@@ -111,7 +111,7 @@
     <Button
         android:id="@+id/confirm_q_btn"
         android:layout_width="327dp"
-        android:layout_height="67dp"
+        android:layout_height="68dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/round_btn2"
         android:fontFamily="@font/roboto_bold"

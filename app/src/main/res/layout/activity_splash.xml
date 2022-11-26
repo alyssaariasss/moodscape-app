@@ -29,7 +29,7 @@
         android:layout_centerVertical="true"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center_horizontal|center_vertical"
-        android:text="mood"
+        android:text="@string/title"
         android:textAlignment="center"
         android:textColor="#4A5759"
         android:textSize="72sp"

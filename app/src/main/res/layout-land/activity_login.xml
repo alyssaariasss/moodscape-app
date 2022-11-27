@@ -10,14 +10,14 @@
 
     <ImageView
         android:id="@+id/moodscape_ls"
-        android:layout_width="180dp"
-        android:layout_height="45dp"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="@string/loginD"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/moodscape_ls"
@@ -25,25 +25,25 @@
 
     <ImageView
         android:id="@+id/undraw_begin"
-        android:layout_width="280dp"
-        android:layout_height="280dp"
+        android:layout_width="106dp"
+        android:layout_height="100dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="36dp"
         android:contentDescription="@string/loginD"
-        app:layout_constraintBottom_toTopOf="@+id/Email1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/moodscape_ls"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/undraw_begin_chat" />
 
     <EditText
         android:id="@+id/Email1"
         android:layout_width="280dp"
-        android:layout_height="49dp"
+        android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginBottom="276dp"
+        android:layout_marginBottom="188dp"
         android:background="@drawable/round_btn2"
         android:ems="10"
         android:fontFamily="@font/sourcesanspro_regular"
@@ -60,14 +60,15 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.859" />
 
     <EditText
         android:id="@+id/Password1"
         android:layout_width="280dp"
-        android:layout_height="49dp"
+        android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_btn2"
@@ -86,17 +87,16 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Email1"
-        app:layout_constraintVertical_bias="0.074"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintVertical_bias="0.106" />
 
     <Button
         android:id="@+id/ForgotPass"
         style="@android:style/Widget.Button.Small"
-        android:layout_width="137dp"
-        android:layout_height="wrap_content"
+        android:layout_width="134dp"
+        android:layout_height="48dp"
         android:background="#00FFFFFF"
         android:fontFamily="@font/sourcesanspro_regular"
         android:paddingLeft="0dp"
@@ -107,19 +107,18 @@
         android:textColor="@color/dark_gray"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.781"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Password1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/Password1"
         app:layout_constraintTop_toBottomOf="@+id/Password1"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/LogInBtn"
         android:layout_width="280dp"
-        android:layout_height="49dp"
+        android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginBottom="45dp"
         android:background="@drawable/round_btn3"
         android:fontFamily="@font/sourcesanspro_semibold"
         android:paddingLeft="16dp"
@@ -127,14 +126,14 @@
         android:paddingRight="16dp"
         android:paddingBottom="0dp"
         android:text="@string/login2"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:backgroundTint="@color/dark_pink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Password1"
-        app:layout_constraintVertical_bias="0.644"
+        app:layout_constraintVertical_bias="0.808"
         tools:ignore="TextContrastCheck" />
 
     <ProgressBar

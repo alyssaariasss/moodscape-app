@@ -11,7 +11,6 @@ public class introduction extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
         setContentView(R.layout.activity_introduction);
 
         Button button3 = findViewById(R.id.btn_get);

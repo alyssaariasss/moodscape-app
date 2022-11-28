@@ -3,6 +3,7 @@ package com.example.puhon_sample;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -16,38 +17,69 @@ public class menu extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_menu);
 
-        Button btn_mood = findViewById(R.id.btn_mood);
+        // Main Menu Buttons
+
+        Button btn_mood = findViewById(R.id.mood_button);
 
         btn_mood.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, moods.class);
+            Intent intent = new Intent(this, sample_activity.class);
             startActivity(intent);
         });
 
-        ImageButton btn_home = findViewById(R.id.image_btn_home);
+        Button btn_goals = findViewById(R.id.goals_button);
 
-        btn_home.setOnClickListener(v -> {
+        btn_goals.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, menu.class);
+            Intent intent = new Intent(this, sample_activity.class);
             startActivity(intent);
         });
 
-        ImageButton btn_settings = findViewById(R.id.image_btn_settings);
+        Button btn_meditate = findViewById(R.id.meditate_button);
 
-        btn_settings.setOnClickListener(v -> {
+        btn_meditate.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, settings.class);
+            Intent intent = new Intent(this, sample_activity.class);
             startActivity(intent);
         });
 
-        Button btn_summary = findViewById(R.id.btn_view_summary);
+        Button btn_summary = findViewById(R.id.progress_button);
 
         btn_summary.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, retrieveMood.class);
+            Intent intent = new Intent(this, sample_activity.class);
             startActivity(intent);
         });
 
+        // NavBar Buttons
+
+        ImageButton btn_home = findViewById(R.id.nav_home);
+
+        btn_home.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, sample_activity.class);
+        });
+
+        ImageButton btn_info = findViewById(R.id.nav_about_mood);
+
+        btn_info.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, sample_activity.class);
+        });
+
+        ImageButton btn_progress = findViewById(R.id.nav_progress);
+
+        btn_progress.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, sample_activity.class);
+        });
+
+        ImageButton btn_settings = findViewById(R.id.nav_settings);
+
+        btn_settings.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, sample_activity.class);
+        });
 
     }
 }

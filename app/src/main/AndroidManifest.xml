@@ -12,22 +12,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Puhon_sample">
+        <activity
+            android:name=".sample_activity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity android:name=".retrieveFeelings" />
         <activity android:name=".retrieveMood" />
-        <activity android:name=".questions" />
-<!--        <activity android:name=".question_2" />-->
+        <activity android:name=".questions" /> <!-- <activity android:name=".question_2" /> -->
         <activity android:name=".feelings" />
-        <activity android:name=".settings" />
-<!--        <activity android:name=".choices" />-->
+        <activity android:name=".settings" /> <!-- <activity android:name=".choices" /> -->
         <activity android:name=".moods" />
         <activity android:name=".introduction" />
         <activity android:name=".menu" />
         <activity android:name=".login" />
         <activity android:name=".register" />
-        <activity android:name=".MainActivity"
-            android:exported="false"/>
-        <activity android:name=".splash"
-            android:exported="true" >
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".splash"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

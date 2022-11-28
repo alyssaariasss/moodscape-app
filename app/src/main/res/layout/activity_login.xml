@@ -45,7 +45,6 @@
         android:layout_marginBottom="276dp"
         android:background="@drawable/round_btn2"
         android:ems="10"
-        android:fontFamily="@font/sourcesanspro_regular"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:paddingStart="25dp"

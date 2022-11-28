@@ -1,39 +1,17 @@
 package com.example.puhon_sample;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ListView;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.HashMap;
-import java.util.Map;
-
-public class settings extends AppCompatActivity {
-
-    ImageButton Logout;
-    FirebaseAuth fAuth;
+public class BreakScreen1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_break_screen1);
 
         // NavBar Buttons
 
@@ -68,19 +46,5 @@ public class settings extends AppCompatActivity {
             Intent intent = new Intent(this, sample_activity.class);
             startActivity(intent);
         });
-
-        Logout = findViewById(R.id.signOut);
-
-            Logout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    fAuth.signOut();
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                }
-            });
-
-        }
     }
-
-
-
+}

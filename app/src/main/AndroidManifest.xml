@@ -25,7 +25,6 @@
         <activity android:name=".feelings" />
         <activity android:name=".settings" /> <!-- <activity android:name=".choices" /> -->
         <activity android:name=".moods" />
-        <activity android:name=".introduction" />
         <activity android:name=".menu" />
         <activity android:name=".login" />
         <activity android:name=".register" />

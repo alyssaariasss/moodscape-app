@@ -43,7 +43,7 @@
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginBottom="188dp"
+        android:layout_marginBottom="196dp"
         android:background="@drawable/round_btn2"
         android:ems="10"
         android:fontFamily="@font/sourcesanspro_regular"
@@ -63,40 +63,51 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.859" />
+        app:layout_constraintVertical_bias="0.859"
+        tools:ignore="TextContrastCheck" />
 
-    <EditText
-        android:id="@+id/Password1"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
         android:layout_width="280dp"
-        android:layout_height="48dp"
+        android:layout_height="49dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/round_btn2"
+        android:layout_marginTop="-60dp"
         android:ems="10"
         android:fontFamily="@font/sourcesanspro_regular"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:paddingStart="25dp"
-        android:paddingLeft="25dp"
-        android:paddingTop="0dp"
-        android:paddingEnd="0dp"
-        android:paddingRight="0dp"
-        android:paddingBottom="2dp"
         android:textColor="@color/dark_gray"
-        android:textColorHint="@color/dark_gray"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:hintEnabled="false"
+        app:layout_constraintBottom_toTopOf="@+id/LogInBtn"
+        app:layout_constraintEnd_toEndOf="@+id/Email1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Email1"
         app:layout_constraintTop_toBottomOf="@+id/Email1"
-        app:layout_constraintVertical_bias="0.106" />
+        app:layout_constraintVertical_bias="0.547"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Password1"
+            android:layout_width="280dp"
+            android:layout_height="49dp"
+            android:background="@drawable/round_btn2"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingStart="25dp"
+            android:paddingLeft="25dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="0dp"
+            android:paddingBottom="2dp"
+            android:textColorHint="@color/dark_gray"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/ForgotPass"
         style="@android:style/Widget.Button.Small"
-        android:layout_width="134dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="#00FFFFFF"
         android:fontFamily="@font/sourcesanspro_regular"
         android:paddingLeft="0dp"
@@ -107,10 +118,10 @@
         android:textColor="@color/dark_gray"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/Password1"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/Password1"
-        app:layout_constraintTop_toBottomOf="@+id/Password1"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -130,10 +141,10 @@
         app:backgroundTint="@color/dark_pink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Password1"
-        app:layout_constraintVertical_bias="0.808"
+        app:layout_constraintTop_toBottomOf="@+id/Email1"
+        app:layout_constraintVertical_bias="0.792"
         tools:ignore="TextContrastCheck" />
 
     <ProgressBar

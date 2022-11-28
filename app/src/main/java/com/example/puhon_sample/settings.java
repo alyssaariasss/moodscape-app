@@ -64,9 +64,9 @@ public class settings extends AppCompatActivity {
 
                     userprofile = snapshot.getValue(User.class);
 
-                    mprofileName.setText(userprofile.getUserName());
+                    mprofileName.setText(userprofile.getUserFirstName());
+                    mprofilePronouns.setText(userprofile.getUserLastName());
                     mprofileAge.setText(userprofile.getUserAge());
-                    mprofilePronouns.setText(userprofile.getUserPronouns());
                     mprofileEmail.setText(userprofile.getUserEmail());
                     mprofilePassword.setText(userprofile.getUserPassword());
 

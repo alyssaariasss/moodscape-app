@@ -4,14 +4,14 @@
     <string name="title">puhon</string>
     <string name="stars">TODO</string>
     <string name="tagline">Monitor your daily moods and make a list of your goals today!</string>
-    <string name="sign_up">Sign Up</string>
+    <string name="sign_up">SIGN UP</string>
     <string name="login">login</string>
     <string name="jup">TODO</string>
     <string name="tagline2">Glad to see you here!</string>
     <string name="age">Age</string>
-    <string name="pronouns">Pronouns</string>
     <string name="email3">Email</string>
-    <string name="name">Name</string>
+    <string name="firstname">First Name</string>
+    <string name="lastname">Last Name</string>
     <string name="password2">Password</string>
     <string name="loginD">TODO</string>
     <string name="welcome">Welcome</string>

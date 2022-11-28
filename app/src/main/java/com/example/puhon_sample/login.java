@@ -12,12 +12,14 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;
 
 public class login extends AppCompatActivity {
-    EditText mEmail1,mPassword1;
+    EditText mEmail1;
+    TextInputEditText mPassword1;
     Button mLogInBtn,mForgotPass;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
@@ -36,7 +38,7 @@ public class login extends AppCompatActivity {
 
         mLogInBtn.setOnClickListener(v -> {
             String email = mEmail1.getText().toString().trim();
-            String password = mPassword1.getText().toString().trim();
+            String password = Objects.requireNonNull(mPassword1.getText()).toString().trim();
 
             if(TextUtils.isEmpty(email)){
                 mEmail1.setError("Email is required.");
@@ -64,7 +66,7 @@ public class login extends AppCompatActivity {
 
                 }
                 else {
-                    Toast.makeText(login.this, "Error!" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(login.this, "Error! " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                 }
 

@@ -34,6 +34,7 @@
         android:layout_marginStart="75dp"
         android:layout_marginLeft="70dp"
         android:layout_marginTop="-3dp"
+        android:layout_marginBottom="25dp"
         android:layout_marginEnd="75dp"
         app:srcCompat="@drawable/undraw_online_ad" />
 
@@ -58,8 +59,8 @@
 
             <EditText
                 android:id="@+id/FirstName"
-                android:layout_width="280dp"
-                android:layout_height="49dp"
+                android:layout_width="450dp"
+                android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginBottom="12dp"
@@ -76,13 +77,13 @@
                 android:paddingBottom="2dp"
                 android:textColor="@color/dark_gray"
                 android:textColorHint="@color/dark_gray"
-                android:textSize="15sp"
+                android:textSize="25sp"
                 tools:ignore="TextContrastCheck" />
 
             <EditText
                 android:id="@+id/LastName"
-                android:layout_width="280dp"
-                android:layout_height="49dp"
+                android:layout_width="450dp"
+                android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginBottom="12dp"
@@ -99,13 +100,13 @@
                 android:paddingBottom="2dp"
                 android:textColor="@color/dark_gray"
                 android:textColorHint="@color/dark_gray"
-                android:textSize="15sp"
+                android:textSize="25sp"
                 tools:ignore="TextContrastCheck" />
 
             <EditText
                 android:id="@+id/Age"
-                android:layout_width="280dp"
-                android:layout_height="49dp"
+                android:layout_width="450dp"
+                android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginBottom="12dp"
@@ -122,13 +123,13 @@
                 android:paddingBottom="2dp"
                 android:textColor="@color/dark_gray"
                 android:textColorHint="@color/dark_gray"
-                android:textSize="15sp"
+                android:textSize="25sp"
                 tools:ignore="TextContrastCheck" />
 
             <EditText
                 android:id="@+id/Email1"
-                android:layout_width="280dp"
-                android:layout_height="49dp"
+                android:layout_width="450dp"
+                android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginBottom="12dp"
@@ -145,13 +146,13 @@
                 android:paddingBottom="2dp"
                 android:textColor="@color/dark_gray"
                 android:textColorHint="@color/dark_gray"
-                android:textSize="15sp"
+                android:textSize="25sp"
                 tools:ignore="TextContrastCheck" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout"
-                android:layout_width="280dp"
-                android:layout_height="49dp"
+                android:layout_width="450dp"
+                android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:ems="10"
@@ -163,9 +164,9 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/Password1"
-                    android:layout_width="280dp"
-                    android:layout_height="49dp"
-                    android:textSize="15sp"
+                    android:layout_width="450dp"
+                    android:layout_height="50dp"
+                    android:textSize="25sp"
                     android:hint="@string/password"
                     android:textColorHint="@color/dark_gray"
                     android:background="@drawable/round_btn2"
@@ -180,8 +181,8 @@
 
             <Button
                 android:id="@+id/SignUpBtn"
-                android:layout_width="280dp"
-                android:layout_height="49dp"
+                android:layout_width="450dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/round_btn3"
                 android:elevation="5dp"
@@ -195,7 +196,7 @@
                 android:text="@string/sign_up"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 app:backgroundTint="@color/dark_pink"
                 tools:ignore="TextContrastCheck" />
         </LinearLayout>

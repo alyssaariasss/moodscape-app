@@ -7,7 +7,6 @@
     android:background="@color/white"
     tools:context=".login">
 
-
     <ImageView
         android:id="@+id/moodscape_ls"
         android:layout_width="180dp"
@@ -64,38 +63,47 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TextContrastCheck" />
 
-    <EditText
-        android:id="@+id/Password1"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
         android:layout_width="280dp"
         android:layout_height="49dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/round_btn2"
+        android:layout_marginTop="-130dp"
         android:ems="10"
         android:fontFamily="@font/sourcesanspro_regular"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:paddingStart="25dp"
-        android:paddingLeft="25dp"
-        android:paddingTop="0dp"
-        android:paddingEnd="0dp"
-        android:paddingRight="0dp"
-        android:paddingBottom="2dp"
         android:textColor="@color/dark_gray"
-        android:textColorHint="@color/dark_gray"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
+        app:hintEnabled="false"
+        app:layout_constraintBottom_toTopOf="@+id/LogInBtn"
+        app:layout_constraintEnd_toEndOf="@+id/undraw_begin"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/undraw_begin"
         app:layout_constraintTop_toBottomOf="@+id/Email1"
-        app:layout_constraintVertical_bias="0.074"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintVertical_bias="0.547"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Password1"
+            android:layout_width="280dp"
+            android:layout_height="49dp"
+            android:background="@drawable/round_btn2"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingStart="25dp"
+            android:paddingLeft="25dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="0dp"
+            android:paddingBottom="2dp"
+            android:textColorHint="@color/dark_gray"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/ForgotPass"
         style="@android:style/Widget.Button.Small"
-        android:layout_width="137dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
         android:fontFamily="@font/sourcesanspro_regular"
@@ -107,10 +115,10 @@
         android:textColor="@color/dark_gray"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.781"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Password1"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -126,6 +134,8 @@
         android:paddingTop="0dp"
         android:paddingRight="16dp"
         android:paddingBottom="0dp"
+        android:elevation="5dp"
+        android:stateListAnimator="@null"
         android:text="@string/login2"
         android:textSize="20sp"
         app:backgroundTint="@color/dark_pink"

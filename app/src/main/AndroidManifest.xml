@@ -20,13 +20,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".AngryChoice"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".HappyChoice"
             android:exported="false" >
             <meta-data
@@ -48,14 +41,6 @@
         <activity android:name=".moods" />
         <activity
             android:name=".menu"
-            android:exported="false" />
-        <activity android:name=".login" />
-        <activity android:name=".register" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".splash"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -63,6 +48,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".login" />
+        <activity android:name=".register" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".splash"
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"

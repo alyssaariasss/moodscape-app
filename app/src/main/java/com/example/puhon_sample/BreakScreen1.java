@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
+import android.widget.Button;
 
 public class BreakScreen1 extends AppCompatActivity {
 
@@ -43,7 +44,17 @@ public class BreakScreen1 extends AppCompatActivity {
 
         btn_settings.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, sample_activity.class);
+            Intent intent = new Intent(this, settings.class);
+            startActivity(intent);
+        });
+
+        // Back & Continue Button
+
+        Button btn_back = findViewById(R.id.backButton);
+
+        btn_back.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, moods.class);
             startActivity(intent);
         });
     }

@@ -3,7 +3,6 @@ package com.example.puhon_sample;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -22,7 +21,7 @@ public class menu extends AppCompatActivity {
 
         btn_mood.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, sample_activity.class);
+            Intent intent = new Intent(this, HappyChoice.class);
             startActivity(intent);
         });
 
@@ -56,14 +55,16 @@ public class menu extends AppCompatActivity {
 
         btn_home.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, sample_activity.class);
+            Intent intent = new Intent(this, menu.class);
+            startActivity(intent);
         });
 
         ImageButton btn_info = findViewById(R.id.nav_about_mood);
 
         btn_info.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, sample_activity.class);
+            Intent intent = new Intent(this, BreakScreen1.class);
+            startActivity(intent);
         });
 
         ImageButton btn_progress = findViewById(R.id.nav_progress);
@@ -71,13 +72,15 @@ public class menu extends AppCompatActivity {
         btn_progress.setOnClickListener(v -> {
 
             Intent intent = new Intent(this, sample_activity.class);
+            startActivity(intent);
         });
 
         ImageButton btn_settings = findViewById(R.id.nav_settings);
 
         btn_settings.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, sample_activity.class);
+            Intent intent = new Intent(this, settings.class);
+            startActivity(intent);
         });
 
     }

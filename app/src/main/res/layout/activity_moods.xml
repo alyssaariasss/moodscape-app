@@ -4,175 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#253350"
+    android:background="@color/white"
     tools:context=".moods">
 
-
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_width="130dp"
-        android:layout_height="43dp"
-        android:background="@drawable/round_btn3"
-        android:fontFamily="@font/roboto_bold"
-        android:text="@string/continue_btn"
-        android:textColor="#FEF8EC"
-        android:textSize="14sp"
-        app:backgroundTint="#955B5A"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.79"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.93" />
-
     <TextView
-        android:id="@+id/mood_bg"
-        android:layout_width="match_parent"
-        android:layout_height="450dp"
-        android:background="@drawable/custom_shape"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-
-    <TextView
-        android:id="@+id/text_mood"
-        android:layout_width="313dp"
-        android:layout_height="97dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="@string/mood_tag_txt"
-        android:textColor="#253350"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/mood_bg"
-        app:layout_constraintVertical_bias="0.093" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/ChoiceTagline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
+        android:gravity="center"
+        android:text="How are you\nfeeling today?"
+        android:textAlignment="center"
+        android:textColor="@color/dark_gray"
+        android:textSize="42sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_mood"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <RadioButton
-            android:id="@+id/rad_btn_happy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_bold"
-            android:text="@string/happy"
-            android:textColor="#253350"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.155"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <RadioButton
-            android:id="@+id/rad_btn_sad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_bold"
-            android:text="@string/sad"
-            android:textColor="#253350"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.155"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <RadioButton
-            android:id="@+id/rad_btn_angry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_bold"
-            android:text="@string/angry"
-            android:textColor="#253350"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.167"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <RadioButton
-            android:id="@+id/rad_btn_surprised"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_bold"
-            android:text="@string/fearful"
-            android:textColor="#253350"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.764"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.009" />
-
-        <RadioButton
-            android:id="@+id/rad_btn_fearful"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_bold"
-            android:text="@string/disgusted"
-            android:textColor="#253350"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.71"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.096" />
-
-        <RadioButton
-            android:id="@+id/rad_btn_disgusted"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_bold"
-            android:text="@string/surprised"
-            android:textColor="#253350"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.803"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-    </RadioGroup>
-
-    <ImageView
-        android:id="@+id/mood_image"
-        android:layout_width="283dp"
-        android:layout_height="232dp"
-        android:contentDescription="@string/mood_img"
-        app:layout_constraintBottom_toTopOf="@+id/mood_bg"
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/mood_slider"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:layout_marginTop="44dp"
+        app:auto_cycle="false"
+        app:corner_radius="5"
+        app:delay="0"
+        app:error_image="@color/dark_pink"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.592" />
+        app:layout_constraintTop_toBottomOf="@+id/ChoiceTagline"
+        app:placeholder="@color/white" />
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="157dp"
-        android:layout_height="170dp"
-        android:contentDescription="@string/mood_des"
+    <Button
+        android:id="@+id/ChoiceButton"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/round_btn"
+        android:elevation="5dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
+        android:gravity="center"
+        android:stateListAnimator="@null"
+        android:text="Select"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mood_slider" />
+
+    <ImageButton
+        android:id="@+id/nav_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="30dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/nav_home"
+        android:translationZ="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/mood_bg"
-        app:layout_constraintHorizontal_bias="0.83"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_mood"
-        app:layout_constraintVertical_bias="0.06" />
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
+    <ImageButton
+        android:id="@+id/nav_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/nav_settings"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/nav_about_mood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/nav_info"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_home"
+        app:layout_constraintStart_toStartOf="@+id/nav_home"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/nav_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="115dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/nav_stats"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
+        app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

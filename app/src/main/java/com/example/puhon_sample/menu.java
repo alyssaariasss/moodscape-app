@@ -21,7 +21,7 @@ public class menu extends AppCompatActivity {
 
         btn_mood.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, HappyChoice.class);
+            Intent intent = new Intent(this, moods.class);
             startActivity(intent);
         });
 

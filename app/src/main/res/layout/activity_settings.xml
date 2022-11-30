@@ -22,7 +22,7 @@
         android:id="@+id/moodscape_ls"
         android:layout_width="200dp"
         android:layout_height="45dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="70dp"
         android:src="@drawable/moodscape_ls"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
         android:id="@+id/sampleImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="55dp"
         android:src="@drawable/undraw_user"
         app:layout_constraintEnd_toEndOf="@+id/moodscape_ls"
         app:layout_constraintHorizontal_bias="0.48"
@@ -41,9 +41,9 @@
 
     <EditText
         android:id="@+id/Settings_FName"
-        android:layout_width="280dp"
+        android:layout_width="300dp"
         android:layout_height="49dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="180dp"
         android:background="@drawable/round_btn2"
         android:ems="10"
         android:fontFamily="@font/sourcesanspro_regular"
@@ -65,9 +65,9 @@
 
     <EditText
         android:id="@+id/Settings_LName"
-        android:layout_width="280dp"
+        android:layout_width="300dp"
         android:layout_height="49dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="65dp"
         android:background="@drawable/round_btn2"
         android:ems="10"
         android:fontFamily="@font/sourcesanspro_regular"
@@ -89,9 +89,9 @@
 
     <EditText
         android:id="@+id/Settings_Age"
-        android:layout_width="280dp"
+        android:layout_width="300dp"
         android:layout_height="49dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="65dp"
         android:background="@drawable/round_btn2"
         android:ems="10"
         android:fontFamily="@font/sourcesanspro_regular"
@@ -113,9 +113,9 @@
 
     <EditText
         android:id="@+id/Settings_Email"
-        android:layout_width="280dp"
+        android:layout_width="300dp"
         android:layout_height="49dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="65dp"
         android:background="@drawable/round_btn2"
         android:ems="10"
         android:fontFamily="@font/sourcesanspro_regular"
@@ -137,9 +137,9 @@
 
     <EditText
         android:id="@+id/Settings_Password"
-        android:layout_width="280dp"
+        android:layout_width="300dp"
         android:layout_height="49dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="65dp"
         android:background="@drawable/round_btn2"
         android:ems="10"
         android:fontFamily="@font/sourcesanspro_regular"
@@ -161,16 +161,17 @@
 
     <Button
         android:id="@+id/Settings_SaveBtn"
-        android:layout_width="280dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:text="SAVE CHANGES"
-        android:fontFamily="@font/sourcesanspro_semibold"
+        android:layout_marginTop="100dp"
         android:background="@drawable/round_btn3"
-        android:textSize="20sp"
         android:elevation="5dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
         android:stateListAnimator="@null"
+        android:text="SAVE CHANGES"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="@+id/Settings_Password"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/Settings_Password"
         app:layout_constraintTop_toTopOf="@+id/Settings_Password" />
 
@@ -179,7 +180,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="30dp"
         android:background="#00FFFFFF"
         android:src="@drawable/nav_home"
         android:translationZ="0dp"
@@ -203,7 +204,7 @@
         android:id="@+id/nav_about_mood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
+        android:layout_marginStart="110dp"
         android:background="#00FFFFFF"
         android:src="@drawable/nav_info"
         android:translationZ="0dp"
@@ -215,12 +216,12 @@
         android:id="@+id/nav_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="216dp"
+        android:layout_marginStart="115dp"
         android:background="#00FFFFFF"
         android:src="@drawable/nav_stats"
         android:translationZ="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
-        app:layout_constraintStart_toStartOf="@+id/nav_home"
+        app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
 

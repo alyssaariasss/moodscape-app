@@ -65,7 +65,7 @@ public class settings extends AppCompatActivity {
 
         btn_settings.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, sample_activity.class);
+            Intent intent = new Intent(this, settings.class);
             startActivity(intent);
         });
 

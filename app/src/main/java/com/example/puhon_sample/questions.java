@@ -33,14 +33,14 @@ public class questions extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_questions);
+        setContentView(R.layout.activity_question1);
 
         mWhereTxt = findViewById(R.id.question1);
-        mWhoTxt = findViewById(R.id.question2);
-        mDoTxt = findViewById(R.id.question3);
-        mReasonTxt = findViewById(R.id.question4);
-        mWhatTxt = findViewById(R.id.question5);
-        mSaveQuestionsBtn = findViewById(R.id.confirm_q_btn);
+        mWhoTxt = findViewById(R.id.question1);
+        mDoTxt = findViewById(R.id.question1);
+        mReasonTxt = findViewById(R.id.question1);
+        mWhatTxt = findViewById(R.id.question1);
+        mSaveQuestionsBtn = findViewById(R.id.nextbtn);
 
         fAuth = FirebaseAuth.getInstance();
         FirebaseUser user = fAuth.getCurrentUser();

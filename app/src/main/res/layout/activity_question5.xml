@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/question5_tagline1"
+        android:layout_width="138dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="648dp"
+        android:fontFamily="@font/sourcesanspro_regular"
+        android:text="on a scale of 1-10"
+        android:textColor="#4A5759"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/question5_how"
+        android:layout_width="275dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="104dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="How well have you been sleeping?"
+        android:textColor="#4A5759"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/question5_tagline2"
+        android:layout_width="265dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="468dp"
+        android:fontFamily="@font/sourcesanspro_regular"
+        android:text="1 being poorly and 10 being very well"
+        android:textColor="#4A5759"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Hello_User" />
+
+    <ImageButton
+        android:id="@+id/nav_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="30dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/nav_home"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/nav_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/nav_settings"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/nav_about_mood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/nav_info"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_home"
+        app:layout_constraintStart_toStartOf="@+id/nav_home"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/nav_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="115dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/nav_stats"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
+        app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/nextbtn"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/round_btn3"
+        android:elevation="5dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
+        android:gravity="center_horizontal|center_vertical"
+        android:paddingTop="0dp"
+        android:stateListAnimator="@null"
+        android:text="Next"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:backgroundTint="@color/dark_pink"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.876"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.996"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/backbtn"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/round_btn3"
+        android:elevation="5dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
+        android:gravity="center_horizontal|center_vertical"
+        android:paddingTop="2dp"
+        android:stateListAnimator="@null"
+        android:text="Back"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:backgroundTint="@color/canary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85"
+        tools:ignore="TextContrastCheck" />
+
+    <SeekBar
+        android:id="@+id/question5_seekBar"
+        android:layout_width="355dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="364dp"
+        android:background="@drawable/round_btn4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tickMarkTint="#000000" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/question2_where"
+        android:layout_width="307dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="Where are you right now?"
+        android:textColor="#4A5759"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/question2_tagline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="596dp"
+        android:fontFamily="@font/sourcesanspro_regular"
+        android:text="At home? school? ..."
+        android:textColor="#4A5759"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Hello_User" />
+
+
+    <EditText
+        android:id="@+id/question2_1"
+        android:layout_width="355dp"
+        android:layout_height="90dp"
+        android:background="@drawable/round_btn4"
+
+        android:ems="10"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:overScrollMode="always"
+        android:paddingEnd="0dp"
+        android:paddingStart="15dp"
+        android:paddingTop="15dp"
+        android:text="Write your answers here..."
+        android:textColor="@color/dark_gray"
+        android:textColorHint="@color/dark_gray"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.237" />
+
+    <TextView
+        android:id="@+id/question2_who"
+        android:layout_width="307dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="288dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="Who are you with?"
+        android:textColor="#4A5759"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/question2_tagline2"
+        android:layout_width="129dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="364dp"
+        android:fontFamily="@font/sourcesanspro_regular"
+        android:text="Family? Friends? ..."
+        android:textColor="#4A5759"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Hello_User" />
+
+    <EditText
+        android:id="@+id/question2_2"
+        android:layout_width="355dp"
+        android:layout_height="90dp"
+        android:background="@drawable/round_btn4"
+
+        android:ems="10"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:overScrollMode="always"
+        android:paddingStart="15dp"
+        android:paddingEnd="0dp"
+        android:paddingTop="15dp"
+        android:text="Write your answers here..."
+        android:textColor="@color/dark_gray"
+        android:textColorHint="@color/dark_gray"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.597" />
+
+    <ImageButton
+        android:id="@+id/nav_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="30dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/nav_home"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/nav_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/nav_settings"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/nav_about_mood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/nav_info"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_home"
+        app:layout_constraintStart_toStartOf="@+id/nav_home"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/nav_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="115dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/nav_stats"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
+        app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/nextbtn"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/round_btn3"
+        android:elevation="5dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
+        android:gravity="center_horizontal|center_vertical"
+        android:paddingTop="0dp"
+        android:stateListAnimator="@null"
+        android:text="Next"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:backgroundTint="@color/dark_pink"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.876"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.996"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/backbtn"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/round_btn3"
+        android:elevation="5dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
+        android:gravity="center_horizontal|center_vertical"
+        android:paddingTop="2dp"
+        android:stateListAnimator="@null"
+        android:text="Back"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:backgroundTint="@color/canary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85"
+        tools:ignore="TextContrastCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,10 +2,12 @@
 <resources>
     <color name="light_pink">#F9BAAF</color>
     <color name="dark_pink">#EF807F</color>
+    <color name="light_canary">#FFE1AD</color>
     <color name="canary">#FFC461</color>
     <color name="dirty_cream">#F2F3D9</color>
-    <color name="mud">#B1AC8A</color>
+    <color name="mud">#B1AC89</color>
     <color name="dark_gray">#4A5759</color>
+    <color name="light_gray">#F6F7F7</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

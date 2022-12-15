@@ -34,7 +34,8 @@
                 android:value="" />
         </activity>
         <activity android:name=".retrieveFeelings" />
-        <activity android:name=".retrieveMood" />
+        <activity android:name=".summary"
+            android:exported="false" />
         <activity android:name=".questions" /> <!-- <activity android:name=".question_2" /> -->
         <activity android:name=".feelings" />
         <activity android:name=".settings" /> <!-- <activity android:name=".choices" /> -->

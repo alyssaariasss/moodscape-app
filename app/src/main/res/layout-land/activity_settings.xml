@@ -12,7 +12,7 @@
         android:id="@+id/signOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="18dp"
         android:layout_marginEnd="32dp"
         android:background="#00FFFFFF"
         android:src="@drawable/sign_out"
@@ -23,9 +23,10 @@
         android:id="@+id/moodscape_ls"
         android:layout_width="200dp"
         android:layout_height="45dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/moodscape_ls"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.243"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,8 +55,8 @@
     <EditText
         android:id="@+id/Settings_FName"
         android:layout_width="300dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="170dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/round_btn2"
         android:ems="10"
         android:fontFamily="@font/sourcesanspro_regular"
@@ -70,16 +71,15 @@
         android:textColor="@color/dark_gray"
         android:textColorHint="@color/dark_gray"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/sampleImage"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="@+id/sampleImage"
-        app:layout_constraintTop_toTopOf="@+id/sampleImage" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/moodscape_ls"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/Settings_LName"
         android:layout_width="300dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="65dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="55dp"
         android:background="@drawable/round_btn2"
         android:ems="10"
         android:fontFamily="@font/sourcesanspro_regular"
@@ -102,8 +102,8 @@
     <EditText
         android:id="@+id/Settings_Age"
         android:layout_width="300dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="65dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="55dp"
         android:background="@drawable/round_btn2"
         android:ems="10"
         android:fontFamily="@font/sourcesanspro_regular"
@@ -126,8 +126,8 @@
     <EditText
         android:id="@+id/Settings_Email"
         android:layout_width="300dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="65dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="55dp"
         android:background="@drawable/round_btn2"
         android:ems="10"
         android:fontFamily="@font/sourcesanspro_regular"
@@ -150,8 +150,8 @@
     <EditText
         android:id="@+id/Settings_Password"
         android:layout_width="300dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="65dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="55dp"
         android:background="@drawable/round_btn2"
         android:ems="10"
         android:fontFamily="@font/sourcesanspro_regular"
@@ -174,49 +174,38 @@
     <Button
         android:id="@+id/Settings_SaveBtn"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="160dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
         android:stateListAnimator="@null"
         android:text="SAVE CHANGES"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="@+id/Settings_Password"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/Settings_Password"
-        app:layout_constraintTop_toTopOf="@+id/Settings_Password" />
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/sampleImage"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="@+id/sampleImage"
+        app:layout_constraintTop_toTopOf="@+id/sampleImage" />
 
     <ImageButton
         android:id="@+id/nav_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="8dp"
         android:background="#00FFFFFF"
         android:src="@drawable/nav_home"
         android:translationZ="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.306"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <ImageButton
-        android:id="@+id/nav_settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_settings"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/nav_about_mood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
+        android:layout_marginStart="106dp"
         android:background="#00FFFFFF"
         android:src="@drawable/nav_info"
         android:translationZ="0dp"
@@ -228,12 +217,24 @@
         android:id="@+id/nav_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="115dp"
+        android:layout_marginStart="110dp"
         android:background="#00FFFFFF"
         android:src="@drawable/nav_stats"
         android:translationZ="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
         app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/nav_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/nav_settings"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
+        app:layout_constraintStart_toStartOf="@+id/nav_progress"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
 

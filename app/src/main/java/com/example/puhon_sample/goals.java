@@ -81,7 +81,7 @@ public class goals extends AppCompatActivity {
 
         btn_progress.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, sample_activity.class);
+            Intent intent = new Intent(this, summary.class);
             startActivity(intent);
         });
 

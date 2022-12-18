@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatRadioButton;
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -50,7 +51,8 @@ public class summary extends AppCompatActivity {
     UserMoods userMoods;
 
     AppCompatRadioButton summaryRb, overallRb;
-    TextView inputCard, inputTitle, overallReportCard, overallReportTitle, progressCard, chartTitle, selectedDateCard, selectedDateText;
+    TextView inputTitle, overallReportTitle, chartTitle, selectedDateText;
+    CardView inputCard, overallReportCard, progressCard, selectedDateCard;
     ImageView moodView;
 
     LinearLayout linearLayout;
@@ -96,7 +98,7 @@ public class summary extends AppCompatActivity {
 
         BarDataSet barDataSet = new BarDataSet(barEntries,"Mood");
         initBarChart();
-        barDataSet.setColors(new int[] {R.color.dark_pink, R.color.dark_gray, R.color.mud, R.color.canary, R.color.light_pink, R.color.light_canary}, this);
+        barDataSet.setColors(new int[] {R.color.dark_pink, R.color.light_pink, R.color.mud, R.color.canary, R.color.dark_gray, R.color.brown}, this);
         barDataSet.setDrawValues(false);
         barChart.setData(new BarData(barDataSet));
 
@@ -131,17 +133,17 @@ public class summary extends AppCompatActivity {
 
             // Set Image
             if (desc == "happy") {
-                moodView.setImageResource(R.drawable.happy_mood);
+                moodView.setImageResource(R.drawable.happy_icon);
             } else if (desc == "angry") {
-                moodView.setImageResource(R.drawable.angry_mood);
+                moodView.setImageResource(R.drawable.angry_icon);
             } else if (desc == "fearful") {
-                moodView.setImageResource(R.drawable.fearful_mood);
+                moodView.setImageResource(R.drawable.fearful_icon);
             } else if (desc == "sad") {
-                moodView.setImageResource(R.drawable.sad_mood);
+                moodView.setImageResource(R.drawable.sad_icon);
             } else if (desc == "disgusted") {
-                moodView.setImageResource(R.drawable.disgusted_mood);
+                moodView.setImageResource(R.drawable.disgusted_icon);
             } else if (desc == "surprised") {
-                moodView.setImageResource(R.drawable.surprised_mood);
+                moodView.setImageResource(R.drawable.surprised_icon);
             }
         });
 

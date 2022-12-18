@@ -54,7 +54,7 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="14sp"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+            tools:ignore="TextContrastCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
         <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/overallRb"
@@ -70,19 +70,18 @@
             android:textAllCaps="false"
             android:textColor="@color/dark_gray"
             android:textSize="14sp"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck,UsingOnClickInXml" />
     </RadioGroup>
 
     <!--    Summary  -->
 
-    <TextView
+    <androidx.cardview.widget.CardView
         android:id="@+id/inputCard"
         android:layout_width="330dp"
         android:layout_height="220dp"
-        android:background="@drawable/round_btn4"
         android:backgroundTint="@color/dirty_cream"
-        android:elevation="5dp"
-        android:stateListAnimator="@null"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -188,16 +187,15 @@
             app:layout_constraintVertical_bias="0.349" />
     </LinearLayout>
 
-    <TextView
+    <androidx.cardview.widget.CardView
         android:id="@+id/progressCard"
         android:layout_width="330dp"
         android:layout_height="330dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/round_btn4"
         android:backgroundTint="@color/dirty_cream"
-        android:elevation="5dp"
-        android:stateListAnimator="@null"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -237,21 +235,20 @@
 
     <!--    Overall Report  -->
 
-    <TextView
+    <androidx.cardview.widget.CardView
         android:id="@+id/overallReportCard"
         android:layout_width="330dp"
         android:layout_height="400dp"
-        android:background="@drawable/round_btn4"
         android:backgroundTint="@color/dirty_cream"
         android:visibility="gone"
-        android:elevation="5dp"
-        android:stateListAnimator="@null"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.340" />
+        app:layout_constraintVertical_bias="0.360" />
 
     <TextView
         android:id="@+id/overallReportTitle"
@@ -287,15 +284,14 @@
         app:layout_constraintTop_toTopOf="@+id/overallReportCard"
         app:layout_constraintVertical_bias="0.679" />
 
-    <TextView
+    <androidx.cardview.widget.CardView
         android:id="@+id/selectedDateCard"
         android:layout_width="330dp"
         android:layout_height="100dp"
-        android:background="@drawable/round_btn4"
         android:backgroundTint="@color/dirty_cream"
         android:visibility="gone"
-        android:elevation="6dp"
-        android:stateListAnimator="@null"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -327,7 +323,7 @@
         android:layout_height="80dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/happy_mood"
+        android:src="@drawable/happy_icon"
         android:visibility="gone"
         android:elevation="6dp"
         android:contentDescription="@string/moods"

@@ -11,7 +11,7 @@
         android:layout_height="32dp"
         android:layout_margin="4dp"
         app:cardCornerRadius="4dp"
-        app:cardBackgroundColor="@color/light_canary">
+        app:cardBackgroundColor="@color/brown">
         
         <TextView
             android:id="@+id/surprisedDateTextView"

@@ -4,11 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -20,77 +26,116 @@ import com.google.firebase.database.ValueEventListener;
 
 public class goals extends AppCompatActivity {
 
-    TextView FirstName;
-    FirebaseAuth fAuth;
-    FirebaseDatabase database;
-    DatabaseReference reference;
-    String id;
-    User userprofile;
+    TextView goals_Today, goals_History;
+    private int selectedTabNumber = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goals);
 
-        fAuth = FirebaseAuth.getInstance();
-        database = FirebaseDatabase.getInstance();
-        FirebaseUser user = fAuth.getCurrentUser();
-        assert user != null;
-        id = user.getUid();
-        reference = database.getReference().child("users").child(id);
+        goals_Today = findViewById(R.id.goals_Today);
+        goals_History = findViewById(R.id.goals_History);
 
-        FirstName = findViewById(R.id.goals_greetings);
+        // selecting first fragment by default
+        getSupportFragmentManager().beginTransaction()
+                .setReorderingAllowed(true)
+                .replace(R.id.fragmentContainer, FragmentToday.class, null)
+                .commit();
 
-        reference.addValueEventListener(new ValueEventListener() {
+        goals_Today.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            public void onClick(View v) {
 
-                userprofile = snapshot.getValue(User.class);
-                assert userprofile != null;
-                FirstName.setText(String.format("Hi %s", userprofile.getUserFirstName()));
+                selectTab(1);
+
+            }
+        });
+
+        goals_History.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                selectTab(2);
+
+            }
+        });
+    }
+
+    private void selectTab(int tabNumber){
+
+        TextView selectedTextView;
+        TextView nonSelectedTextView;
+
+        if(tabNumber == 1){
+
+            // user has selected first tab so first TextView is selected
+            selectedTextView = goals_Today;
+
+            // the other is not selected
+            nonSelectedTextView = goals_History;
+
+            // setting fragment to the fragment container view
+            getSupportFragmentManager().beginTransaction()
+                    .setReorderingAllowed(true)
+                    .replace(R.id.fragmentContainer,FragmentToday.class, null)
+                    .commit();
+        }
+        else {
+
+            // user has selected second tab so second TextView is selected
+            selectedTextView = goals_History;
+
+            // the other is not selected
+            nonSelectedTextView = goals_Today;
+
+            // setting fragment to the fragment container view
+            getSupportFragmentManager().beginTransaction()
+                    .setReorderingAllowed(true)
+                    .replace(R.id.fragmentContainer,FragmentHistory.class, null)
+                    .commit();
+        }
+
+        float slideTo = (tabNumber - selectedTabNumber) * selectedTextView.getWidth();
+
+        // creating translate animation
+        TranslateAnimation translateAnimation = new TranslateAnimation(0, slideTo, 0, 0);
+        translateAnimation.setDuration(200);
+
+        // checking for previously selected tab
+        if(selectedTabNumber == 1){
+            goals_Today.startAnimation(translateAnimation);
+        }
+        else{
+            goals_History.startAnimation(translateAnimation);
+        }
+
+        translateAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
 
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(goals.this, "Something is wrong.", Toast.LENGTH_SHORT).show();
+            public void onAnimationEnd(Animation animation) {
+
+                // change design of selected tab's textView
+                selectedTextView.setBackgroundResource(R.drawable.round_selector_goals);
+                selectedTextView.setTypeface(null, Typeface.BOLD);
+                selectedTextView.setTextColor(Color.WHITE);
+
+                // change design of non selected tab's textView
+                nonSelectedTextView.setBackgroundResource(R.drawable.round_back_goals);
+                selectedTextView.setTypeface(null, Typeface.NORMAL);
+                nonSelectedTextView.setTextColor(Color.parseColor("#4A5759"));
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
             }
         });
 
-
-
-        // NavBar Buttons
-
-        ImageButton btn_home = findViewById(R.id.nav_home);
-
-        btn_home.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, menu.class);
-            startActivity(intent);
-        });
-
-        ImageButton btn_info = findViewById(R.id.nav_about_mood);
-
-        btn_info.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, BreakScreen1.class);
-            startActivity(intent);
-        });
-
-        ImageButton btn_progress = findViewById(R.id.nav_progress);
-
-        btn_progress.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, summary.class);
-            startActivity(intent);
-        });
-
-        ImageButton btn_settings = findViewById(R.id.nav_settings);
-
-        btn_settings.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, settings.class);
-            startActivity(intent);
-        });
+        selectedTabNumber = tabNumber;
     }
 }

@@ -11,7 +11,7 @@
         android:layout_width="290dp"
         android:layout_height="62dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="48dp"
         android:fontFamily="@font/ubuntu_bold"
         android:text="When did you last feel this mood?"
         android:textColor="#4A5759"
@@ -24,7 +24,7 @@
         android:layout_width="253dp"
         android:layout_height="23dp"
         android:layout_marginTop="42dp"
-        android:layout_marginBottom="740dp"
+        android:layout_marginBottom="696dp"
         android:fontFamily="@font/sourcesanspro_regular"
         android:text="Why were you feeling this way?"
         android:textColor="#4A5759"
@@ -116,7 +116,6 @@
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginBottom="100dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
@@ -130,10 +129,10 @@
         app:backgroundTint="@color/dark_pink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintHorizontal_bias="0.876"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.996"
+        app:layout_constraintVertical_bias="0.88"
         tools:ignore="TextContrastCheck" />
 
     <Button

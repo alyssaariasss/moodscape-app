@@ -7,119 +7,55 @@
 
 
     <TextView
-        android:id="@+id/question2_where"
-        android:layout_width="301dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="40dp"
+        android:id="@+id/question4_tagline1"
+        android:layout_width="138dp"
+        android:layout_height="25dp"
+        android:fontFamily="@font/sourcesanspro_regular"
+        android:text="on a scale of 1-10"
+        android:textColor="#4A5759"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.078" />
+
+    <TextView
+        android:id="@+id/question4_how"
+        android:layout_width="297dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/ubuntu_bold"
-        android:text="Where are you right now?"
+        android:text="How much do you worry about things at the moment?"
         android:textColor="#4A5759"
         android:textSize="23sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/question2_tagline1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/question4_tagline2"
+        android:layout_width="304dp"
+        android:layout_height="30dp"
         android:layout_marginTop="42dp"
-        android:layout_marginBottom="556dp"
+        android:layout_marginBottom="564dp"
         android:fontFamily="@font/sourcesanspro_regular"
-        android:text="At home? school? ..."
+        android:text="1 being nonchalant and 10 being distraught"
         android:textColor="#4A5759"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Hello_User" />
-
-    <EditText
-        android:id="@+id/question2_1"
-        android:layout_width="360dp"
-        android:layout_height="90dp"
-        android:background="@drawable/round_btn4"
-
-        android:ems="10"
-        android:gravity="top"
-        android:inputType="textMultiLine"
-        android:lines="3"
-        android:overScrollMode="always"
-        android:paddingStart="15dp"
-        android:paddingTop="15dp"
-        android:paddingEnd="0dp"
-        android:text="Write your answers here..."
-        android:textColor="@color/dark_gray"
-        android:textColorHint="@color/dark_gray"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.209" />
-
-    <TextView
-        android:id="@+id/question2_who"
-        android:layout_width="210dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="252dp"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="Who are you with?"
-        android:textColor="#4A5759"
-        android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/question2_tagline2"
-        android:layout_width="129dp"
-        android:layout_height="17dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginBottom="348dp"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:text="Family? Friends? ..."
-        android:textColor="#4A5759"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.088"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Hello_User" />
-
-    <EditText
-        android:id="@+id/question2_2"
-        android:layout_width="360dp"
-        android:layout_height="90dp"
-        android:background="@drawable/round_btn4"
-
-        android:ems="10"
-        android:gravity="top"
-        android:inputType="textMultiLine"
-        android:lines="3"
-        android:overScrollMode="always"
-        android:paddingStart="15dp"
-        android:paddingTop="15dp"
-        android:paddingEnd="0dp"
-        android:text="Write your answers here..."
-        android:textColor="@color/dark_gray"
-        android:textColorHint="@color/dark_gray"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
 
     <ImageButton
         android:id="@+id/nav_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="30dp"
         android:background="#00FFFFFF"
         android:src="@drawable/nav_home"
         android:translationZ="0dp"
@@ -128,10 +64,22 @@
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageButton
+        android:id="@+id/nav_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/nav_settings"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
         android:id="@+id/nav_about_mood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="106dp"
+        android:layout_marginStart="110dp"
         android:background="#00FFFFFF"
         android:src="@drawable/nav_info"
         android:translationZ="0dp"
@@ -143,24 +91,12 @@
         android:id="@+id/nav_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
+        android:layout_marginStart="115dp"
         android:background="#00FFFFFF"
         android:src="@drawable/nav_stats"
         android:translationZ="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
         app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/nav_settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_settings"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
-        app:layout_constraintStart_toStartOf="@+id/nav_progress"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <Button
@@ -182,10 +118,10 @@
         app:backgroundTint="@color/dark_pink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintHorizontal_bias="0.876"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.882"
+        app:layout_constraintVertical_bias="0.88"
         tools:ignore="TextContrastCheck" />
 
     <Button
@@ -207,10 +143,21 @@
         app:backgroundTint="@color/canary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.883"
+        app:layout_constraintVertical_bias="0.881"
         tools:ignore="TextContrastCheck" />
+
+    <SeekBar
+        android:id="@+id/question4_seekBar"
+        android:layout_width="355dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="468dp"
+        android:background="@drawable/round_btn4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tickMarkTint="#000000" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

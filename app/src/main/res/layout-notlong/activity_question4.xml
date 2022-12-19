@@ -11,22 +11,23 @@
         android:layout_width="138dp"
         android:layout_height="25dp"
         android:layout_marginTop="42dp"
-        android:layout_marginBottom="648dp"
+        android:layout_marginBottom="448dp"
         android:fontFamily="@font/sourcesanspro_regular"
         android:text="on a scale of 1-10"
         android:textColor="#4A5759"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.188" />
 
     <TextView
         android:id="@+id/question4_how"
         android:layout_width="312dp"
         android:layout_height="85dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="100dp"
         android:fontFamily="@font/ubuntu_bold"
         android:text="How much do you worry about things at the moment?"
@@ -40,14 +41,14 @@
         android:layout_width="304dp"
         android:layout_height="30dp"
         android:layout_marginTop="42dp"
-        android:layout_marginBottom="464dp"
+        android:layout_marginBottom="404dp"
         android:fontFamily="@font/sourcesanspro_regular"
         android:text="1 being nonchalant and 10 being distraught"
         android:textColor="#4A5759"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Hello_User" />
 
@@ -56,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         android:background="#00FFFFFF"
         android:src="@drawable/nav_home"
         android:translationZ="0dp"
@@ -65,22 +66,10 @@
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageButton
-        android:id="@+id/nav_settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_settings"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-    <ImageButton
         android:id="@+id/nav_about_mood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
+        android:layout_marginStart="106dp"
         android:background="#00FFFFFF"
         android:src="@drawable/nav_info"
         android:translationZ="0dp"
@@ -92,12 +81,24 @@
         android:id="@+id/nav_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="115dp"
+        android:layout_marginStart="110dp"
         android:background="#00FFFFFF"
         android:src="@drawable/nav_stats"
         android:translationZ="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
         app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/nav_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/nav_settings"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
+        app:layout_constraintStart_toStartOf="@+id/nav_progress"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <Button
@@ -106,7 +107,6 @@
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginBottom="100dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
@@ -120,10 +120,10 @@
         app:backgroundTint="@color/dark_pink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.876"
+        app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.996"
+        app:layout_constraintVertical_bias="0.882"
         tools:ignore="TextContrastCheck" />
 
     <Button
@@ -148,15 +148,15 @@
         app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85"
+        app:layout_constraintVertical_bias="0.883"
         tools:ignore="TextContrastCheck" />
 
     <SeekBar
         android:id="@+id/question4_seekBar"
-        android:layout_width="355dp"
+        android:layout_width="360dp"
         android:layout_height="85dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="364dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="304dp"
         android:background="@drawable/round_btn4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

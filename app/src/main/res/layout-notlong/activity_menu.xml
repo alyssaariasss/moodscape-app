@@ -14,26 +14,11 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="25dp"
         android:fontFamily="@font/sourcesanspro_bold"
-        android:text="Hello,"
+        android:text="Hello, User!"
         android:textColor="#4A5759"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/menu_firstName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="78dp"
-        android:layout_marginTop="0dp"
-        android:background="@null"
-        android:fontFamily="@font/sourcesanspro_bold"
-        android:text="User"
-        android:inputType="text"
-        android:textColor="#4A5759"
-        android:textSize="28sp"
-        app:layout_constraintStart_toStartOf="@+id/Hello_User"
-        app:layout_constraintTop_toTopOf="@+id/Hello_User" />
 
     <TextView
         android:id="@+id/menu_tagline"

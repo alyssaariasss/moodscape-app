@@ -32,13 +32,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".HappyChoice"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
         <activity android:name=".sample_activity" />
         <activity android:name=".retrieveFeelings" />
         <activity android:name=".summary"

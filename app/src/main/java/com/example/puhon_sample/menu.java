@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class menu extends AppCompatActivity {
 
-    TextView FirstName;
+    TextView Greetings;
     FirebaseAuth fAuth;
     FirebaseDatabase database;
     DatabaseReference reference;
@@ -39,7 +39,7 @@ public class menu extends AppCompatActivity {
         id = user.getUid();
         reference = database.getReference().child("users").child(id);
 
-        FirstName = findViewById(R.id.menu_firstName);
+        Greetings = findViewById(R.id.Hello_User);
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -47,7 +47,7 @@ public class menu extends AppCompatActivity {
 
                 userprofile = snapshot.getValue(User.class);
                 assert userprofile != null;
-                FirstName.setText(String.format("%s!", userprofile.getUserFirstName()));
+                Greetings.setText(String.format("Hello, %s!", userprofile.getUserFirstName()));
 
             }
 

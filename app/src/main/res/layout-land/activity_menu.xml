@@ -11,30 +11,15 @@
         android:id="@+id/Hello_User"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/sourcesanspro_bold"
-        android:text="Hello,"
+        android:text="Hello, User!"
         android:textAlignment="center"
         android:textColor="#4A5759"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/menu_firstName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:background="@null"
-        android:fontFamily="@font/sourcesanspro_bold"
-        android:inputType="text"
-        android:text="User"
-        android:textColor="#4A5759"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Hello_User"
-        app:layout_constraintTop_toTopOf="@+id/Hello_User" />
 
     <TextView
         android:id="@+id/menu_tagline"

@@ -8,20 +8,15 @@
 
     <TextView
         android:id="@+id/question4_tagline1"
-        android:layout_width="138dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginBottom="448dp"
+        android:layout_width="139dp"
+        android:layout_height="18dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/sourcesanspro_regular"
         android:text="on a scale of 1-10"
         android:textColor="#4A5759"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.087"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188" />
+        app:layout_constraintBottom_toTopOf="@+id/question4_how"
+        app:layout_constraintStart_toStartOf="@+id/question4_how" />
 
     <TextView
         android:id="@+id/question4_how"
@@ -38,19 +33,16 @@
 
     <TextView
         android:id="@+id/question4_tagline2"
-        android:layout_width="304dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginBottom="404dp"
+        android:layout_width="289dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="128dp"
         android:fontFamily="@font/sourcesanspro_regular"
         android:text="1 being nonchalant and 10 being distraught"
         android:textColor="#4A5759"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Hello_User" />
+        app:layout_constraintTop_toTopOf="@+id/question4_how" />
 
     <ImageButton
         android:id="@+id/nav_home"
@@ -107,6 +99,7 @@
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
@@ -118,12 +111,8 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:backgroundTint="@color/dark_pink"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.882"
+        app:layout_constraintTop_toTopOf="@+id/backbtn"
         tools:ignore="TextContrastCheck" />
 
     <Button
@@ -132,6 +121,7 @@
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginTop="187dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
@@ -143,23 +133,21 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:backgroundTint="@color/canary"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.883"
+        app:layout_constraintTop_toBottomOf="@+id/question4_seekBar"
         tools:ignore="TextContrastCheck" />
 
     <SeekBar
         android:id="@+id/question4_seekBar"
         android:layout_width="360dp"
         android:layout_height="85dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="304dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/round_btn4"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/question4_tagline2"
         app:tickMarkTint="#000000" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

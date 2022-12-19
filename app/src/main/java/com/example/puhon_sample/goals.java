@@ -1,14 +1,14 @@
 package com.example.puhon_sample;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -18,7 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class menu extends AppCompatActivity {
+public class goals extends AppCompatActivity {
 
     TextView FirstName;
     FirebaseAuth fAuth;
@@ -30,7 +30,7 @@ public class menu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_goals);
 
         fAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -39,7 +39,7 @@ public class menu extends AppCompatActivity {
         id = user.getUid();
         reference = database.getReference().child("users").child(id);
 
-        FirstName = findViewById(R.id.menu_firstName);
+        FirstName = findViewById(R.id.goals_greetings);
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -47,50 +47,17 @@ public class menu extends AppCompatActivity {
 
                 userprofile = snapshot.getValue(User.class);
                 assert userprofile != null;
-                FirstName.setText(String.format("%s!", userprofile.getUserFirstName()));
+                FirstName.setText(String.format("Hi %s", userprofile.getUserFirstName()));
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(menu.this, "Something is wrong.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(goals.this, "Something is wrong.", Toast.LENGTH_SHORT).show();
             }
         });
 
-        
-        // Main Menu Buttons
 
-        Button btn_mood = findViewById(R.id.mood_button);
-
-        btn_mood.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, moods.class);
-            startActivity(intent);
-        });
-
-        Button btn_goals = findViewById(R.id.goals_button);
-
-        btn_goals.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, goals.class);
-            startActivity(intent);
-        });
-
-        Button btn_meditate = findViewById(R.id.meditate_button);
-
-        btn_meditate.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, sample_activity.class);
-            startActivity(intent);
-        });
-
-        Button btn_summary = findViewById(R.id.progress_button);
-
-        btn_summary.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, sample_activity.class);
-            startActivity(intent);
-        });
 
         // NavBar Buttons
 
@@ -125,6 +92,5 @@ public class menu extends AppCompatActivity {
             Intent intent = new Intent(this, settings.class);
             startActivity(intent);
         });
-
     }
 }

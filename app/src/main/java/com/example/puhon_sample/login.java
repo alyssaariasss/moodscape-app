@@ -1,8 +1,5 @@
 package com.example.puhon_sample;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
@@ -50,11 +50,6 @@ public class login extends AppCompatActivity {
                 return;
             }
 
-            if(password.length() < 10){
-                mPassword1.setError("Password must be at least 10 characters.");
-                return;
-            }
-
             progressBar.setVisibility(View.VISIBLE);
 
             // authenticate the user
@@ -63,7 +58,6 @@ public class login extends AppCompatActivity {
                 if (task.isSuccessful()){
                     Toast.makeText(login.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), menu.class));
-
                 }
                 else {
                     Toast.makeText(login.this, "Error! " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();

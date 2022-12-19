@@ -11,27 +11,26 @@
         android:id="@+id/Hello_User"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/sourcesanspro_bold"
         android:text="Hello,"
         android:textColor="#4A5759"
-        android:textSize="28sp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="32sp"
+        app:layout_constraintStart_toStartOf="@+id/mood_button"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/menu_firstName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="78dp"
+        android:layout_marginStart="88dp"
         android:layout_marginTop="0dp"
         android:background="@null"
         android:fontFamily="@font/sourcesanspro_bold"
         android:text="User"
         android:inputType="text"
         android:textColor="#4A5759"
-        android:textSize="28sp"
+        android:textSize="32sp"
         app:layout_constraintStart_toStartOf="@+id/Hello_User"
         app:layout_constraintTop_toTopOf="@+id/Hello_User" />
 
@@ -43,27 +42,26 @@
         android:fontFamily="@font/sourcesanspro_regular"
         android:text="Assess yourself now and meditate later."
         android:textColor="#4A5759"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/Hello_User"
         app:layout_constraintTop_toTopOf="@+id/Hello_User" />
 
     <TextView
         android:id="@+id/dash_lines"
-        android:layout_width="350dp"
+        android:layout_width="500dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="140dp"
         android:background="@drawable/dash_lines"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/mood_button"
-        android:layout_width="350dp"
+        android:layout_width="500dp"
         android:layout_height="100dp"
-        android:layout_marginTop="175dp"
+        android:layout_marginTop="195dp"
         android:background="@drawable/menu_choice_button"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_regular"
@@ -73,17 +71,16 @@
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textColor="#4A5759"
-        android:textSize="20sp"
+        android:textSize="22sp"
         app:backgroundTint="@color/dirty_cream"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/goals_button"
-        android:layout_width="350dp"
+        android:layout_width="500dp"
         android:layout_height="100dp"
         android:layout_marginTop="130dp"
         android:background="@drawable/menu_choice_button"
@@ -95,7 +92,7 @@
         android:textAlignment="textEnd"
         android:textAllCaps="false"
         android:textColor="#4A5759"
-        android:textSize="20sp"
+        android:textSize="22sp"
         app:backgroundTint="@color/dirty_cream"
         app:layout_constraintEnd_toEndOf="@+id/mood_button"
         app:layout_constraintHorizontal_bias="0.0"
@@ -105,7 +102,7 @@
 
     <Button
         android:id="@+id/meditate_button"
-        android:layout_width="350dp"
+        android:layout_width="500dp"
         android:layout_height="100dp"
         android:layout_marginTop="260dp"
         android:background="@drawable/menu_choice_button"
@@ -117,7 +114,7 @@
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textColor="#4A5759"
-        android:textSize="20sp"
+        android:textSize="22sp"
         app:backgroundTint="@color/dirty_cream"
         app:layout_constraintEnd_toEndOf="@+id/goals_button"
         app:layout_constraintHorizontal_bias="0.459"
@@ -127,7 +124,7 @@
 
     <Button
         android:id="@+id/progress_button"
-        android:layout_width="350dp"
+        android:layout_width="500dp"
         android:layout_height="100dp"
         android:layout_marginTop="390dp"
         android:background="@drawable/menu_choice_button"
@@ -139,7 +136,7 @@
         android:textAlignment="textEnd"
         android:textAllCaps="false"
         android:textColor="#4A5759"
-        android:textSize="20sp"
+        android:textSize="22sp"
         app:backgroundTint="@color/dirty_cream"
         app:layout_constraintEnd_toEndOf="@+id/meditate_button"
         app:layout_constraintHorizontal_bias="0.491"
@@ -149,22 +146,23 @@
 
     <ImageButton
         android:id="@+id/nav_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="30dp"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="40dp"
         android:background="#00FFFFFF"
         android:src="@drawable/nav_home"
         android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/progress_button"
+        app:layout_constraintTop_toBottomOf="@+id/progress_button"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageButton
         android:id="@+id/nav_about_mood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="106dp"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="144dp"
         android:background="#00FFFFFF"
         android:src="@drawable/nav_info"
         android:translationZ="0dp"
@@ -174,9 +172,9 @@
 
     <ImageButton
         android:id="@+id/nav_progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="160dp"
         android:background="#00FFFFFF"
         android:src="@drawable/nav_stats"
         android:translationZ="0dp"
@@ -186,16 +184,15 @@
 
     <ImageButton
         android:id="@+id/nav_settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="156dp"
         android:background="#00FFFFFF"
         android:src="@drawable/nav_settings"
         android:translationZ="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
         app:layout_constraintStart_toStartOf="@+id/nav_progress"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

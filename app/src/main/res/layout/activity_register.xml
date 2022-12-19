@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-
     tools:context=".register">
 
     <ImageView
@@ -29,12 +28,11 @@
         android:layout_height="220dp"
         android:layout_below="@+id/moodscape_ls"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="75dp"
-        android:layout_marginLeft="70dp"
         android:layout_marginTop="-3dp"
         android:layout_marginEnd="75dp"
+        android:contentDescription="@string/get_started_intro"
         app:srcCompat="@drawable/undraw_online_ad" />
 
     <RelativeLayout
@@ -54,14 +52,13 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
 
             <EditText
                 android:id="@+id/FirstName"
                 android:layout_width="280dp"
                 android:layout_height="49dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
                 android:layout_marginBottom="12dp"
                 android:background="@drawable/round_btn2"
                 android:ems="10"
@@ -69,22 +66,19 @@
                 android:hint="@string/firstname"
                 android:inputType="textPersonName"
                 android:paddingStart="25dp"
-                android:paddingLeft="25dp"
                 android:paddingTop="0dp"
                 android:paddingEnd="0dp"
-                android:paddingRight="0dp"
                 android:paddingBottom="2dp"
                 android:textColor="@color/dark_gray"
                 android:textColorHint="@color/dark_gray"
                 android:textSize="15sp"
+                android:autofillHints="name"
                 tools:ignore="TextContrastCheck" />
 
             <EditText
                 android:id="@+id/LastName"
                 android:layout_width="280dp"
                 android:layout_height="49dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
                 android:layout_marginBottom="12dp"
                 android:background="@drawable/round_btn2"
                 android:ems="10"
@@ -92,22 +86,19 @@
                 android:hint="@string/lastname"
                 android:inputType="textPersonName"
                 android:paddingStart="25dp"
-                android:paddingLeft="25dp"
                 android:paddingTop="0dp"
                 android:paddingEnd="0dp"
-                android:paddingRight="0dp"
                 android:paddingBottom="2dp"
                 android:textColor="@color/dark_gray"
                 android:textColorHint="@color/dark_gray"
                 android:textSize="15sp"
+                android:autofillHints="name"
                 tools:ignore="TextContrastCheck" />
 
             <EditText
                 android:id="@+id/Age"
                 android:layout_width="280dp"
                 android:layout_height="49dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
                 android:layout_marginBottom="12dp"
                 android:background="@drawable/round_btn2"
                 android:ems="10"
@@ -115,10 +106,8 @@
                 android:hint="@string/age"
                 android:inputType="number"
                 android:paddingStart="25dp"
-                android:paddingLeft="25dp"
                 android:paddingTop="0dp"
                 android:paddingEnd="0dp"
-                android:paddingRight="0dp"
                 android:paddingBottom="2dp"
                 android:textColor="@color/dark_gray"
                 android:textColorHint="@color/dark_gray"
@@ -129,31 +118,26 @@
                 android:id="@+id/Email1"
                 android:layout_width="280dp"
                 android:layout_height="49dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
                 android:layout_marginBottom="12dp"
                 android:background="@drawable/round_btn2"
                 android:ems="10"
                 android:fontFamily="@font/sourcesanspro_regular"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:paddingStart="25dp"
-                android:paddingLeft="25dp"
                 android:paddingTop="0dp"
                 android:paddingEnd="0dp"
-                android:paddingRight="0dp"
                 android:paddingBottom="2dp"
                 android:textColor="@color/dark_gray"
                 android:textColorHint="@color/dark_gray"
                 android:textSize="15sp"
+                android:autofillHints="emailAddress"
                 tools:ignore="TextContrastCheck" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout"
                 android:layout_width="280dp"
                 android:layout_height="49dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
                 android:ems="10"
                 android:fontFamily="@font/sourcesanspro_regular"
                 android:textColor="@color/dark_gray"
@@ -171,10 +155,8 @@
                     android:background="@drawable/round_btn2"
                     android:inputType="textPassword"
                     android:paddingStart="25dp"
-                    android:paddingLeft="25dp"
                     android:paddingTop="0dp"
                     android:paddingEnd="0dp"
-                    android:paddingRight="0dp"
                     android:paddingBottom="2dp" />
             </com.google.android.material.textfield.TextInputLayout>
 

@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.puhon_sample"
-        minSdkVersion 17
+        minSdkVersion 21
         targetSdkVersion 33
         versionCode 1
         versionName "1.0"
@@ -31,16 +31,20 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.6.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.firebase:firebase-auth:21.1.0'
     implementation 'com.google.firebase:firebase-database:20.1.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.25'
+    implementation 'com.google.firebase:firebase-storage:20.0.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
-
     implementation 'com.github.denzcoskun:ImageSlideShow:0.0.6'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'org.naishadhparmar.zcustomcalendar:zcustomcalendar:1.0.1'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }

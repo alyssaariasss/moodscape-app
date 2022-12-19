@@ -3,7 +3,9 @@ package com.example.puhon_sample;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.opengl.Visibility;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 
 import com.denzcoskun.imageslider.ImageSlider;
@@ -25,14 +27,15 @@ public class moods extends AppCompatActivity {
 
         List<SlideModel> slideModels = new ArrayList<>();
 
-        slideModels.add(new SlideModel(R.drawable.happy_mood));
-        slideModels.add(new SlideModel(R.drawable.angry_mood));
-        slideModels.add(new SlideModel(R.drawable.sad_mood));
-        slideModels.add(new SlideModel(R.drawable.disgusted_mood));
-        slideModels.add(new SlideModel(R.drawable.surprised_mood));
-        slideModels.add(new SlideModel(R.drawable.fearful_mood));
+        slideModels.add(new SlideModel(R.drawable.happy_icon));
+        slideModels.add(new SlideModel(R.drawable.angry_icon));
+        slideModels.add(new SlideModel(R.drawable.sad_icon));
+        slideModels.add(new SlideModel(R.drawable.disgusted_icon));
+        slideModels.add(new SlideModel(R.drawable.surprised_icon));
+        slideModels.add(new SlideModel(R.drawable.fearful_icon));
 
         imageSlider.setImageList(slideModels,true);
+
 
         // NavBar Buttons
 
@@ -56,7 +59,7 @@ public class moods extends AppCompatActivity {
 
         btn_progress.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, sample_activity.class);
+            Intent intent = new Intent(this, summary.class);
             startActivity(intent);
         });
 

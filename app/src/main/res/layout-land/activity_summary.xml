@@ -18,347 +18,74 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintVertical_bias="0.044" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="330dp"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/round_btn"
-        android:backgroundTint="@color/light_gray"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.090">
-
-        <androidx.appcompat.widget.AppCompatRadioButton
-            android:id="@+id/summaryRb"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:background="@drawable/radio_btn_pressed"
-            android:button="@null"
-            android:checked="true"
-            android:elevation="5dp"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:onClick="onRadioButtonClicked"
-            android:stateListAnimator="@null"
-            android:text="@string/summary_text"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            tools:ignore="TouchTargetSizeCheck,UsingOnClickInXml" />
-
-        <androidx.appcompat.widget.AppCompatRadioButton
-            android:id="@+id/overallRb"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:background="@drawable/radio_btn_default"
-            android:button="@null"
-            android:checked="false"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:onClick="onRadioButtonClicked"
-            android:text="@string/overall_text"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textColor="@color/dark_gray"
-            android:textSize="14sp"
-            tools:ignore="TouchTargetSizeCheck,UsingOnClickInXml" />
-    </RadioGroup>
-
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:paddingBottom="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+        app:layout_constraintTop_toBottomOf="@+id/reportTitle">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="30dp">
-
-            <!--    Summary  -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/inputCard"
-                android:layout_width="550dp"
-                android:layout_height="300dp"
-                android:backgroundTint="@color/dirty_cream"
-                app:cardCornerRadius="25dp"
-                app:cardElevation="5dp"
-                app:layout_constraintBottom_toTopOf="@+id/progressCard"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="90dp"
+            android:background="@drawable/round_back_goals"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:weightSum="2">
 
             <TextView
-                android:id="@+id/inputTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:elevation="6dp"
-                android:fontFamily="@font/sourcesanspro_semibold"
-                android:gravity="center_horizontal"
-                android:text="@string/input_text"
-                android:textColor="@color/dark_gray"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="@+id/inputCard"
-                app:layout_constraintHorizontal_bias="0.056"
-                app:layout_constraintStart_toStartOf="@+id/inputCard"
-                app:layout_constraintTop_toTopOf="@+id/inputCard" />
-
-            <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="5dp"
-                android:elevation="6dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="@+id/inputCard"
-                app:layout_constraintEnd_toEndOf="@+id/inputCard"
-                app:layout_constraintStart_toStartOf="@+id/inputCard"
-                app:layout_constraintTop_toTopOf="@+id/inputCard">
-
-                <TextView
-                    android:id="@+id/mood_txt"
-                    android:layout_width="400dp"
-                    android:layout_height="48dp"
-                    android:background="@drawable/round_btn4"
-                    android:backgroundTint="@color/white"
-                    android:fontFamily="@font/sourcesanspro_regular"
-                    android:gravity="center"
-                    android:paddingStart="40dp"
-                    android:paddingEnd="40dp"
-                    android:singleLine="true"
-                    android:text=""
-                    android:textColor="@color/dark_gray"
-                    android:textSize="14sp"
-                    app:drawableStartCompat="@drawable/undraw_handcrafts_heart"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.506"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.349" />
-
-                <TextView
-                    android:id="@+id/task_txt"
-                    android:layout_width="400dp"
-                    android:layout_height="48dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/round_btn4"
-                    android:backgroundTint="@color/white"
-                    android:fontFamily="@font/sourcesanspro_regular"
-                    android:gravity="center"
-                    android:paddingStart="40dp"
-                    android:paddingEnd="40dp"
-                    android:singleLine="true"
-                    android:text=""
-                    android:textColor="@color/dark_gray"
-                    android:textSize="14sp"
-                    app:drawableStartCompat="@drawable/undraw_handcrafts_to_do"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.506"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.349" />
-
-                <TextView
-                    android:id="@+id/sleep_txt"
-                    android:layout_width="400dp"
-                    android:layout_height="48dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/round_btn4"
-                    android:backgroundTint="@color/white"
-                    android:fontFamily="@font/sourcesanspro_regular"
-                    android:gravity="center"
-                    android:paddingStart="40dp"
-                    android:paddingEnd="40dp"
-                    android:singleLine="true"
-                    android:text=""
-                    android:textColor="@color/dark_gray"
-                    android:textSize="14sp"
-                    app:drawableStartCompat="@drawable/undraw_handcrafts_leaf"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.506"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.349" />
-            </LinearLayout>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/progressCard"
-                android:layout_width="550dp"
-                android:layout_height="400dp"
-                android:layout_marginTop="40dp"
-                android:backgroundTint="@color/dirty_cream"
-                app:cardCornerRadius="25dp"
-                app:cardElevation="5dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.493"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputCard"
-                app:layout_constraintVertical_bias="0.137" />
+                android:id="@+id/summaryTab"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_selector_goals"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:gravity="center"
+                android:text="@string/summary_text"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/chartTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:elevation="6dp"
-                android:fontFamily="@font/sourcesanspro_semibold"
-                android:gravity="center_horizontal"
-                android:text="@string/chart_text"
+                android:id="@+id/overallTab"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:gravity="center"
+                android:text="@string/overall_text"
                 android:textColor="@color/dark_gray"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="@+id/progressCard"
-                app:layout_constraintHorizontal_bias="0.058"
-                app:layout_constraintStart_toStartOf="@+id/progressCard"
-                app:layout_constraintTop_toTopOf="@+id/progressCard" />
+                android:textSize="20sp" />
+        </LinearLayout>
 
-            <com.github.mikephil.charting.charts.BarChart
-                android:id="@+id/barChart"
-                android:layout_width="400dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="70dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginBottom="35dp"
-                android:elevation="6dp"
-                app:layout_constraintBottom_toBottomOf="@+id/progressCard"
-                app:layout_constraintEnd_toEndOf="@+id/progressCard"
-                app:layout_constraintStart_toStartOf="@+id/progressCard"
-                app:layout_constraintTop_toTopOf="@+id/progressCard" />
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentLayout"
+            android:name="com.example.puhon_sample.FragmentSummary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_summary" />
+    </RelativeLayout>
 
-            <!--    Overall Report  -->
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/overallReportCard"
-                android:layout_width="550dp"
-                android:layout_height="400dp"
-                android:backgroundTint="@color/dirty_cream"
-                android:visibility="gone"
-                app:cardCornerRadius="25dp"
-                app:cardElevation="5dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.492"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.340" />
-
-            <TextView
-                android:id="@+id/overallReportTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sourcesanspro_semibold"
-                android:gravity="center_horizontal"
-                android:text="@string/calendar"
-                android:textColor="@color/dark_gray"
-                android:textSize="14sp"
-                android:visibility="gone"
-                android:elevation="6dp"
-                app:layout_constraintBottom_toTopOf="@+id/customCalendar"
-                app:layout_constraintEnd_toEndOf="@+id/overallReportCard"
-                app:layout_constraintHorizontal_bias="0.126"
-                app:layout_constraintStart_toStartOf="@+id/overallReportCard"
-                app:layout_constraintTop_toTopOf="@+id/overallReportCard" />
-
-            <org.naishadhparmar.zcustomcalendar.CustomCalendar
-                android:id="@+id/customCalendar"
-                android:layout_width="400dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="65dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="65dp"
-                android:layout_marginBottom="10dp"
-                android:visibility="gone"
-                android:elevation="6dp"
-                app:layout_constraintBottom_toBottomOf="@+id/overallReportCard"
-                app:layout_constraintEnd_toEndOf="@+id/overallReportCard"
-                app:layout_constraintHorizontal_bias="0.493"
-                app:layout_constraintStart_toStartOf="@+id/overallReportCard"
-                app:layout_constraintTop_toTopOf="@+id/overallReportCard"
-                app:layout_constraintVertical_bias="0.679" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/selectedDateCard"
-                android:layout_width="550dp"
-                android:layout_height="100dp"
-                android:backgroundTint="@color/dirty_cream"
-                android:visibility="gone"
-                android:layout_marginTop="20dp"
-                app:cardCornerRadius="25dp"
-                app:cardElevation="5dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.493"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/overallReportCard"
-                app:layout_constraintVertical_bias="0.129" />
-
-            <TextView
-                android:id="@+id/selectedDateText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:elevation="6dp"
-                android:fontFamily="@font/ubuntu_bold"
-                android:gravity="center_horizontal"
-                android:text=""
-                android:textColor="@color/dark_gray"
-                android:textSize="35sp"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/moodView"
-                app:layout_constraintEnd_toEndOf="@+id/selectedDateCard"
-                app:layout_constraintHorizontal_bias="0.330"
-                app:layout_constraintStart_toStartOf="@+id/selectedDateCard"
-                app:layout_constraintTop_toTopOf="@+id/moodView" />
-
-            <ImageView
-                android:id="@+id/moodView"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:contentDescription="@string/moods"
-                android:elevation="6dp"
-                android:src="@drawable/happy_icon"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/selectedDateCard"
-                app:layout_constraintEnd_toEndOf="@+id/selectedDateCard"
-                app:layout_constraintHorizontal_bias="0.750"
-                app:layout_constraintStart_toStartOf="@+id/selectedDateCard"
-                app:layout_constraintTop_toTopOf="@+id/selectedDateCard"
-                app:layout_constraintVertical_bias="0.0" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-
-<!--    Navbar Buttons  -->
+    <!--    Navbar Buttons  -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:background="@color/white"
         android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
         android:weightSum="4"
-        android:paddingBottom="10dp"
+        android:elevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -374,18 +101,6 @@
             app:layout_constraintBottom_toBottomOf="@+id/progressCard"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-        <ImageButton
-            android:id="@+id/nav_settings"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#00FFFFFF"
-            android:src="@drawable/nav_settings"
-            android:translationZ="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/nav_about_mood"
@@ -410,6 +125,25 @@
             app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
             app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/nav_settings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_settings"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="117dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

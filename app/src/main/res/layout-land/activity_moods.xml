@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".moods">
+
+    <TextView
+        android:id="@+id/ChoiceTagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
+        android:gravity="center"
+        android:text="@string/mood_title_uncut"
+        android:textAlignment="center"
+        android:textColor="@color/dark_gray"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/moodView"
+        android:layout_width="170dp"
+        android:layout_height="162dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/angry_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ChoiceTagline" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider"
+        android:layout_width="475dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:contentDescription="@string/mood"
+        android:stepSize="1"
+        android:value="0"
+        android:valueFrom="0"
+        android:valueTo="5"
+        app:labelBehavior="gone"
+        app:layout_constraintEnd_toEndOf="@+id/moodView"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="@+id/moodView"
+        app:layout_constraintTop_toBottomOf="@+id/moodView"
+        app:thumbColor="@color/canary"
+        app:trackColor="#50FFC461" />
+
+    <!--    Navbar Buttons  -->
+
+    <Button
+        android:id="@+id/ChoiceButton"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:background="@drawable/round_btn"
+        android:elevation="5dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
+        android:gravity="center"
+        android:stateListAnimator="@null"
+        android:text="@string/select"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slider"
+        app:layout_constraintVertical_bias="0.106" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:weightSum="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/nav_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_home"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/progressCard"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/nav_settings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_settings"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/nav_about_mood"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_info"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nav_home"
+            app:layout_constraintStart_toStartOf="@+id/nav_home"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/nav_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_stats"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
+            app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

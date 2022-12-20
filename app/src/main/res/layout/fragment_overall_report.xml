@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentOverallReport">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        tools:ignore="UselessParent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/overallReportCard"
+                android:layout_width="330dp"
+                android:layout_height="400dp"
+                android:backgroundTint="@color/dirty_cream"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.492"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0" />
+
+            <TextView
+                android:id="@+id/overallReportTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sourcesanspro_semibold"
+                android:gravity="center_horizontal"
+                android:text="@string/calendar"
+                android:textColor="@color/dark_gray"
+                android:textSize="14sp"
+                android:elevation="6dp"
+                app:layout_constraintBottom_toTopOf="@+id/customCalendar"
+                app:layout_constraintEnd_toEndOf="@+id/overallReportCard"
+                app:layout_constraintHorizontal_bias="0.126"
+                app:layout_constraintStart_toStartOf="@+id/overallReportCard"
+                app:layout_constraintTop_toTopOf="@+id/overallReportCard" />
+
+            <org.naishadhparmar.zcustomcalendar.CustomCalendar
+                android:id="@+id/customCalendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="65dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="65dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="6dp"
+                app:layout_constraintBottom_toBottomOf="@+id/overallReportCard"
+                app:layout_constraintEnd_toEndOf="@+id/overallReportCard"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="@+id/overallReportCard"
+                app:layout_constraintTop_toTopOf="@+id/overallReportCard"
+                app:layout_constraintVertical_bias="0.679" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/selectedDateCard"
+                android:layout_width="330dp"
+                android:layout_height="100dp"
+                android:backgroundTint="@color/dirty_cream"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/overallReportCard"
+                app:layout_constraintVertical_bias="0.129" />
+
+            <TextView
+                android:id="@+id/selectedDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_bold"
+                android:gravity="center_horizontal"
+                android:text=""
+                android:textColor="@color/dark_gray"
+                android:textSize="28sp"
+                android:elevation="6dp"
+                app:layout_constraintBottom_toBottomOf="@+id/moodView"
+                app:layout_constraintEnd_toEndOf="@+id/selectedDateCard"
+                app:layout_constraintHorizontal_bias="0.191"
+                app:layout_constraintStart_toStartOf="@+id/selectedDateCard"
+                app:layout_constraintTop_toTopOf="@+id/moodView"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/moodView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/happy_icon"
+                android:elevation="6dp"
+                android:contentDescription="@string/moods"
+                app:layout_constraintBottom_toBottomOf="@+id/selectedDateCard"
+                app:layout_constraintEnd_toEndOf="@+id/selectedDateCard"
+                app:layout_constraintHorizontal_bias="0.864"
+                app:layout_constraintStart_toStartOf="@+id/selectedDateCard"
+                app:layout_constraintTop_toTopOf="@+id/selectedDateCard"
+                app:layout_constraintVertical_bias="0.357" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>

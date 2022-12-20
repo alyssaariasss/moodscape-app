@@ -14,7 +14,7 @@
         android:layout_marginTop="40dp"
         android:fontFamily="@font/sourcesanspro_semibold"
         android:gravity="center"
-        android:text="@string/mood_title"
+        android:text="@string/mood_title_uncut"
         android:textAlignment="center"
         android:textColor="@color/dark_gray"
         android:textSize="42sp"
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="40dp"
         android:contentDescription="@string/mood"
         android:stepSize="1"
@@ -65,61 +65,74 @@
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/nav_progress"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/slider"
         app:layout_constraintVertical_bias="0.388" />
 
-    <ImageButton
-        android:id="@+id/nav_home"
-        android:layout_width="wrap_content"
+    <!--    Navbar Buttons  -->
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="30dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_home"
-        android:translationZ="0dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:weightSum="4"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <ImageButton
-        android:id="@+id/nav_settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_settings"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <ImageButton
-        android:id="@+id/nav_about_mood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_info"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_home"
-        app:layout_constraintStart_toStartOf="@+id/nav_home"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        <ImageButton
+            android:id="@+id/nav_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_home"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/progressCard"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <ImageButton
-        android:id="@+id/nav_progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="115dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_stats"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
-        app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        <ImageButton
+            android:id="@+id/nav_settings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_settings"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/nav_about_mood"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_info"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nav_home"
+            app:layout_constraintStart_toStartOf="@+id/nav_home"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/nav_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_stats"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
+            app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

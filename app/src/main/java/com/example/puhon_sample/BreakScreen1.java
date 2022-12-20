@@ -1,11 +1,11 @@
 package com.example.puhon_sample;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageButton;
 import android.widget.Button;
+import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class BreakScreen1 extends AppCompatActivity {
 
@@ -54,7 +54,15 @@ public class BreakScreen1 extends AppCompatActivity {
 
         btn_back.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, moods.class);
+            Intent intent = new Intent(this, menu.class);
+            startActivity(intent);
+        });
+
+        Button btn_cont = findViewById(R.id.continueButton);
+
+        btn_cont.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, sample_activity.class);
             startActivity(intent);
         });
     }

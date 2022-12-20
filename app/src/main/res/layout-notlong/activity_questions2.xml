@@ -23,24 +23,21 @@
         android:id="@+id/question2_tagline1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:layout_marginBottom="556dp"
+        android:layout_marginTop="44dp"
         android:fontFamily="@font/sourcesanspro_regular"
         android:text="At home? school? ..."
         android:textColor="#4A5759"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.086"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Hello_User" />
+        app:layout_constraintStart_toStartOf="@+id/question2_where"
+        app:layout_constraintTop_toTopOf="@+id/question2_where" />
 
     <EditText
         android:id="@+id/question2_1"
         android:layout_width="360dp"
         android:layout_height="90dp"
-        android:background="@drawable/round_btn4"
+        android:layout_marginTop="32dp"
 
+        android:background="@drawable/round_btn4"
         android:ems="10"
         android:gravity="top"
         android:inputType="textMultiLine"
@@ -53,12 +50,10 @@
         android:textColor="@color/dark_gray"
         android:textColorHint="@color/dark_gray"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.209" />
+        app:layout_constraintTop_toTopOf="@+id/question2_tagline1" />
 
     <TextView
         android:id="@+id/question2_who"
@@ -77,24 +72,21 @@
         android:id="@+id/question2_tagline2"
         android:layout_width="129dp"
         android:layout_height="17dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginBottom="348dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/sourcesanspro_regular"
         android:text="Family? Friends? ..."
         android:textColor="#4A5759"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.088"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Hello_User" />
+        app:layout_constraintStart_toStartOf="@+id/question2_who"
+        app:layout_constraintTop_toTopOf="@+id/question2_who" />
 
     <EditText
         android:id="@+id/question2_2"
         android:layout_width="360dp"
         android:layout_height="90dp"
-        android:background="@drawable/round_btn4"
+        android:layout_marginTop="32dp"
 
+        android:background="@drawable/round_btn4"
         android:ems="10"
         android:gravity="top"
         android:inputType="textMultiLine"
@@ -107,12 +99,10 @@
         android:textColor="@color/dark_gray"
         android:textColorHint="@color/dark_gray"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
+        app:layout_constraintTop_toTopOf="@+id/question2_tagline2" />
 
     <ImageButton
         android:id="@+id/nav_home"
@@ -169,6 +159,7 @@
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
@@ -180,12 +171,8 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:backgroundTint="@color/dark_pink"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.882"
+        app:layout_constraintTop_toTopOf="@+id/backbtn"
         tools:ignore="TextContrastCheck" />
 
     <Button
@@ -194,6 +181,7 @@
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginTop="122dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
@@ -205,12 +193,10 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:backgroundTint="@color/canary"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.883"
+        app:layout_constraintTop_toBottomOf="@+id/question2_2"
         tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

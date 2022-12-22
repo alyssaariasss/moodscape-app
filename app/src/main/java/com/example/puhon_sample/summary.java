@@ -10,25 +10,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 public class summary extends AppCompatActivity {
-//    FirebaseAuth fAuth;
-//    FirebaseDatabase database;
-//    DatabaseReference reference;
-//    String id, dateToday, mood, date;
-//
-//    UserMoods userMoods;
-//
-//    TextView moodTxt, taskTxt, sleepTxt, inputTitle, overallReportTitle, chartTitle, selectedDateText;
-//    CardView inputCard, overallReportCard, progressCard, selectedDateCard;
-//    ImageView moodView;
-//
-//    LinearLayout linearLayout;
-//
-//    BarChart barChart;
-//
-//    CustomCalendar customCalendar;
-
     TextView summaryTab, overallTab;
     private int selectedTabNumber = 1;
 
@@ -135,7 +119,7 @@ public class summary extends AppCompatActivity {
 
                 nonSelectedTextView.setBackgroundResource(R.drawable.round_back_goals);
                 selectedTextView.setTypeface(null, Typeface.NORMAL);
-                nonSelectedTextView.setTextColor(getResources().getColor(R.color.dark_gray));
+                nonSelectedTextView.setTextColor(ContextCompat.getColor(summary.this, R.color.dark_gray));
             }
 
             @Override

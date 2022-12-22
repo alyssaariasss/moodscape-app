@@ -164,6 +164,23 @@
                 app:layout_constraintStart_toStartOf="@+id/progressCard"
                 app:layout_constraintTop_toTopOf="@+id/progressCard" />
 
+            <Spinner
+                android:id="@+id/moodSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="320dp"
+                android:layout_marginEnd="120dp"
+                android:background="@drawable/bg_spinner"
+                android:elevation="5dp"
+                android:fontFamily="@font/sourcesanspro_semibold"
+                android:textColor="@color/dark_gray"
+                android:textSize="14sp"
+                android:popupBackground="@color/light_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/chartTitle"
+                app:layout_constraintEnd_toEndOf="@+id/progressCard"
+                app:layout_constraintTop_toTopOf="@+id/chartTitle"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
             <com.github.mikephil.charting.charts.BarChart
                 android:id="@+id/moodChart"
                 android:layout_width="match_parent"
@@ -208,6 +225,23 @@
                 app:layout_constraintHorizontal_bias="0.125"
                 app:layout_constraintStart_toStartOf="@+id/goalsCard"
                 app:layout_constraintTop_toTopOf="@+id/goalsCard" />
+
+            <Spinner
+                android:id="@+id/goalsSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="320dp"
+                android:layout_marginEnd="120dp"
+                android:elevation="5dp"
+                android:fontFamily="@font/sourcesanspro_semibold"
+                android:textColor="@color/dark_gray"
+                android:textSize="14sp"
+                android:background="@drawable/bg_spinner"
+                android:popupBackground="@color/light_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/goalsTitle"
+                app:layout_constraintEnd_toEndOf="@+id/goalsCard"
+                app:layout_constraintTop_toTopOf="@+id/goalsTitle"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <com.github.mikephil.charting.charts.BarChart
                 android:id="@+id/goalsChart"

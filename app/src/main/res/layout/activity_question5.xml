@@ -24,7 +24,7 @@
         android:layout_width="275dp"
         android:layout_height="55dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="90dp"
         android:fontFamily="@font/ubuntu_bold"
         android:text="How well have you been sleeping?"
         android:textColor="#4A5759"
@@ -95,7 +95,7 @@
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/nextbtn"
+        android:id="@+id/nextbtn5"
         android:layout_width="185dp"
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
@@ -113,16 +113,16 @@
         android:textSize="20sp"
         app:backgroundTint="@color/dark_pink"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backbtn"
+        app:layout_constraintTop_toTopOf="@+id/backbtn5"
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/backbtn"
+        android:id="@+id/backbtn5"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="331dp"
+        android:layout_marginTop="316dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
@@ -142,6 +142,8 @@
 
     <SeekBar
         android:id="@+id/question5_seekBar"
+        android:min="1"
+        android:max="10"
         android:layout_width="360dp"
         android:layout_height="85dp"
         android:layout_marginTop="40dp"

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.SeekBar;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,11 +25,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class questions extends AppCompatActivity {
+public class question5 extends AppCompatActivity {
 
-    UserAnswers AnswerQuestion1;
-    Button BackBtn1, NextBtn1;
-    EditText Question1;
+    UserAnswers Answers;
+    Button BackBtn5, NextBtn5;
+    SeekBar Question5;
     FirebaseAuth fAuth;
     FirebaseDatabase database;
     DatabaseReference reference;
@@ -38,37 +39,62 @@ public class questions extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question1);
+        setContentView(R.layout.activity_question5);
 
-        Question1 = findViewById(R.id.question1);
-        BackBtn1 = findViewById(R.id.backbtn1);
-        NextBtn1 = findViewById(R.id.nextbtn1);
+        Question5 = findViewById(R.id.question5_seekBar);
+        BackBtn5 = findViewById(R.id.backbtn5);
+        NextBtn5 = findViewById(R.id.nextbtn5);
 
+        fAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = fAuth.getCurrentUser();
+        id = user.getUid();
 
-        //next and back buttons
-        NextBtn1.setOnClickListener(new View.OnClickListener() {
+        reference = database.getInstance().getReference().child("users").child(id).child("Questions");
+
+        reference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                String question1 = Question1.getText().toString();
+                if(dataSnapshot.exists()){
 
-                if(TextUtils.isEmpty(question1)){
-                    Question1.setError("Input is required");
-                    return;
+                    i = (int) dataSnapshot.getChildrenCount();
                 }
-                else{
-                    Intent intent = new Intent(questions.this, question2.class);
-                    intent.putExtra("QUESTION1", question1);
-                    startActivity(intent);
-                    finish();
-                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                ///
+
             }
         });
 
-        BackBtn1.setOnClickListener(new View.OnClickListener() {
+
+        //next and back buttons
+        NextBtn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), BreakScreen1.class));
+
+                int question5 = Question5.getProgress();
+
+                Intent intent3 = getIntent();
+                String question1 = intent3.getStringExtra("QUESTION1");
+                String question2_1 = intent3.getStringExtra("QUESTION2_1");
+                String question2_2 = intent3.getStringExtra("QUESTION2_2");
+                String question3 = intent3.getStringExtra("QUESTION3");
+                Integer question4 = intent3.getIntExtra("QUESTION4", 1);
+                Answers = new UserAnswers(question1, question2_1, question2_2, question3, question4, question5);
+                ShowDate();
+                Answers.setDate(dateToday);
+                reference.child(String.valueOf(i + 1)).setValue(Answers);
+                startActivity(new Intent(getApplicationContext(), menu.class));
+                finish();
+            }
+        });
+
+        BackBtn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), menu.class));
             }
         });
 

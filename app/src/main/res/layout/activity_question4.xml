@@ -23,7 +23,7 @@
         android:layout_width="297dp"
         android:layout_height="81dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="90dp"
         android:fontFamily="@font/ubuntu_bold"
         android:text="How much do you worry about things at the moment?"
         android:textColor="#4A5759"
@@ -94,7 +94,7 @@
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/nextbtn"
+        android:id="@+id/nextbtn4"
         android:layout_width="185dp"
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
@@ -112,16 +112,16 @@
         android:textSize="20sp"
         app:backgroundTint="@color/dark_pink"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backbtn"
+        app:layout_constraintTop_toTopOf="@+id/backbtn4"
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/backbtn"
+        android:id="@+id/backbtn4"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="327dp"
+        android:layout_marginTop="312dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
@@ -141,6 +141,8 @@
 
     <SeekBar
         android:id="@+id/question4_seekBar"
+        android:min="1"
+        android:max="10"
         android:layout_width="360dp"
         android:layout_height="85dp"
         android:layout_marginTop="40dp"

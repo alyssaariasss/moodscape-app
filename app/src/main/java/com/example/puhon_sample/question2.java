@@ -24,11 +24,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class questions extends AppCompatActivity {
+public class question2 extends AppCompatActivity {
 
-    UserAnswers AnswerQuestion1;
-    Button BackBtn1, NextBtn1;
-    EditText Question1;
+    UserAnswers AnswerQuestion2;
+    Button BackBtn2, NextBtn2;
+    EditText Question2_1,Question2_2;
     FirebaseAuth fAuth;
     FirebaseDatabase database;
     DatabaseReference reference;
@@ -38,37 +38,48 @@ public class questions extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question1);
+        setContentView(R.layout.activity_questions2);
 
-        Question1 = findViewById(R.id.question1);
-        BackBtn1 = findViewById(R.id.backbtn1);
-        NextBtn1 = findViewById(R.id.nextbtn1);
+        Question2_1 = findViewById(R.id.question2_1);
+        Question2_2 = findViewById(R.id.question2_2);
+        BackBtn2 = findViewById(R.id.backbtn2);
+        NextBtn2 = findViewById(R.id.nextbtn2);
 
 
         //next and back buttons
-        NextBtn1.setOnClickListener(new View.OnClickListener() {
+        NextBtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String question1 = Question1.getText().toString();
+                String question2_1 = Question2_1.getText().toString();
+                String question2_2 = Question2_2.getText().toString();
 
-                if(TextUtils.isEmpty(question1)){
-                    Question1.setError("Input is required");
+
+                if(TextUtils.isEmpty(question2_1)){
+                    Question2_1.setError("Input is required");
+                    return;
+                }
+                if(TextUtils.isEmpty(question2_2)) {
+                    Question2_2.setError("Input is required");
                     return;
                 }
                 else{
-                    Intent intent = new Intent(questions.this, question2.class);
-                    intent.putExtra("QUESTION1", question1);
-                    startActivity(intent);
+                    Intent intent = getIntent();
+                    String question1 = intent.getStringExtra("QUESTION1");
+                    Intent intent1 = new Intent(question2.this, question3.class);
+                    intent1.putExtra("QUESTION1", question1);
+                    intent1.putExtra("QUESTION2_1", question2_1);
+                    intent1.putExtra("QUESTION2_2", question2_2);
+                    startActivity(intent1);
                     finish();
                 }
             }
         });
 
-        BackBtn1.setOnClickListener(new View.OnClickListener() {
+        BackBtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), BreakScreen1.class));
+                startActivity(new Intent(getApplicationContext(), questions.class));
             }
         });
 

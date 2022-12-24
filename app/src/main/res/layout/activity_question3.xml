@@ -10,7 +10,7 @@
         android:layout_width="275dp"
         android:layout_height="41dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="38dp"
         android:fontFamily="@font/ubuntu_bold"
         android:text="What did you do today?"
         android:textColor="#4A5759"
@@ -104,7 +104,7 @@ haven't accomplished anything."
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/nextbtn"
+        android:id="@+id/nextbtn3"
         android:layout_width="185dp"
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
@@ -122,16 +122,16 @@ haven't accomplished anything."
         android:textSize="20sp"
         app:backgroundTint="@color/dark_pink"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backbtn"
+        app:layout_constraintTop_toTopOf="@+id/backbtn3"
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/backbtn"
+        android:id="@+id/backbtn3"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"

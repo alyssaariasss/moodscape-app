@@ -51,6 +51,7 @@ public class FragmentSummary extends Fragment {
     FirebaseAuth fAuth;
     FirebaseDatabase database;
     DatabaseReference reference;
+
     String id, dateToday, date, wstartDate, wendDate, mstartDate, mendDate;
     String mood = "none";
     int happyCount, angryCount, fearfulCount, disgustedCount, sadCount, surprisedCount;
@@ -86,7 +87,6 @@ public class FragmentSummary extends Fragment {
         FetchMoodData();
         InitSpinners();
         CountGoals();
-        GetFirstDayMonth();
     }
 
     // Initializes and checks value of spinners for data filtering
@@ -112,8 +112,8 @@ public class FragmentSummary extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                FetchMoodData();
-                CountMoods();
+                GetFirstDayWeek();
+                CountWeeklyMood();
             }
         });
 
@@ -168,43 +168,6 @@ public class FragmentSummary extends Fragment {
         } else {
             moodTxt.setText(R.string.mood_others);
         }
-    }
-
-    // Retrieves all moods and initializes mood count chart
-    private void CountMoods() {
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    switch (Objects.requireNonNull(dataSnapshot.child("mood").getValue(String.class))) {
-                        case "Happy":
-                            ++happyCount;
-                            break;
-                        case "Angry":
-                            ++angryCount;
-                            break;
-                        case "Fearful":
-                            ++fearfulCount;
-                            break;
-                        case "Disgusted":
-                            ++disgustedCount;
-                            break;
-                        case "Sad":
-                            ++sadCount;
-                            break;
-                        case "Surprised":
-                            ++surprisedCount;
-                            break;
-                    }
-                }
-                SetMoodData();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.d(TAG, error.getMessage());
-            }
-        });
     }
 
     // Retrieves weekly moods and initializes mood count chart
@@ -340,7 +303,6 @@ public class FragmentSummary extends Fragment {
         rightAxis.setAxisMinimum(0.0f);
         rightAxis.setGranularityEnabled(true);
         rightAxis.setGranularity(1.0f);
-
 
         // Touch and Scale settings
         moodChart.setTouchEnabled(false);

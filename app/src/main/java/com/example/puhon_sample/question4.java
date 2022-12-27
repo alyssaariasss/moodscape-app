@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -29,6 +30,7 @@ public class question4 extends AppCompatActivity {
 
     UserAnswers Answers;
     Button BackBtn4, NextBtn4;
+    TextView Question4Rate;
     SeekBar Question4;
     FirebaseAuth fAuth;
     FirebaseDatabase database;
@@ -42,8 +44,26 @@ public class question4 extends AppCompatActivity {
         setContentView(R.layout.activity_question4);
 
         Question4 = findViewById(R.id.question4_seekBar);
+        Question4Rate = findViewById(R.id.question4_rate);
         BackBtn4 = findViewById(R.id.backbtn4);
         NextBtn4 = findViewById(R.id.nextbtn4);
+
+        Question4.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                Question4Rate.setText("" + progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
 
         //next and back buttons

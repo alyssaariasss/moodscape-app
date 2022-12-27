@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -28,6 +29,7 @@ import java.util.Locale;
 public class question5 extends AppCompatActivity {
 
     UserAnswers Answers;
+    TextView Question5Rate;
     Button BackBtn5, NextBtn5;
     SeekBar Question5;
     FirebaseAuth fAuth;
@@ -42,8 +44,26 @@ public class question5 extends AppCompatActivity {
         setContentView(R.layout.activity_question5);
 
         Question5 = findViewById(R.id.question5_seekBar);
+        Question5Rate = findViewById(R.id.question5_rate);
         BackBtn5 = findViewById(R.id.backbtn5);
         NextBtn5 = findViewById(R.id.nextbtn5);
+
+        Question5.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                Question5Rate.setText("" + progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
         fAuth = FirebaseAuth.getInstance();
         FirebaseUser user = fAuth.getCurrentUser();

@@ -1,0 +1,48 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="20dp"
+    android:backgroundTint="@color/dirty_cream"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <CheckBox
+            android:id="@+id/goalsCheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:buttonTint="@color/dark_gray"
+            android:minHeight="100dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/dark_gray"
+            android:textSize="16sp"
+            android:button="@null"
+            android:drawableEnd="@drawable/checkbox"
+            tools:fontFamily="@font/sourcesanspro_semibold"
+            tools:text="This is a sample goal" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/goalsCheckbox"
+            android:layout_alignStart="@+id/goalsCheckbox"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="-19dp"
+            android:text="10:00 PM"
+            android:textSize="14sp"
+            tools:fontFamily="@font/sourcesanspro_regular"/>
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

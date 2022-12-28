@@ -38,7 +38,10 @@
     <string name="daily_mood">DAILY MOOD</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="get_started_design">TODO</string>
+    <string-array name="spinner">
+        <item>By Week</item>
+        <item>By Month</item>
+    </string-array>
     <string name="intro_design1">TODO</string>
     <string name="intro_design2">TODO</string>
     <string name="get_started_intro">Get Started</string>

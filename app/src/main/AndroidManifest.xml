@@ -36,12 +36,27 @@
         <activity android:name=".retrieveFeelings" />
         <activity android:name=".summary"
             android:exported="false" />
-        <activity android:name=".questions" /> <!-- <activity android:name=".question_2" /> -->
+        <activity android:name=".questions"
+            android:exported="false">
+
+        </activity> <!-- <activity android:name=".question_2" /> -->
+        <activity android:name=".question2" />
+        <activity android:name=".question3" />
+        <activity android:name=".question4"
+            android:exported="false">
+        </activity>
+        <activity android:name=".question5"
+            android:exported="false">
+        </activity>
         <activity android:name=".feelings" />
         <activity android:name=".settings" /> <!-- <activity android:name=".choices" /> -->
         <activity android:name=".moods" />
         <activity
             android:name=".menu"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,9 +64,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".login"
-            android:exported="false" />
         <activity
             android:name=".register"
             android:exported="false" />
@@ -61,6 +73,7 @@
         <activity
             android:name=".splash"
             android:exported="false" />
+
 
         <meta-data
             android:name="preloaded_fonts"

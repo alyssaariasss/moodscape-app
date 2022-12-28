@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,11 +26,12 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class questions extends AppCompatActivity {
+public class question4 extends AppCompatActivity {
 
-    UserAnswers AnswerQuestion1;
-    Button BackBtn1, NextBtn1;
-    EditText Question1;
+    UserAnswers Answers;
+    Button BackBtn4, NextBtn4;
+    TextView Question4Rate;
+    SeekBar Question4;
     FirebaseAuth fAuth;
     FirebaseDatabase database;
     DatabaseReference reference;
@@ -38,37 +41,58 @@ public class questions extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question1);
+        setContentView(R.layout.activity_question4);
 
-        Question1 = findViewById(R.id.question1);
-        BackBtn1 = findViewById(R.id.backbtn1);
-        NextBtn1 = findViewById(R.id.nextbtn1);
+        Question4 = findViewById(R.id.question4_seekBar);
+        Question4Rate = findViewById(R.id.question4_rate);
+        BackBtn4 = findViewById(R.id.backbtn4);
+        NextBtn4 = findViewById(R.id.nextbtn4);
 
-
-        //next and back buttons
-        NextBtn1.setOnClickListener(new View.OnClickListener() {
+        Question4.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onClick(View v) {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                Question4Rate.setText("" + progress);
+            }
 
-                String question1 = Question1.getText().toString();
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
 
-                if(TextUtils.isEmpty(question1)){
-                    Question1.setError("Input is required");
-                    return;
-                }
-                else{
-                    Intent intent = new Intent(questions.this, question2.class);
-                    intent.putExtra("QUESTION1", question1);
-                    startActivity(intent);
-                    finish();
-                }
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
             }
         });
 
-        BackBtn1.setOnClickListener(new View.OnClickListener() {
+
+        //next and back buttons
+        NextBtn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), BreakScreen1.class));
+
+                int question4 = Question4.getProgress();
+
+                Intent intent2 = getIntent();
+                String question1 = intent2.getStringExtra("QUESTION1");
+                String question2_1 = intent2.getStringExtra("QUESTION2_1");
+                String question2_2 = intent2.getStringExtra("QUESTION2_2");
+                String question3 = intent2.getStringExtra("QUESTION3");
+                Intent intent3 = new Intent(question4.this, question5.class);
+                intent3.putExtra("QUESTION1", question1);
+                intent3.putExtra("QUESTION2_1", question2_1);
+                intent3.putExtra("QUESTION2_2", question2_2);
+                intent3.putExtra("QUESTION3", question3);
+                intent3.putExtra("QUESTION4", question4);
+                startActivity(intent3);
+                finish();
+            }
+        });
+
+        BackBtn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), menu.class));
             }
         });
 

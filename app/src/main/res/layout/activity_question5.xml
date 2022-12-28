@@ -24,7 +24,7 @@
         android:layout_width="275dp"
         android:layout_height="55dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="90dp"
         android:fontFamily="@font/ubuntu_bold"
         android:text="How well have you been sleeping?"
         android:textColor="#4A5759"
@@ -44,6 +44,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/question5_how" />
+
+
+    <TextView
+        android:id="@+id/question5_rate"
+        android:layout_width="29dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="35dp"
+        android:text="0"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/question5_tagline2"
+        app:layout_constraintTop_toTopOf="@+id/question5_tagline2" />
 
     <ImageButton
         android:id="@+id/nav_home"
@@ -95,7 +107,7 @@
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/nextbtn"
+        android:id="@+id/nextbtn5"
         android:layout_width="185dp"
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
@@ -113,16 +125,16 @@
         android:textSize="20sp"
         app:backgroundTint="@color/dark_pink"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backbtn"
+        app:layout_constraintTop_toTopOf="@+id/backbtn5"
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/backbtn"
+        android:id="@+id/backbtn5"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="331dp"
+        android:layout_marginTop="286dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
@@ -142,9 +154,11 @@
 
     <SeekBar
         android:id="@+id/question5_seekBar"
+        android:min="1"
+        android:max="10"
         android:layout_width="360dp"
         android:layout_height="85dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="70dp"
         android:background="@drawable/round_btn4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"

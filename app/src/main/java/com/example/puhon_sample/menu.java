@@ -88,7 +88,7 @@ public class menu extends AppCompatActivity {
 
         btn_summary.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, sample_activity.class);
+            Intent intent = new Intent(this, summary.class);
             startActivity(intent);
         });
 

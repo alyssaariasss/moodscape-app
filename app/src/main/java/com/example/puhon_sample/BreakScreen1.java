@@ -62,7 +62,7 @@ public class BreakScreen1 extends AppCompatActivity {
 
         btn_cont.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, sample_activity.class);
+            Intent intent = new Intent(this, questions.class);
             startActivity(intent);
         });
     }

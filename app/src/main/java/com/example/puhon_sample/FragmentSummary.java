@@ -7,6 +7,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -31,7 +34,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -44,12 +51,16 @@ public class FragmentSummary extends Fragment {
     FirebaseAuth fAuth;
     FirebaseDatabase database;
     DatabaseReference reference;
-    String id, dateToday, mood, date;
+
+    String id, dateToday, date, wstartDate, wendDate, mstartDate, mendDate;
+    String mood = "none";
     int happyCount, angryCount, fearfulCount, disgustedCount, sadCount, surprisedCount;
 
     TextView moodTxt, taskTxt, sleepTxt;
 
     BarChart moodChart, goalsChart;
+
+    Spinner moodSpinner, goalsSpinner;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -62,6 +73,9 @@ public class FragmentSummary extends Fragment {
         moodChart = view.findViewById(R.id.moodChart);
         goalsChart = view.findViewById(R.id.goalsChart);
 
+        moodSpinner = view.findViewById(R.id.moodSpinner);
+        goalsSpinner = view.findViewById(R.id.goalsSpinner);
+
         fAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         FirebaseUser user = fAuth.getCurrentUser();
@@ -71,10 +85,45 @@ public class FragmentSummary extends Fragment {
         reference = database.getReference().child("users").child(id).child("UserMoods");
 
         FetchMoodData();
-        CountMoods();
+        InitSpinners();
         CountGoals();
     }
 
+    // Initializes and checks value of spinners for data filtering
+    private void InitSpinners() {
+        String [] filter = getResources().getStringArray(R.array.spinner);
+        ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, filter);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        moodSpinner.setAdapter(adapter);
+        goalsSpinner.setAdapter(adapter);
+
+        moodSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String valueFromSpinner = adapterView.getItemAtPosition(i).toString();
+                if (valueFromSpinner.equals("By Week")) {
+                    GetFirstDayWeek();
+                    CountWeeklyMood();
+                } else {
+                    GetFirstDayMonth();
+                    CountMonthlyMood();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                GetFirstDayWeek();
+                CountWeeklyMood();
+            }
+        });
+
+        // goalsSpinner start onitemselected
+
+
+        // goalsSpinner end onitemselected
+    }
+
+    // Gets latest input of mood
     private void FetchMoodData() {
         ShowDate();
 
@@ -85,10 +134,7 @@ public class FragmentSummary extends Fragment {
 
                 if (Objects.equals(dateToday, date)) {
                     mood = String.valueOf(snapshot.child("mood").getValue());
-                } else {
-                    moodTxt.setText(R.string.mood_null);
                 }
-
                 CheckMoodInput();
             }
 
@@ -115,7 +161,7 @@ public class FragmentSummary extends Fragment {
     }
 
     private void CheckMoodInput() {
-        if (Objects.equals(mood, null)) {
+        if (Objects.equals(mood, "none")) {
             moodTxt.setText(R.string.mood_null);
         } else if (Objects.equals(mood, "Happy")) {
             moodTxt.setText(R.string.mood_great);
@@ -124,9 +170,9 @@ public class FragmentSummary extends Fragment {
         }
     }
 
-    // Retrieves all moods and initializes mood count chart
-    private void CountMoods() {
-        reference.addValueEventListener(new ValueEventListener() {
+    // Retrieves weekly moods and initializes mood count chart
+    private void CountWeeklyMood() {
+        reference.orderByChild("date").startAt(wstartDate).endAt(wendDate).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
@@ -151,21 +197,46 @@ public class FragmentSummary extends Fragment {
                             break;
                     }
                 }
-                ArrayList<BarEntry> barEntries = new ArrayList<>();
-                int i = 1;
+                SetMoodData();
+                happyCount = 0; angryCount = 0; fearfulCount = 0; disgustedCount = 0; sadCount = 0; surprisedCount = 0;
+            }
 
-                barEntries.add(new BarEntry(i, happyCount));
-                barEntries.add(new BarEntry(i+1, angryCount));
-                barEntries.add(new BarEntry(i+2, fearfulCount));
-                barEntries.add(new BarEntry(i+3, disgustedCount));
-                barEntries.add(new BarEntry(i+4, sadCount));
-                barEntries.add(new BarEntry(i+5, surprisedCount));
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d(TAG, error.getMessage());
+            }
+        });
+    }
 
-                BarDataSet barDataSet = new BarDataSet(barEntries,"Mood");
-                InitMoodChart();
-                barDataSet.setColors(new int[] {R.color.dark_pink, R.color.light_pink, R.color.mud, R.color.canary, R.color.dark_gray, R.color.brown}, getActivity());
-                barDataSet.setDrawValues(false);
-                moodChart.setData(new BarData(barDataSet));
+    // Retrieves monthly moods and initializes mood count chart
+    private void CountMonthlyMood() {
+        reference.orderByChild("date").startAt(mstartDate).endAt(mendDate).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    switch (Objects.requireNonNull(dataSnapshot.child("mood").getValue(String.class))) {
+                        case "Happy":
+                            ++happyCount;
+                            break;
+                        case "Angry":
+                            ++angryCount;
+                            break;
+                        case "Fearful":
+                            ++fearfulCount;
+                            break;
+                        case "Disgusted":
+                            ++disgustedCount;
+                            break;
+                        case "Sad":
+                            ++sadCount;
+                            break;
+                        case "Surprised":
+                            ++surprisedCount;
+                            break;
+                    }
+                }
+                SetMoodData();
+                happyCount = 0; angryCount = 0; fearfulCount = 0; disgustedCount = 0; sadCount = 0; surprisedCount = 0;
             }
 
             @Override
@@ -233,7 +304,6 @@ public class FragmentSummary extends Fragment {
         rightAxis.setGranularityEnabled(true);
         rightAxis.setGranularity(1.0f);
 
-
         // Touch and Scale settings
         moodChart.setTouchEnabled(false);
         moodChart.setDragEnabled(false);
@@ -283,11 +353,70 @@ public class FragmentSummary extends Fragment {
         goalsChart.setPinchZoom(false);
     }
 
+    private void SetMoodData() {
+        ArrayList<BarEntry> barEntries = new ArrayList<>();
+        int i = 1;
+
+        barEntries.add(new BarEntry(i, happyCount));
+        barEntries.add(new BarEntry(i+1, angryCount));
+        barEntries.add(new BarEntry(i+2, fearfulCount));
+        barEntries.add(new BarEntry(i+3, disgustedCount));
+        barEntries.add(new BarEntry(i+4, sadCount));
+        barEntries.add(new BarEntry(i+5, surprisedCount));
+
+        BarDataSet barDataSet = new BarDataSet(barEntries,"Mood");
+        InitMoodChart();
+        barDataSet.setColors(new int[] {R.color.dark_pink, R.color.light_pink, R.color.mud, R.color.canary, R.color.dark_gray, R.color.brown}, getActivity());
+        barDataSet.setDrawValues(false);
+        moodChart.setData(new BarData(barDataSet));
+    }
+
     // Gets current date
     private void ShowDate() {
         Date today = Calendar.getInstance().getTime();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MMM/yyyy", Locale.US);
         dateToday = dateFormat.format(today);
+    }
+
+    // Gets first day and end day of the week
+    private void GetFirstDayWeek() {
+        final LocalizedWeek week = new LocalizedWeek(Locale.US);
+        wstartDate = String.valueOf(week.getFirstDay());
+        wendDate = String.valueOf(week.getLastDay());
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+
+        try {
+            Date sWeek = dateFormat.parse(wstartDate);
+            Date eWeek = dateFormat.parse(wendDate);
+
+            assert sWeek != null;
+            wstartDate = new SimpleDateFormat("dd/MMM/yyyy", Locale.US).format(sWeek);
+            assert eWeek != null;
+            wendDate = new SimpleDateFormat("dd/MMM/yyyy", Locale.US).format(eWeek);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Gets first day and end day of the month
+    private void GetFirstDayMonth() {
+        ZoneId TZ = ZoneId.of("Asia/Manila");
+        LocalDate today = LocalDate.now(TZ);
+        mstartDate = String.valueOf(today.withDayOfMonth(1));
+        mendDate = String.valueOf(today.with(TemporalAdjusters.lastDayOfMonth()));
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+
+        try {
+            Date sMonth = dateFormat.parse(mstartDate);
+            Date eMonth = dateFormat.parse(mendDate);
+
+            assert sMonth != null;
+            mstartDate = new SimpleDateFormat("dd/MMM/yyyy", Locale.US).format(sMonth);
+            assert eMonth != null;
+            mendDate = new SimpleDateFormat("dd/MMM/yyyy", Locale.US).format(eMonth);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

@@ -35,7 +35,13 @@
         <activity android:name=".sample_activity" />
         <activity android:name=".retrieveFeelings" />
         <activity android:name=".summary"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".questions"
             android:exported="false">
 
@@ -57,12 +63,7 @@
         </activity>
         <activity
             android:name=".login"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
         <activity
             android:name=".register"

@@ -175,26 +175,32 @@ public class FragmentSummary extends Fragment {
         reference.orderByChild("date").startAt(wstartDate).endAt(wendDate).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                wstartDate = wstartDate.substring(3,6);
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    switch (Objects.requireNonNull(dataSnapshot.child("mood").getValue(String.class))) {
-                        case "Happy":
-                            ++happyCount;
-                            break;
-                        case "Angry":
-                            ++angryCount;
-                            break;
-                        case "Fearful":
-                            ++fearfulCount;
-                            break;
-                        case "Disgusted":
-                            ++disgustedCount;
-                            break;
-                        case "Sad":
-                            ++sadCount;
-                            break;
-                        case "Surprised":
-                            ++surprisedCount;
-                            break;
+                    String date = Objects.requireNonNull(dataSnapshot.child("date").getValue()).toString();
+                    date = date.substring(3,6);
+
+                    if (Objects.equals(date, wstartDate)) {
+                        switch (Objects.requireNonNull(dataSnapshot.child("mood").getValue(String.class))) {
+                            case "Happy":
+                                ++happyCount;
+                                break;
+                            case "Angry":
+                                ++angryCount;
+                                break;
+                            case "Fearful":
+                                ++fearfulCount;
+                                break;
+                            case "Disgusted":
+                                ++disgustedCount;
+                                break;
+                            case "Sad":
+                                ++sadCount;
+                                break;
+                            case "Surprised":
+                                ++surprisedCount;
+                                break;
+                        }
                     }
                 }
                 SetMoodData();
@@ -213,26 +219,32 @@ public class FragmentSummary extends Fragment {
         reference.orderByChild("date").startAt(mstartDate).endAt(mendDate).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mstartDate = mstartDate.substring(3,6);
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    switch (Objects.requireNonNull(dataSnapshot.child("mood").getValue(String.class))) {
-                        case "Happy":
-                            ++happyCount;
-                            break;
-                        case "Angry":
-                            ++angryCount;
-                            break;
-                        case "Fearful":
-                            ++fearfulCount;
-                            break;
-                        case "Disgusted":
-                            ++disgustedCount;
-                            break;
-                        case "Sad":
-                            ++sadCount;
-                            break;
-                        case "Surprised":
-                            ++surprisedCount;
-                            break;
+                    String date = Objects.requireNonNull(dataSnapshot.child("date").getValue()).toString();
+                    date = date.substring(3,6);
+
+                    if (Objects.equals(date, mstartDate)) {
+                        switch (Objects.requireNonNull(dataSnapshot.child("mood").getValue(String.class))) {
+                            case "Happy":
+                                ++happyCount;
+                                break;
+                            case "Angry":
+                                ++angryCount;
+                                break;
+                            case "Fearful":
+                                ++fearfulCount;
+                                break;
+                            case "Disgusted":
+                                ++disgustedCount;
+                                break;
+                            case "Sad":
+                                ++sadCount;
+                                break;
+                            case "Surprised":
+                                ++surprisedCount;
+                                break;
+                        }
                     }
                 }
                 SetMoodData();

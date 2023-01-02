@@ -69,7 +69,7 @@ public class question5 extends AppCompatActivity {
         FirebaseUser user = fAuth.getCurrentUser();
         id = user.getUid();
 
-        reference = database.getInstance().getReference().child("users").child(id).child("Questions");
+        reference = database.getInstance().getReference().child("users").child(id).child("UserQuestions");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override

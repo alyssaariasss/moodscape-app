@@ -14,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,6 +29,7 @@ import org.naishadhparmar.zcustomcalendar.CustomCalendar;
 import org.naishadhparmar.zcustomcalendar.OnNavigationButtonClickedListener;
 import org.naishadhparmar.zcustomcalendar.Property;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
@@ -37,7 +40,13 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
     FirebaseAuth fAuth;
     FirebaseDatabase database;
     DatabaseReference reference;
-    String id;
+    DatabaseReference ref;
+    String id, qDate;
+    UserAnswers userAnswers;
+
+    MyAdapter myAdapter;
+    ArrayList<UserAnswers> list1;
+    RecyclerView AnswerOne;
 
     CustomCalendar customCalendar;
     CardView selectedDateCard;
@@ -45,6 +54,7 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
     TextView selectedDateText, overallReportTitle;
 
     HashMap<Integer, Object> mapDateToDesc;
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -56,9 +66,15 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
         selectedDateText = view.findViewById(R.id.selectedDateText);
         overallReportTitle = view.findViewById(R.id.overallReportTitle);
 
+        // For Questions
+        AnswerOne = view.findViewById(R.id.answerOne);
+        userAnswers = new UserAnswers();
+
         selectedDateCard.setVisibility(View.INVISIBLE);
         selectedDateText.setVisibility(View.INVISIBLE);
         moodView.setVisibility(View.INVISIBLE);
+
+        AnswerOne.setVisibility(View.INVISIBLE);
 
         fAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -68,9 +84,13 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
 
         mapDateToDesc = new HashMap<>();
 
+
         reference = database.getReference().child("users").child(id).child("UserMoods");
+        ref = database.getReference().child("users").child(id).child("UserQuestions");
 
         RetrieveMoods();
+
+
 
         // Previous and Next buttons on calendar
         customCalendar.setOnNavigationButtonClickedListener(CustomCalendar.PREVIOUS, this);
@@ -81,6 +101,8 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
             selectedDateCard.setVisibility(View.VISIBLE);
             selectedDateText.setVisibility(View.VISIBLE);
             moodView.setVisibility(View.VISIBLE);
+            AnswerOne.setVisibility(View.VISIBLE);
+
 
             // Gets date as string
             String sDate = (selectedDate.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.ENGLISH))
@@ -92,8 +114,16 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
             DisplayImage(desc);
 
             // display of answers from UserQuestions start
+            qDate = (selectedDate.get(Calendar.DAY_OF_MONTH)) + "/" +
+                    selectedDate.getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale.ENGLISH)
+                    + "/" + selectedDate.get(Calendar.YEAR);
+            System.out.println(qDate);
 
-
+            RetrieveQuestions();
+            AnswerOne.setHasFixedSize(true);
+            AnswerOne.setLayoutManager(new GridLayoutManager(getActivity(), 1));
+            list1 = new ArrayList<>();
+            myAdapter = new MyAdapter(this, list1);
 
             // display of answers from UserQuestions end
 
@@ -164,11 +194,45 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
                     mapDateToDesc.put(day, mood);
                 }
                 customCalendar.setDate(calendar, mapDateToDesc);
-                InitCalendarView();
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.d(TAG, error.getMessage());
+            }
+        });
+    }
+
+    //Retrieve Questions
+    private void RetrieveQuestions() {
+        Calendar calendar = Calendar.getInstance();
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+
+                    //UserAnswers answer = dataSnapshot.child("userQuestion1").getValue().toString;
+
+                    UserAnswers userAnswers = dataSnapshot.getValue(UserAnswers.class);
+                    String date1 = Objects.requireNonNull(dataSnapshot.child("date").getValue()).toString();
+                    list1.add(userAnswers);
+                    System.out.println(userAnswers);
+                    System.out.println(date1);
+
+                    if (qDate.equals(date1)) {
+                        // For recyclerview
+                        myAdapter.notifyDataSetChanged();
+                        AnswerOne.setAdapter(myAdapter);
+                    }
+
+                }
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }

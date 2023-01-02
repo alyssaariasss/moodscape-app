@@ -8,7 +8,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="609dp"
         android:layout_gravity="center_vertical"
         tools:ignore="UselessParent">
 
@@ -34,12 +34,12 @@
                 android:id="@+id/overallReportTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:elevation="6dp"
                 android:fontFamily="@font/sourcesanspro_semibold"
                 android:gravity="center_horizontal"
                 android:text="@string/calendar"
                 android:textColor="@color/dark_gray"
                 android:textSize="14sp"
-                android:elevation="6dp"
                 app:layout_constraintBottom_toTopOf="@+id/customCalendar"
                 app:layout_constraintEnd_toEndOf="@+id/overallReportCard"
                 app:layout_constraintHorizontal_bias="0.126"
@@ -66,9 +66,9 @@
                 android:id="@+id/selectedDateCard"
                 android:layout_width="330dp"
                 android:layout_height="100dp"
-                android:backgroundTint="@color/dirty_cream"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/dirty_cream"
                 app:cardCornerRadius="25dp"
                 app:cardElevation="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -76,18 +76,21 @@
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/overallReportCard"
-                app:layout_constraintVertical_bias="0.129" />
+                app:layout_constraintVertical_bias="0.129">
+
+            </androidx.cardview.widget.CardView>
+
 
             <TextView
                 android:id="@+id/selectedDateText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:elevation="6dp"
                 android:fontFamily="@font/ubuntu_bold"
                 android:gravity="center_horizontal"
                 android:text=""
                 android:textColor="@color/dark_gray"
                 android:textSize="28sp"
-                android:elevation="6dp"
                 app:layout_constraintBottom_toBottomOf="@+id/moodView"
                 app:layout_constraintEnd_toEndOf="@+id/selectedDateCard"
                 app:layout_constraintHorizontal_bias="0.191"
@@ -101,9 +104,9 @@
                 android:layout_height="80dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:src="@drawable/happy_icon"
-                android:elevation="6dp"
                 android:contentDescription="@string/moods"
+                android:elevation="6dp"
+                android:src="@drawable/happy_icon"
                 app:layout_constraintBottom_toBottomOf="@+id/selectedDateCard"
                 app:layout_constraintEnd_toEndOf="@+id/selectedDateCard"
                 app:layout_constraintHorizontal_bias="0.864"
@@ -111,6 +114,17 @@
                 app:layout_constraintTop_toTopOf="@+id/selectedDateCard"
                 app:layout_constraintVertical_bias="0.357" />
 
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/answerOne"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="@+id/selectedDateCard"
+                app:layout_constraintTop_toBottomOf="@+id/selectedDateCard" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+
 </FrameLayout>

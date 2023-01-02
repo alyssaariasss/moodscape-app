@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNewGoal">
+
+    <EditText
+        android:id="@+id/editxtNGoal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/round_btn2"
+        android:ems="10"
+        android:fontFamily="@font/sourcesanspro_regular"
+        android:hint="Your goal title here . . "
+        android:inputType="text"
+        android:paddingStart="25dp"
+        android:paddingLeft="25dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp"
+        android:paddingBottom="2dp"
+        android:textColor="@color/dark_gray"
+        android:textColorHint="@color/dark_gray"
+        android:textSize="15sp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/goalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:drawableStart="@drawable/goal_add_time"
+        android:drawablePadding="8dp"
+        android:text="Set Time"
+        android:textColor="@color/dark_gray"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/editxtNGoal"
+        app:layout_constraintTop_toTopOf="@+id/editxtNGoal" />
+
+    <Button
+        android:id="@+id/buttonAddGoal"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="155dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/custom_shape_new"
+        android:elevation="5dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
+        android:stateListAnimator="@null"
+        android:text="ADD GOALS"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        app:backgroundTint="@color/canary"
+        app:layout_constraintEnd_toEndOf="@+id/editxtNGoal"
+        app:layout_constraintTop_toTopOf="@+id/editxtNGoal" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

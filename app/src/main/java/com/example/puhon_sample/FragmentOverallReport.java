@@ -3,6 +3,7 @@ package com.example.puhon_sample;
 import static android.content.ContentValues.TAG;
 
 import android.os.Bundle;
+import android.renderscript.Sampler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import org.naishadhparmar.zcustomcalendar.CustomCalendar;
@@ -86,10 +88,10 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
 
 
         reference = database.getReference().child("users").child(id).child("UserMoods");
-        ref = database.getReference().child("users").child(id).child("UserQuestions");
 
         RetrieveMoods();
 
+        ref = database.getReference().child("users").child(id).child("UserQuestions");
 
 
         // Previous and Next buttons on calendar
@@ -113,17 +115,41 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
             // Sets and displays image
             DisplayImage(desc);
 
-            // display of answers from UserQuestions start
-            qDate = (selectedDate.get(Calendar.DAY_OF_MONTH)) + "/" +
+
+            // Displays answers from UserQuestions start
+            String day = String.format("%02d", selectedDate.get(Calendar.DAY_OF_MONTH));
+            qDate = day + "/" +
                     selectedDate.getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale.ENGLISH)
                     + "/" + selectedDate.get(Calendar.YEAR);
             System.out.println(qDate);
 
-            RetrieveQuestions();
+                    ValueEventListener valueEventListener = new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            list1.clear();
+                            if (snapshot.exists()) {
+                                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                    UserAnswers userAnswers = dataSnapshot.getValue(UserAnswers.class);
+                                    list1.add(userAnswers);
+                                }
+                                myAdapter.notifyDataSetChanged();
+                            }
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    };
+            ref.addListenerForSingleValueEvent(valueEventListener);
+            Query query = ref.orderByChild("date").equalTo(qDate);
+            query.addListenerForSingleValueEvent(valueEventListener);
             AnswerOne.setHasFixedSize(true);
             AnswerOne.setLayoutManager(new GridLayoutManager(getActivity(), 1));
             list1 = new ArrayList<>();
             myAdapter = new MyAdapter(this, list1);
+            AnswerOne.setAdapter(myAdapter);
 
             // display of answers from UserQuestions end
 
@@ -202,40 +228,6 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
         });
     }
 
-    //Retrieve Questions
-    private void RetrieveQuestions() {
-        Calendar calendar = Calendar.getInstance();
-
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-
-                    //UserAnswers answer = dataSnapshot.child("userQuestion1").getValue().toString;
-
-                    UserAnswers userAnswers = dataSnapshot.getValue(UserAnswers.class);
-                    String date1 = Objects.requireNonNull(dataSnapshot.child("date").getValue()).toString();
-                    list1.add(userAnswers);
-                    System.out.println(userAnswers);
-                    System.out.println(date1);
-
-                    if (qDate.equals(date1)) {
-                        // For recyclerview
-                        myAdapter.notifyDataSetChanged();
-                        AnswerOne.setAdapter(myAdapter);
-                    }
-
-                }
-
-            }
-
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
 
     private void DisplayImage(Object desc) {
         if (Objects.equals(desc, "Happy")) {

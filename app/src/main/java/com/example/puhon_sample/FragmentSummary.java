@@ -52,7 +52,7 @@ public class FragmentSummary extends Fragment {
     FirebaseDatabase database;
     DatabaseReference reference;
 
-    String id, dateToday, date, wstartDate, wendDate, mstartDate, mendDate;
+    String id, dateToday, date, wStartDate, wEndDate, mStartDate, mEndDate;
     String mood = "none";
     int happyCount, angryCount, fearfulCount, disgustedCount, sadCount, surprisedCount;
 
@@ -63,8 +63,9 @@ public class FragmentSummary extends Fragment {
     Spinner moodSpinner, goalsSpinner;
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_summary, container, false);
 
         moodTxt = view.findViewById(R.id.mood_txt);
         taskTxt = view.findViewById(R.id.task_txt);
@@ -87,16 +88,19 @@ public class FragmentSummary extends Fragment {
         FetchMoodData();
         InitSpinners();
         CountGoals();
+
+        return view;
     }
 
     // Initializes and checks value of spinners for data filtering
     private void InitSpinners() {
         String [] filter = getResources().getStringArray(R.array.spinner);
-        ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, filter);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, filter);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         moodSpinner.setAdapter(adapter);
         goalsSpinner.setAdapter(adapter);
 
+        // Checks value of spinner and displays mood data
         moodSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -110,6 +114,7 @@ public class FragmentSummary extends Fragment {
                 }
             }
 
+            // Default weekly data
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 GetFirstDayWeek();
@@ -117,10 +122,10 @@ public class FragmentSummary extends Fragment {
             }
         });
 
-        // goalsSpinner start onitemselected
+        // goalsSpinner start onItemSelected
 
 
-        // goalsSpinner end onitemselected
+        // goalsSpinner end onItemSelected
     }
 
     // Gets latest input of mood
@@ -160,6 +165,7 @@ public class FragmentSummary extends Fragment {
         });
     }
 
+    // Displays text depending on mood input
     private void CheckMoodInput() {
         if (Objects.equals(mood, "none")) {
             moodTxt.setText(R.string.mood_null);
@@ -172,7 +178,7 @@ public class FragmentSummary extends Fragment {
 
     // Retrieves weekly moods and initializes mood count chart
     private void CountWeeklyMood() {
-        reference.orderByChild("date").startAt(wstartDate).endAt(wendDate).addValueEventListener(new ValueEventListener() {
+        reference.orderByChild("date").startAt(wStartDate).endAt(wEndDate).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 wstartDate = wstartDate.substring(3,6);
@@ -204,6 +210,7 @@ public class FragmentSummary extends Fragment {
                     }
                 }
                 SetMoodData();
+                // Sets all count to 0 to avoid overlapping of values from weekly and monthly chart
                 happyCount = 0; angryCount = 0; fearfulCount = 0; disgustedCount = 0; sadCount = 0; surprisedCount = 0;
             }
 
@@ -216,7 +223,7 @@ public class FragmentSummary extends Fragment {
 
     // Retrieves monthly moods and initializes mood count chart
     private void CountMonthlyMood() {
-        reference.orderByChild("date").startAt(mstartDate).endAt(mendDate).addValueEventListener(new ValueEventListener() {
+        reference.orderByChild("date").startAt(mStartDate).endAt(mEndDate).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 mstartDate = mstartDate.substring(3,6);
@@ -248,6 +255,7 @@ public class FragmentSummary extends Fragment {
                     }
                 }
                 SetMoodData();
+                // Sets all count to 0 to avoid overlapping of values from weekly and monthly chart
                 happyCount = 0; angryCount = 0; fearfulCount = 0; disgustedCount = 0; sadCount = 0; surprisedCount = 0;
             }
 
@@ -326,6 +334,7 @@ public class FragmentSummary extends Fragment {
 
     // Customize goal chart
     private void InitGoalChart() {
+        // Sample date
         List<String> xAxisValues = new ArrayList<>(Arrays.asList("", "12/19", "12/20", "12/21", "12/22", "12/23", "12/24", "12/25"));
 
         // General settings
@@ -365,6 +374,7 @@ public class FragmentSummary extends Fragment {
         goalsChart.setPinchZoom(false);
     }
 
+    // Adds count to bar entries and sets data for chart
     private void SetMoodData() {
         ArrayList<BarEntry> barEntries = new ArrayList<>();
         int i = 1;
@@ -393,18 +403,18 @@ public class FragmentSummary extends Fragment {
     // Gets first day and end day of the week
     private void GetFirstDayWeek() {
         final LocalizedWeek week = new LocalizedWeek(Locale.US);
-        wstartDate = String.valueOf(week.getFirstDay());
-        wendDate = String.valueOf(week.getLastDay());
+        wStartDate = String.valueOf(week.getFirstDay());
+        wEndDate = String.valueOf(week.getLastDay());
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
 
         try {
-            Date sWeek = dateFormat.parse(wstartDate);
-            Date eWeek = dateFormat.parse(wendDate);
+            Date sWeek = dateFormat.parse(wStartDate);
+            Date eWeek = dateFormat.parse(wEndDate);
 
             assert sWeek != null;
-            wstartDate = new SimpleDateFormat("dd/MMM/yyyy", Locale.US).format(sWeek);
+            wStartDate = new SimpleDateFormat("dd/MMM/yyyy", Locale.US).format(sWeek);
             assert eWeek != null;
-            wendDate = new SimpleDateFormat("dd/MMM/yyyy", Locale.US).format(eWeek);
+            wEndDate = new SimpleDateFormat("dd/MMM/yyyy", Locale.US).format(eWeek);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -414,27 +424,20 @@ public class FragmentSummary extends Fragment {
     private void GetFirstDayMonth() {
         ZoneId TZ = ZoneId.of("Asia/Manila");
         LocalDate today = LocalDate.now(TZ);
-        mstartDate = String.valueOf(today.withDayOfMonth(1));
-        mendDate = String.valueOf(today.with(TemporalAdjusters.lastDayOfMonth()));
+        mStartDate = String.valueOf(today.withDayOfMonth(1));
+        mEndDate = String.valueOf(today.with(TemporalAdjusters.lastDayOfMonth()));
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
 
         try {
-            Date sMonth = dateFormat.parse(mstartDate);
-            Date eMonth = dateFormat.parse(mendDate);
+            Date sMonth = dateFormat.parse(mStartDate);
+            Date eMonth = dateFormat.parse(mEndDate);
 
             assert sMonth != null;
-            mstartDate = new SimpleDateFormat("dd/MMM/yyyy", Locale.US).format(sMonth);
+            mStartDate = new SimpleDateFormat("dd/MMM/yyyy", Locale.US).format(sMonth);
             assert eMonth != null;
-            mendDate = new SimpleDateFormat("dd/MMM/yyyy", Locale.US).format(eMonth);
+            mEndDate = new SimpleDateFormat("dd/MMM/yyyy", Locale.US).format(eMonth);
         } catch (ParseException e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_summary, container, false);
     }
 }

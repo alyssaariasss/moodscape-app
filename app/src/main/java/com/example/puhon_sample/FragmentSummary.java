@@ -52,13 +52,21 @@ public class FragmentSummary extends Fragment {
     FirebaseDatabase database;
     DatabaseReference reference;
 
-    String id, dateToday, date, wStartDate, wEndDate, mStartDate, mEndDate;
+    String id, dateToday, wStartDate, wEndDate, mStartDate, mEndDate;
     String mood = "none";
+    int sleep = 0;
+    List<String> days;
+    // For mood count
     int happyCount, angryCount, fearfulCount, disgustedCount, sadCount, surprisedCount;
+    // For goal count
+    int checkedCount, uncheckedCount, checkedCount1, uncheckedCount1, checkedCount2, uncheckedCount2,
+            checkedCount3, uncheckedCount3, checkedCount4, uncheckedCount4, checkedCount5, uncheckedCount5,
+            checkedCount6, uncheckedCount6, checked, totalGoals;
 
     TextView moodTxt, taskTxt, sleepTxt;
 
     BarChart moodChart, goalsChart;
+    BarData data;
 
     Spinner moodSpinner, goalsSpinner;
 
@@ -86,19 +94,27 @@ public class FragmentSummary extends Fragment {
         reference = database.getReference().child("users").child(id).child("UserMoods");
 
         FetchMoodData();
+        FetchGoalData();
+        FetchSleepData();
+
         InitSpinners();
-        CountGoals();
 
         return view;
     }
 
     // Initializes and checks value of spinners for data filtering
     private void InitSpinners() {
+        // Mood Spinner
         String [] filter = getResources().getStringArray(R.array.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, filter);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         moodSpinner.setAdapter(adapter);
-        goalsSpinner.setAdapter(adapter);
+
+        // Goals Spinner
+        String [] filter1 = getResources().getStringArray(R.array.spinner1);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, filter1);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        goalsSpinner.setAdapter(adapter1);
 
         // Checks value of spinner and displays mood data
         moodSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -122,10 +138,22 @@ public class FragmentSummary extends Fragment {
             }
         });
 
-        // goalsSpinner start onItemSelected
+        goalsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String valueFromSpinner = adapterView.getItemAtPosition(i).toString();
+                if (valueFromSpinner.equals("By Week")) {
+                    GetFirstDayWeek();
+                    CountGoals();
+                }
+            }
 
-
-        // goalsSpinner end onItemSelected
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                GetFirstDayWeek();
+                CountGoals();
+            }
+        });
     }
 
     // Gets latest input of mood
@@ -135,7 +163,7 @@ public class FragmentSummary extends Fragment {
         reference.limitToLast(1).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                date = snapshot.child("date").getValue(String.class);
+                String date = snapshot.child("date").getValue(String.class);
 
                 if (Objects.equals(dateToday, date)) {
                     mood = String.valueOf(snapshot.child("mood").getValue());
@@ -144,19 +172,13 @@ public class FragmentSummary extends Fragment {
             }
 
             @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {}
 
             @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {}
 
             @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {}
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -176,6 +198,74 @@ public class FragmentSummary extends Fragment {
         }
     }
 
+    // Gets total count of completed goals
+    private void FetchGoalData() {
+        ShowDate();
+
+        DatabaseReference newRef = database.getReference().child("users").child(id).child("UserGoals");
+
+        newRef.orderByChild("date").equalTo(dateToday).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    ++totalGoals;
+                    if (Objects.requireNonNull(dataSnapshot.child("status").getValue()).toString().equals("1")) {
+                        ++checked;
+                    }
+                }
+                taskTxt.setText(String.format("%s out of %s tasks done.", checked, totalGoals));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d(TAG, error.getMessage());
+            }
+        });
+    }
+
+    // Gets latest sleep data
+    private void FetchSleepData() {
+        ShowDate();
+
+        DatabaseReference newRef = database.getReference().child("users").child(id).child("UserQuestions");
+
+        newRef.limitToLast(1).addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                String date = snapshot.child("date").getValue(String.class);
+
+                if (Objects.equals(dateToday, date)) {
+                    sleep = ((Long) Objects.requireNonNull(snapshot.child("userQuestion5").getValue())).intValue();
+                }
+                CheckSleepInput();
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {}
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {}
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {}
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d(TAG, error.getMessage());
+            }
+        });
+    }
+
+    // Displays text depending on sleep input
+    private void CheckSleepInput() {
+        if (sleep == 0) {
+            sleepTxt.setText(R.string.sleep_null);
+        } else if (sleep >= 6) {
+            sleepTxt.setText(R.string.sleep_great);
+        } else {
+            sleepTxt.setText(R.string.sleep_others);
+        }
+    }
     // Retrieves weekly moods and initializes mood count chart
     private void CountWeeklyMood() {
         reference.orderByChild("date").startAt(wStartDate).endAt(wEndDate).addValueEventListener(new ValueEventListener() {
@@ -268,20 +358,90 @@ public class FragmentSummary extends Fragment {
 
     // Dummy data for goals
     private void CountGoals() {
-        ArrayList<BarEntry> goalEntries = new ArrayList<>();
+        DatabaseReference newRef = database.getReference().child("users").child(id).child("UserGoals");
 
-        // Sample Data for Bar Chart
-        for (int i=1; i<8; i++) {
-            float value = (float) (i*10.0);
-            BarEntry goalEntry = new BarEntry(i, value);
-            goalEntries.add(goalEntry);
-        }
+        newRef.orderByChild("date").startAt(wStartDate).endAt(wEndDate).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    String date = Objects.requireNonNull(dataSnapshot.child("date").getValue()).toString();
+                    date = date.substring(0,2);
 
-        BarDataSet goalDataSet = new BarDataSet(goalEntries,"Dates");
-        InitGoalChart();
-        goalDataSet.setColor(ContextCompat.getColor(requireContext(), R.color.dark_pink));
-        goalDataSet.setDrawValues(false);
-        goalsChart.setData(new BarData(goalDataSet));
+                    if (Objects.equals(date, days.get(0).substring(3,5))) {
+                        switch (Objects.requireNonNull(dataSnapshot.child("status").getValue()).toString()) {
+                            case "1":
+                                ++checkedCount;
+                                break;
+                            case "0":
+                                ++uncheckedCount;
+                                break;
+                        }
+                    } else if (Objects.equals(date, days.get(1).substring(3,5))) {
+                        switch (Objects.requireNonNull(dataSnapshot.child("status").getValue()).toString()) {
+                            case "1":
+                                ++checkedCount1;
+                                break;
+                            case "0":
+                                ++uncheckedCount1;
+                                break;
+                        }
+                    } else if (Objects.equals(date, days.get(2).substring(3,5))) {
+                        switch (Objects.requireNonNull(dataSnapshot.child("status").getValue()).toString()) {
+                            case "1":
+                                ++checkedCount2;
+                                break;
+                            case "0":
+                                ++uncheckedCount2;
+                                break;
+                        }
+                    } else if (Objects.equals(date, days.get(3).substring(3,5))) {
+                        switch (Objects.requireNonNull(dataSnapshot.child("status").getValue()).toString()) {
+                            case "1":
+                                ++checkedCount3;
+                                break;
+                            case "0":
+                                ++uncheckedCount3;
+                                break;
+                        }
+                    } else if (Objects.equals(date, days.get(4).substring(3,5))) {
+                        switch (Objects.requireNonNull(dataSnapshot.child("status").getValue()).toString()) {
+                            case "1":
+                                ++checkedCount4;
+                                break;
+                            case "0":
+                                ++uncheckedCount4;
+                                break;
+                        }
+                    } else if (Objects.equals(date, days.get(5).substring(3,5))) {
+                        switch (Objects.requireNonNull(dataSnapshot.child("status").getValue()).toString()) {
+                            case "1":
+                                ++checkedCount5;
+                                break;
+                            case "0":
+                                ++uncheckedCount5;
+                                break;
+                        }
+                    } else if (Objects.equals(date, days.get(6).substring(3,5))) {
+                        switch (Objects.requireNonNull(dataSnapshot.child("status").getValue()).toString()) {
+                            case "1":
+                                ++checkedCount6;
+                                break;
+                            case "0":
+                                ++uncheckedCount6;
+                                break;
+                        }
+                    }
+                }
+                SetGoalData();
+                // Sets all count to 0 to avoid overlapping of values from weekly and monthly chart
+                checkedCount = 0; uncheckedCount = 0;
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d(TAG, error.getMessage());
+            }
+        });
     }
 
     // Customize mood chart
@@ -334,8 +494,8 @@ public class FragmentSummary extends Fragment {
 
     // Customize goal chart
     private void InitGoalChart() {
-        // Sample date
-        List<String> xAxisValues = new ArrayList<>(Arrays.asList("", "12/19", "12/20", "12/21", "12/22", "12/23", "12/24", "12/25"));
+        GetFirstDayWeek();
+        List<String> xAxisValues = new ArrayList<>(days);
 
         // General settings
         goalsChart.setDrawGridBackground(false);
@@ -355,23 +515,36 @@ public class FragmentSummary extends Fragment {
         // X axis settings
         XAxis xAxis = goalsChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setEnabled(true);
-        xAxis.setDrawAxisLine(false);
-        xAxis.setDrawGridLines(false);
+        xAxis.setGranularity(1f);
+        xAxis.setCenterAxisLabels(true);
+        xAxis.setAxisMinimum(0);
         xAxis.setValueFormatter(new IndexAxisValueFormatter(xAxisValues));
 
         // Y axis settings
         YAxis leftAxis = goalsChart.getAxisLeft();
         leftAxis.setDrawAxisLine(false);
+        leftAxis.setAxisMinimum(0.0f);
+        leftAxis.setGranularityEnabled(true);
+        leftAxis.setGranularity(1.0f);
+
         YAxis rightAxis = goalsChart.getAxisRight();
         rightAxis.setDrawAxisLine(false);
+        rightAxis.setAxisMinimum(0.0f);
+        rightAxis.setGranularityEnabled(true);
+        rightAxis.setGranularity(1.0f);
 
-        // Touch and Scale settings
-        goalsChart.setTouchEnabled(false);
-        goalsChart.setDragEnabled(false);
-        goalsChart.setScaleEnabled(false);
-        goalsChart.setScaleXEnabled(false);
-        goalsChart.setPinchZoom(false);
+        // Group bar data settings
+        float barSpace = 0.1f;
+        float groupSpace = 0.02f;
+        data.setBarWidth(0.40f);
+
+        goalsChart.groupBars(0, groupSpace, barSpace);
+        goalsChart.invalidate();
+
+        // Touch settings
+        goalsChart.setDragEnabled(true);
+        goalsChart.setVisibleXRangeMaximum(3);
+
     }
 
     // Adds count to bar entries and sets data for chart
@@ -391,6 +564,37 @@ public class FragmentSummary extends Fragment {
         barDataSet.setColors(new int[] {R.color.dark_pink, R.color.light_pink, R.color.mud, R.color.canary, R.color.dark_gray, R.color.brown}, getActivity());
         barDataSet.setDrawValues(false);
         moodChart.setData(new BarData(barDataSet));
+    }
+
+    private void SetGoalData() {
+        ArrayList<BarEntry> goalEntries = new ArrayList<>();
+        ArrayList<BarEntry> goalEntries1 = new ArrayList<>();
+        int i = 1;
+
+        goalEntries.add(new BarEntry(i, checkedCount));
+        goalEntries.add(new BarEntry(i+1, checkedCount1));
+        goalEntries.add(new BarEntry(i+2, checkedCount2));
+        goalEntries.add(new BarEntry(i+3, checkedCount3));
+        goalEntries.add(new BarEntry(i+4, checkedCount4));
+        goalEntries.add(new BarEntry(i+5, checkedCount5));
+        goalEntries.add(new BarEntry(i+6, checkedCount6));
+
+        goalEntries1.add(new BarEntry(i, uncheckedCount));
+        goalEntries1.add(new BarEntry(i+1, uncheckedCount1));
+        goalEntries1.add(new BarEntry(i+2, uncheckedCount2));
+        goalEntries1.add(new BarEntry(i+3, uncheckedCount3));
+        goalEntries1.add(new BarEntry(i+4, uncheckedCount4));
+        goalEntries1.add(new BarEntry(i+5, uncheckedCount5));
+        goalEntries1.add(new BarEntry(i+6, uncheckedCount6));
+
+        BarDataSet goalDataSet = new BarDataSet(goalEntries,"Checked goals");
+        goalDataSet.setColor(ContextCompat.getColor(requireContext(), R.color.dark_pink));
+        BarDataSet goalDataSet1 = new BarDataSet(goalEntries1,"Unchecked goals");
+        goalDataSet1.setColor(ContextCompat.getColor(requireContext(), R.color.light_pink));
+
+        data = new BarData(goalDataSet, goalDataSet1);
+        goalsChart.setData(data);
+        InitGoalChart();
     }
 
     // Gets current date
@@ -417,6 +621,19 @@ public class FragmentSummary extends Fragment {
             wEndDate = new SimpleDateFormat("dd/MMM/yyyy", Locale.US).format(eWeek);
         } catch (ParseException e) {
             e.printStackTrace();
+        }
+
+        // Gets all days of the week for goals chart x axis values
+        int sDay = Integer.parseInt(wStartDate.substring(8,10));
+        String sMonth = wStartDate.substring(0,3);
+        days = new ArrayList<>();
+
+        for (int i = 0; i < 7; i++) {
+            if (sDay < 10) {
+                days.add(sMonth + "0" + sDay++);
+            } else {
+                days.add(sMonth + sDay++);
+            }
         }
     }
 

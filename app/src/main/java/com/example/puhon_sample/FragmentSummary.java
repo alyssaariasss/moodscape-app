@@ -181,12 +181,12 @@ public class FragmentSummary extends Fragment {
         reference.orderByChild("date").startAt(wStartDate).endAt(wEndDate).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                wstartDate = wstartDate.substring(3,6);
+                wStartDate = wStartDate.substring(3,6);
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     String date = Objects.requireNonNull(dataSnapshot.child("date").getValue()).toString();
                     date = date.substring(3,6);
 
-                    if (Objects.equals(date, wstartDate)) {
+                    if (Objects.equals(date, wStartDate)) {
                         switch (Objects.requireNonNull(dataSnapshot.child("mood").getValue(String.class))) {
                             case "Happy":
                                 ++happyCount;
@@ -226,12 +226,12 @@ public class FragmentSummary extends Fragment {
         reference.orderByChild("date").startAt(mStartDate).endAt(mEndDate).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mstartDate = mstartDate.substring(3,6);
+                mStartDate = mStartDate.substring(3,6);
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     String date = Objects.requireNonNull(dataSnapshot.child("date").getValue()).toString();
                     date = date.substring(3,6);
 
-                    if (Objects.equals(date, mstartDate)) {
+                    if (Objects.equals(date, mStartDate)) {
                         switch (Objects.requireNonNull(dataSnapshot.child("mood").getValue(String.class))) {
                             case "Happy":
                                 ++happyCount;

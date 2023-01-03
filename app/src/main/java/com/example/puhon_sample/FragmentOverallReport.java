@@ -3,7 +3,6 @@ package com.example.puhon_sample;
 import static android.content.ContentValues.TAG;
 
 import android.os.Bundle;
-import android.renderscript.Sampler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -225,6 +224,7 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
                     }
                 }
                 customCalendar.setDate(calendar, mapDateToDesc);
+                InitCalendarView();
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

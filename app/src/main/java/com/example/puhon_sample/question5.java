@@ -33,7 +33,7 @@ public class question5 extends AppCompatActivity {
     Button BackBtn5, NextBtn5;
     SeekBar Question5;
     FirebaseAuth fAuth;
-    FirebaseDatabase database;
+    FirebaseDatabase database;  
     DatabaseReference reference;
     String id, dateToday;
     int i = 0;

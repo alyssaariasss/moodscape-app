@@ -106,7 +106,7 @@ public class menu extends AppCompatActivity {
 
         btn_info.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, BreakScreen1.class);
+            Intent intent = new Intent(this, Meditation.class);
             startActivity(intent);
         });
 

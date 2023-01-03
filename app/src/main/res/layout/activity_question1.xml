@@ -47,7 +47,7 @@
         android:paddingTop="15dp"
         android:paddingEnd="0dp"
         android:paddingRight="0dp"
-        android:text="Write your thoughts here..."
+        android:hint="Write your thoughts here..."
         android:textColor="@color/dark_gray"
         android:textColorHint="@color/dark_gray"
         android:textSize="14sp"

@@ -1,8 +1,5 @@
 package com.example.puhon_sample;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -10,11 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -26,8 +24,14 @@ import com.google.firebase.database.ValueEventListener;
 
 public class goals extends AppCompatActivity {
 
-    TextView goals_Today, goals_History;
+    TextView goals_Today, goals_History, goals_greetings;
     private int selectedTabNumber = 1;
+
+    FirebaseAuth fAuth;
+    FirebaseDatabase database;
+    DatabaseReference reference;
+    String id;
+    User userprofile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +40,51 @@ public class goals extends AppCompatActivity {
 
         goals_Today = findViewById(R.id.goals_Today);
         goals_History = findViewById(R.id.goals_History);
+        goals_greetings = findViewById(R.id.goals_greetings);
+
+        GreetUser();
+
+        // NavBar Buttons
+
+        ImageButton btn_home = findViewById(R.id.nav_home);
+
+        btn_home.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, menu.class);
+            startActivity(intent);
+        });
+
+        ImageButton btn_info = findViewById(R.id.nav_about_mood);
+
+        btn_info.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, BreakScreen1.class);
+            startActivity(intent);
+        });
+
+        ImageButton btn_progress = findViewById(R.id.nav_progress);
+
+        btn_progress.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, summary.class);
+            startActivity(intent);
+        });
+
+        ImageButton btn_settings = findViewById(R.id.nav_settings);
+
+        btn_settings.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, settings.class);
+            startActivity(intent);
+        });
 
         // selecting first fragment by default
-        getSupportFragmentManager().beginTransaction()
-                .setReorderingAllowed(true)
-                .replace(R.id.fragmentContainer, FragmentToday.class, null)
-                .commit();
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .setReorderingAllowed(true)
+                    .replace(R.id.fragmentContainer, FragmentToday.class, null)
+                    .commit();
+        }
 
         goals_Today.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +101,32 @@ public class goals extends AppCompatActivity {
 
                 selectTab(2);
 
+            }
+        });
+    }
+
+    // Retrieves user's first name
+    private void GreetUser() {
+        fAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        FirebaseUser user = fAuth.getCurrentUser();
+        assert user != null;
+        id = user.getUid();
+        reference = database.getReference().child("users").child(id);
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                userprofile = snapshot.getValue(User.class);
+                assert userprofile != null;
+                goals_greetings.setText(String.format("Hello, %s!", userprofile.getUserFirstName()));
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(goals.this, "Something is wrong.", Toast.LENGTH_SHORT).show();
             }
         });
     }

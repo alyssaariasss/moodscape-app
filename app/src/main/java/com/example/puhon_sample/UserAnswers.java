@@ -5,9 +5,8 @@ public class UserAnswers {
     String UserQuestion1, date, UserQuestion2_1, UserQuestion2_2, UserQuestion3;
     Integer UserQuestion4, UserQuestion5;
 
-    public UserAnswers(String question1){
-        UserQuestion1 = question1;
-        this.date = date;
+    public UserAnswers() {
+
     }
 
     public UserAnswers(String question1, String question2_1, String question2_2, String question3,
@@ -20,7 +19,6 @@ public class UserAnswers {
         UserQuestion5 = question5;
         this.date = date;
     }
-
 
 
     // getters
@@ -38,7 +36,7 @@ public class UserAnswers {
     public void setUserQuestion1(String question1) {UserQuestion1 = question1; }
     public void setUserQuestion2_1(String question2_1) {UserQuestion2_1 = question2_1; }
     public void setUserQuestion2_2(String question2_2) {UserQuestion2_2 = question2_2; }
-    public void setUserQuestion3(String question3) {UserQuestion1 = question3; }
+    public void setUserQuestion3(String question3) {UserQuestion3 = question3; }
     public void setUserQuestion4(Integer question4) {UserQuestion4 = question4; }
     public void setUserQuestion5(Integer question5) {UserQuestion5 = question5; }
     public void setDate(String date) {

@@ -4,70 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".summary">
+    tools:context=".Meditation">
 
     <TextView
-        android:id="@+id/reportTitle"
+        android:id="@+id/meditate_greetings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/ubuntu_bold"
-        android:gravity="center_horizontal"
-        android:text="@string/view_progress"
-        android:textColor="@color/dark_gray"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/sourcesanspro_bold"
+        android:text="Hello!"
+        android:textColor="#4A5759"
+        android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/goals_tagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:fontFamily="@font/sourcesanspro_regular"
+        android:text="Rest is just as important as work."
+        android:textColor="#4A5759"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/meditate_greetings"
+        app:layout_constraintTop_toTopOf="@+id/meditate_greetings" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/reportTitle"
+        app:layout_constraintTop_toBottomOf="@+id/goals_tagline"
         tools:layout_editor_absoluteX="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_margin="30dp"
-            android:background="@drawable/round_back_goals"
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingStart="5dp"
             android:paddingEnd="5dp"
-            android:weightSum="2">
+            android:weightSum="4">
 
-            <TextView
-                android:id="@+id/summaryTab"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_weight="1"
-                android:background="@drawable/round_selector_goals"
-                android:fontFamily="@font/sourcesanspro_regular"
-                android:gravity="center"
-                android:text="@string/summary_text"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/mc_relax"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1.3"
+                android:layout_gravity="center"
+                android:src="@drawable/relax_choice" />
 
-            <TextView
-                android:id="@+id/overallTab"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/sourcesanspro_regular"
-                android:gravity="center"
-                android:text="@string/overall_text"
-                android:textColor="@color/dark_gray"
-                android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/mc_focus"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1.3"
+                android:layout_gravity="center"
+                android:src="@drawable/focus_choice" />
+
+            <ImageView
+                android:id="@+id/mc_anxiety"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1.3"
+                android:layout_gravity="center"
+                android:src="@drawable/anxiety_choice" />
+
+            <ImageView
+                android:id="@+id/mc_stress"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1.3"
+                android:layout_gravity="center"
+                android:src="@drawable/stress_choice" />
+
         </LinearLayout>
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout="@layout/fragment_overall_report" />
+            tools:layout="@layout/fragment_relax" />
     </RelativeLayout>
 
     <!--    Navbar Buttons  -->
@@ -135,10 +153,10 @@
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
+        android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="674dp" />
+        app:layout_constraintGuide_begin="168dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

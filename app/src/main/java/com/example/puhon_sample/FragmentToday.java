@@ -86,7 +86,7 @@ public class FragmentToday extends Fragment implements DialogCloseListener {
     private void RetrieveGoals() {
         ShowDate();
 
-        reference.orderByChild("date").addValueEventListener(new ValueEventListener() {
+        reference.orderByChild("date").equalTo(dateToday).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 UserGoals.clear();

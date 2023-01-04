@@ -104,57 +104,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/question2_tagline2" />
 
-    <ImageButton
-        android:id="@+id/nav_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="20dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_home"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <ImageButton
-        android:id="@+id/nav_about_mood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="106dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_info"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_home"
-        app:layout_constraintStart_toStartOf="@+id/nav_home"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/nav_progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_stats"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
-        app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/nav_settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_settings"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
-        app:layout_constraintStart_toStartOf="@+id/nav_progress"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/nextbtn"
+        android:id="@+id/nextbtn2"
         android:layout_width="185dp"
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
@@ -172,16 +124,16 @@
         android:textSize="20sp"
         app:backgroundTint="@color/dark_pink"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backbtn"
+        app:layout_constraintTop_toTopOf="@+id/backbtn2"
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/backbtn"
+        android:id="@+id/backbtn2"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="122dp"
+        android:layout_marginTop="132dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"

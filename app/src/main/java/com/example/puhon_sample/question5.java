@@ -1,17 +1,14 @@
 package com.example.puhon_sample;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -33,7 +30,7 @@ public class question5 extends AppCompatActivity {
     Button BackBtn5, NextBtn5;
     SeekBar Question5;
     FirebaseAuth fAuth;
-    FirebaseDatabase database;
+    FirebaseDatabase database;  
     DatabaseReference reference;
     String id, dateToday;
     int i = 0;
@@ -106,7 +103,7 @@ public class question5 extends AppCompatActivity {
                 ShowDate();
                 Answers.setDate(dateToday);
                 reference.child(String.valueOf(i + 1)).setValue(Answers);
-                startActivity(new Intent(getApplicationContext(), menu.class));
+                startActivity(new Intent(getApplicationContext(), BreakScreen2.class));
                 finish();
             }
         });
@@ -116,40 +113,6 @@ public class question5 extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), menu.class));
             }
-        });
-
-
-        // NavBar Buttons
-        ImageButton btn_home = findViewById(R.id.nav_home);
-
-        btn_home.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, menu.class);
-            startActivity(intent);
-        });
-
-        ImageButton btn_info = findViewById(R.id.nav_about_mood);
-
-        btn_info.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, BreakScreen1.class);
-            startActivity(intent);
-        });
-
-        ImageButton btn_progress = findViewById(R.id.nav_progress);
-
-        btn_progress.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, summary.class);
-            startActivity(intent);
-        });
-
-        ImageButton btn_settings = findViewById(R.id.nav_settings);
-
-        btn_settings.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, settings.class);
-            startActivity(intent);
         });
 
     }

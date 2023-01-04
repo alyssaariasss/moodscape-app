@@ -34,7 +34,7 @@
     <EditText
         android:id="@+id/question1"
         android:layout_width="360dp"
-        android:layout_height="500dp"
+        android:layout_height="450dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/round_btn4"
         android:ems="10"
@@ -101,55 +101,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question1"
         tools:ignore="TextContrastCheck" />
-
-    <ImageButton
-        android:id="@+id/nav_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="28dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_home"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <ImageButton
-        android:id="@+id/nav_settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_settings"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/nav_about_mood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_info"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_home"
-        app:layout_constraintStart_toStartOf="@+id/nav_home"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/nav_progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="115dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_stats"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
-        app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

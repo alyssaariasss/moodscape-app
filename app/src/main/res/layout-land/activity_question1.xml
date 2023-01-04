@@ -57,68 +57,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/question2_tagline1" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:weightSum="4"
-        android:paddingBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageButton
-            android:id="@+id/nav_home"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#00FFFFFF"
-            android:src="@drawable/nav_home"
-            android:translationZ="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/progressCard"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-        <ImageButton
-            android:id="@+id/nav_settings"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#00FFFFFF"
-            android:src="@drawable/nav_settings"
-            android:translationZ="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/nav_about_mood"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#00FFFFFF"
-            android:src="@drawable/nav_info"
-            android:translationZ="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/nav_home"
-            app:layout_constraintStart_toStartOf="@+id/nav_home"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/nav_progress"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#00FFFFFF"
-            android:src="@drawable/nav_stats"
-            android:translationZ="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
-            app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-    </LinearLayout>
 
     <Button
-        android:id="@+id/nextbtn"
+        android:id="@+id/nextbtn1"
         android:layout_width="180dp"
         android:layout_height="35dp"
         android:layout_centerHorizontal="true"
@@ -136,16 +77,16 @@
         android:textSize="15sp"
         app:backgroundTint="@color/dark_pink"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backbtn"
+        app:layout_constraintTop_toTopOf="@+id/backbtn1"
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/backbtn"
+        android:id="@+id/backbtn1"
         android:layout_width="130dp"
         android:layout_height="35dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="18dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"

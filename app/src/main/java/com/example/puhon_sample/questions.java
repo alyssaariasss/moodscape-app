@@ -52,11 +52,10 @@ public class questions extends AppCompatActivity {
 
                 String question1 = Question1.getText().toString();
 
-                if(TextUtils.isEmpty(question1)){
+                if (TextUtils.isEmpty(question1)) {
                     Question1.setError("Input is required");
                     return;
-                }
-                else{
+                } else {
                     Intent intent = new Intent(questions.this, question2.class);
                     intent.putExtra("QUESTION1", question1);
                     startActivity(intent);
@@ -70,40 +69,6 @@ public class questions extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), BreakScreen1.class));
             }
-        });
-
-
-        // NavBar Buttons
-        ImageButton btn_home = findViewById(R.id.nav_home);
-
-        btn_home.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, menu.class);
-            startActivity(intent);
-        });
-
-        ImageButton btn_info = findViewById(R.id.nav_about_mood);
-
-        btn_info.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, BreakScreen1.class);
-            startActivity(intent);
-        });
-
-        ImageButton btn_progress = findViewById(R.id.nav_progress);
-
-        btn_progress.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, summary.class);
-            startActivity(intent);
-        });
-
-        ImageButton btn_settings = findViewById(R.id.nav_settings);
-
-        btn_settings.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, settings.class);
-            startActivity(intent);
         });
 
     }

@@ -8,6 +8,9 @@
     <color name="mud">#B1AC89</color>
     <color name="dark_gray">#4A5759</color>
     <color name="light_gray">#F6F7F7</color>
+    <color name="coral">#A0616A</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
 </resources>

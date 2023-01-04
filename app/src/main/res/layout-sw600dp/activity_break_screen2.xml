@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BreakScreen2">
+
+    <TextView
+        android:id="@+id/breakscreenTagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="@string/well_done_on_taking_time_to_nreflect_on_your_thoughts"
+        android:textAlignment="center"
+        android:textColor="@color/dark_gray"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="@+id/breakscreen1"
+        app:layout_constraintStart_toStartOf="@+id/breakscreen1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/breakscreenTagline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sourcesanspro_regular"
+        android:layout_marginTop="20dp"
+        android:text="@string/hoping_the_best_for_you_see_you_again"
+        android:textAlignment="center"
+        android:textColor="@color/dark_gray"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="@+id/breakscreenTagline"
+        app:layout_constraintStart_toStartOf="@+id/breakscreenTagline"
+        app:layout_constraintTop_toBottomOf="@+id/breakscreenTagline" />
+
+    <!--    Navbar Buttons  -->
+    <ImageView
+        android:id="@+id/breakscreen1"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="80dp"
+        android:contentDescription="@string/thank_you"
+        android:src="@drawable/undraw_super_thank_you_re_f8bo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/breakscreenTagline2" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="@+id/breakscreen1"
+        app:layout_constraintStart_toStartOf="@+id/breakscreen1"
+        app:layout_constraintTop_toBottomOf="@+id/breakscreen1">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_btn3"
+            android:elevation="5dp"
+            android:fontFamily="@font/sourcesanspro_semibold"
+            android:stateListAnimator="@null"
+            android:text="@string/back"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:backgroundTint="@color/canary" />
+
+        <Button
+            android:id="@+id/meditateButton"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/round_btn3"
+            android:elevation="5dp"
+            android:fontFamily="@font/sourcesanspro_semibold"
+            android:stateListAnimator="@null"
+            android:text="@string/meditate"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:backgroundTint="@color/dark_pink" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/white"
+        android:elevation="5dp"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:weightSum="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/nav_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_home"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/progressCard"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/nav_about_mood"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_info"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nav_home"
+            app:layout_constraintStart_toStartOf="@+id/nav_home"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/nav_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_stats"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
+            app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/nav_settings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_settings"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

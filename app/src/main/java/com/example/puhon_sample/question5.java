@@ -1,17 +1,14 @@
 package com.example.puhon_sample;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -106,7 +103,7 @@ public class question5 extends AppCompatActivity {
                 ShowDate();
                 Answers.setDate(dateToday);
                 reference.child(String.valueOf(i + 1)).setValue(Answers);
-                startActivity(new Intent(getApplicationContext(), menu.class));
+                startActivity(new Intent(getApplicationContext(), BreakScreen2.class));
                 finish();
             }
         });

@@ -62,11 +62,12 @@
                 app:layout_constraintTop_toTopOf="@+id/overallReportCard"
                 app:layout_constraintVertical_bias="0.679" />
 
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/selectedDateCard"
                 android:layout_width="330dp"
                 android:layout_height="100dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="@color/dirty_cream"
                 app:cardCornerRadius="25dp"
@@ -76,10 +77,9 @@
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/overallReportCard"
-                app:layout_constraintVertical_bias="0.129">
+                app:layout_constraintVertical_bias="0.094">
 
             </androidx.cardview.widget.CardView>
-
 
             <TextView
                 android:id="@+id/selectedDateText"
@@ -118,7 +118,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/answerOne"
                 android:layout_width="328dp"
-                android:layout_height="wrap_content"
+                android:layout_height="505dp"
                 android:layout_marginTop="30dp"
                 app:layout_constraintStart_toStartOf="@+id/selectedDateCard"
                 app:layout_constraintTop_toBottomOf="@+id/selectedDateCard" />

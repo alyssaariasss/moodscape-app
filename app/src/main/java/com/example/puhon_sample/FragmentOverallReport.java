@@ -77,7 +77,7 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
         selectedDateText.setVisibility(View.INVISIBLE);
         moodView.setVisibility(View.INVISIBLE);
 
-        AnswerOne.setVisibility(View.INVISIBLE);
+        AnswerOne.setVisibility(View.GONE);
 
         fAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -104,6 +104,7 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
             selectedDateText.setVisibility(View.VISIBLE);
             moodView.setVisibility(View.VISIBLE);
             AnswerOne.setVisibility(View.VISIBLE);
+
 
             // Gets date as string
             String sDate = (selectedDate.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.ENGLISH))

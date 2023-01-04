@@ -19,7 +19,7 @@ public class BreakScreen2 extends AppCompatActivity {
         meditateButton = findViewById(R.id.meditateButton);
 
         backButton.setOnClickListener(view -> {
-            Intent intent = new Intent(this, question5.class);
+            Intent intent = new Intent(this, menu.class);
             startActivity(intent);
         });
 

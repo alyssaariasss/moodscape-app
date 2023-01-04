@@ -16,6 +16,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Puhon_sample">
         <activity
+            android:name=".MCFocus1"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MCAnxiety2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MCAnxiety1"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".goals"
             android:exported="false">
             <meta-data
@@ -40,15 +61,15 @@
             android:exported="false" />
         <activity
             android:name=".questions"
-            android:exported="false"></activity> <!-- <activity android:name=".question_2" /> -->
+            android:exported="false" /> <!-- <activity android:name=".question_2" /> -->
         <activity android:name=".question2" />
         <activity android:name=".question3" />
         <activity
             android:name=".question4"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".question5"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity android:name=".feelings" />
         <activity android:name=".settings" /> <!-- <activity android:name=".choices" /> -->
         <activity android:name=".moods" />
@@ -63,7 +84,7 @@
         </activity>
         <activity
             android:name=".login"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".register"
             android:exported="false" />

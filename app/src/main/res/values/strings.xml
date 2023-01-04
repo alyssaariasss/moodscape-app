@@ -79,4 +79,5 @@
     <string name="hi_user">Hi User!</string>
     <string name="_10_00_pm">10:00 PM</string>
     <string name="add_goals">ADD GOALS</string>
+    <string name="done">DONE</string>
 </resources>

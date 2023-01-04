@@ -39,53 +39,121 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="80dp"
             android:layout_margin="30dp"
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingStart="5dp"
             android:paddingEnd="5dp"
-            android:weightSum="4">
+            android:weightSum="4.5">
 
-            <ImageView
-                android:id="@+id/mc_relax"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_weight="1.3"
-                android:layout_gravity="center"
-                android:src="@drawable/relax_choice" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_weight="1.1">
 
-            <ImageView
-                android:id="@+id/mc_focus"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_weight="1.3"
-                android:layout_gravity="center"
-                android:src="@drawable/focus_choice" />
+                <ImageView
+                    android:id="@+id/mc_relax"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/relax_choice" />
 
-            <ImageView
-                android:id="@+id/mc_anxiety"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_weight="1.3"
-                android:layout_gravity="center"
-                android:src="@drawable/anxiety_choice" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="relax"
+                    android:textSize="16sp"
+                    android:textColor="@color/dark_gray"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/sourcesanspro_regular"/>
+            </LinearLayout>
 
-            <ImageView
-                android:id="@+id/mc_stress"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_weight="1.3"
-                android:layout_gravity="center"
-                android:src="@drawable/stress_choice" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_weight="1.1">
+
+                <ImageView
+                    android:id="@+id/mc_focus"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/focus_choice" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="focus"
+                    android:textSize="16sp"
+                    android:textColor="@color/dark_gray"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/sourcesanspro_regular"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_weight="1.1">
+
+                <ImageView
+                    android:id="@+id/mc_anxiety"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/anxiety_choice" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="anxiety"
+                    android:textSize="16sp"
+                    android:textColor="@color/dark_gray"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/sourcesanspro_regular"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_weight="1.1">
+
+                <ImageView
+                    android:id="@+id/mc_stress"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/stress_choice" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="stress"
+                    android:textSize="16sp"
+                    android:textColor="@color/dark_gray"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/sourcesanspro_regular"/>
+            </LinearLayout>
+
+
+
 
         </LinearLayout>
+
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout="@layout/fragment_relax" />
+            tools:layout="@layout/fragment_focus" />
     </RelativeLayout>
 
     <!--    Navbar Buttons  -->
@@ -151,12 +219,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </LinearLayout>
-
+    
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="168dp" />
+        app:layout_constraintGuide_begin="167dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

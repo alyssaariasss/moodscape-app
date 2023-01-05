@@ -72,13 +72,7 @@ public class FragmentToday extends Fragment implements DialogCloseListener {
         InitializeRecyclerView();
         RetrieveGoals();
 
-        buttonAddNewGoals.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                AddNewGoal.newInstance().show(getParentFragmentManager() , AddNewGoal.TAG);
-            }
-        });
+        buttonAddNewGoals.setOnClickListener(v -> AddNewGoal.newInstance().show(getParentFragmentManager() , AddNewGoal.TAG));
 
         return view;
     }

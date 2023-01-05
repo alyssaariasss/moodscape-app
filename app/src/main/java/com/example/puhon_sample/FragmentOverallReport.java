@@ -44,9 +44,11 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
     String id, qDate, currentMonth, nextMonth;
     DatabaseReference ref;
     UserAnswers userAnswers;
+    UserMoods userMoods;
 
     MyAdapter myAdapter;
     ArrayList<UserAnswers> list1;
+    ArrayList<UserMoods> list2;
     RecyclerView AnswerOne;
 
     CustomCalendar customCalendar;
@@ -68,9 +70,10 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
         selectedDateText = view.findViewById(R.id.selectedDateText);
         overallReportTitle = view.findViewById(R.id.overallReportTitle);
 
-        // For Questions
+        // For moods and Questions
         AnswerOne = view.findViewById(R.id.answerOne);
         userAnswers = new UserAnswers();
+        userMoods = new UserMoods();
 
         // Sets pop up card to be invisible once layout is built
         selectedDateCard.setVisibility(View.INVISIBLE);
@@ -120,7 +123,7 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
             qDate = day + "/" +
                     selectedDate.getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale.ENGLISH)
                     + "/" + selectedDate.get(Calendar.YEAR);
-            System.out.println(qDate);
+
 
                     ValueEventListener valueEventListener = new ValueEventListener() {
                         @Override
@@ -141,13 +144,45 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
 
                         }
                     };
+            //questions
             ref.addListenerForSingleValueEvent(valueEventListener);
             Query query = ref.orderByChild("date").equalTo(qDate);
             query.addListenerForSingleValueEvent(valueEventListener);
+
             AnswerOne.setHasFixedSize(true);
             AnswerOne.setLayoutManager(new GridLayoutManager(getActivity(), 1));
             list1 = new ArrayList<>();
-            myAdapter = new MyAdapter(this, list1);
+            myAdapter = new MyAdapter(this, list1, list2);
+            AnswerOne.setAdapter(myAdapter);
+
+            ValueEventListener valueEventListener1 = new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    list2.clear();
+                    if (snapshot.exists()) {
+                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                            UserMoods userMoods = dataSnapshot.getValue(UserMoods.class);
+                            list2.add(userMoods);
+                        }
+                        myAdapter.notifyDataSetChanged();
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            };
+            //moods
+            reference.addListenerForSingleValueEvent(valueEventListener1);
+            Query query1 = reference.orderByChild("date").equalTo(qDate);
+            query1.addListenerForSingleValueEvent(valueEventListener1);
+
+            AnswerOne.setHasFixedSize(true);
+            AnswerOne.setLayoutManager(new GridLayoutManager(getActivity(), 1));
+            list2 = new ArrayList<>();
+            myAdapter = new MyAdapter(this, list1, list2);
             AnswerOne.setAdapter(myAdapter);
 
         });

@@ -67,7 +67,7 @@
                 android:id="@+id/selectedDateCard"
                 android:layout_width="330dp"
                 android:layout_height="100dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="@color/dirty_cream"
                 app:cardCornerRadius="25dp"
@@ -77,7 +77,7 @@
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/overallReportCard"
-                app:layout_constraintVertical_bias="0.094">
+                app:layout_constraintVertical_bias="0.044">
 
             </androidx.cardview.widget.CardView>
 

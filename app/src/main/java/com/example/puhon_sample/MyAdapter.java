@@ -16,11 +16,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     FragmentOverallReport context1;
     ArrayList<UserAnswers> list1;
+    ArrayList<UserMoods> list2;
 
 
-    public MyAdapter(FragmentOverallReport context1, ArrayList<UserAnswers> list1) {
+    public MyAdapter(FragmentOverallReport context1, ArrayList<UserAnswers> list1,
+                     ArrayList<UserMoods> list2) {
         this.context1 = context1;
         this.list1 = list1;
+        this.list2 = list2;
     }
 
     @NonNull
@@ -41,17 +44,22 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.AnswerList4.setText(String.valueOf(userAnswers.getUserQuestion4()));
         holder.AnswerList5.setText(String.valueOf(userAnswers.getUserQuestion5()));
 
+        UserMoods userMoods = list2.get(position);
+        holder.MoodList.setText(String.valueOf(userMoods.getMood()));
+        //holder.MoodList.setText(userMoods.getMood());
+
     }
 
     @Override
     public int getItemCount() {
         return list1.size();
+
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView AnswerList1, AnswerList2_1, AnswerList2_2, AnswerList3,
-                AnswerList4, AnswerList5;
+                AnswerList4, AnswerList5, MoodList;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -62,6 +70,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             AnswerList3 = itemView.findViewById(R.id.answerList3);
             AnswerList4 = itemView.findViewById(R.id.answerList4);
             AnswerList5 = itemView.findViewById(R.id.answerList5);
+            MoodList = itemView.findViewById(R.id.moodList);
         }
     }
 

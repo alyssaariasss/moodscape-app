@@ -99,6 +99,8 @@
             android:name=".splash"
             android:exported="false" />
 
+        <receiver android:name=".ReminderNotification" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

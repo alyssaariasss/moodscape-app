@@ -25,7 +25,7 @@
         android:id="@+id/focus1_design"
         android:layout_width="280dp"
         android:layout_height="230dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="65dp"
         android:src="@drawable/focus1_design"
         app:layout_constraintEnd_toEndOf="@+id/title3"
         app:layout_constraintStart_toStartOf="@+id/title3"
@@ -35,7 +35,7 @@
         android:id="@+id/focus1_desc"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="260dp"
         android:fontFamily="@font/sourcesanspro_regular"
         android:text="Try taking a stroll for 10 minutes. If you’re already outside, press the timer and start walking around."
         android:textAlignment="center"
@@ -60,8 +60,39 @@
         app:layout_constraintStart_toStartOf="@+id/focus1_desc"
         app:layout_constraintTop_toTopOf="@+id/focus1_desc" />
 
+
+    <Button
+        android:id="@+id/focus_timer_reset"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round_btn3"
+        android:elevation="5dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
+        android:gravity="center"
+        android:stateListAnimator="@null"
+        android:text="RESET"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/focus_timer_done"
+        app:layout_constraintEnd_toEndOf="@+id/focus1_desc" />
+
     <Button
         android:id="@+id/focus_timer_start"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round_btn3"
+        android:elevation="5dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
+        android:gravity="center"
+        android:stateListAnimator="@null"
+        android:text="START"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/focus_timer_done"
+        app:layout_constraintStart_toStartOf="@+id/focus1_desc" />
+
+    <Button
+        android:id="@+id/focus_timer_done"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
@@ -70,10 +101,13 @@
         android:fontFamily="@font/sourcesanspro_semibold"
         android:gravity="center"
         android:stateListAnimator="@null"
-        android:text="START"
+        android:text="DONE"
         android:textSize="22sp"
+        android:visibility="visible"
+        app:backgroundTint="@color/canary"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
         app:layout_constraintEnd_toEndOf="@+id/focus1_timer"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="@+id/focus1_timer" />
 
     <LinearLayout

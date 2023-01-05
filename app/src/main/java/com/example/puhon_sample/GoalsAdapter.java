@@ -72,11 +72,6 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.GoalsViewHol
         return fragmentToday;
     }
 
-    public void setTasks(ArrayList<UserGoals> userGoals) {
-        this.UserGoals = userGoals;
-        notifyDataSetChanged();
-    }
-
     public static void editItem(int position) {
         UserGoals userGoals = UserGoals.get(position);
         Bundle bundle = new Bundle();

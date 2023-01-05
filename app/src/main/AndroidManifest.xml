@@ -90,6 +90,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".relax_music"
+            android:exported="false" />
+        <activity
             android:name=".login"
             android:exported="false" />
         <activity

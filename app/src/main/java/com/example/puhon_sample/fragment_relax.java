@@ -37,7 +37,7 @@ public class fragment_relax extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getActivity(), MCAnxiety2.class);
+                Intent intent = new Intent(getActivity(), relax_exercise.class);
                 startActivity(intent);
             }
         });

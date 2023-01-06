@@ -80,7 +80,7 @@ public class menu extends AppCompatActivity {
 
         btn_meditate.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, questions.class);
+            Intent intent = new Intent(this, Meditation.class);
             startActivity(intent);
         });
 

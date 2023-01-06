@@ -139,11 +139,15 @@ public class relax_music extends AppCompatActivity {
             }
         });
 
-        Done.setOnClickListener(v -> {
-            mediaPlayer.stop();
-            Intent intent = new Intent(this, fragment_relax.class);
-            startActivity(intent);
+        Done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.stop();
+                startActivity(new Intent(getApplicationContext(), Meditation.class));
+                finish();
+            }
         });
+
     }
 
     // created a section for all the names

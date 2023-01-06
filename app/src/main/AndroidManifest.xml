@@ -38,10 +38,12 @@
         </activity>
         <activity
             android:name=".goals"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
@@ -82,12 +84,7 @@
         <activity android:name=".moods" />
         <activity
             android:name=".menu"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
         <activity
             android:name=".relax_music"
@@ -104,6 +101,8 @@
         <activity
             android:name=".splash"
             android:exported="false" />
+
+        <receiver android:name=".ReminderNotification" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -1,19 +1,27 @@
 package com.example.puhon_sample;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class MCFocus1 extends AppCompatActivity {
 
+    public static final long START_TIME_IN_MILLIS = 6000;
+
     TextView focusTimer;
-    Button focusTimerStart;
+    Button focusTimerStart, focusTimerReset, focusTimerDone;
     CountDownTimer countDownTimer;
-    long timeLeftInMilliseconds = 600000; // 10 minutes
+    long timeLeftInMillis;
+    long endTime;
     boolean timerRunning;
 
     @Override
@@ -24,64 +32,154 @@ public class MCFocus1 extends AppCompatActivity {
 
         focusTimer = findViewById(R.id.focus1_timer);
         focusTimerStart = findViewById(R.id.focus_timer_start);
+        focusTimerReset = findViewById(R.id.focus_timer_reset);
+        focusTimerDone = findViewById(R.id.focus_timer_done);
+
+        focusTimerDone.setVisibility(View.INVISIBLE);
+        focusTimerDone.postDelayed(new Runnable() {
+            public void run() {
+                focusTimerDone.setVisibility(View.VISIBLE);
+            }
+        }, 60000);
+
+        focusTimerDone.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, Meditation.class);
+            startActivity(intent);
+        });
 
         focusTimerStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startStop();
+                if(timerRunning) {
+                    pauseTimer();
+                }
+                else {
+                    startTimer();
+                }
             }
         });
 
-        updateTimer();
-    }
+        focusTimerReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetTimer();
+            }
+        });
 
-    public void startStop() {
-        if(timerRunning) {
-            stopTimer();
-        }
-        else {
-            startTimer();
-        }
     }
 
     public void startTimer() {
-        countDownTimer = new CountDownTimer(timeLeftInMilliseconds, 1000) {
+        endTime = System.currentTimeMillis() + timeLeftInMillis;
+
+        countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                timeLeftInMilliseconds = millisUntilFinished;
+                timeLeftInMillis = millisUntilFinished;
                 updateTimer();
             }
 
             @Override
             public void onFinish() {
-
+                timerRunning = false;
+                focusTimerDone.setVisibility(View.VISIBLE);
+                updateButtons();
             }
         }.start();
 
-        focusTimerStart.setText("PAUSE");
         timerRunning = true;
-
+        updateButtons();
     }
 
-    public void stopTimer() {
+    public void pauseTimer() {
         countDownTimer.cancel();
-        focusTimerStart.setText("START");
         timerRunning = false;
+        updateButtons();
+    }
+
+    public void resetTimer() {
+        timeLeftInMillis = START_TIME_IN_MILLIS;
+        updateTimer();
+        updateButtons();
     }
 
     public void updateTimer() {
-        int minutes = (int) timeLeftInMilliseconds / 60000;
-        int seconds = (int) timeLeftInMilliseconds % 60000 / 1000;
+        int minutes = (int) (timeLeftInMillis / 1000) / 60;
+        int seconds = (int) (timeLeftInMillis / 1000) % 60;
 
-        String timeLeftText;
+        String timeLeftFormatted = String.format(Locale.getDefault(),"%02d:%02d", minutes, seconds);
 
-        timeLeftText = "" + minutes;
-        timeLeftText += ":";
-        if (seconds < 10) timeLeftText += "0";
-        timeLeftText += seconds;
+        focusTimer.setText(timeLeftFormatted);
+    }
 
-        focusTimer.setText(timeLeftText);
+    public void updateButtons() {
+        if (timerRunning) {
+            focusTimerReset.setVisibility(View.INVISIBLE);
+            focusTimerStart.setText("PAUSE");
+        }
+        else {
+            focusTimerStart.setText("START");
 
+            if (timeLeftInMillis < 1000) {
+                focusTimerStart.setVisibility(View.INVISIBLE);
+            }
+            else {
+                focusTimerStart.setVisibility(View.VISIBLE);
+            }
 
+            if (timeLeftInMillis < START_TIME_IN_MILLIS) {
+                focusTimerReset.setVisibility(View.VISIBLE);
+            }
+            else {
+                focusTimerReset.setVisibility(View.INVISIBLE);
+            }
+        }
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        SharedPreferences preferences = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+
+        editor.putLong("millisLeft", timeLeftInMillis);
+        editor.putBoolean("timerRunning", timerRunning);
+        editor.putLong("endTime", endTime);
+
+        editor.apply();
+
+        if (countDownTimer != null) {
+            countDownTimer.cancel();
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        SharedPreferences preferences = getSharedPreferences("prefs", MODE_PRIVATE);
+
+        timeLeftInMillis = preferences.getLong("millisLeft", START_TIME_IN_MILLIS);
+        timerRunning = preferences.getBoolean("timerRunning", false);
+
+        updateTimer();
+        updateButtons();
+
+        if (timerRunning) {
+            endTime = preferences.getLong("endTime", 0);
+            timeLeftInMillis = endTime - System.currentTimeMillis();
+
+            if (timeLeftInMillis < 0){
+                timeLeftInMillis = 0;
+                timerRunning = false;
+                updateTimer();
+                updateButtons();
+            }
+            else {
+                startTimer();
+            }
+        }
     }
 }

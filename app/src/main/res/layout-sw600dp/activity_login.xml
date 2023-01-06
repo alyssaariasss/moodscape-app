@@ -7,7 +7,6 @@
     android:background="@color/white"
     tools:context=".login">
 
-
     <ImageView
         android:id="@+id/undraw_begin"
         android:layout_width="327dp"

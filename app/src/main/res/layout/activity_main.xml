@@ -23,7 +23,7 @@
         app:srcCompat="@drawable/undraw_meditation" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/welcomeTitle"
         android:layout_width="274dp"
         android:layout_height="50dp"
         android:fontFamily="@font/ubuntu_bold"
@@ -44,7 +44,7 @@
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/welcomeSubtitle"
         android:layout_width="274dp"
         android:layout_height="50dp"
         android:fontFamily="@font/sourcesanspro_regular"
@@ -82,7 +82,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTitle"
         app:layout_constraintVertical_bias="0.358"
         tools:ignore="TextContrastCheck" />
 

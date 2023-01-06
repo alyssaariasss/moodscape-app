@@ -4,90 +4,125 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BreakScreen1">
-
-    <ImageView
-        android:id="@+id/breakscreen1"
-        android:layout_width="300dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/undraw_breakscreen1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".MCFocus1">
 
     <TextView
-        android:id="@+id/breakscreenTagline"
-        android:layout_width="wrap_content"
+        android:id="@+id/title3"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="Take a moment to\nprocess your thoughts!"
-        android:textAlignment="center"
-        android:textColor="@color/dark_gray"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="@+id/breakscreen1"
-        app:layout_constraintStart_toStartOf="@+id/breakscreen1"
-        app:layout_constraintTop_toTopOf="@+id/breakscreen1" />
-
-    <TextView
-        android:id="@+id/breakscreenTagline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="45dp"
         android:fontFamily="@font/sourcesanspro_regular"
-        android:text="press next to continue"
+        android:text="If you are currently going through a rough spot, try spending some time outside and taking a walk."
         android:textAlignment="center"
         android:textColor="@color/dark_gray"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/breakscreenTagline"
-        app:layout_constraintStart_toStartOf="@+id/breakscreenTagline"
-        app:layout_constraintTop_toTopOf="@+id/breakscreenTagline" />
-
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="280dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/round_btn3"
-        android:elevation="5dp"
-        android:fontFamily="@font/sourcesanspro_semibold"
-        android:stateListAnimator="@null"
-        android:text="Back"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        app:backgroundTint="@color/canary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/breakscreenTagline2" />
-
-    <Button
-        android:id="@+id/continueButton"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/round_btn3"
-        android:elevation="5dp"
-        android:fontFamily="@font/sourcesanspro_semibold"
-        android:stateListAnimator="@null"
-        android:text="Continue"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        app:backgroundTint="@color/dark_pink"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
-        app:layout_constraintStart_toEndOf="@+id/backButton"
-        app:layout_constraintTop_toTopOf="@+id/backButton" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/focus1_design"
+        android:layout_width="230dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="52dp"
+        android:src="@drawable/focus1_design"
+        app:layout_constraintEnd_toEndOf="@+id/title3"
+        app:layout_constraintStart_toStartOf="@+id/title3"
+        app:layout_constraintTop_toTopOf="@+id/title3" />
+
+    <TextView
+        android:id="@+id/focus1_desc"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="216dp"
+        android:fontFamily="@font/sourcesanspro_regular"
+        android:text="Try taking a stroll for 10 minutes. If you’re already outside, press the timer and start walking around."
+        android:textAlignment="center"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/focus1_design" />
+
+
+    <TextView
+        android:id="@+id/focus1_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:gravity="center"
+        android:text="1 0 : 0 0"
+        android:textColor="@color/dark_gray"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="@+id/focus1_desc"
+        app:layout_constraintStart_toStartOf="@+id/focus1_desc"
+        app:layout_constraintTop_toTopOf="@+id/focus1_desc" />
+
+    <Button
+        android:id="@+id/focus_timer_reset"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/round_btn3"
+        android:elevation="5dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
+        android:gravity="center"
+        android:stateListAnimator="@null"
+        android:text="RESET"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/focus_timer_done"
+        app:layout_constraintEnd_toEndOf="@+id/focus1_desc" />
+
+    <Button
+        android:id="@+id/focus_timer_start"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/round_btn3"
+        android:elevation="5dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
+        android:gravity="center"
+        android:stateListAnimator="@null"
+        android:text="START"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/focus_timer_done"
+        app:layout_constraintStart_toStartOf="@+id/focus1_desc" />
+
+    <Button
+        android:id="@+id/focus_timer_done"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/round_btn3"
+        android:elevation="5dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
+        android:gravity="center"
+        android:stateListAnimator="@null"
+        android:text="DONE"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:backgroundTint="@color/canary"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toEndOf="@+id/focus1_timer"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="@+id/focus1_timer" />
 
     <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:background="@color/white"
+        android:elevation="5dp"
         android:orientation="horizontal"
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
         android:weightSum="4"
-        android:elevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -140,6 +175,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

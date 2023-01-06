@@ -4,84 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".moods">
+    tools:context=".MCAnxiety1">
 
     <TextView
-        android:id="@+id/ChoiceTagline"
-        android:layout_width="wrap_content"
+        android:id="@+id/title1"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/sourcesanspro_semibold"
-        android:gravity="center"
-        android:text="@string/mood_title"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/sourcesanspro_regular"
+        android:text="Increase your self-love and reaffirm yourself today through this quote. "
         android:textAlignment="center"
         android:textColor="@color/dark_gray"
-        android:textSize="42sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/moodView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/angry_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ChoiceTagline" />
 
-    <com.google.android.material.slider.Slider
-        android:id="@+id/slider"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="500dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="40dp"
-        android:contentDescription="@string/mood"
-        android:stepSize="1"
-        android:value="0"
-        android:valueFrom="0"
-        android:valueTo="5"
-        app:labelBehavior="gone"
-        app:layout_constraintEnd_toEndOf="@+id/moodView"
-        app:layout_constraintStart_toStartOf="@+id/moodView"
-        app:layout_constraintTop_toBottomOf="@+id/moodView"
-        app:thumbColor="@color/canary"
-        app:trackColor="#50FFC461" />
+        android:layout_marginTop="200dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:lineSpacingExtra="10sp"
+        android:text='"I AM ALLOWED TO MAKE A BIG DEAL OUT OF THINGS THAT FEEL REALLY BIG TO ME"'
+        android:textAlignment="center"
+        android:textColor="@color/coral"
+        android:textSize="42sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/anxiety1_design"
+        android:layout_width="500dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="280dp"
+        android:src="@drawable/anxiety1_design"
+        app:layout_constraintEnd_toEndOf="@+id/title2"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="@+id/title2"
+        app:layout_constraintTop_toTopOf="@+id/title2" />
 
     <Button
-        android:id="@+id/ChoiceButton"
-        android:layout_width="320dp"
-        android:layout_height="50dp"
-        android:background="@drawable/round_btn"
+        android:id="@+id/mc_doneBtn"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
         android:gravity="center"
         android:stateListAnimator="@null"
-        android:text="@string/select"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/nav_progress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/slider"
-        app:layout_constraintVertical_bias="0.388" />
+        android:text="@string/done"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/anxiety1_design"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/anxiety1_design"
+        app:layout_constraintTop_toTopOf="@+id/anxiety1_design" />
 
     <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:background="@color/white"
+        android:elevation="5dp"
         android:orientation="horizontal"
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
         android:weightSum="4"
-        android:elevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -135,5 +130,6 @@
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
 
+
+</androidx.constraintlayout.widget.ConstraintLayout>

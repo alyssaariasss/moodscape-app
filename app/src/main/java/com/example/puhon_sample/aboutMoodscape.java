@@ -4,25 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-public class MCAnxiety1 extends AppCompatActivity {
-
+public class aboutMoodscape extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mcanxiety1);
+        setContentView(R.layout.activity_about_moodscape);
 
-
-        Button mcButtonDone = findViewById(R.id.mc_doneBtn);
-
-        mcButtonDone.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, Meditation.class);
-            startActivity(intent);
-        });
 
         // NavBar Buttons
 
@@ -55,6 +45,5 @@ public class MCAnxiety1 extends AppCompatActivity {
             Intent intent = new Intent(this, settings.class);
             startActivity(intent);
         });
-
     }
 }

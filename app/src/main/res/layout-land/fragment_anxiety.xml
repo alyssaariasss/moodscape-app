@@ -153,7 +153,7 @@
                             android:id="@+id/anxiety2_desc"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="It helps you clear and calm your mind. Focus on what’s important and that is yourself."
+                            android:text="It helps you clear and calm your mind. Focus on what’s really important and that is yourself."
                             android:textSize="14sp"
                             android:textColor="@color/dark_gray"/>
 

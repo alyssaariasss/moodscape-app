@@ -18,6 +18,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Puhon_sample">
         <activity
+            android:name=".aboutMoodscape"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MCFocus1"
             android:exported="false">
             <meta-data
@@ -40,13 +47,7 @@
         </activity>
         <activity
             android:name=".goals"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
@@ -66,7 +67,6 @@
         </activity>
         <activity android:name=".Meditation" />
         <activity android:name=".sample_activity" />
-        <activity android:name=".retrieveFeelings" />
         <activity
             android:name=".summary"
             android:exported="false" />
@@ -81,12 +81,16 @@
         <activity
             android:name=".question5"
             android:exported="false" />
-        <activity android:name=".feelings" />
         <activity android:name=".settings" /> <!-- <activity android:name=".choices" /> -->
         <activity android:name=".moods" />
         <activity
             android:name=".menu"
-            android:exported="false">
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".relax_music"

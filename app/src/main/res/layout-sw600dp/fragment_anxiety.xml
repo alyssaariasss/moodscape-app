@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:text="Reducing Anxiousness"
                 android:fontFamily="@font/sourcesanspro_semibold"
-                android:textSize="24sp"
+                android:textSize="32sp"
                 android:textColor="@color/dark_gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -31,22 +31,22 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/anxiety1"
-                android:layout_width="350dp"
-                android:layout_height="100dp"
+                android:layout_width="500dp"
+                android:layout_height="120dp"
                 android:backgroundTint="@color/dirty_cream"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="15dp"
                 app:cardElevation="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.491"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/fragment_title"
-                app:layout_constraintVertical_bias="0.160">
+                app:layout_constraintVertical_bias="0.200">
 
                 <LinearLayout
                     android:id="@+id/linearLayoutMC"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="18dp"
                     android:layout_marginBottom="5dp"
                     android:elevation="6dp"
@@ -58,16 +58,16 @@
 
                     <ImageView
                         android:id="@+id/anxiety1_image"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="50dp"
                         android:layout_marginTop="15dp"
                         android:src="@drawable/anxiety_note" />
 
                     <LinearLayout
-                        android:layout_width="250dp"
+                        android:layout_width="300dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
+                        android:layout_marginStart="30dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -77,7 +77,7 @@
                             android:fontFamily="@font/sourcesanspro_bold"
                             android:text="Love Yourself"
                             android:textColor="@color/dark_gray"
-                            android:textSize="20sp" />
+                            android:textSize="26sp" />
 
                         <TextView
                             android:id="@+id/anxiety1_desc"
@@ -85,15 +85,15 @@
                             android:layout_height="wrap_content"
                             android:text="Making a time to appreciate yourself is important. Tell yourself you love you."
                             android:textColor="@color/dark_gray"
-                            android:textSize="14sp" />
+                            android:textSize="16sp" />
 
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginEnd="15dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="30dp"
                         android:src="@drawable/arrow_forward" />
 
                 </LinearLayout>
@@ -102,11 +102,11 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/anxiety2"
-                android:layout_width="350dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="125dp"
+                android:layout_width="500dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="150dp"
                 android:backgroundTint="@color/dirty_cream"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="15dp"
                 app:cardElevation="5dp"
                 app:layout_constraintEnd_toEndOf="@+id/anxiety1"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -115,8 +115,8 @@
 
                 <LinearLayout
                     android:id="@+id/linearLayoutMC1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="5dp"
                     android:elevation="6dp"
@@ -128,15 +128,15 @@
 
                     <ImageView
                         android:id="@+id/anxiety2_image"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="50dp"
                         android:src="@drawable/anxiety_spiral"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="15dp"/>
+                        android:layout_marginTop="20dp"/>
 
                     <LinearLayout
-                        android:layout_marginStart="15dp"
-                        android:layout_width="250dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical" >
 
@@ -147,23 +147,23 @@
                             android:text="Take a Deep Breath"
                             android:fontFamily="@font/sourcesanspro_bold"
                             android:textColor="@color/dark_gray"
-                            android:textSize="20sp"/>
+                            android:textSize="26sp"/>
 
                         <TextView
                             android:id="@+id/anxiety2_desc"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="It helps you clear and calm your mind. Focus on what’s important and that is yourself."
-                            android:textSize="14sp"
+                            android:textSize="16sp"
                             android:textColor="@color/dark_gray"/>
 
                     </LinearLayout>
 
                     <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_marginTop="30dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
                         android:src="@drawable/arrow_forward"/>
 
                 </LinearLayout>

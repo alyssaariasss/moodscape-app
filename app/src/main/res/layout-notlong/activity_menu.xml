@@ -44,143 +44,225 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/mood_button"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/for_moods"
         android:layout_width="350dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="140dp"
-        android:background="@drawable/menu_choice_button"
-        android:elevation="5dp"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:paddingLeft="20dp"
-        android:stateListAnimator="@null"
-        android:text="how are you\nfeeling today?"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:textColor="#4A5759"
-        android:textSize="20sp"
-        app:backgroundTint="@color/dirty_cream"
+        android:layout_height="80dp"
+        android:backgroundTint="@color/dirty_cream"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toTopOf="@+id/dash_lines">
 
-    <Button
-        android:id="@+id/goals_button"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:weightSum="2.5">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:paddingStart="25dp"
+                android:text="how are you\nfeeling today?"
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1.5"
+                android:src="@drawable/menu1" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/for_goals"
         android:layout_width="350dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="110dp"
-        android:background="@drawable/menu_choice_button"
-        android:elevation="5dp"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:paddingRight="20dp"
-        android:stateListAnimator="@null"
-        android:text="what are your\ngoals for today?"
-        android:textAlignment="textEnd"
-        android:textAllCaps="false"
-        android:textColor="#4A5759"
-        android:textSize="20sp"
-        app:backgroundTint="@color/dirty_cream"
-        app:layout_constraintEnd_toEndOf="@+id/mood_button"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/mood_button"
-        app:layout_constraintTop_toTopOf="@+id/mood_button"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:layout_height="80dp"
+        android:backgroundTint="@color/dirty_cream"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="5dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/for_moods">
 
-    <Button
-        android:id="@+id/meditate_button"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:weightSum="2.5">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1.5"
+                android:src="@drawable/menu2" />
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:paddingEnd="25dp"
+                android:text="what are your\ngoals for today?"
+                android:textAlignment="textEnd"
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/for_meditation"
         android:layout_width="350dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="110dp"
-        android:background="@drawable/menu_choice_button"
-        android:elevation="5dp"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:paddingLeft="20dp"
-        android:stateListAnimator="@null"
-        android:text="let's start\nmeditation here"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:textColor="#4A5759"
-        android:textSize="20sp"
-        app:backgroundTint="@color/dirty_cream"
-        app:layout_constraintEnd_toEndOf="@+id/goals_button"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/goals_button"
-        app:layout_constraintTop_toTopOf="@+id/goals_button"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:layout_height="80dp"
+        android:backgroundTint="@color/dirty_cream"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="5dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/for_goals">
 
-    <Button
-        android:id="@+id/progress_button"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:weightSum="2.5">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:paddingStart="25dp"
+                android:text="let's start\nmeditation here"
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="100dp"
+                android:layout_weight="1.5"
+                android:paddingBottom="32dp"
+                android:src="@drawable/menu3" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/for_summary"
         android:layout_width="350dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="110dp"
-        android:background="@drawable/menu_choice_button"
-        android:elevation="5dp"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:paddingRight="20dp"
-        android:stateListAnimator="@null"
-        android:text="track your\nsummary here"
-        android:textAlignment="textEnd"
-        android:textAllCaps="false"
-        android:textColor="#4A5759"
-        android:textSize="20sp"
-        app:backgroundTint="@color/dirty_cream"
-        app:layout_constraintEnd_toEndOf="@+id/meditate_button"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/meditate_button"
-        app:layout_constraintTop_toTopOf="@+id/meditate_button"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:layout_height="80dp"
+        android:backgroundTint="@color/dirty_cream"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="5dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/for_meditation">
 
-    <ImageButton
-        android:id="@+id/nav_home"
-        android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:weightSum="2.5">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="9dp"
+                android:layout_weight="1.5"
+                android:src="@drawable/menu4" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:paddingEnd="25dp"
+                android:text="track your\nsummary here"
+                android:textAlignment="textEnd"
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="20dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_home"
-        android:translationZ="0dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:weightSum="4"
+        android:elevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <ImageButton
-        android:id="@+id/nav_about_mood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="106dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_info"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_home"
-        app:layout_constraintStart_toStartOf="@+id/nav_home"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        <ImageButton
+            android:id="@+id/nav_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_home"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/progressCard"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <ImageButton
-        android:id="@+id/nav_progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_stats"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
-        app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        <ImageButton
+            android:id="@+id/nav_about_mood"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_info"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nav_home"
+            app:layout_constraintStart_toStartOf="@+id/nav_home"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-    <ImageButton
-        android:id="@+id/nav_settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/nav_settings"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
-        app:layout_constraintStart_toStartOf="@+id/nav_progress"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        <ImageButton
+            android:id="@+id/nav_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_stats"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
+            app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
+        <ImageButton
+            android:id="@+id/nav_settings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_settings"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

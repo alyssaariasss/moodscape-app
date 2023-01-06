@@ -38,10 +38,13 @@ public class Meditation extends AppCompatActivity {
         mc_anxiety.setOnClickListener(view -> selectTab(3));
         mc_stress.setOnClickListener(view -> selectTab(4));
 
-
         // NavBar Buttons
 
         ImageButton btn_home = findViewById(R.id.nav_home);
+        ImageButton btn_info = findViewById(R.id.nav_about_mood);
+        ImageButton btn_progress = findViewById(R.id.nav_progress);
+        ImageButton btn_settings = findViewById(R.id.nav_settings);
+
 
         btn_home.setOnClickListener(v -> {
 
@@ -49,23 +52,17 @@ public class Meditation extends AppCompatActivity {
             startActivity(intent);
         });
 
-        ImageButton btn_info = findViewById(R.id.nav_about_mood);
-
         btn_info.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, BreakScreen1.class);
+            Intent intent = new Intent(this, aboutMoodscape.class);
             startActivity(intent);
         });
-
-        ImageButton btn_progress = findViewById(R.id.nav_progress);
 
         btn_progress.setOnClickListener(v -> {
 
             Intent intent = new Intent(this, summary.class);
             startActivity(intent);
         });
-
-        ImageButton btn_settings = findViewById(R.id.nav_settings);
 
         btn_settings.setOnClickListener(v -> {
 

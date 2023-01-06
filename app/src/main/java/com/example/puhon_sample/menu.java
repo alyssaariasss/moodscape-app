@@ -2,6 +2,7 @@ package com.example.puhon_sample;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,6 +33,7 @@ public class menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        // getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         fAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -60,33 +63,32 @@ public class menu extends AppCompatActivity {
         
         // Main Menu Buttons
 
-        Button btn_mood = findViewById(R.id.mood_button);
+        CardView menu1 = findViewById(R.id.for_moods);
+        CardView menu2 = findViewById(R.id.for_goals);
+        CardView menu3 = findViewById(R.id.for_meditation);
+        CardView menu4 = findViewById(R.id.for_summary);
 
-        btn_mood.setOnClickListener(v -> {
+        menu1.setOnClickListener(v -> {
 
             Intent intent = new Intent(this, moods.class);
             startActivity(intent);
         });
 
-        Button btn_goals = findViewById(R.id.goals_button);
-
-        btn_goals.setOnClickListener(v -> {
+        menu2.setOnClickListener(v -> {
 
             Intent intent = new Intent(this, goals.class);
             startActivity(intent);
         });
 
-        Button btn_meditate = findViewById(R.id.meditate_button);
 
-        btn_meditate.setOnClickListener(v -> {
+        menu3.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, questions.class);
+            Intent intent = new Intent(this, Meditation.class);
             startActivity(intent);
         });
 
-        Button btn_summary = findViewById(R.id.progress_button);
 
-        btn_summary.setOnClickListener(v -> {
+        menu4.setOnClickListener(v -> {
 
             Intent intent = new Intent(this, summary.class);
             startActivity(intent);
@@ -94,31 +96,22 @@ public class menu extends AppCompatActivity {
 
         // NavBar Buttons
 
-        ImageButton btn_home = findViewById(R.id.nav_home);
-
-        btn_home.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, menu.class);
-            startActivity(intent);
-        });
-
         ImageButton btn_info = findViewById(R.id.nav_about_mood);
+        ImageButton btn_progress = findViewById(R.id.nav_progress);
+        ImageButton btn_settings = findViewById(R.id.nav_settings);
+
 
         btn_info.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, Meditation.class);
+            Intent intent = new Intent(this, aboutMoodscape.class);
             startActivity(intent);
         });
-
-        ImageButton btn_progress = findViewById(R.id.nav_progress);
 
         btn_progress.setOnClickListener(v -> {
 
             Intent intent = new Intent(this, summary.class);
             startActivity(intent);
         });
-
-        ImageButton btn_settings = findViewById(R.id.nav_settings);
 
         btn_settings.setOnClickListener(v -> {
 

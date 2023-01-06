@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.Locale;
@@ -65,6 +66,38 @@ public class MCFocus1 extends AppCompatActivity {
             public void onClick(View v) {
                 resetTimer();
             }
+        });
+
+        // NavBar Buttons
+
+        ImageButton btn_home = findViewById(R.id.nav_home);
+        ImageButton btn_info = findViewById(R.id.nav_about_mood);
+        ImageButton btn_progress = findViewById(R.id.nav_progress);
+        ImageButton btn_settings = findViewById(R.id.nav_settings);
+
+
+        btn_home.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, menu.class);
+            startActivity(intent);
+        });
+
+        btn_info.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, aboutMoodscape.class);
+            startActivity(intent);
+        });
+
+        btn_progress.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, summary.class);
+            startActivity(intent);
+        });
+
+        btn_settings.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, settings.class);
+            startActivity(intent);
         });
 
     }
@@ -182,4 +215,5 @@ public class MCFocus1 extends AppCompatActivity {
             }
         }
     }
+
 }

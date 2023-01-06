@@ -169,9 +169,13 @@ public class settings extends AppCompatActivity {
             }
         });
 
-        // Navigation Bar
+        // NavBar Buttons
 
         ImageButton btn_home = findViewById(R.id.nav_home);
+        ImageButton btn_info = findViewById(R.id.nav_about_mood);
+        ImageButton btn_progress = findViewById(R.id.nav_progress);
+        ImageButton btn_settings = findViewById(R.id.nav_settings);
+
 
         btn_home.setOnClickListener(v -> {
 
@@ -179,23 +183,17 @@ public class settings extends AppCompatActivity {
             startActivity(intent);
         });
 
-        ImageButton btn_info = findViewById(R.id.nav_about_mood);
-
         btn_info.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, BreakScreen1.class);
+            Intent intent = new Intent(this, aboutMoodscape.class);
             startActivity(intent);
         });
-
-        ImageButton btn_progress = findViewById(R.id.nav_progress);
 
         btn_progress.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, sample_activity.class);
+            Intent intent = new Intent(this, summary.class);
             startActivity(intent);
         });
-
-        ImageButton btn_settings = findViewById(R.id.nav_settings);
 
         btn_settings.setOnClickListener(v -> {
 

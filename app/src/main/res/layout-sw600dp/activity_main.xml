@@ -22,7 +22,7 @@
         app:srcCompat="@drawable/undraw_meditation" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/welcomeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/ubuntu_bold"
@@ -34,17 +34,17 @@
         android:textColor="@color/dark_pink"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/welcomeSubtitle"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/welcomeSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="128dp"
         android:fontFamily="@font/sourcesanspro_regular"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/tagline"
@@ -52,7 +52,6 @@
         android:textColor="@color/dark_pink"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         tools:ignore="TextContrastCheck" />
@@ -76,9 +75,10 @@
         app:backgroundTint="@color/dark_pink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.233"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTitle"
+        app:layout_constraintVertical_bias="0.359"
         tools:ignore="TextContrastCheck" />
 
     <Button
@@ -99,10 +99,11 @@
         android:textSize="25sp"
         app:backgroundTint="@color/canary"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button1"
         app:layout_constraintTop_toBottomOf="@+id/button1"
-        app:layout_constraintVertical_bias="0.123"
+        app:layout_constraintVertical_bias="0.201"
         tools:ignore="TextContrastCheck" />
 
 

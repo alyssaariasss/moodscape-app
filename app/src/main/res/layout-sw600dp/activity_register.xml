@@ -114,6 +114,7 @@
                 android:textColor="@color/dark_gray"
                 android:textColorHint="@color/dark_gray"
                 android:textSize="25sp"
+                android:autofillHints="age"
                 tools:ignore="TextContrastCheck" />
 
             <EditText

@@ -7,7 +7,6 @@
     android:background="@color/white"
     tools:context=".login">
 
-
     <ImageView
         android:id="@+id/moodscape_ls"
         android:layout_width="150dp"

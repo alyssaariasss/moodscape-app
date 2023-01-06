@@ -112,6 +112,7 @@
                 android:textColor="@color/dark_gray"
                 android:textColorHint="@color/dark_gray"
                 android:textSize="15sp"
+                android:autofillHints="age"
                 tools:ignore="TextContrastCheck" />
 
             <EditText
@@ -182,5 +183,4 @@
                 tools:ignore="TextContrastCheck" />
         </LinearLayout>
     </RelativeLayout>
-
 </RelativeLayout>

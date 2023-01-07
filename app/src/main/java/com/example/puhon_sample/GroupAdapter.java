@@ -66,9 +66,9 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.ViewHolder> 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            goalsDateHeader = itemView.findViewById(R.id.goalsDateHeader);
+            //goalsDateHeader = itemView.findViewById(R.id.goalsDateHeader);
             goalsRecyclerView = itemView.findViewById(R.id.goalsRecyclerView);
-            mgoalsRecyclerView = itemView.findViewById(R.id.mgoalsRecyclerView);
+            //mgoalsRecyclerView = itemView.findViewById(R.id.mgoalsRecyclerView);
         }
     }
 }

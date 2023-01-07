@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -36,13 +37,13 @@ public class FragmentHistory extends Fragment {
     FirebaseAuth fAuth;
     FirebaseDatabase database;
     DatabaseReference reference;
-    String id;
+    String id, date;
     UserGoals userGoals;
 
-    private DatePickerDialog datePickerDialog;
+    DatePickerDialog datePickerDialog;
     DatePickerDialog.OnDateSetListener dateSetListener;
-    private Button dateButton;
-    String date;
+    Button dateButton;
+    TextView completedHeader, missedHeader, emptyData;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,6 +52,13 @@ public class FragmentHistory extends Fragment {
 
         goalsRecyclerView = (RecyclerView) view.findViewById(R.id.goalsRecyclerGroup);
         goalsRecyclerView1 = (RecyclerView) view.findViewById(R.id.goalsRecyclerGroup1);
+
+        completedHeader = view.findViewById(R.id.completedHeader);
+        missedHeader = view.findViewById(R.id.missedHeader);
+        emptyData = view.findViewById(R.id.emptyData);
+
+        completedHeader.setVisibility(View.GONE);
+        missedHeader.setVisibility(View.GONE);
 
         dateButton = (Button) view.findViewById(R.id.historyDatePicker);
         dateButton.setText(getTodaysDate());
@@ -66,7 +74,6 @@ public class FragmentHistory extends Fragment {
             datePickerDialog = new DatePickerDialog(getContext(), style, dateSetListener, year, month, day);
             datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
             datePickerDialog.show();
-
         });
 
         dateSetListener = (datePicker, year1, month1, day1) -> {
@@ -93,6 +100,9 @@ public class FragmentHistory extends Fragment {
     }
 
     private void RetrieveData() {
+        completedHeader.setVisibility(View.VISIBLE);
+        missedHeader.setVisibility(View.VISIBLE);
+
         reference.orderByChild("date").equalTo(date).addValueEventListener(new ValueEventListener()
         {
             @Override
@@ -100,7 +110,7 @@ public class FragmentHistory extends Fragment {
                 GoalsList.clear();
                 GoalsList2.clear();
                 if (snapshot.exists()) {
-
+                    emptyData.setVisibility(View.GONE);
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         userGoals = dataSnapshot.getValue(UserGoals.class);
                         String status = Objects.requireNonNull(dataSnapshot.child("status").getValue()).toString();
@@ -113,6 +123,10 @@ public class FragmentHistory extends Fragment {
                     }
                     HistoryGoalsAdapter.notifyDataSetChanged();
                     HistoryGoalsAdapter1.notifyDataSetChanged();
+                } else {
+                    completedHeader.setVisibility(View.GONE);
+                    missedHeader.setVisibility(View.GONE);
+                    emptyData.setVisibility(View.VISIBLE);
                 }
             }
 

@@ -63,6 +63,20 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
+                        android:id="@+id/emptyData"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/sourcesanspro_regular"
+                        android:layout_gravity="center"
+                        android:text="@string/no_goals_for_today"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="22sp"
+                        android:visibility="gone"
+                        android:elevation="6dp"/>
+
+                    <TextView
+                        android:id="@+id/completedHeader"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
@@ -89,6 +103,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/missedHeader"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"

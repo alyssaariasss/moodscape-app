@@ -73,6 +73,8 @@ public class FragmentHistory extends Fragment {
             month1 = month1 + 1;
             date = makeDateString(day1, month1, year1);
             dateButton.setText(date);
+
+            // retrieves goal data based on selected mood
             RetrieveData();
         };
 

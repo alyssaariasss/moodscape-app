@@ -91,4 +91,16 @@
     <string name="hoping_the_best_for_you_see_you_again">Hoping the best for you. See you again!</string>
     <string name="back">Back</string>
     <string name="meditate">Meditate</string>
+    <string name="alleviating_stress">Alleviating stress</string>
+    <string name="watch_funny_videos">Watch Funny Videos</string>
+    <string name="laughter_is_the_best_medicine">Laughter is the best medicine. A good belly laugh not only relieves stress but also generates positive physical changes in the body.</string>
+    <string name="title_activity_stress1">stress1</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

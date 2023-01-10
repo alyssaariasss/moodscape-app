@@ -1,14 +1,17 @@
 package com.example.puhon_sample;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.text.HtmlCompat;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,8 +25,11 @@ public class register extends AppCompatActivity {
     EditText mFirstName, mLastName, mEmail, mAge;
     TextInputEditText mPassword;
     Button mSignUpBtn;
-    FirebaseAuth fAuth;
+    CheckBox checkTOS;
 
+    MaterialAlertDialogBuilder materialAlertDialogBuilder;
+
+    FirebaseAuth fAuth;
     String id;
 
     @Override
@@ -36,9 +42,30 @@ public class register extends AppCompatActivity {
         mEmail = findViewById(R.id.Email1);
         mPassword = findViewById(R.id.Password1);
         mAge = findViewById(R.id.Age);
+        checkTOS = findViewById(R.id.checkTOS);
         mSignUpBtn = findViewById(R.id.SignUpBtn);
 
+        materialAlertDialogBuilder = new MaterialAlertDialogBuilder(this);
+
         fAuth = FirebaseAuth.getInstance();
+
+        checkTOS.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (b) {
+                materialAlertDialogBuilder.setTitle("Terms and Service");
+                materialAlertDialogBuilder.setMessage(HtmlCompat.fromHtml(getString(R.string.terms_of_service), HtmlCompat.FROM_HTML_MODE_LEGACY));
+                materialAlertDialogBuilder.setPositiveButton("Accept", (dialogInterface, i) -> {
+                    checkTOS.setChecked(true);
+                    dialogInterface.dismiss();
+                });
+
+                materialAlertDialogBuilder.setNegativeButton("Decline", (dialogInterface, i) -> {
+                    dialogInterface.dismiss();
+                    checkTOS.setChecked(false);
+                });
+
+                materialAlertDialogBuilder.show();
+            }
+        });
 
         mSignUpBtn.setOnClickListener(v -> {
             String email = mEmail.getText().toString().trim();
@@ -66,6 +93,9 @@ public class register extends AppCompatActivity {
             if(password.length() < 10){
                 mPassword.setError("Password must be at least 10 characters.");
                 return;
+            }
+            if(!checkTOS.isChecked()) {
+                checkTOS.setError("You must accept the terms of service to register an account.");
             }
 
             // register the user in firebase

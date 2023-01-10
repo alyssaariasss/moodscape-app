@@ -103,4 +103,67 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!-- Terms of Service    -->
+    <string name="agree_tos">I have read and agree to the <b>Terms of Service</b>.</string>
+    <string name="terms_of_service">
+        <![CDATA[
+        <br><b>Last Updated:</b> January 10, 2023<br><br><br>
+        Welcome to Moodscape! These terms of service ("Terms") apply to your access and use of Moodscape (the "Service") provided by Puhon (the “Company”). Please read them carefully.
+        <br><br><br>
+
+        <b>Acknowledgment</b><br><br>
+        These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company.
+        These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.<br><br>
+
+        Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions.
+        These Terms and Conditions apply to all visitors, users and others who access or use the Service.<br><br>
+
+        By accessing or using the Service You agree to be bound by these Terms and Conditions.
+        If You disagree with any part of these Terms and Conditions then You may not access the Service.<br><br>
+
+        You represent that you are over the age of 18. The Company does not permit those under 18 to use the Service.<br><br>
+
+        If you access or use the Service, it means you agree to be bound by all of the terms below. So, before you use the Service, please read all of the terms.
+        If you don\'t agree to all of the terms below, please do not use the Service. Also, if a term does not make sense to you,
+        please let us know by emailing <b>moodscape2023@gmail.com</b>.<br><br><br>
+
+        <b>Not Medical Advice</b><br><br>
+        You agree that the Service constitutes, in part, a self-help system designed to help you improve your own mood and that if you choose to utilize the Service you are
+        solely responsible for deciding which of the suggested techniques you put into practice and how you apply those techniques.
+        As such, you agree that the Company is not a healthcare provider and does not provide you with any actual medical advice.<br><br>
+
+        Any advice or other materials provided through the Service are intended for general information purposes only. They are not intended to be relied upon and are not a substitute
+        for professional medical advice based on your personal circumstances. Such advice and other materials are not intended to replace the advice of healthcare providers. We are not
+        liable or responsible for any actions taken due to your having used the Service. To the fullest extent permitted by law, we give no representation or warranties about the accuracy,
+        completeness, or suitability for any purpose of the advice, other materials, and information published on or through the Service.<br><br>
+        If you receive advice from a medical professional which conflicts with anything contained in the Service, then the advice of the medical professional should take precedence.
+        Never disregard professional medical advice or delay in seeking it because of something you have read through the Service. If you think you may have a medical emergency,
+        contact a medical professional or call 911 immediately.<br><br><br>
+
+        <b>Links to Other Websites</b><br><br>
+        Our Service may contain links to third-party websites or services that are not owned or controlled by the Company.<br><br>
+
+        The Company has no control over and assumes no responsibility for, the content, privacy policies, or practices of any third-party websites or services. You further acknowledge and agree that
+        the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content,
+        goods, or services available on or through any such web sites or services.<br><br>
+
+        We strongly advise You to read the terms and conditions and privacy policies of any third-party websites or services that You visit.<br><br><br>
+
+        <b>Termination</b><br><br>
+        We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.\n
+        Upon termination, Your right to use the Service will cease immediately.<br><br><br>
+
+
+        <b>Changes to These Terms and Conditions</b><br><br>
+        We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is a material We will make reasonable efforts to provide at least 30 days’ notice prior to any new terms taking effect.
+        What constitutes a material change will be determined at Our sole discretion.<br><br>
+
+        By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.<br><br><br>
+
+        <b>Contact Us</b><br><br>
+        If you have any questions about these Terms and Conditions, You can contact us:<br><br>
+        By email: moodscape2023@gmail.com<br>
+        ]]>
+    </string>
 </resources>

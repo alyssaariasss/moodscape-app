@@ -18,7 +18,7 @@
         android:layout_marginLeft="17dp"
         android:textColor="@color/dark_gray"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:fontFamily="@font/sourcesanspro_bold" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -35,7 +35,7 @@
             android:text="Why were you feeling this way?"
             android:textColor="@color/dark_gray"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:fontFamily="@font/sourcesanspro_semibold" />
 
 
     <LinearLayout
@@ -69,7 +69,7 @@
             android:text="Where are you right now?"
             android:textColor="@color/dark_gray"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:fontFamily="@font/sourcesanspro_semibold"  />
 
 
         <LinearLayout
@@ -103,7 +103,7 @@
             android:text="Who are you with?"
             android:textColor="@color/dark_gray"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:fontFamily="@font/sourcesanspro_semibold"  />
 
 
         <LinearLayout
@@ -137,7 +137,7 @@
             android:text="What did you do today?"
             android:textColor="@color/dark_gray"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:fontFamily="@font/sourcesanspro_semibold"  />
 
 
         <LinearLayout
@@ -172,7 +172,7 @@
             android:text="How much do you worry about things?"
             android:textColor="@color/dark_gray"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:fontFamily="@font/sourcesanspro_semibold"  />
 
 
         <LinearLayout
@@ -206,7 +206,7 @@
             android:text="How well have you been sleeping?"
             android:textColor="@color/dark_gray"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:fontFamily="@font/sourcesanspro_semibold"  />
 
 
         <LinearLayout

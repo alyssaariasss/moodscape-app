@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -47,9 +46,8 @@ public class AddNewGoal extends BottomSheetDialogFragment {
 
     public static final String TAG = "AddNewGoal";
 
-    TextView setTime;
     EditText goalEdit;
-    Button addGoal;
+    Button addGoal, setTime;
     int hour, minute, currentHour, goalId;
 
     UserGoals userGoals;

@@ -52,7 +52,7 @@ public class FragmentSummary extends Fragment {
     FirebaseDatabase database;
     DatabaseReference reference;
 
-    String id, dateToday, wStartDate, wEndDate, mStartDate, mEndDate;
+    String id, dateToday, wStartDate, wEndDate, mStartDate, mEndDate, sMonth;
     String mood = "none";
     int sleep = 0;
     List<String> days;
@@ -159,6 +159,7 @@ public class FragmentSummary extends Fragment {
     // Gets latest input of mood
     private void FetchMoodData() {
         ShowDate();
+        CheckMoodInput();
 
         reference.limitToLast(1).addChildEventListener(new ChildEventListener() {
             @Override
@@ -226,6 +227,7 @@ public class FragmentSummary extends Fragment {
     // Gets latest sleep data
     private void FetchSleepData() {
         ShowDate();
+        CheckSleepInput();
 
         DatabaseReference newRef = database.getReference().child("users").child(id).child("UserQuestions");
 
@@ -617,6 +619,7 @@ public class FragmentSummary extends Fragment {
 
             assert sWeek != null;
             wStartDate = new SimpleDateFormat("dd/MMM/yyyy", Locale.US).format(sWeek);
+            sMonth = new SimpleDateFormat("MM/", Locale.US).format(sWeek);
             assert eWeek != null;
             wEndDate = new SimpleDateFormat("dd/MMM/yyyy", Locale.US).format(eWeek);
         } catch (ParseException e) {
@@ -624,8 +627,7 @@ public class FragmentSummary extends Fragment {
         }
 
         // Gets all days of the week for goals chart x axis values
-        int sDay = Integer.parseInt(wStartDate.substring(8,10));
-        String sMonth = wStartDate.substring(0,3);
+        int sDay = Integer.parseInt(wStartDate.substring(0,2));
         days = new ArrayList<>();
 
         for (int i = 0; i < 7; i++) {

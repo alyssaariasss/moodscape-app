@@ -257,9 +257,5 @@
                 android:layout_height="180dp"
                 app:layout_constraintTop_toBottomOf="@+id/goalsCard"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
     </ScrollView>
-
-
 </FrameLayout>

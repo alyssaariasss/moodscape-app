@@ -72,7 +72,7 @@
             android:name="com.example.puhon_sample.FragmentSummary"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout="@layout/fragment_summary" />
+            tools:layout="@layout/fragment_overall_report" />
     </RelativeLayout>
 
     <!--    Navbar Buttons  -->

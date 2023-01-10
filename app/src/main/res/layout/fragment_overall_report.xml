@@ -8,8 +8,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="609dp"
+        android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
+        android:layout_marginTop="70dp"
         tools:ignore="UselessParent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -62,7 +63,6 @@
                 app:layout_constraintTop_toTopOf="@+id/overallReportCard"
                 app:layout_constraintVertical_bias="0.679" />
 
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/selectedDateCard"
                 android:layout_width="330dp"
@@ -77,9 +77,7 @@
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/overallReportCard"
-                app:layout_constraintVertical_bias="0.044">
-
-            </androidx.cardview.widget.CardView>
+                app:layout_constraintVertical_bias="0.044"/>
 
             <TextView
                 android:id="@+id/selectedDateText"
@@ -114,17 +112,19 @@
                 app:layout_constraintTop_toTopOf="@+id/selectedDateCard"
                 app:layout_constraintVertical_bias="0.357" />
 
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/answerOne"
                 android:layout_width="328dp"
                 android:layout_height="505dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="@+id/selectedDateCard"
                 app:layout_constraintStart_toStartOf="@+id/selectedDateCard"
                 app:layout_constraintTop_toBottomOf="@+id/selectedDateCard" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                app:layout_constraintTop_toBottomOf="@+id/answerOne"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-
 </FrameLayout>

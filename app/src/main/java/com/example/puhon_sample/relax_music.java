@@ -207,6 +207,7 @@ public class relax_music extends AppCompatActivity {
 
         btn_home.setOnClickListener(v -> {
 
+            mediaPlayer.stop();
             Intent intent = new Intent(this, menu.class);
             startActivity(intent);
         });
@@ -215,6 +216,7 @@ public class relax_music extends AppCompatActivity {
 
         btn_info.setOnClickListener(v -> {
 
+            mediaPlayer.stop();
             Intent intent = new Intent(this, BreakScreen1.class);
             startActivity(intent);
         });
@@ -223,6 +225,7 @@ public class relax_music extends AppCompatActivity {
 
         btn_progress.setOnClickListener(v -> {
 
+            mediaPlayer.stop();
             Intent intent = new Intent(this, summary.class);
             startActivity(intent);
         });
@@ -231,6 +234,7 @@ public class relax_music extends AppCompatActivity {
 
         btn_settings.setOnClickListener(v -> {
 
+            mediaPlayer.stop();
             Intent intent = new Intent(this, settings.class);
             startActivity(intent);
         });

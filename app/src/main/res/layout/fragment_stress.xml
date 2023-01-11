@@ -99,6 +99,80 @@
 
             </androidx.cardview.widget.CardView>
 
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/stress2"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="180dp"
+                android:backgroundTint="@color/dirty_cream"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/fragment_title1"
+                app:layout_constraintVertical_bias="0.240">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutMC2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:elevation="6dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="@+id/stress2"
+                    app:layout_constraintEnd_toEndOf="@+id/stress2"
+                    app:layout_constraintStart_toStartOf="@+id/stress2"
+                    app:layout_constraintTop_toTopOf="@+id/stress2">
+
+                    <ImageView
+                        android:id="@+id/stress2_image"
+                        android:layout_width="45dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/stress2_note" />
+
+                    <LinearLayout
+                        android:layout_marginStart="15dp"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/stress2_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sourcesanspro_bold"
+                            android:text="Write your thoughts"
+                            android:textColor="@color/dark_gray"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/stress2_desc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:text="Expressive writing can reduce stress. Journaling will help you deal with your emotions and calm your thoughts."
+                            android:textColor="@color/dark_gray"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_marginTop="35dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/arrow_forward" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
             <!--    Dummy view to prevent cutoff at the bottom         -->
             <TextView
                 android:layout_width="match_parent"

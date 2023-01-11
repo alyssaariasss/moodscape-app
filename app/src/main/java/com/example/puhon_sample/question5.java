@@ -111,7 +111,24 @@ public class question5 extends AppCompatActivity {
         BackBtn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), menu.class));
+                int question5 = Question5.getProgress();
+
+                Intent intent3 = getIntent();
+                String question1 = intent3.getStringExtra("QUESTION1");
+                String question2_1 = intent3.getStringExtra("QUESTION2_1");
+                String question2_2 = intent3.getStringExtra("QUESTION2_2");
+                String question3 = intent3.getStringExtra("QUESTION3");
+                String question4 = intent3.getStringExtra("QUESTION4");
+
+                Intent intent8 = new Intent(question5.this, question4.class);
+                intent8.putExtra("QUESTION1", question1);
+                intent8.putExtra("QUESTION2_1", question2_1);
+                intent8.putExtra("QUESTION2_2", question2_2);
+                intent8.putExtra("QUESTION3", question3);
+                intent8.putExtra("QUESTION4", question4);
+                intent8.putExtra("QUESTION5", question5);
+                startActivity(intent8);
+                finish();
             }
         });
 

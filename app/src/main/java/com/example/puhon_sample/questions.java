@@ -67,7 +67,25 @@ public class questions extends AppCompatActivity {
         BackBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), BreakScreen1.class));
+                String question1 = Question1.getText().toString();
+
+                Intent intent5 = getIntent();
+                String question2_1 = intent5.getStringExtra("QUESTION2_1");
+                String question2_2 = intent5.getStringExtra("QUESTION2_2");
+                String question3 = intent5.getStringExtra("QUESTION3");
+                String question4 = intent5.getStringExtra("QUESTION4");
+                String question5 = intent5.getStringExtra("QUESTION5");
+
+                Intent intent4 = new Intent(questions.this, BreakScreen1.class);
+                intent4.putExtra("QUESTION1", question1);
+                intent4.putExtra("QUESTION2_1", question2_1);
+                intent4.putExtra("QUESTION2_2", question2_2);
+                intent4.putExtra("QUESTION3", question3);
+                intent4.putExtra("QUESTION4", question4);
+                intent4.putExtra("QUESTION5", question5);
+
+                startActivity(intent4);
+                finish();
             }
         });
 

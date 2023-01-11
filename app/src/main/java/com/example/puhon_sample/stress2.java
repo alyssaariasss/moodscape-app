@@ -2,33 +2,27 @@ package com.example.puhon_sample;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class relax_exercise extends AppCompatActivity {
+public class stress2 extends AppCompatActivity {
 
-    Button Done1;
+    Button stress2DoneBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_relax_exercise);
-        //getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_stress2);
 
-        Done1 = findViewById(R.id.relaxDoneBtn1);
+        stress2DoneBtn = (Button) findViewById(R.id.stress2DoneBtn);
 
-        Done1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Meditation.class));
-                finish();
-            }
+        stress2DoneBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(stress2.this, Meditation.class);
+            startActivity(intent);
         });
+
 
         // NavBar Buttons
 

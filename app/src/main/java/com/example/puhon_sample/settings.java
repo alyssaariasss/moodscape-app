@@ -225,7 +225,7 @@ public class settings extends AppCompatActivity {
                         .setFixAspectRatio(true)
                         .setCropMenuCropButtonTitle("Done")
                         .start(this);
-                //imgProfilePic.setImageURI(imageUri);
+                ImgProfilePic.setImageURI(imageUri);
                 uploadImageToFirebase(imageUri);
             }
 

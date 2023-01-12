@@ -21,16 +21,21 @@ public class fragment_focus extends Fragment {
         View view = inflater.inflate(R.layout.fragment_focus, container, false);
 
         focus1CV = view.findViewById(R.id.focus1);
+        focus2CV = view.findViewById(R.id.focus2);
 
 
-        focus1CV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        focus1CV.setOnClickListener(v -> {
 
-                Intent intent = new Intent(getActivity(), MCFocus1.class);
-                startActivity(intent);
-            }
+            Intent intent = new Intent(getActivity(), MCFocus1.class);
+            startActivity(intent);
         });
+
+        focus2CV.setOnClickListener(v -> {
+
+            Intent intent = new Intent(getActivity(), BSFocus2.class);
+            startActivity(intent);
+        });
+
 
         return view;
     }

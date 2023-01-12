@@ -48,6 +48,20 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".stress1"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".stress2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MCFocus1"
             android:exported="false">
             <meta-data

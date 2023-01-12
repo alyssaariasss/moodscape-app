@@ -1,6 +1,8 @@
 package com.example.puhon_sample;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,6 +37,8 @@ public class question5 extends AppCompatActivity {
     String id, dateToday;
     int i = 0;
 
+    SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +48,9 @@ public class question5 extends AppCompatActivity {
         Question5Rate = findViewById(R.id.question5_rate);
         BackBtn5 = findViewById(R.id.backbtn5);
         NextBtn5 = findViewById(R.id.nextbtn5);
+
+        sharedPreferences = getApplicationContext().getSharedPreferences("UserAnswers", Context.MODE_PRIVATE);
+        DisplayText();
 
         Question5.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -93,16 +100,20 @@ public class question5 extends AppCompatActivity {
 
                 int question5 = Question5.getProgress();
 
-                Intent intent3 = getIntent();
-                String question1 = intent3.getStringExtra("QUESTION1");
-                String question2_1 = intent3.getStringExtra("QUESTION2_1");
-                String question2_2 = intent3.getStringExtra("QUESTION2_2");
-                String question3 = intent3.getStringExtra("QUESTION3");
-                Integer question4 = intent3.getIntExtra("QUESTION4", 1);
+                String question1 = sharedPreferences.getString("Answer1", "");
+                String question2_1 = sharedPreferences.getString("Answer2_1", "");
+                String question2_2 = sharedPreferences.getString("Answer2_2", "");
+                String question3 = sharedPreferences.getString("Answer3", "");
+                Integer question4 = sharedPreferences.getInt("Answer4", 0);
+
                 Answers = new UserAnswers(question1, question2_1, question2_2, question3, question4, question5);
                 ShowDate();
                 Answers.setDate(dateToday);
                 reference.child(String.valueOf(i + 1)).setValue(Answers);
+
+                // Removes all values for next input
+                sharedPreferences.edit().clear().apply();
+
                 startActivity(new Intent(getApplicationContext(), BreakScreen2.class));
                 finish();
             }
@@ -111,10 +122,23 @@ public class question5 extends AppCompatActivity {
         BackBtn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), menu.class));
+                Intent intent = new Intent(question5.this, question4.class);
+
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putInt("Answer5", Question5.getProgress());
+                editor.apply();
+
+                startActivity(intent);
+                finish();
             }
         });
+    }
 
+    private void DisplayText() {
+        int answer5 = sharedPreferences.getInt("Answer5",0);
+
+        Question5Rate.setText("" + answer5);
+        Question5.setProgress(answer5);
     }
 
     // Gets current date

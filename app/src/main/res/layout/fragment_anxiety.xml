@@ -61,8 +61,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
-                        android:layout_marginTop="15dp"
-                        android:src="@drawable/anxiety_note" />
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/anxiety_heart" />
 
                     <LinearLayout
                         android:layout_width="250dp"

@@ -74,7 +74,9 @@
         android:text="RESET"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/focus_timer_done"
-        app:layout_constraintEnd_toEndOf="@+id/focus1_desc" />
+        app:layout_constraintEnd_toEndOf="@+id/focus1_desc"
+        android:visibility="invisible"
+        tools:visibility="visible"/>
 
     <Button
         android:id="@+id/focus_timer_start"

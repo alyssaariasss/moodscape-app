@@ -16,12 +16,12 @@ import java.util.Locale;
 
 public class MCFocus1 extends AppCompatActivity {
 
-    public static final long START_TIME_IN_MILLIS = 6000;
+    public static final long START_TIME_IN_MILLIS = 600000;
 
     TextView focusTimer;
     Button focusTimerStart, focusTimerReset, focusTimerDone;
     CountDownTimer countDownTimer;
-    long timeLeftInMillis;
+    long timeLeftInMillis = START_TIME_IN_MILLIS;
     long endTime;
     boolean timerRunning;
 
@@ -64,9 +64,11 @@ public class MCFocus1 extends AppCompatActivity {
         focusTimerReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 resetTimer();
             }
         });
+        updateTimer();
 
         // NavBar Buttons
 
@@ -117,17 +119,20 @@ public class MCFocus1 extends AppCompatActivity {
                 timerRunning = false;
                 focusTimerDone.setVisibility(View.VISIBLE);
                 updateButtons();
+
             }
         }.start();
 
         timerRunning = true;
         updateButtons();
+
     }
 
     public void pauseTimer() {
         countDownTimer.cancel();
         timerRunning = false;
         updateButtons();
+
     }
 
     public void resetTimer() {
@@ -153,12 +158,6 @@ public class MCFocus1 extends AppCompatActivity {
         else {
             focusTimerStart.setText("START");
 
-            if (timeLeftInMillis < 1000) {
-                focusTimerStart.setVisibility(View.INVISIBLE);
-            }
-            else {
-                focusTimerStart.setVisibility(View.VISIBLE);
-            }
 
             if (timeLeftInMillis < START_TIME_IN_MILLIS) {
                 focusTimerReset.setVisibility(View.VISIBLE);
@@ -169,6 +168,7 @@ public class MCFocus1 extends AppCompatActivity {
         }
 
     }
+
 
     @Override
     protected void onStop() {
@@ -215,5 +215,4 @@ public class MCFocus1 extends AppCompatActivity {
             }
         }
     }
-
 }

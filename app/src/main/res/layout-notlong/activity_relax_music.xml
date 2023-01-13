@@ -6,10 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".relax_music">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".relax_music">
@@ -18,15 +16,15 @@
             android:id="@+id/relax_exer_txt"
             android:layout_width="400dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
             android:fontFamily="@font/sourcesanspro_regular"
+            android:gravity="center"
             android:text="Music can have a profound effect on both the emotions and the body. Music is effective for relaxation and stress management."
             android:textColor="@color/dark_gray"
             android:textSize="16sp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +33,7 @@
             android:id="@+id/music_logo"
             android:layout_width="320dp"
             android:layout_height="220dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/music_icon"
             android:layout_gravity="center"/>
 
@@ -45,7 +43,7 @@
             android:layout_height="wrap_content"
             android:text="Song Title"
             android:fontFamily="@font/sourcesanspro_semibold"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:textStyle="bold"
             android:gravity="center"
             android:textSize="30sp"
@@ -101,7 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -113,22 +111,22 @@
 
                 <ImageView
                     android:id="@+id/relaxPrev"
-                    android:layout_width="70dp"
-                    android:layout_height="60dp"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
                     android:src="@drawable/prev_icon"/>
 
                 <ImageView
                     android:id="@+id/relaxPlay"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:layout_width="80dp"
-                    android:layout_height="60dp"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
                     android:src="@drawable/play_icon"/>
 
                 <ImageView
                     android:id="@+id/relaxNext"
-                    android:layout_width="70dp"
-                    android:layout_height="50dp"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
                     android:src="@drawable/next_icon"/>
 
             </LinearLayout>

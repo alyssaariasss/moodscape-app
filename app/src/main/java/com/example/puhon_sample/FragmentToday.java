@@ -92,7 +92,6 @@ public class FragmentToday extends Fragment implements DialogCloseListener {
                         UserGoals.add(userGoals);
                         key = dataSnapshot.getKey();
                     }
-
                 }
                 InitializeRecyclerView();
             }

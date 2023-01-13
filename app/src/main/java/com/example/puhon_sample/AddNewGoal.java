@@ -1,10 +1,18 @@
 package com.example.puhon_sample;
 
 
+import static android.content.Context.ALARM_SERVICE;
+
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -87,6 +95,7 @@ public class AddNewGoal extends BottomSheetDialogFragment {
         goalEdit = requireView().findViewById(R.id.editxtNGoal);
         addGoal = requireView().findViewById(R.id.buttonAddGoal);
 
+        CreateNotificationChannel();
         InitializeUpdate();
 
         fAuth = FirebaseAuth.getInstance();
@@ -122,7 +131,6 @@ public class AddNewGoal extends BottomSheetDialogFragment {
                             calendar.set(0,0,0, hour, minute);
                             setTime.setText(DateFormat.format("hh:mm aa", calendar));
                         }
-
                     }, 12, 0, false);
 
             timePickerDialog.updateTime(hour, minute);
@@ -198,6 +206,26 @@ public class AddNewGoal extends BottomSheetDialogFragment {
                             userGoals.setDeadline(time);
                             userGoals.setStatus(0);
                             reference.child(String.valueOf(i+1)).setValue(userGoals);
+
+                            // Set up alarm system for goals
+                            Intent intent = new Intent(getContext(), GoalsNotification.class);
+                            PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), 0, intent, PendingIntent.FLAG_IMMUTABLE);
+
+                            AlarmManager alarmManager = (AlarmManager) requireActivity().getSystemService(ALARM_SERVICE);
+
+                            // Add selected hour and minute to calendar
+                            Calendar cal = Calendar.getInstance();
+                            cal.setTimeInMillis(System.currentTimeMillis());
+                            cal.set(Calendar.HOUR_OF_DAY, hour);
+                            cal.set(Calendar.MINUTE, minute);
+                            cal.set(Calendar.SECOND, 0);
+
+                            if (Build.VERSION.SDK_INT >= 19) {
+                                alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
+                            } else {
+                                alarmManager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
+                            }
+
                             Toast.makeText(getContext(), "A new goal has been added.", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(getContext(), "Goal already exists. Please enter a different goal title.", Toast.LENGTH_SHORT).show();
@@ -210,9 +238,22 @@ public class AddNewGoal extends BottomSheetDialogFragment {
                     }
                 });
             }
-
-
         });
+    }
+
+    // Initialize GoalsNotification channel
+    private void CreateNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "GoalsReminderChannel";
+            String description = "Channel for Goals";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+
+            NotificationChannel channel = new NotificationChannel("GoalNotification", name, importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager = requireActivity().getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 
     // Retrieves value from FragmentToday
@@ -228,7 +269,7 @@ public class AddNewGoal extends BottomSheetDialogFragment {
             setTime.setText(time);
 
             if (goal.length() > 0) {
-                addGoal.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
+                addGoal.setTextColor(ContextCompat.getColor(requireContext(), R.color.white));
             }
         }
 
@@ -245,7 +286,7 @@ public class AddNewGoal extends BottomSheetDialogFragment {
                     addGoal.setTextColor(Color.WHITE);
                 } else {
                     addGoal.setEnabled(true);
-                    addGoal.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
+                    addGoal.setTextColor(ContextCompat.getColor(requireContext(), R.color.white));
                 }
             }
 

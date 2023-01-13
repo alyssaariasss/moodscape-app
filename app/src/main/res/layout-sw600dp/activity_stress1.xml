@@ -8,8 +8,8 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2"
-        android:layout_width="354dp"
-        android:layout_height="550dp"
+        android:layout_width="650dp"
+        android:layout_height="850dp"
         android:layout_margin="50dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/stress1DoneBtn"
@@ -17,23 +17,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--    Navbar Buttons  -->
     <Button
         android:id="@+id/stress1DoneBtn"
-        android:layout_width="350dp"
+        android:layout_width="550dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="130dp"
         android:background="@drawable/round_btn3"
-        android:layout_marginBottom="80dp"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
         android:gravity="center"
         android:stateListAnimator="@null"
         android:text="@string/done"
-        android:textSize="22sp"
+        android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/viewPager2"
         app:layout_constraintStart_toStartOf="@+id/viewPager2" />
 
-    <!--    Navbar Buttons  -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

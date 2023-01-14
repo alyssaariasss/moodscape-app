@@ -17,7 +17,7 @@
         <CheckBox
             android:id="@+id/goalsCheckbox"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
             android:buttonTint="@color/dark_gray"
             android:minHeight="100dp"
             android:paddingStart="15dp"
@@ -36,9 +36,11 @@
             android:layout_below="@+id/goalsCheckbox"
             android:layout_alignStart="@+id/goalsCheckbox"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="-19dp"
+            android:layout_marginTop="-15dp"
+            android:layout_marginBottom="10dp"
             android:text="@string/_10_00_pm"
             android:textSize="14sp"
+            android:textColor="@color/dark_gray"
             tools:fontFamily="@font/sourcesanspro_regular"/>
 
 

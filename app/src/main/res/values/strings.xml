@@ -42,11 +42,11 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string-array name="spinner">
-        <item>By Week</item>
-        <item>By Month</item>
+        <item>By Week&#160;&#160;&#160;&#160;</item>
+        <item>By Month&#160;&#160;&#160;&#160;&#160;</item>
     </string-array>
     <string-array name="spinner1">
-        <item>By Week</item>
+        <item>By Week&#160;&#160;&#160;&#160;&#160;&#160;&#160;</item>
     </string-array>
     <string name="thank_you">Thank you image.</string>
     <string name="intro_design2">TODO</string>

@@ -106,14 +106,54 @@ public class FragmentSummary extends Fragment {
     private void InitSpinners() {
         // Mood Spinner
         String [] filter = getResources().getStringArray(R.array.spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, filter);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, filter) {
+            @Override
+            public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+
+                TextView text = (TextView)view.findViewById(android.R.id.text1);
+                text.setTextColor(ContextCompat.getColor(requireContext(), R.color.dark_gray));
+
+                return view;
+            }
+
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+
+                TextView text = (TextView)view.findViewById(android.R.id.text1);
+                text.setTextColor(ContextCompat.getColor(requireContext(), R.color.dark_gray));
+
+                return view;
+            }
+        };
+
         moodSpinner.setAdapter(adapter);
 
         // Goals Spinner
         String [] filter1 = getResources().getStringArray(R.array.spinner1);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, filter1);
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, filter1) {
+            @Override
+            public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+
+                TextView text = (TextView)view.findViewById(android.R.id.text1);
+                text.setTextColor(ContextCompat.getColor(requireContext(), R.color.dark_gray));
+
+                return view;
+            }
+
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+
+                TextView text = (TextView)view.findViewById(android.R.id.text1);
+                text.setTextColor(ContextCompat.getColor(requireContext(), R.color.dark_gray));
+
+                return view;
+            }
+        };
+
         goalsSpinner.setAdapter(adapter1);
 
         // Checks value of spinner and displays mood data
@@ -141,11 +181,8 @@ public class FragmentSummary extends Fragment {
         goalsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String valueFromSpinner = adapterView.getItemAtPosition(i).toString();
-                if (valueFromSpinner.equals("By Week")) {
-                    GetFirstDayWeek();
-                    CountGoals();
-                }
+                GetFirstDayWeek();
+                CountGoals();
             }
 
             @Override

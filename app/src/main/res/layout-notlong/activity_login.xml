@@ -28,8 +28,8 @@
         android:layout_height="200dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
         android:contentDescription="@string/loginD"
-        app:layout_constraintBottom_toTopOf="@+id/Email1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +42,7 @@
         android:layout_height="49dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="276dp"
         android:autofillHints="emailAddress"
         android:background="@drawable/round_btn2"
@@ -59,6 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/undraw_begin"
         tools:ignore="TextContrastCheck" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -79,7 +81,8 @@
         app:layout_constraintStart_toStartOf="@+id/Email1"
         app:layout_constraintTop_toBottomOf="@+id/Email1"
         app:layout_constraintVertical_bias="0.547"
-        app:passwordToggleEnabled="true">
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/dark_gray">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Password1"
@@ -93,7 +96,8 @@
             android:paddingEnd="0dp"
             android:paddingBottom="2dp"
             android:textColorHint="@color/dark_gray"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:textColor="@color/dark_gray"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

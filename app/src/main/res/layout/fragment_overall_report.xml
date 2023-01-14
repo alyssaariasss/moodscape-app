@@ -19,8 +19,10 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/overallReportCard"
-                android:layout_width="330dp"
+                android:layout_width="match_parent"
                 android:layout_height="400dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
                 android:backgroundTint="@color/dirty_cream"
                 app:cardCornerRadius="25dp"
                 app:cardElevation="5dp"
@@ -51,9 +53,9 @@
                 android:id="@+id/customCalendar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="65dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="65dp"
+                android:layout_marginEnd="50dp"
                 android:layout_marginBottom="10dp"
                 android:elevation="6dp"
                 app:layout_constraintBottom_toBottomOf="@+id/overallReportCard"
@@ -65,9 +67,11 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/selectedDateCard"
-                android:layout_width="330dp"
+                android:layout_width="match_parent"
                 android:layout_height="100dp"
+                android:layout_marginStart="25dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginEnd="25dp"
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="@color/dirty_cream"
                 app:cardCornerRadius="25dp"
@@ -77,7 +81,7 @@
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/overallReportCard"
-                app:layout_constraintVertical_bias="0.044"/>
+                app:layout_constraintVertical_bias="0.044" />
 
             <TextView
                 android:id="@+id/selectedDateText"
@@ -122,6 +126,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/selectedDateCard" />
 
             <TextView
+                android:id="@+id/dummyText"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 app:layout_constraintTop_toBottomOf="@+id/answerOne"/>

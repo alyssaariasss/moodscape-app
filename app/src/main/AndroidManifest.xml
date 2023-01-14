@@ -10,6 +10,7 @@
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
 
     <application
@@ -154,7 +155,9 @@
         </intent-filter>
         </activity>
 
+        <!--   Notification    -->
         <receiver android:name=".ReminderNotification" />
+        <receiver android:name=".GoalsNotification" />
 
         <meta-data
             android:name="preloaded_fonts"

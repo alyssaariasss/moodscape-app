@@ -19,8 +19,10 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/inputCard"
-                android:layout_width="330dp"
+                android:layout_width="match_parent"
                 android:layout_height="235dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
                 android:backgroundTint="@color/dirty_cream"
                 app:cardCornerRadius="25dp"
                 app:cardElevation="5dp"
@@ -29,8 +31,7 @@
                 app:layout_constraintHorizontal_bias="0.492"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0" >
-            </androidx.cardview.widget.CardView>
+                app:layout_constraintVertical_bias="0"></androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/inputTitle"
@@ -132,9 +133,11 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/progressCard"
-                android:layout_width="330dp"
+                android:layout_width="match_parent"
                 android:layout_height="305dp"
+                android:layout_marginStart="25dp"
                 android:layout_marginTop="30dp"
+                android:layout_marginEnd="25dp"
                 android:backgroundTint="@color/dirty_cream"
                 app:cardCornerRadius="25dp"
                 app:cardElevation="5dp"
@@ -161,10 +164,10 @@
 
             <Spinner
                 android:id="@+id/moodSpinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="220dp"
-                android:layout_marginEnd="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="30dp"
                 android:background="@drawable/bg_spinner"
                 android:elevation="5dp"
                 android:fontFamily="@font/sourcesanspro_semibold"
@@ -192,10 +195,11 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/goalsCard"
-                android:layout_width="330dp"
+                android:layout_width="match_parent"
                 android:layout_height="280dp"
+                android:layout_marginStart="25dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="25dp"
                 android:backgroundTint="@color/dirty_cream"
                 app:cardCornerRadius="25dp"
                 app:cardElevation="5dp"
@@ -222,15 +226,15 @@
 
             <Spinner
                 android:id="@+id/goalsSpinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="220dp"
-                android:layout_marginEnd="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/bg_spinner"
                 android:elevation="5dp"
                 android:fontFamily="@font/sourcesanspro_semibold"
                 android:textColor="@color/dark_gray"
                 android:textSize="14sp"
-                android:background="@drawable/bg_spinner"
                 android:popupBackground="@color/light_gray"
                 app:layout_constraintBottom_toBottomOf="@+id/goalsTitle"
                 app:layout_constraintEnd_toEndOf="@+id/goalsCard"

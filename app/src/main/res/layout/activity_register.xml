@@ -140,14 +140,16 @@
                 android:fontFamily="@font/sourcesanspro_regular"
                 android:textColor="@color/dark_gray"
                 android:textSize="15sp"
-                app:passwordToggleEnabled="true"
-                app:hintEnabled="false" >
+                app:hintEnabled="false"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/dark_gray">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/Password1"
                     android:layout_width="280dp"
                     android:layout_height="49dp"
                     android:textSize="15sp"
+                    android:textColor="@color/dark_gray"
                     android:hint="@string/password"
                     android:textColorHint="@color/dark_gray"
                     android:background="@drawable/round_btn2"
@@ -164,6 +166,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/agree_tos"
                 android:textSize="15sp"
+                android:textColor="@color/dark_gray"
                 android:fontFamily="@font/sourcesanspro_regular"
                 android:layout_marginTop="20dp"
                 android:paddingStart="15dp"

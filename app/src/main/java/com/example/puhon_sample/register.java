@@ -3,9 +3,11 @@ package com.example.puhon_sample;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +28,7 @@ public class register extends AppCompatActivity {
     TextInputEditText mPassword;
     Button mSignUpBtn;
     CheckBox checkTOS;
+    ProgressBar progressBar;
 
     MaterialAlertDialogBuilder materialAlertDialogBuilder;
 
@@ -44,6 +47,8 @@ public class register extends AppCompatActivity {
         mAge = findViewById(R.id.Age);
         checkTOS = findViewById(R.id.checkTOS);
         mSignUpBtn = findViewById(R.id.SignUpBtn);
+        progressBar = findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.GONE);
 
         materialAlertDialogBuilder = new MaterialAlertDialogBuilder(this);
 
@@ -74,32 +79,35 @@ public class register extends AppCompatActivity {
             String lname = mLastName.getText().toString().trim();
             String age = mAge.getText().toString().trim();
 
-            if(TextUtils.isEmpty(fname)) {
-                mEmail.setError("First name is required.");
+            if (TextUtils.isEmpty(fname)) {
+                mFirstName.setError("First name is required.");
                 return;
             }
-            if(TextUtils.isEmpty(lname)) {
-                mEmail.setError("Last name is required.");
+            if (TextUtils.isEmpty(lname)) {
+                mLastName.setError("Last name is required.");
                 return;
             }
-            if(TextUtils.isEmpty(email)){
+            if (TextUtils.isEmpty(email)) {
                 mEmail.setError("Email is required.");
                 return;
             }
-            if(TextUtils.isEmpty(password)){
+            if (TextUtils.isEmpty(password)) {
                 mPassword.setError("Password is required.");
                 return;
             }
-            if(password.length() < 10){
+            if (password.length() < 10) {
                 mPassword.setError("Password must be at least 10 characters.");
                 return;
             }
-            if(!checkTOS.isChecked()) {
+            if (!checkTOS.isChecked()) {
                 checkTOS.setError("You must accept the terms of service to register an account.");
             }
 
+            progressBar.setVisibility(View.VISIBLE);
+
             // register the user in firebase
             fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
+
                 if (task.isSuccessful()){
 
                     FirebaseUser user = fAuth.getCurrentUser();
@@ -109,7 +117,7 @@ public class register extends AppCompatActivity {
 
                     User userdata = new User(fname,lname,age,email,password);
                     databaseRef.setValue(userdata).addOnCompleteListener(task1 -> {
-
+                        progressBar.setVisibility(View.GONE);
                         Toast.makeText(this, "User created.", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(),login.class));
                         finish();
@@ -117,7 +125,8 @@ public class register extends AppCompatActivity {
                     });
                 }
                 else {
-                    Toast.makeText(register.this, "Error!" + Objects.requireNonNull(task.getException()). getMessage(), Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
+                    Toast.makeText(register.this, "Error! " + Objects.requireNonNull(task.getException()). getMessage(), Toast.LENGTH_LONG).show();
                 }
             });
         });

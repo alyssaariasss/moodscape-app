@@ -249,8 +249,12 @@
                 app:layout_constraintEnd_toEndOf="@+id/goalsCard"
                 app:layout_constraintStart_toStartOf="@+id/goalsCard"
                 app:layout_constraintTop_toBottomOf="@+id/goalsTitle" />
+
+            <TextView
+                android:id="@+id/dummyText"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                app:layout_constraintTop_toBottomOf="@+id/goalsCard"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-
 </FrameLayout>

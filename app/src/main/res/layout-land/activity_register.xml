@@ -10,7 +10,7 @@
     android:fillViewport="true"
     tools:context=".register">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -18,38 +18,36 @@
             android:id="@+id/moodscape_ls"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="108dp"
-            android:layout_marginTop="35dp"
-            android:layout_marginEnd="106dp"
+            android:layout_marginTop="25dp"
             android:contentDescription="@string/loginD"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/moodscape_ls"
             tools:ignore="ImageContrastCheck" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="106dp"
-            android:layout_height="150dp"
-            android:layout_below="@+id/moodscape_ls"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="75dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="30dp"
-            android:layout_marginEnd="75dp"
+            android:layout_width="200dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="15dp"
             android:contentDescription="@string/get_started_intro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/moodscape_ls"
             app:srcCompat="@drawable/undraw_online_ad" />
 
         <LinearLayout
             android:id="@+id/inputLinear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView"
+            android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
             android:orientation="vertical"
-            android:layout_marginBottom="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
             tools:ignore="UselessParent">
 
             <EditText
@@ -140,9 +138,9 @@
                 android:fontFamily="@font/sourcesanspro_regular"
                 android:textColor="@color/dark_gray"
                 android:textSize="15sp"
-                app:hintEnabled="false"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/dark_gray">
+                app:endIconTint="@color/dark_gray"
+                app:hintEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/Password1"
@@ -155,9 +153,9 @@
                     android:paddingTop="0dp"
                     android:paddingEnd="0dp"
                     android:paddingBottom="2dp"
+                    android:textColor="@color/dark_gray"
                     android:textColorHint="@color/dark_gray"
-                    android:textSize="15sp"
-                    android:textColor="@color/dark_gray" />
+                    android:textSize="15sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <CheckBox
@@ -171,8 +169,8 @@
                 android:paddingEnd="0dp"
                 android:paddingBottom="2dp"
                 android:text="@string/agree_tos"
-                android:textSize="15sp"
-                android:textColor="@color/dark_gray"/>
+                android:textColor="@color/dark_gray"
+                android:textSize="15sp" />
 
             <Button
                 android:id="@+id/SignUpBtn"
@@ -195,5 +193,23 @@
                 app:backgroundTint="@color/dark_pink"
                 tools:ignore="TextContrastCheck" />
         </LinearLayout>
-    </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.204" />
+
+        <TextView
+            android:id="@+id/dummyText"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/inputLinear"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

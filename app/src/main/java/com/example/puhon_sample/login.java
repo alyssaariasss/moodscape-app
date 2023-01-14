@@ -60,7 +60,7 @@ public class login extends AppCompatActivity {
                     startActivity(new Intent(getApplicationContext(), menu.class));
                 }
                 else {
-                    Toast.makeText(login.this, "Error! " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(login.this, "Error! " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
                 }
 

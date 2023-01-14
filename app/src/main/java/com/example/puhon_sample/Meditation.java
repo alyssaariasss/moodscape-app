@@ -127,41 +127,5 @@ public class Meditation extends AppCompatActivity {
                     .commit();
         }
 
-        float slideTo = (tabNumber - selectedTabNumber) * selectedImageView.getWidth();
-
-        TranslateAnimation translateAnimation = new TranslateAnimation(0, slideTo, 0, 0);
-        translateAnimation.setDuration(200);
-
-        if (selectedTabNumber == 1) {
-            mc_relax.startAnimation(translateAnimation);
-        }
-        else if (selectedTabNumber == 2) {
-            mc_focus.startAnimation(translateAnimation);
-        }
-        else if (selectedTabNumber == 3) {
-            mc_anxiety.startAnimation(translateAnimation);
-        }
-        else {
-            mc_stress.startAnimation(translateAnimation);
-        }
-
-        translateAnimation.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-
-        selectedTabNumber = tabNumber;
     }
 }

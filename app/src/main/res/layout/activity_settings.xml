@@ -174,17 +174,16 @@
         android:id="@+id/Settings_SaveBtn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_marginTop="112dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
         android:stateListAnimator="@null"
         android:text="SAVE CHANGES"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-        app:layout_constraintEnd_toEndOf="@+id/Settings_Password"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/Settings_Password" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Settings_Password" />
 
     <LinearLayout
         android:id="@+id/linearLayout4"

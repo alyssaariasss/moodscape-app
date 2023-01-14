@@ -62,21 +62,6 @@
 
 
     <Button
-        android:id="@+id/focus_timer_reset"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/round_btn3"
-        android:elevation="5dp"
-        android:fontFamily="@font/sourcesanspro_semibold"
-        android:gravity="center"
-        android:stateListAnimator="@null"
-        android:text="RESET"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/focus_timer_done"
-        app:layout_constraintEnd_toEndOf="@+id/focus1_desc" />
-
-    <Button
         android:id="@+id/focus_timer_start"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
@@ -90,6 +75,22 @@
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/focus_timer_done"
         app:layout_constraintStart_toStartOf="@+id/focus1_desc" />
+
+    <Button
+        android:id="@+id/focus_timer_reset"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round_btn3"
+        android:elevation="5dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
+        android:gravity="center"
+        android:stateListAnimator="@null"
+        android:text="RESET"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/focus_timer_done"
+        app:layout_constraintEnd_toEndOf="@+id/focus1_desc" />
 
     <Button
         android:id="@+id/focus_timer_done"

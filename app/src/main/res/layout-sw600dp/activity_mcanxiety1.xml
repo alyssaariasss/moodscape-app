@@ -10,7 +10,7 @@
         android:id="@+id/title1"
         android:layout_width="330dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/sourcesanspro_regular"
         android:text="Increase your self-love and reaffirm yourself today through this quote. "
         android:textAlignment="center"
@@ -26,7 +26,7 @@
         android:id="@+id/title2"
         android:layout_width="500dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="125dp"
         android:fontFamily="@font/ubuntu_bold"
         android:lineSpacingExtra="10sp"
         android:text='"I AM ALLOWED TO MAKE A BIG DEAL OUT OF THINGS THAT FEEL REALLY BIG TO ME"'
@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/title1" />
 
     <ImageView
         android:id="@+id/anxiety1_design"

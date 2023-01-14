@@ -103,7 +103,7 @@ public class menu extends AppCompatActivity {
 
         btn_info.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, aboutMoodscape.class);
+            Intent intent = new Intent(this, sample_cropper.class);
             startActivity(intent);
         });
 

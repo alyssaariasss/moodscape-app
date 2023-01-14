@@ -2,12 +2,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="80dp"
     app:cardElevation="5dp"
     app:cardCornerRadius="20dp"
     android:backgroundTint="@color/dirty_cream"
     android:layout_marginHorizontal="16dp"
-    android:layout_marginVertical="8dp" >
+    android:layout_marginVertical="16dp" >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,16 +17,18 @@
         <CheckBox
             android:id="@+id/goalsCheckbox"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="0dp"
+            android:button="@null"
             android:buttonTint="@color/dark_gray"
+            android:drawableEnd="@drawable/checkbox"
             android:minHeight="100dp"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
             android:textColor="@color/dark_gray"
-            android:textSize="16sp"
-            android:button="@null"
-            android:drawableEnd="@drawable/checkbox"
+            android:textSize="18sp"
             tools:fontFamily="@font/sourcesanspro_semibold"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck"
             tools:text="This is a sample goal" />
 
         <TextView
@@ -35,11 +37,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/goalsCheckbox"
             android:layout_alignStart="@+id/goalsCheckbox"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="-19dp"
+            android:layout_marginStart="16dp"
             android:text="@string/_10_00_pm"
-            android:textSize="14sp"
-            tools:fontFamily="@font/sourcesanspro_regular"/>
+            android:textSize="16sp"
+            tools:fontFamily="@font/sourcesanspro_regular" />
 
 
     </RelativeLayout>

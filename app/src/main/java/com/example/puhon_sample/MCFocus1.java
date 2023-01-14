@@ -63,8 +63,8 @@ public class MCFocus1 extends AppCompatActivity {
 
         focusTimerReset.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
+            public void onClick(View v)
+            {
                 resetTimer();
             }
         });

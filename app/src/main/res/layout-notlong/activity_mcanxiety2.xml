@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MCAnxiety1">
+    tools:context=".MCAnxiety2">
 
     <TextView
-        android:id="@+id/title1"
-        android:layout_width="280dp"
+        android:id="@+id/title2"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/sourcesanspro_regular"
-        android:text="Increase your self-love and reaffirm yourself today through this quote. "
+        android:text="Breathing exercises enable more air to flow into your body and can help calm your nerves, reducing stress and anxiety"
         android:textAlignment="center"
         android:textColor="@color/dark_gray"
         android:textSize="16sp"
@@ -21,38 +21,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <TextView
-        android:id="@+id/title2"
-        android:layout_width="330dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:fontFamily="@font/ubuntu_bold"
-        android:lineSpacingExtra="10sp"
-        android:text='"I AM ALLOWED TO MAKE A BIG DEAL OUT OF THINGS THAT FEEL REALLY BIG TO ME"'
-        android:textAlignment="center"
-        android:textColor="@color/coral"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/anxiety1_design"
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/anxiety2_content"
         android:layout_width="350dp"
-        android:layout_height="230dp"
-        android:layout_marginTop="208dp"
-        android:src="@drawable/anxiety1_design"
+        android:layout_height="280dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/breathe1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/title2" />
 
     <Button
-        android:id="@+id/mc_doneBtn"
+        android:id="@+id/mc_doneBtn1"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="310dp"
+        android:layout_marginTop="350dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
@@ -61,12 +44,11 @@
         android:text="@string/done"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/anxiety1_design" />
+        app:layout_constraintTop_toTopOf="@+id/anxiety2_content" />
 
     <LinearLayout
-        android:id="@+id/linearLayout6"
+        android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -128,7 +110,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

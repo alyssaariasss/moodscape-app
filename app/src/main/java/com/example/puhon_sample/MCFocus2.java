@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -68,6 +69,7 @@ public class MCFocus2 extends AppCompatActivity {
         focusQ10.setTag("9");
         focusQ11.setTag("10");
         focusQ12.setTag("11");
+
 
         // load the card images
         frontOfCardsResources();
@@ -138,6 +140,37 @@ public class MCFocus2 extends AppCompatActivity {
             doStuff(focusQ12, theCard);
         });
 
+        // NavBar Buttons
+
+        ImageButton btn_home = findViewById(R.id.nav_home);
+        ImageButton btn_info = findViewById(R.id.nav_about_mood);
+        ImageButton btn_progress = findViewById(R.id.nav_progress);
+        ImageButton btn_settings = findViewById(R.id.nav_settings);
+
+
+        btn_home.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, menu.class);
+            startActivity(intent);
+        });
+
+        btn_info.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, aboutMoodscape.class);
+            startActivity(intent);
+        });
+
+        btn_progress.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, summary.class);
+            startActivity(intent);
+        });
+
+        btn_settings.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, settings.class);
+            startActivity(intent);
+        });
     }
 
     private void doStuff(ImageView img, int card) {
@@ -331,7 +364,11 @@ public class MCFocus2 extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     })
-                    .setNegativeButton("EXIT", (dialog, which) -> finish());
+                    .setNegativeButton("EXIT", (dialog, which) -> {
+                        Intent intent = new Intent(getApplicationContext(), Meditation.class);
+                        startActivity(intent);
+                        finish();
+                    });
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
         }

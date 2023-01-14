@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:text="Improving Concentration"
                 android:fontFamily="@font/sourcesanspro_semibold"
-                android:textSize="24sp"
+                android:textSize="32sp"
                 android:textColor="@color/dark_gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -32,17 +32,17 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/focus1"
-                android:layout_width="350dp"
-                android:layout_height="100dp"
+                android:layout_width="500dp"
+                android:layout_height="120dp"
                 android:backgroundTint="@color/dirty_cream"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="15dp"
                 app:cardElevation="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.491"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/fragment_title1"
-                app:layout_constraintVertical_bias="0.160">
+                app:layout_constraintVertical_bias="0.200">
 
                 <LinearLayout
                     android:id="@+id/linearLayoutMC1"
@@ -59,17 +59,17 @@
 
                     <ImageView
                         android:id="@+id/focus1_image"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="20dp"
                         android:src="@drawable/focus_tree" />
 
                     <LinearLayout
-                        android:layout_marginStart="15dp"
-                        android:layout_width="250dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_width="300dp"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical" >
 
                         <TextView
                             android:id="@+id/focus1_title"
@@ -78,7 +78,7 @@
                             android:fontFamily="@font/sourcesanspro_bold"
                             android:text="Take a break and walk"
                             android:textColor="@color/dark_gray"
-                            android:textSize="20sp" />
+                            android:textSize="26sp" />
 
                         <TextView
                             android:id="@+id/focus1_desc"
@@ -86,15 +86,15 @@
                             android:layout_height="wrap_content"
                             android:text="Walking helps to get away from the distractions of everyday things and to clear your mind."
                             android:textColor="@color/dark_gray"
-                            android:textSize="14sp" />
+                            android:textSize="16sp" />
 
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_marginTop="30dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="30dp"
                         android:src="@drawable/arrow_forward" />
 
                 </LinearLayout>
@@ -103,11 +103,11 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/focus2"
-                android:layout_width="350dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="125dp"
+                android:layout_width="500dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="150dp"
                 android:backgroundTint="@color/dirty_cream"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="15dp"
                 app:cardElevation="5dp"
                 app:layout_constraintEnd_toEndOf="@+id/focus1"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -116,8 +116,8 @@
 
                 <LinearLayout
                     android:id="@+id/linearLayoutMC2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="5dp"
                     android:elevation="6dp"
@@ -129,15 +129,15 @@
 
                     <ImageView
                         android:id="@+id/focus2_image"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="50dp"
                         android:src="@drawable/focus_clock"
-                        android:layout_marginStart="15dp"
                         android:layout_marginTop="20dp"/>
 
                     <LinearLayout
-                        android:layout_marginStart="15dp"
-                        android:layout_width="250dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical" >
 
@@ -148,23 +148,23 @@
                             android:text="Memory Matching Game"
                             android:fontFamily="@font/sourcesanspro_bold"
                             android:textColor="@color/dark_gray"
-                            android:textSize="20sp"/>
+                            android:textSize="26sp"/>
 
                         <TextView
                             android:id="@+id/anxiety2_desc"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Memory matching game that involves strategy can help develop one's concentration level and patience."
-                            android:textSize="14sp"
+                            android:textSize="16sp"
                             android:textColor="@color/dark_gray"/>
 
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_marginTop="30dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="30dp"
                         android:src="@drawable/arrow_forward"/>
 
                 </LinearLayout>

@@ -17,7 +17,6 @@ public class aboutMoodscape extends AppCompatActivity {
         // NavBar Buttons
 
         ImageButton btn_home = findViewById(R.id.nav_home);
-        ImageButton btn_info = findViewById(R.id.nav_about_mood);
         ImageButton btn_progress = findViewById(R.id.nav_progress);
         ImageButton btn_settings = findViewById(R.id.nav_settings);
 
@@ -25,12 +24,6 @@ public class aboutMoodscape extends AppCompatActivity {
         btn_home.setOnClickListener(v -> {
 
             Intent intent = new Intent(this, menu.class);
-            startActivity(intent);
-        });
-
-        btn_info.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, aboutMoodscape.class);
             startActivity(intent);
         });
 

@@ -1,17 +1,11 @@
 package com.example.puhon_sample;
 
-
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +15,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 import androidx.annotation.Nullable;
 
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -34,6 +29,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
@@ -41,7 +37,6 @@ import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 
 public class settings extends AppCompatActivity {
@@ -55,7 +50,10 @@ public class settings extends AppCompatActivity {
     String id;
     User userprofile;
     CircleImageView ImgProfilePic;
-    StorageReference storageReference;
+    private Uri imageUri;
+    private String myUri = "";
+    private StorageTask uploadTask;
+    private StorageReference storageReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,16 +77,10 @@ public class settings extends AppCompatActivity {
         assert user != null;
         id = user.getUid();
         reference = database.getReference().child("users").child(id);
+        storageReference = FirebaseStorage.getInstance().getReference().child("Profile Pic");
 
-        storageReference = FirebaseStorage.getInstance().getReference();
-        StorageReference profileRef = storageReference.child("users/" + fAuth.getCurrentUser().getUid() + "/profile.jpg");
+        AddProfilePic.setOnClickListener(v -> CropImage.activity().setAspectRatio(1, 1).start(settings.this));
 
-        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Picasso.get().load(uri).into(ImgProfilePic);
-            }
-        });
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -104,19 +96,9 @@ public class settings extends AppCompatActivity {
 
             }
 
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
-
-        // Deprecated
-        AddProfilePic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent openGalleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(openGalleryIntent, 1000);
             }
         });
 
@@ -163,9 +145,10 @@ public class settings extends AppCompatActivity {
                         Map<String, Object> edited = new HashMap<>();
                         edited.put("userPassword", password);
                         reference.updateChildren(edited);
-
                     }
+
                 });
+                uploadProfileImage();
             }
         });
 
@@ -174,8 +157,6 @@ public class settings extends AppCompatActivity {
         ImageButton btn_home = findViewById(R.id.nav_home);
         ImageButton btn_info = findViewById(R.id.nav_about_mood);
         ImageButton btn_progress = findViewById(R.id.nav_progress);
-        ImageButton btn_settings = findViewById(R.id.nav_settings);
-
 
         btn_home.setOnClickListener(v -> {
 
@@ -195,17 +176,32 @@ public class settings extends AppCompatActivity {
             startActivity(intent);
         });
 
-        btn_settings.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, settings.class);
-            startActivity(intent);
+        LogOut.setOnClickListener(v -> {
+            fAuth.signOut();
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
         });
 
-        LogOut.setOnClickListener(new View.OnClickListener() {
+        getUseInfo();
+    }
+
+    private void getUseInfo() {
+        reference.child(fAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
-                fAuth.signOut();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists() && dataSnapshot.getChildrenCount() > 0)
+                {
+
+                    if (dataSnapshot.hasChild("image"))
+                    {
+                        String image = dataSnapshot.child("image").getValue().toString();
+                        Picasso.get().load(image).into(ImgProfilePic);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+
             }
         });
     }
@@ -213,56 +209,46 @@ public class settings extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1000) {
-            if (resultCode == Activity.RESULT_OK) {
-                assert data != null;
-                Uri imageUri = data.getData();
-                // hindi nagana ito, nagshoshow up lang yung cropper pero hindi siya nacocrop lol hahaha
-                CropImage.activity(imageUri)
-                        .setGuidelines(CropImageView.Guidelines.ON)
-                        .setCropShape(CropImageView.CropShape.OVAL)
-                        .setActivityTitle("Crop Image")
-                        .setFixAspectRatio(true)
-                        .setCropMenuCropButtonTitle("Done")
-                        .start(this);
-                ImgProfilePic.setImageURI(imageUri);
-                uploadImageToFirebase(imageUri);
-            }
 
-            if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-                CropImage.ActivityResult result = CropImage.getActivityResult(data);
-                if (resultCode == RESULT_OK) {
-                    Uri imageUri = data.getData();
-                    ImgProfilePic.setImageURI(imageUri);
-                } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                    Exception error = result.getError();
-                    Toast.makeText(settings.this,error.getMessage(),Toast.LENGTH_SHORT).show();
-                }
-            }
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK && data != null)
+        {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            imageUri = result.getUri();
+        }
+        else
+        {
+            Toast.makeText(this, "Error, Try Again", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void uploadImageToFirebase(Uri imageUri) {
-        // Upload image to fb storage
-        final StorageReference fileRef = storageReference.child("users/" + Objects.requireNonNull(fAuth.getCurrentUser()).getUid() + "/profile.jpg");
-        fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        Picasso.get().load(uri).into(ImgProfilePic);
+    private void uploadProfileImage() {
+        if (imageUri != null) {
+            final StorageReference fileRef = storageReference
+                    .child(fAuth.getCurrentUser().getUid() + ".jpg");
 
+            uploadTask = fileRef.putFile(imageUri);
+
+            uploadTask.continueWithTask(new Continuation() {
+                @Override
+                public Object then(@NonNull Task task) throws Exception {
+                    if (!task.isSuccessful()) {
+                        throw task.getException();
                     }
-                });
+                    return fileRef.getDownloadUrl();
+                }
+            }).addOnCompleteListener((OnCompleteListener<Uri>) task -> {
+                if (task.isSuccessful()) {
+                    Uri downloadUri = task.getResult();
+                    myUri = downloadUri.toString();
 
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(settings.this, "Failed.", Toast.LENGTH_SHORT).show();
-            }
-        });
+                    HashMap<String, Object> userMap = new HashMap<>();
+                    userMap.put("image", myUri);
+
+                    reference.child(fAuth.getCurrentUser().getUid()).updateChildren(userMap);
+
+                }
+            });
+        }
     }
 }
 

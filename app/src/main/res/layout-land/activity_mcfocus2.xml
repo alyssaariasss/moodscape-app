@@ -4,69 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MCAnxiety1">
+    tools:context=".MCFocus2">
 
-    <TextView
-        android:id="@+id/title1"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:text="Increase your self-love and reaffirm yourself today through this quote. "
-        android:textAlignment="center"
-        android:textColor="@color/dark_gray"
-        android:textSize="16sp"
+    <include
+        layout="@layout/mc_images"
+        android:layout_width="550dp"
+        android:layout_height="280dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.457" />
 
     <TextView
-        android:id="@+id/title2"
-        android:layout_width="330dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:fontFamily="@font/ubuntu_bold"
-        android:lineSpacingExtra="10sp"
-        android:text='"I AM ALLOWED TO MAKE A BIG DEAL OUT OF THINGS THAT FEEL REALLY BIG TO ME"'
-        android:textAlignment="center"
-        android:textColor="@color/coral"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
+        android:text="Memory Matching Game"
+        android:textColor="@color/dark_gray"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/anxiety1_design"
-        android:layout_width="350dp"
-        android:layout_height="230dp"
-        android:layout_marginTop="208dp"
-        android:src="@drawable/anxiety1_design"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/title2" />
-
-    <Button
-        android:id="@+id/mc_doneBtn"
-        android:layout_width="350dp"
+    <TextView
+        android:id="@+id/tv_p1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="310dp"
-        android:background="@drawable/round_btn3"
-        android:elevation="5dp"
-        android:fontFamily="@font/sourcesanspro_semibold"
-        android:gravity="center"
-        android:stateListAnimator="@null"
-        android:text="@string/done"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="4dp"
+        android:text="P1: 0"
+        android:textColor="@color/dark_gray"
+        android:textSize="34sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/anxiety1_design" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_p2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        android:text="P2: 0"
+        android:textColor="@color/dark_gray"
+        android:textSize="34sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout6"
+        android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -130,5 +123,6 @@
     </LinearLayout>
 
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

@@ -11,6 +11,7 @@ import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -20,7 +21,8 @@ import java.util.ArrayList;
 
 public class relax_music extends AppCompatActivity {
 
-    Button Play, Pause, Prev, Next, Done;
+    Button Done;
+    ImageView Play, Prev, Next;
     TextView SongTitle;
     SeekBar SeekBarTime, SeekBarVol;
     private Runnable runnable;
@@ -36,10 +38,10 @@ public class relax_music extends AppCompatActivity {
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         // initializing views
-        Play = findViewById(R.id.relaxPlayBtn);
-        Pause = findViewById(R.id.relaxPauseBtn);
-        Prev = findViewById(R.id.relaxPrevBtn);
-        Next = findViewById(R.id.relaxNextBtn);
+        //Play = findViewById(R.id.relaxPlayBtn);
+        Play = findViewById(R.id.relaxPlay);
+        Prev = findViewById(R.id.relaxPrev);
+        Next = findViewById(R.id.relaxNext);
         Done = findViewById(R.id.relaxDoneBtn);
         SongTitle = findViewById(R.id.songTitle);
         SeekBarTime = findViewById(R.id.seekBarTime);
@@ -88,22 +90,17 @@ public class relax_music extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SeekBarTime.setMax(mediaPlayer.getDuration());
-                if (mediaPlayer != null) {
+                if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+                    mediaPlayer.pause();
+                    Play.setImageResource(R.drawable.play_icon);
+                }else {
                     mediaPlayer.start();
+                    Play.setImageResource(R.drawable.pause_icon);
                 }
                 SongNames();
             }
         });
 
-
-        Pause.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mediaPlayer != null) {
-                    mediaPlayer.pause();
-                }
-            }
-        });
 
         Next.setOnClickListener(new View.OnClickListener() {
             @Override

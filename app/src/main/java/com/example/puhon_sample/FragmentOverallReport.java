@@ -54,7 +54,7 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
     CustomCalendar customCalendar;
     CardView selectedDateCard;
     ImageView moodView;
-    TextView selectedDateText, overallReportTitle;
+    TextView selectedDateText, overallReportTitle, dummyText;
 
     HashMap<Integer, Object> mapDateToDesc = new HashMap<>();
 
@@ -69,6 +69,7 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
         moodView = view.findViewById(R.id.moodView);
         selectedDateText = view.findViewById(R.id.selectedDateText);
         overallReportTitle = view.findViewById(R.id.overallReportTitle);
+        dummyText = view.findViewById(R.id.dummyText);
 
         // For moods and Questions
         AnswerOne = view.findViewById(R.id.answerOne);
@@ -80,7 +81,8 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
         selectedDateText.setVisibility(View.INVISIBLE);
         moodView.setVisibility(View.INVISIBLE);
 
-        AnswerOne.setVisibility(View.GONE);
+        AnswerOne.setVisibility(View.INVISIBLE);
+        dummyText.setVisibility(View.INVISIBLE);
 
         fAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -103,88 +105,95 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
 
         // Displays date and mood when date is selected
         customCalendar.setOnDateSelectedListener((view1, selectedDate, desc) -> {
-            selectedDateCard.setVisibility(View.VISIBLE);
-            selectedDateText.setVisibility(View.VISIBLE);
-            moodView.setVisibility(View.VISIBLE);
-            AnswerOne.setVisibility(View.VISIBLE);
+            if (desc != null) {
+                selectedDateCard.setVisibility(View.VISIBLE);
+                selectedDateText.setVisibility(View.VISIBLE);
+                moodView.setVisibility(View.VISIBLE);
+                AnswerOne.setVisibility(View.VISIBLE);
+                dummyText.setVisibility(View.VISIBLE);
 
+                // Gets date as string
+                String sDate = (selectedDate.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.ENGLISH))
+                        + " " + selectedDate.get(Calendar.DAY_OF_MONTH);
+                // Displays selected date
+                selectedDateText.setText(sDate);
 
-            // Gets date as string
-            String sDate = (selectedDate.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.ENGLISH))
-                    + " " + selectedDate.get(Calendar.DAY_OF_MONTH);
-            // Displays selected date
-            selectedDateText.setText(sDate);
+                // Sets and displays image
+                DisplayImage(desc);
 
-            // Sets and displays image
-            DisplayImage(desc);
+                // Displays answers from UserQuestions start
+                String day = String.format("%02d", selectedDate.get(Calendar.DAY_OF_MONTH));
+                qDate = day + "/" +
+                        selectedDate.getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale.ENGLISH)
+                        + "/" + selectedDate.get(Calendar.YEAR);
 
-            // Displays answers from UserQuestions start
-            String day = String.format("%02d", selectedDate.get(Calendar.DAY_OF_MONTH));
-            qDate = day + "/" +
-                    selectedDate.getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale.ENGLISH)
-                    + "/" + selectedDate.get(Calendar.YEAR);
-
-
-                    ValueEventListener valueEventListener = new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            list1.clear();
-                            if (snapshot.exists()) {
-                                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                                    UserAnswers userAnswers = dataSnapshot.getValue(UserAnswers.class);
-                                    list1.add(userAnswers);
-                                }
-                                myAdapter.notifyDataSetChanged();
+                ValueEventListener valueEventListener = new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        list1.clear();
+                        if (snapshot.exists()) {
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                UserAnswers userAnswers = dataSnapshot.getValue(UserAnswers.class);
+                                list1.add(userAnswers);
                             }
-
+                            myAdapter.notifyDataSetChanged();
                         }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    };
-            //questions
-            ref.addListenerForSingleValueEvent(valueEventListener);
-            Query query = ref.orderByChild("date").equalTo(qDate);
-            query.addListenerForSingleValueEvent(valueEventListener);
-
-            AnswerOne.setHasFixedSize(true);
-            AnswerOne.setLayoutManager(new GridLayoutManager(getActivity(), 1));
-            list1 = new ArrayList<>();
-            myAdapter = new MyAdapter(this, list1, list2);
-            AnswerOne.setAdapter(myAdapter);
-
-            ValueEventListener valueEventListener1 = new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    list2.clear();
-                    if (snapshot.exists()) {
-                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                            UserMoods userMoods = dataSnapshot.getValue(UserMoods.class);
-                            list2.add(userMoods);
-                        }
-                        myAdapter.notifyDataSetChanged();
                     }
 
-                }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
+                    }
+                };
+                //questions
+                ref.addListenerForSingleValueEvent(valueEventListener);
+                Query query = ref.orderByChild("date").equalTo(qDate);
+                query.addListenerForSingleValueEvent(valueEventListener);
 
-                }
-            };
-            //moods
-            reference.addListenerForSingleValueEvent(valueEventListener1);
-            Query query1 = reference.orderByChild("date").equalTo(qDate);
-            query1.addListenerForSingleValueEvent(valueEventListener1);
+                AnswerOne.setHasFixedSize(true);
+                AnswerOne.setLayoutManager(new GridLayoutManager(getActivity(), 1));
+                list1 = new ArrayList<>();
+                myAdapter = new MyAdapter(this, list1, list2);
+                AnswerOne.setAdapter(myAdapter);
 
-            AnswerOne.setHasFixedSize(true);
-            AnswerOne.setLayoutManager(new GridLayoutManager(getActivity(), 1));
-            list2 = new ArrayList<>();
-            myAdapter = new MyAdapter(this, list1, list2);
-            AnswerOne.setAdapter(myAdapter);
+                ValueEventListener valueEventListener1 = new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        list2.clear();
+                        if (snapshot.exists()) {
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                UserMoods userMoods = dataSnapshot.getValue(UserMoods.class);
+                                list2.add(userMoods);
+                            }
+                            myAdapter.notifyDataSetChanged();
+                        }
 
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                };
+                //moods
+                reference.addListenerForSingleValueEvent(valueEventListener1);
+                Query query1 = reference.orderByChild("date").equalTo(qDate);
+                query1.addListenerForSingleValueEvent(valueEventListener1);
+
+                AnswerOne.setHasFixedSize(true);
+                AnswerOne.setLayoutManager(new GridLayoutManager(getActivity(), 1));
+                list2 = new ArrayList<>();
+                myAdapter = new MyAdapter(this, list1, list2);
+                AnswerOne.setAdapter(myAdapter);
+
+            } else {
+                selectedDateCard.setVisibility(View.INVISIBLE);
+                selectedDateText.setVisibility(View.INVISIBLE);
+                moodView.setVisibility(View.INVISIBLE);
+                AnswerOne.setVisibility(View.INVISIBLE);
+                dummyText.setVisibility(View.INVISIBLE);
+            }
         });
 
         return view;

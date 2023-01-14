@@ -141,7 +141,8 @@
                 android:textColor="@color/dark_gray"
                 android:textSize="15sp"
                 app:hintEnabled="false"
-                app:passwordToggleEnabled="true">
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/dark_gray">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/Password1"
@@ -155,7 +156,8 @@
                     android:paddingEnd="0dp"
                     android:paddingBottom="2dp"
                     android:textColorHint="@color/dark_gray"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:textColor="@color/dark_gray" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <CheckBox
@@ -169,7 +171,8 @@
                 android:paddingEnd="0dp"
                 android:paddingBottom="2dp"
                 android:text="@string/agree_tos"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:textColor="@color/dark_gray"/>
 
             <Button
                 android:id="@+id/SignUpBtn"

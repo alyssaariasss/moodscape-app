@@ -196,39 +196,46 @@ public class AddNewGoal extends BottomSheetDialogFragment {
                 // Create new instance of UserGoals and stores new goal and deadline
                 userGoals = new UserGoals();
 
-                reference.orderByChild("goal").equalTo(goal).addListenerForSingleValueEvent(new ValueEventListener() {
+                reference.orderByChild("date").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (!snapshot.exists()) {
-                            userGoals.setGoalId(i+1);
-                            userGoals.setDate(dateToday);
-                            userGoals.setGoal(goal);
-                            userGoals.setDeadline(time);
-                            userGoals.setStatus(0);
-                            reference.child(String.valueOf(i+1)).setValue(userGoals);
+                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                            String date = Objects.requireNonNull(dataSnapshot.child("date").getValue()).toString();
+                            String savedGoal = Objects.requireNonNull(dataSnapshot.child("goal").getValue()).toString();
 
-                            // Set up alarm system for goals
-                            Intent intent = new Intent(getContext(), GoalsNotification.class);
-                            PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), 0, intent, PendingIntent.FLAG_IMMUTABLE);
-
-                            AlarmManager alarmManager = (AlarmManager) requireActivity().getSystemService(ALARM_SERVICE);
-
-                            // Add selected hour and minute to calendar
-                            Calendar cal = Calendar.getInstance();
-                            cal.setTimeInMillis(System.currentTimeMillis());
-                            cal.set(Calendar.HOUR_OF_DAY, hour);
-                            cal.set(Calendar.MINUTE, minute);
-                            cal.set(Calendar.SECOND, 0);
-
-                            if (Build.VERSION.SDK_INT >= 19) {
-                                alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
+                            if (date.equals(dateToday)) {
+                                if (savedGoal.equals(goal)) {
+                                    Toast.makeText(getContext(), "Goal already exists. Please enter a different goal title.", Toast.LENGTH_SHORT).show();
+                                }
                             } else {
-                                alarmManager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
-                            }
+                                userGoals.setGoalId(i+1);
+                                userGoals.setDate(dateToday);
+                                userGoals.setGoal(goal);
+                                userGoals.setDeadline(time);
+                                userGoals.setStatus(0);
+                                reference.child(String.valueOf(i+1)).setValue(userGoals);
 
-                            Toast.makeText(getContext(), "A new goal has been added.", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(getContext(), "Goal already exists. Please enter a different goal title.", Toast.LENGTH_SHORT).show();
+                                // Set up alarm system for goals
+                                Intent intent = new Intent(getContext(), GoalsNotification.class);
+                                PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), 0, intent, PendingIntent.FLAG_IMMUTABLE);
+
+                                AlarmManager alarmManager = (AlarmManager) requireActivity().getSystemService(ALARM_SERVICE);
+
+                                // Add selected hour and minute to calendar
+                                Calendar cal = Calendar.getInstance();
+                                cal.setTimeInMillis(System.currentTimeMillis());
+                                cal.set(Calendar.HOUR_OF_DAY, hour);
+                                cal.set(Calendar.MINUTE, minute);
+                                cal.set(Calendar.SECOND, 0);
+
+                                if (Build.VERSION.SDK_INT >= 19) {
+                                    alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
+                                } else {
+                                    alarmManager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
+                                }
+
+                                Toast.makeText(getContext(), "A new goal has been added.", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
 

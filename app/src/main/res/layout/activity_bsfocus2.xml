@@ -6,62 +6,89 @@
     android:layout_height="match_parent"
     tools:context=".BSFocus2">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-            android:id="@+id/focus2_title"
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:text="Playing memory games can improve other brain functions, such as attention, concentration, and focus."
-            android:textAlignment="center"
-            android:textColor="@color/dark_gray"
-            android:textSize="16sp" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="380dp"
-            android:layout_height="230dp"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/focus2_design" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:text="Instruction:\n\nThe game begins with all of the cards face down. Look for another card with the same image as the first. If you can't find a pair, the flipped cards will be flipped back with the face down. Try to remember these images as it becomes easier to find pairs the longer you play. There will be no time limit so take as much time as you want."
-            android:textAlignment="center"
-            android:textColor="@color/dark_gray"
-            android:textSize="18sp"
-            android:layout_marginTop="30dp"/>
-
-        <Button
-            android:id="@+id/mc_startBtn"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/round_btn3"
-            android:elevation="5dp"
-            android:fontFamily="@font/sourcesanspro_bold"
-            android:gravity="center"
-            android:stateListAnimator="@null"
-            android:text="START"
-            android:textSize="24sp"
-            android:layout_marginTop="50dp" />
-
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/bsFocus2Linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="30dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.1">
+
+                <TextView
+                    android:id="@+id/focus2_title"
+                    android:layout_width="380dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:text="Playing memory games can improve other brain functions, such as attention, concentration, and focus."
+                    android:textAlignment="center"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="230dp"
+                    android:layout_marginTop="50dp"
+                    android:src="@drawable/focus2_design" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:text="Instruction:\n\nThe game begins with all of the cards face down. Look for another card with the same image as the first. If you can't find a pair, the flipped cards will be flipped back with the face down. Try to remember these images as it becomes easier to find pairs the longer you play. There will be no time limit so take as much time as you want."
+                    android:textAlignment="center"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/mc_startBtn"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/round_btn3"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/sourcesanspro_bold"
+                    android:gravity="center"
+                    android:stateListAnimator="@null"
+                    android:text="START"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bsFocus2Linear"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 
     <LinearLayout
         android:id="@+id/linearLayout6"
@@ -126,7 +153,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

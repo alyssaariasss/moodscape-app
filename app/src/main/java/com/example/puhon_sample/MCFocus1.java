@@ -22,7 +22,7 @@ import java.util.Locale;
 
 public class MCFocus1 extends AppCompatActivity {
 
-    public static final long START_TIME_IN_MILLIS = 10000;
+    public static final long START_TIME_IN_MILLIS = 600000;
 
     TextView focusTimer;
     Button focusTimerStart, focusTimerReset, focusTimerDone;
@@ -75,7 +75,7 @@ public class MCFocus1 extends AppCompatActivity {
                 AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
 
                 long startTime = System.currentTimeMillis();
-                long tenMinutesInMillis = 1000 * 10;
+                long tenMinutesInMillis = 1000 * 600;
 
                 alarmManager.set(AlarmManager.RTC_WAKEUP,
                         startTime + tenMinutesInMillis, pendingIntent);

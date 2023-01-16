@@ -7,7 +7,6 @@
     android:background="@color/white"
     tools:context=".settings">
 
-
     <ImageButton
         android:id="@+id/signOut"
         android:layout_width="wrap_content"

@@ -48,7 +48,8 @@
         android:text="Write your answers here..."
         android:textColor="@color/dark_gray"
         android:textColorHint="@color/dark_gray"
-        android:textSize="14sp"
+        android:textSize="24sp"
+        android:lineSpacingExtra="8sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/question2_tagline1" />
@@ -84,7 +85,6 @@
         android:layout_width="700dp"
         android:layout_height="200dp"
         android:layout_marginTop="76dp"
-
         android:background="@drawable/round_btn4"
         android:ems="10"
         android:gravity="top"
@@ -97,7 +97,8 @@
         android:text="Write your answers here..."
         android:textColor="@color/dark_gray"
         android:textColorHint="@color/dark_gray"
-        android:textSize="14sp"
+        android:textSize="24sp"
+        android:lineSpacingExtra="8sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/question2_tagline2" />

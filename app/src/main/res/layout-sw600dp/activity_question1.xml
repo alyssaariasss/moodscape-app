@@ -52,6 +52,7 @@
         android:textColor="@color/dark_gray"
         android:textColorHint="@color/dark_gray"
         android:textSize="34sp"
+        android:lineSpacingExtra="8sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/question2_tagline1" />

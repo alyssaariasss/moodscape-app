@@ -103,7 +103,7 @@ public class menu extends AppCompatActivity {
 
         btn_info.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, sample_cropper.class);
+            Intent intent = new Intent(this, BSFocus2.class);
             startActivity(intent);
         });
 

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -16,11 +17,11 @@ public class BSFocus2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bsfocus2);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         Button startBtn = findViewById(R.id.mc_startBtn);
 
         startBtn.setOnClickListener(v -> {
-
             Intent intent = new Intent(this, MCFocus2.class);
             startActivity(intent);
         });
@@ -34,25 +35,21 @@ public class BSFocus2 extends AppCompatActivity {
 
 
         btn_home.setOnClickListener(v -> {
-
             Intent intent = new Intent(this, menu.class);
             startActivity(intent);
         });
 
         btn_info.setOnClickListener(v -> {
-
             Intent intent = new Intent(this, aboutMoodscape.class);
             startActivity(intent);
         });
 
         btn_progress.setOnClickListener(v -> {
-
             Intent intent = new Intent(this, summary.class);
             startActivity(intent);
         });
 
         btn_settings.setOnClickListener(v -> {
-
             Intent intent = new Intent(this, settings.class);
             startActivity(intent);
         });

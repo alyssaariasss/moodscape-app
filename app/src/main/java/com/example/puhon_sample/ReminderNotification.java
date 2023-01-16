@@ -11,10 +11,10 @@ public class ReminderNotification extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "notifyUser")
-                .setSmallIcon(R.drawable.reminder_notif)
-                .setContentTitle("Reminders")
-                .setContentText("Time's up, you can relax now and go home safely.")
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "ReminderNotification")
+                .setSmallIcon(R.drawable.timer_notif)
+                .setContentTitle("Reminder")
+                .setContentText("[Walking] Time's up! You can rest now and go home safely.")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(context);

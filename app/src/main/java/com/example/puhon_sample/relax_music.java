@@ -34,6 +34,7 @@ public class relax_music extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_relax_music);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 

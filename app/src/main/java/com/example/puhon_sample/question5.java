@@ -43,6 +43,7 @@ public class question5 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question5);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         Question5 = findViewById(R.id.question5_seekBar);
         Question5Rate = findViewById(R.id.question5_rate);

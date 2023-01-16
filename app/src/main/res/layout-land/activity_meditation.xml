@@ -46,7 +46,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/goals_tagline"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toTopOf="@+id/goals_tagline"
                 tools:layout_editor_absoluteX="0dp">
 
                 <LinearLayout
@@ -62,9 +63,9 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
                         android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_weight="1.1">
+                        android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/mc_relax"
@@ -76,19 +77,19 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="relax"
-                            android:textSize="16sp"
-                            android:textColor="@color/dark_gray"
                             android:layout_marginTop="3dp"
-                            android:fontFamily="@font/sourcesanspro_regular"/>
+                            android:fontFamily="@font/sourcesanspro_regular"
+                            android:text="relax"
+                            android:textColor="@color/dark_gray"
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
                         android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_weight="1.1">
+                        android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/mc_focus"
@@ -100,19 +101,19 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="focus"
-                            android:textSize="16sp"
-                            android:textColor="@color/dark_gray"
                             android:layout_marginTop="3dp"
-                            android:fontFamily="@font/sourcesanspro_regular"/>
+                            android:fontFamily="@font/sourcesanspro_regular"
+                            android:text="focus"
+                            android:textColor="@color/dark_gray"
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
                         android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_weight="1.1">
+                        android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/mc_anxiety"
@@ -124,19 +125,19 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="anxiety"
-                            android:textSize="16sp"
-                            android:textColor="@color/dark_gray"
                             android:layout_marginTop="3dp"
-                            android:fontFamily="@font/sourcesanspro_regular"/>
+                            android:fontFamily="@font/sourcesanspro_regular"
+                            android:text="anxiety"
+                            android:textColor="@color/dark_gray"
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
                         android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_weight="1.1">
+                        android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/mc_stress"
@@ -148,11 +149,11 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="stress"
-                            android:textSize="16sp"
-                            android:textColor="@color/dark_gray"
                             android:layout_marginTop="3dp"
-                            android:fontFamily="@font/sourcesanspro_regular"/>
+                            android:fontFamily="@font/sourcesanspro_regular"
+                            android:text="stress"
+                            android:textColor="@color/dark_gray"
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -161,10 +162,9 @@
                     android:id="@+id/fragmentLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    tools:layout="@layout/fragment_focus" />
+                    tools:layout="@layout/fragment_relax" />
+
             </RelativeLayout>
-
-
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline4"

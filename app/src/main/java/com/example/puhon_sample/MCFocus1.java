@@ -3,20 +3,26 @@ package com.example.puhon_sample;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Locale;
 
 public class MCFocus1 extends AppCompatActivity {
 
-    public static final long START_TIME_IN_MILLIS = 600000;
+    public static final long START_TIME_IN_MILLIS = 10000;
 
     TextView focusTimer;
     Button focusTimerStart, focusTimerReset, focusTimerDone;
@@ -29,22 +35,17 @@ public class MCFocus1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mcfocus1);
-
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         focusTimer = findViewById(R.id.focus1_timer);
         focusTimerStart = findViewById(R.id.focus_timer_start);
         focusTimerReset = findViewById(R.id.focus_timer_reset);
         focusTimerDone = findViewById(R.id.focus_timer_done);
 
-        focusTimerDone.setVisibility(View.INVISIBLE);
-        focusTimerDone.postDelayed(new Runnable() {
-            public void run() {
-                focusTimerDone.setVisibility(View.VISIBLE);
-            }
-        }, 60000);
+        CreateNotificationChannel();
+
 
         focusTimerDone.setOnClickListener(v -> {
-
             Intent intent = new Intent(this, Meditation.class);
             startActivity(intent);
         });
@@ -52,23 +53,36 @@ public class MCFocus1 extends AppCompatActivity {
         focusTimerStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(timerRunning) {
+                if (timerRunning) {
                     pauseTimer();
+
                 }
                 else {
                     startTimer();
                 }
+
             }
         });
 
         focusTimerReset.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 resetTimer();
+                // Set up alarm system for goals
+                Intent intent = new Intent(MCFocus1.this, ReminderNotification.class);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(MCFocus1.this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
+
+                AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+
+                long startTime = System.currentTimeMillis();
+                long tenMinutesInMillis = 1000 * 10;
+
+                alarmManager.set(AlarmManager.RTC_WAKEUP,
+                        startTime + tenMinutesInMillis, pendingIntent);
             }
         });
         updateTimer();
+
 
         // NavBar Buttons
 
@@ -77,31 +91,40 @@ public class MCFocus1 extends AppCompatActivity {
         ImageButton btn_progress = findViewById(R.id.nav_progress);
         ImageButton btn_settings = findViewById(R.id.nav_settings);
 
-
         btn_home.setOnClickListener(v -> {
-
             Intent intent = new Intent(this, menu.class);
             startActivity(intent);
         });
 
         btn_info.setOnClickListener(v -> {
-
             Intent intent = new Intent(this, aboutMoodscape.class);
             startActivity(intent);
         });
 
         btn_progress.setOnClickListener(v -> {
-
             Intent intent = new Intent(this, summary.class);
             startActivity(intent);
         });
 
         btn_settings.setOnClickListener(v -> {
-
             Intent intent = new Intent(this, settings.class);
             startActivity(intent);
         });
 
+    }
+    // Initialize Countdown Timer channel
+    private void CreateNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "MeditationReminderChannel";
+            String description = "Channel for Focus Meditation";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+
+            NotificationChannel channel = new NotificationChannel("ReminderNotification", name, importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 
     public void startTimer() {
@@ -119,7 +142,6 @@ public class MCFocus1 extends AppCompatActivity {
                 timerRunning = false;
                 focusTimerDone.setVisibility(View.VISIBLE);
                 updateButtons();
-
             }
         }.start();
 

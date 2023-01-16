@@ -34,13 +34,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@+id/goals_tagline"
         tools:layout_editor_absoluteX="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:layout_margin="30dp"
+            android:layout_margin="10dp"
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingStart="5dp"
@@ -144,15 +145,13 @@
             </LinearLayout>
 
 
-
         </LinearLayout>
-
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout="@layout/fragment_focus" />
+            tools:layout="@layout/fragment_relax" />
     </RelativeLayout>
 
     <!--    Navbar Buttons  -->

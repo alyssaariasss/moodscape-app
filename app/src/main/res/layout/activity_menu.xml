@@ -11,8 +11,8 @@
         android:id="@+id/Hello_User"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/sourcesanspro_bold"
         android:text="Hello, User!"
         android:textColor="#4A5759"
@@ -32,26 +32,15 @@
         app:layout_constraintStart_toStartOf="@+id/Hello_User"
         app:layout_constraintTop_toTopOf="@+id/Hello_User" />
 
-    <TextView
-        android:id="@+id/dash_lines"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:background="@drawable/dash_lines"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <RelativeLayout
         android:layout_width="355dp"
         android:layout_height="500dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/dash_lines">
+        app:layout_constraintTop_toTopOf="@+id/menu_tagline">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/for_moods"
@@ -83,9 +72,9 @@
                     android:textSize="20sp" />
 
                 <ImageView
-                    android:layout_width="50dp"
+                    android:layout_width="0dp"
                     android:layout_height="100dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:layout_weight="1.5"
                     android:src="@drawable/menu1" />
             </LinearLayout>
@@ -110,9 +99,9 @@
                 android:weightSum="2.5" >
 
                 <ImageView
-                    android:layout_width="40dp"
+                    android:layout_width="0dp"
                     android:layout_height="100dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="10dp"
                     android:layout_weight="1.5"
                     android:src="@drawable/menu2" />
 
@@ -162,8 +151,9 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="100dp"
+                    android:paddingBottom="20dp"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1.5"
-                    android:paddingBottom="32dp"
                     android:src="@drawable/menu3" />
             </LinearLayout>
 
@@ -188,9 +178,9 @@
                 android:weightSum="2.5" >
 
                 <ImageView
-                    android:layout_width="40dp"
+                    android:layout_width="0dp"
                     android:layout_height="100dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="10dp"
                     android:layout_weight="1.5"
                     android:src="@drawable/menu4" />
 

@@ -42,7 +42,7 @@
                 app:layout_constraintHorizontal_bias="0.491"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/fragment_title1"
-                app:layout_constraintVertical_bias="0.240">
+                app:layout_constraintVertical_bias="0.160">
 
                 <LinearLayout
                     android:id="@+id/linearLayoutMC1"

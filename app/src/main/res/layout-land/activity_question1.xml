@@ -5,58 +5,87 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <TextView
-        android:id="@+id/question2_where"
-        android:layout_width="340dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="When did you last feel this mood?"
-        android:textColor="#4A5759"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/question2_tagline1"
-        android:layout_width="213dp"
-        android:layout_height="23dp"
-        android:layout_marginTop="36dp"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:text="Why were you feeling this way?"
-        android:textColor="#4A5759"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/question2_where"
-        app:layout_constraintTop_toTopOf="@+id/question2_where" />
-
-    <!--    Navbar Buttons  -->
-
-    <EditText
-        android:id="@+id/question1"
-        android:layout_width="750dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/round_btn4"
-        android:ems="10"
-        android:gravity="top"
-        android:inputType="textMultiLine"
-        android:lines="12"
-        android:overScrollMode="always"
-        android:paddingStart="15dp"
-        android:paddingLeft="15dp"
-        android:paddingTop="15dp"
-        android:paddingEnd="0dp"
-        android:paddingRight="0dp"
-        android:text="Write your thoughts here..."
-        android:textColor="@color/dark_gray"
-        android:textColorHint="@color/dark_gray"
-        android:textSize="12sp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/question2_tagline1" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UselessParent">
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/question2_where"
+                    android:layout_width="340dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="56dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:text="When did you last feel this mood?"
+                    android:textColor="#4A5759"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/question2_tagline1"
+                    android:layout_width="213dp"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="56dp"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:text="Why were you feeling this way?"
+                    android:textColor="#4A5759"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@+id/question2_where"
+                    app:layout_constraintTop_toTopOf="@+id/question2_where" />
+
+
+                <EditText
+                    android:id="@+id/question1"
+                    android:layout_width="750dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/round_btn4"
+                    android:ems="10"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:lines="12"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:overScrollMode="always"
+                    android:paddingStart="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="0dp"
+                    android:paddingRight="0dp"
+                    android:text="Write your thoughts here..."
+                    android:textColor="@color/dark_gray"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="12sp"
+                    android:lineSpacingExtra="8sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/question2_tagline1" />
+
+                <!--    Dummy view to prevent cutoff at the bottom         -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_margin="60dp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+    </ScrollView>
 
     <Button
         android:id="@+id/nextbtn1"
@@ -64,7 +93,8 @@
         android:layout_height="35dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="236dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
@@ -76,8 +106,10 @@
         android:textColor="@color/white"
         android:textSize="15sp"
         app:backgroundTint="@color/dark_pink"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backbtn1"
+        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TextContrastCheck" />
 
     <Button
@@ -86,22 +118,22 @@
         android:layout_height="35dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="18dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
         android:gravity="center_horizontal|center_vertical"
         android:paddingTop="2dp"
+        android:layout_marginBottom="30dp"
         android:stateListAnimator="@null"
         android:text="Back"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="15sp"
         app:backgroundTint="@color/canary"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.347"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/question1"
         tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

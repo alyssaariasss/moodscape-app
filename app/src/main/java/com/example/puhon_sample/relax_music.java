@@ -214,7 +214,7 @@ public class relax_music extends AppCompatActivity {
         btn_info.setOnClickListener(v -> {
 
             mediaPlayer.stop();
-            Intent intent = new Intent(this, BreakScreen1.class);
+            Intent intent = new Intent(this, aboutMoodscape.class);
             startActivity(intent);
         });
 

@@ -5,100 +5,133 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <TextView
-        android:id="@+id/question2_where"
-        android:layout_width="257dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="Where are you right now?"
-        android:textColor="#4A5759"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/question2_tagline1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:text="At home? school? ..."
-        android:textColor="#4A5759"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/question2_where"
-        app:layout_constraintTop_toTopOf="@+id/question2_where" />
-
-    <EditText
-        android:id="@+id/question2_1"
-        android:layout_width="750dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/round_btn4"
-        android:ems="10"
-        android:gravity="top"
-        android:inputType="textMultiLine"
-        android:lines="3"
-        android:overScrollMode="always"
-        android:paddingStart="15dp"
-        android:paddingTop="15dp"
-        android:paddingEnd="0dp"
-        android:text="Write your answers here..."
-        android:textColor="@color/dark_gray"
-        android:textColorHint="@color/dark_gray"
-        android:textSize="12sp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/question2_tagline1" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UselessParent">
 
-    <TextView
-        android:id="@+id/question2_who"
-        android:layout_width="187dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="160dp"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="Who are you with?"
-        android:textColor="#4A5759"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/question2_tagline2"
-        android:layout_width="129dp"
-        android:layout_height="17dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:text="Family? Friends? ..."
-        android:textColor="#4A5759"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/question2_who"
-        app:layout_constraintTop_toTopOf="@+id/question2_who" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/question2_2"
-        android:layout_width="750dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/round_btn4"
-        android:ems="10"
-        android:gravity="top"
-        android:inputType="textMultiLine"
-        android:lines="3"
-        android:overScrollMode="always"
-        android:paddingStart="15dp"
-        android:paddingTop="15dp"
-        android:paddingEnd="0dp"
-        android:text="Write your answers here..."
-        android:textColor="@color/dark_gray"
-        android:textColorHint="@color/dark_gray"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/question2_tagline2" />
+                <TextView
+                    android:id="@+id/question2_where"
+                    android:layout_width="257dp"
+                    android:layout_height="23dp"
+                    android:layout_marginStart="56dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:text="Where are you right now?"
+                    android:textColor="#4A5759"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/question2_tagline1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="56dp"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:text="At home? school? ..."
+                    android:textColor="#4A5759"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@+id/question2_where"
+                    app:layout_constraintTop_toTopOf="@+id/question2_where" />
+
+                <EditText
+                    android:id="@+id/question2_1"
+                    android:layout_width="750dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/round_btn4"
+                    android:ems="10"
+                    android:gravity="top"
+                    android:layout_gravity="center"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:overScrollMode="always"
+                    android:paddingStart="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="0dp"
+                    android:text="Write your answers here..."
+                    android:textColor="@color/dark_gray"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="12sp"
+                    android:lineSpacingExtra="8sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/question2_tagline1" />
+
+                <TextView
+                    android:id="@+id/question2_who"
+                    android:layout_width="187dp"
+                    android:layout_height="23dp"
+                    android:layout_marginStart="56dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:text="Who are you with?"
+                    android:textColor="#4A5759"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/question2_tagline2"
+                    android:layout_width="129dp"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="56dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:text="Family? Friends? ..."
+                    android:textColor="#4A5759"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@+id/question2_who"
+                    app:layout_constraintTop_toTopOf="@+id/question2_who" />
+
+                <EditText
+                    android:id="@+id/question2_2"
+                    android:layout_width="750dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/round_btn4"
+                    android:ems="10"
+                    android:gravity="top"
+                    android:layout_gravity="center"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:overScrollMode="always"
+                    android:paddingStart="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="0dp"
+                    android:text="Write your answers here..."
+                    android:textColor="@color/dark_gray"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="12sp"
+                    android:lineSpacingExtra="8sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/question2_tagline2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_margin="60dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </ScrollView>
 
 
     <Button
@@ -107,7 +140,8 @@
         android:layout_height="35dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="236dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
@@ -119,8 +153,10 @@
         android:textColor="@color/white"
         android:textSize="15sp"
         app:backgroundTint="@color/dark_pink"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backbtn2"
+        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TextContrastCheck" />
 
     <Button
@@ -129,22 +165,22 @@
         android:layout_height="35dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="24dp"
         android:background="@drawable/round_btn3"
         android:elevation="5dp"
         android:fontFamily="@font/sourcesanspro_semibold"
         android:gravity="center_horizontal|center_vertical"
         android:paddingTop="2dp"
+        android:layout_marginBottom="30dp"
         android:stateListAnimator="@null"
         android:text="Back"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="15sp"
         app:backgroundTint="@color/canary"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.347"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/question2_2"
         tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

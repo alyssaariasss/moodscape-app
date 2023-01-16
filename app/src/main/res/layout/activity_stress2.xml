@@ -7,6 +7,20 @@
     tools:context=".relax_exercise"
     android:orientation="vertical">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UselessParent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,12 +39,12 @@
 
             <TextView
                 android:id="@+id/stress2_txt"
-                android:layout_width="365dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
                 android:fontFamily="@font/sourcesanspro_semibold"
                 android:text="You don't need to pressure yourself. You don't need to think too much. You just have to write down whatever you have on your mind. Whatever it is, it matters.  Breathe, and just let your thoughts flow."
                 android:textColor="@color/dark_gray"
@@ -42,8 +56,8 @@
 
             <EditText
                 android:id="@+id/stress2_input_txt"
-                android:layout_width="360dp"
-                android:layout_height="400dp"
+                android:layout_width="320dp"
+                android:layout_height="450dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/round_btn4"
@@ -66,6 +80,12 @@
                 app:layout_constraintHorizontal_bias="0.49"
                 app:layout_constraintStart_toStartOf="parent" />
 
+            <!--    Dummy view to prevent cutoff at the bottom         -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_margin="70dp" />
+
 
         </LinearLayout>
 
@@ -78,6 +98,8 @@
             app:layout_constraintGuide_begin="167dp" />
 
     </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -188,11 +188,11 @@ public class FragmentOverallReport extends Fragment implements OnNavigationButto
                 AnswerOne.setAdapter(myAdapter);
 
             } else {
-                selectedDateCard.setVisibility(View.INVISIBLE);
-                selectedDateText.setVisibility(View.INVISIBLE);
-                moodView.setVisibility(View.INVISIBLE);
-                AnswerOne.setVisibility(View.INVISIBLE);
-                dummyText.setVisibility(View.INVISIBLE);
+                selectedDateCard.setVisibility(View.GONE);
+                selectedDateText.setVisibility(View.GONE);
+                moodView.setVisibility(View.GONE);
+                AnswerOne.setVisibility(View.GONE);
+                dummyText.setVisibility(View.GONE);
             }
         });
 

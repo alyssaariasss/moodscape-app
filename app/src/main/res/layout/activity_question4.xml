@@ -45,7 +45,7 @@
             <TextView
                 android:id="@+id/question4_tagline2"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="156dp"
                 android:fontFamily="@font/sourcesanspro_regular"
                 android:text="1 being nonchalant and 10 being distraught"

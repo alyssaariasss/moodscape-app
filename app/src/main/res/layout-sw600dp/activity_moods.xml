@@ -7,79 +7,107 @@
     android:background="@color/white"
     tools:context=".moods">
 
-    <TextView
-        android:id="@+id/ChoiceTagline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/sourcesanspro_semibold"
-        android:gravity="center"
-        android:text="@string/mood_title_uncut"
-        android:textAlignment="center"
-        android:textColor="@color/dark_gray"
-        android:textSize="42sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/moodView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/angry_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ChoiceTagline" />
-
-    <com.google.android.material.slider.Slider
-        android:id="@+id/slider"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="40dp"
-        android:contentDescription="@string/mood"
-        android:stepSize="1"
-        android:value="0"
-        android:valueFrom="0"
-        android:valueTo="5"
-        app:labelBehavior="gone"
-        app:layout_constraintEnd_toEndOf="@+id/moodView"
-        app:layout_constraintStart_toStartOf="@+id/moodView"
-        app:layout_constraintTop_toBottomOf="@+id/moodView"
-        app:thumbColor="@color/canary"
-        app:trackColor="#50FFC461" />
-
-    <Button
-        android:id="@+id/ChoiceButton"
-        android:layout_width="320dp"
-        android:layout_height="50dp"
-        android:background="@drawable/round_btn"
-        android:elevation="5dp"
-        android:fontFamily="@font/sourcesanspro_semibold"
-        android:gravity="center"
-        android:stateListAnimator="@null"
-        android:text="@string/select"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/slider"
-        app:layout_constraintVertical_bias="0.388" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <!--    Navbar Buttons  -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
+
+            <TextView
+                android:id="@+id/ChoiceTagline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:fontFamily="@font/sourcesanspro_semibold"
+                android:gravity="center"
+                android:text="@string/mood_title"
+                android:textAlignment="center"
+                android:textColor="@color/dark_gray"
+                android:textSize="38sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/moodView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/angry_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ChoiceTagline" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/mood"
+                android:stepSize="1"
+                android:value="0"
+                android:valueFrom="0"
+                android:valueTo="5"
+                app:labelBehavior="gone"
+                app:layout_constraintEnd_toEndOf="@+id/moodView"
+                app:layout_constraintStart_toStartOf="@+id/moodView"
+                app:layout_constraintTop_toBottomOf="@+id/moodView"
+                app:thumbColor="@color/canary"
+                app:trackColor="#50FFC461" />
+
+            <Button
+                android:id="@+id/ChoiceButton"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/round_btn"
+                android:elevation="5dp"
+                android:fontFamily="@font/sourcesanspro_bold"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/select"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/slider" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ChoiceButton"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:id="@+id/linearLayout8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:background="@color/white"
+        android:elevation="5dp"
         android:orientation="horizontal"
-        android:paddingBottom="10dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
         android:weightSum="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,18 +124,6 @@
             app:layout_constraintBottom_toBottomOf="@+id/progressCard"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-        <ImageButton
-            android:id="@+id/nav_settings"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#00FFFFFF"
-            android:src="@drawable/nav_settings"
-            android:translationZ="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/nav_about_mood"
@@ -131,6 +147,18 @@
             android:translationZ="0dp"
             app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
             app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/nav_settings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_settings"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
+            app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </LinearLayout>
 

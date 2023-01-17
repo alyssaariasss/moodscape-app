@@ -7,71 +7,94 @@
     android:background="@color/white"
     tools:context=".moods">
 
-    <TextView
-        android:id="@+id/ChoiceTagline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/sourcesanspro_semibold"
-        android:gravity="center"
-        android:text="@string/mood_title"
-        android:textAlignment="center"
-        android:textColor="@color/dark_gray"
-        android:textSize="38sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/moodView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/angry_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ChoiceTagline" />
-
-    <com.google.android.material.slider.Slider
-        android:id="@+id/slider"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="40dp"
-        android:contentDescription="@string/mood"
-        android:stepSize="1"
-        android:value="0"
-        android:valueFrom="0"
-        android:valueTo="5"
-        app:labelBehavior="gone"
-        app:layout_constraintEnd_toEndOf="@+id/moodView"
-        app:layout_constraintStart_toStartOf="@+id/moodView"
-        app:layout_constraintTop_toBottomOf="@+id/moodView"
-        app:thumbColor="@color/canary"
-        app:trackColor="#50FFC461" />
-
-    <Button
-        android:id="@+id/ChoiceButton"
-        android:layout_width="320dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/round_btn"
-        android:elevation="5dp"
-        android:fontFamily="@font/sourcesanspro_semibold"
-        android:gravity="center"
-        android:stateListAnimator="@null"
-        android:text="@string/select"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/slider"
-        app:layout_constraintVertical_bias="0.388" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
+
+            <TextView
+                android:id="@+id/ChoiceTagline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/sourcesanspro_semibold"
+                android:gravity="center"
+                android:text="@string/mood_title"
+                android:textAlignment="center"
+                android:textColor="@color/dark_gray"
+                android:textSize="38sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/moodView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/angry_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ChoiceTagline" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/mood"
+                android:stepSize="1"
+                android:value="0"
+                android:valueFrom="0"
+                android:valueTo="5"
+                app:labelBehavior="gone"
+                app:layout_constraintEnd_toEndOf="@+id/moodView"
+                app:layout_constraintStart_toStartOf="@+id/moodView"
+                app:layout_constraintTop_toBottomOf="@+id/moodView"
+                app:thumbColor="@color/canary"
+                app:trackColor="#50FFC461" />
+
+            <Button
+                android:id="@+id/ChoiceButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/round_btn"
+                android:elevation="5dp"
+                android:fontFamily="@font/sourcesanspro_bold"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/select"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/slider" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ChoiceButton"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/linearLayout8"

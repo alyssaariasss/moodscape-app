@@ -7,90 +7,111 @@
     android:background="@color/white"
     tools:context=".BreakScreen2">
 
-    <TextView
-        android:id="@+id/breakscreenTagline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="@string/well_done_on_taking_time_to_nreflect_on_your_thoughts"
-        android:textAlignment="center"
-        android:textColor="@color/dark_gray"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="@+id/breakscreen1"
-        app:layout_constraintStart_toStartOf="@+id/breakscreen1"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/breakscreenTagline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:layout_marginTop="20dp"
-        android:text="@string/hoping_the_best_for_you_see_you_again"
-        android:textAlignment="center"
-        android:textColor="@color/dark_gray"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="@+id/breakscreenTagline"
-        app:layout_constraintStart_toStartOf="@+id/breakscreenTagline"
-        app:layout_constraintTop_toBottomOf="@+id/breakscreenTagline" />
-
-    <!--    Navbar Buttons  -->
-    <ImageView
-        android:id="@+id/breakscreen1"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="550dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="80dp"
-        android:contentDescription="@string/thank_you"
-        android:src="@drawable/undraw_super_thank_you_re_f8bo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/breakscreenTagline2" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-        app:layout_constraintEnd_toEndOf="@+id/breakscreen1"
-        app:layout_constraintStart_toStartOf="@+id/breakscreen1"
-        app:layout_constraintTop_toBottomOf="@+id/breakscreen1">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <Button
-            android:id="@+id/backButton"
-            android:layout_width="200dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="50dp"
-            android:layout_weight="1"
-            android:background="@drawable/round_btn3"
-            android:elevation="5dp"
-            android:fontFamily="@font/sourcesanspro_semibold"
-            android:stateListAnimator="@null"
-            android:text="@string/back"
-            android:textAllCaps="false"
-            android:textSize="20sp"
-            app:backgroundTint="@color/canary" />
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
 
-        <Button
-            android:id="@+id/meditateButton"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/round_btn3"
-            android:elevation="5dp"
-            android:fontFamily="@font/sourcesanspro_semibold"
-            android:stateListAnimator="@null"
-            android:text="@string/meditate"
-            android:textAllCaps="false"
-            android:textSize="20sp"
-            app:backgroundTint="@color/dark_pink" />
+            <TextView
+                android:id="@+id/breakscreenTagline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="@string/well_done_on_taking_time_to_nreflect_on_your_thoughts"
+                android:textAlignment="center"
+                android:textColor="@color/dark_gray"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/breakscreenTagline2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:text="@string/hoping_the_best_for_you_see_you_again"
+                android:textAlignment="center"
+                android:textColor="@color/dark_gray"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/breakscreenTagline" />
+
+
+            <ImageView
+                android:id="@+id/breakscreen1"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="25dp"
+                android:contentDescription="@string/thank_you"
+                android:src="@drawable/undraw_super_thank_you_re_f8bo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/breakscreenTagline2" />
+
+            <LinearLayout
+                android:id="@+id/bs2Linear"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/breakscreen1">
+
+                <Button
+                    android:id="@+id/backButton"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_btn3"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/sourcesanspro_bold"
+                    android:stateListAnimator="@null"
+                    android:text="@string/back"
+                    android:textAllCaps="false"
+                    android:textSize="24sp"
+                    app:backgroundTint="@color/canary" />
+
+
+                <Button
+                    android:id="@+id/meditateButton"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/round_btn3"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/sourcesanspro_bold"
+                    android:stateListAnimator="@null"
+                    android:text="@string/meditate"
+                    android:textAllCaps="false"
+                    android:textSize="24sp"
+                    app:backgroundTint="@color/dark_pink" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bs2Linear"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/linearLayout4"

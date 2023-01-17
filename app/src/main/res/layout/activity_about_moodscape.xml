@@ -28,7 +28,7 @@
         android:layout_marginEnd="30dp"
         android:fontFamily="@font/sourcesanspro_regular"
         android:justificationMode="inter_word"
-        android:lineSpacingExtra="7dp"
+        android:lineSpacingExtra="10dp"
         android:text="moodscape is a mobile application for monitoring an individual’s mental state. This project creates a safe environment for users to track their moods and list their goals for the day. This application is for everyone who wants to see and monitor their day-to-day mood and overall progress. moodscape also enables the user to identify the usual reasons and events that may trigger moods."
         android:textColor="@color/dark_gray"
         android:textSize="20sp"

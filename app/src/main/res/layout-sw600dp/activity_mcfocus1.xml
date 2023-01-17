@@ -6,110 +6,162 @@
     android:layout_height="match_parent"
     tools:context=".MCFocus1">
 
-    <TextView
-        android:id="@+id/title3"
-        android:layout_width="500dp"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:text="If you are currently going through a rough spot, try spending some time outside and taking a walk."
-        android:textAlignment="center"
-        android:textColor="@color/dark_gray"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <ImageView
-        android:id="@+id/focus1_design"
-        android:layout_width="500dp"
-        android:layout_height="350dp"
-        android:layout_marginTop="128dp"
-        android:src="@drawable/focus1_design"
-        app:layout_constraintEnd_toEndOf="@+id/title3"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/title3"
-        app:layout_constraintTop_toTopOf="@+id/title3" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
 
+            <TextView
+                android:id="@+id/title3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:text="If you are currently going through a rough spot, try spending some time outside and taking a walk."
+                android:textAlignment="center"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/focus1_desc"
-        android:layout_width="500dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="432dp"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:text="Try taking a stroll for 10 minutes. If you’re already outside, press the timer and start walking around."
-        android:textAlignment="center"
-        android:textColor="@color/dark_gray"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/focus1_design" />
+            <ImageView
+                android:id="@+id/focus1_design"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_marginTop="65dp"
+                android:src="@drawable/focus1_design"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/title3" />
 
-    <TextView
-        android:id="@+id/focus1_timer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:fontFamily="@font/ubuntu_bold"
-        android:gravity="center"
-        android:text="1 0 : 0 0"
-        android:textColor="@color/dark_gray"
-        android:textSize="100sp"
-        app:layout_constraintEnd_toEndOf="@+id/focus1_desc"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="@+id/focus1_desc"
-        app:layout_constraintTop_toTopOf="@+id/focus1_desc" />
+            <TextView
+                android:id="@+id/focus1_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:text="Try taking a stroll for 10 minutes. If you’re already outside, press the timer and start walking around."
+                android:textAlignment="center"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/focus1_design" />
 
-    <Button
-        android:id="@+id/focus_timer_reset"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="192dp"
-        android:background="@drawable/round_btn3"
-        android:elevation="5dp"
-        android:fontFamily="@font/sourcesanspro_semibold"
-        android:gravity="center"
-        android:stateListAnimator="@null"
-        android:text="RESET"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="@+id/focus_timer_done"
-        app:layout_constraintTop_toTopOf="@+id/focus1_timer" />
+            <TextView
+                android:id="@+id/focus1_timer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:gravity="center"
+                android:text="1 0 : 0 0"
+                android:textColor="@color/dark_gray"
+                android:textSize="80sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/focus1_desc" />
 
-    <Button
-        android:id="@+id/focus_timer_start"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="192dp"
-        android:background="@drawable/round_btn3"
-        android:elevation="5dp"
-        android:fontFamily="@font/sourcesanspro_semibold"
-        android:gravity="center"
-        android:stateListAnimator="@null"
-        android:text="START"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="@+id/focus_timer_done"
-        app:layout_constraintTop_toTopOf="@+id/focus1_timer" />
+            <LinearLayout
+                android:id="@+id/countdown_linear"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/focus1_timer">
 
-    <Button
-        android:id="@+id/focus_timer_done"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="264dp"
-        android:background="@drawable/round_btn3"
-        android:elevation="5dp"
-        android:fontFamily="@font/sourcesanspro_semibold"
-        android:gravity="center"
-        android:stateListAnimator="@null"
-        android:text="DONE"
-        android:textSize="22sp"
-        android:visibility="visible"
-        app:backgroundTint="@color/canary"
-        app:layout_constraintEnd_toEndOf="@+id/focus1_timer"
-        app:layout_constraintStart_toStartOf="@+id/focus1_timer"
-        app:layout_constraintTop_toTopOf="@+id/focus1_timer" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/focus_timer_start"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round_btn3"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:elevation="5dp"
+                        android:fontFamily="@font/sourcesanspro_semibold"
+                        android:gravity="center"
+                        android:stateListAnimator="@null"
+                        android:text="START"
+                        android:textSize="22sp"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:id="@+id/focus_timer_reset"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round_btn3"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:elevation="5dp"
+                        android:fontFamily="@font/sourcesanspro_semibold"
+                        android:gravity="center"
+                        android:stateListAnimator="@null"
+                        android:text="RESET"
+                        android:textSize="20sp"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/focus_timer_done"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_btn3"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/sourcesanspro_semibold"
+                    android:gravity="center"
+                    android:stateListAnimator="@null"
+                    android:text="DONE"
+                    android:textSize="22sp"
+                    android:visibility="visible"
+                    app:backgroundTint="@color/canary" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/countdown_linear"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/linearLayout6"

@@ -41,7 +41,7 @@
                 app:layout_constraintHorizontal_bias="0.491"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/fragment_title1"
-                app:layout_constraintVertical_bias="0.240">
+                app:layout_constraintVertical_bias="0.160">
 
                 <LinearLayout
                     android:id="@+id/linearLayoutMC1"
@@ -175,7 +175,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
-                app:layout_constraintTop_toBottomOf="@+id/stress1"/>
+                app:layout_constraintTop_toBottomOf="@+id/stress2"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

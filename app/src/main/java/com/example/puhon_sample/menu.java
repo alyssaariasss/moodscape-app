@@ -3,7 +3,6 @@ package com.example.puhon_sample;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -103,7 +102,7 @@ public class menu extends AppCompatActivity {
 
         btn_info.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, BSFocus2.class);
+            Intent intent = new Intent(this, aboutMoodscape.class);
             startActivity(intent);
         });
 

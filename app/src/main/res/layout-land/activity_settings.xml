@@ -24,8 +24,8 @@
                 android:id="@+id/signOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginTop="20dp"
+
                 android:background="#00FFFFFF"
                 android:src="@drawable/sign_out"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -54,114 +54,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/moodscape_ls" />
 
-            <LinearLayout
-                android:id="@+id/settingsLinear"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:layout_marginTop="30dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/sampleImage">
-
-                <EditText
-                    android:id="@+id/Settings_FName"
-                    android:layout_width="match_parent"
-                    android:layout_height="53dp"
-                    android:background="@drawable/round_btn2"
-                    android:ems="16"
-                    android:fontFamily="@font/sourcesanspro_regular"
-                    android:hint="First Name"
-                    android:inputType="text"
-                    android:paddingStart="25dp"
-                    android:textColor="@color/dark_gray"
-                    android:textColorHint="@color/dark_gray"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/Settings_LName"
-                    android:layout_width="match_parent"
-                    android:layout_height="53dp"
-                    android:background="@drawable/round_btn2"
-                    android:ems="16"
-                    android:layout_marginTop="15dp"
-                    android:fontFamily="@font/sourcesanspro_regular"
-                    android:hint="Last Name"
-                    android:inputType="text"
-                    android:paddingStart="25dp"
-                    android:textColor="@color/dark_gray"
-                    android:textColorHint="@color/dark_gray"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/Settings_Age"
-                    android:layout_width="match_parent"
-                    android:layout_height="52dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/round_btn2"
-                    android:ems="16"
-                    android:fontFamily="@font/sourcesanspro_regular"
-                    android:hint="Age"
-                    android:inputType="number"
-                    android:paddingStart="25dp"
-                    android:textColor="@color/dark_gray"
-                    android:textColorHint="@color/dark_gray"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/Settings_Email"
-                    android:layout_width="match_parent"
-                    android:layout_height="53dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/round_btn2"
-                    android:ems="16"
-                    android:fontFamily="@font/sourcesanspro_regular"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:paddingStart="25dp"
-                    android:textColor="@color/dark_gray"
-                    android:textColorHint="@color/dark_gray"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/Settings_Password"
-                    android:layout_width="match_parent"
-                    android:layout_height="53dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/round_btn2"
-                    android:ems="16"
-                    android:fontFamily="@font/sourcesanspro_regular"
-                    android:hint="Password"
-                    android:inputType="textPassword"
-                    android:paddingStart="25dp"
-                    android:textColor="@color/dark_gray"
-                    android:textColorHint="@color/dark_gray"
-                    android:textSize="16sp"/>
-
-                <Button
-                    android:id="@+id/Settings_SaveBtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:background="@drawable/round_btn3"
-                    android:elevation="5dp"
-                    android:fontFamily="@font/sourcesanspro_semibold"
-                    android:stateListAnimator="@null"
-                    android:text="Save Changes"
-                    android:textAllCaps="false"
-                    android:textSize="22sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/Settings_Password" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"/>
-            </LinearLayout>
-
             <ImageButton
                 android:id="@+id/settingsAddPhoto"
                 android:layout_width="wrap_content"
@@ -174,12 +66,182 @@
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <TextView
+                android:id="@+id/userName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="User Name"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:textSize="22sp"
+                android:textColor="@color/dark_gray"
+                android:fontFamily="@font/sourcesanspro_semibold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sampleImage" />
+
+            <TextView
+                android:id="@+id/userEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:gravity="center"
+                android:text="Email Address"
+                android:textSize="14sp"
+                android:textColor="@color/dark_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+            <LinearLayout
+                android:id="@+id/settingsLinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userEmail">
+
+                <EditText
+                    android:id="@+id/Settings_FName"
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    android:background="@drawable/round_btn2"
+                    android:backgroundTint="@color/white_smoke"
+                    android:ems="16"
+                    android:drawableStart="@drawable/user_name"
+                    android:drawablePadding="20dp"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:hint="First Name"
+                    android:inputType="text"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="10dp"
+                    android:textColor="@color/dark_gray"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/Settings_LName"
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    android:background="@drawable/round_btn2"
+                    android:backgroundTint="@color/white_smoke"
+                    android:ems="16"
+                    android:drawableStart="@drawable/user_name"
+                    android:drawablePadding="20dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:hint="Last Name"
+                    android:inputType="text"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="10dp"
+                    android:textColor="@color/dark_gray"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/Settings_Age"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/round_btn2"
+                    android:backgroundTint="@color/white_smoke"
+                    android:ems="16"
+                    android:drawableStart="@drawable/age"
+                    android:drawablePadding="20dp"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:hint="Age"
+                    android:inputType="number"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="10dp"
+                    android:textColor="@color/dark_gray"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    android:ems="10"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp"
+                    android:layout_marginTop="15dp"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="@color/dark_gray"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Settings_Password"
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:background="@drawable/round_btn2"
+                        android:backgroundTint="@color/white_smoke"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        android:drawableStart="@drawable/password"
+                        android:drawablePadding="20dp"
+                        android:paddingStart="20dp"
+                        android:paddingTop="0dp"
+                        android:paddingEnd="0dp"
+                        android:paddingBottom="2dp"
+                        android:textColor="@color/dark_gray"
+                        android:textColorHint="@color/dark_gray"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <EditText
+                    android:id="@+id/Settings_Email"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/round_btn2"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="25dp"
+                    android:textColor="@color/dark_gray"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="16sp"
+                    android:visibility="invisible"/>
+
+                <Button
+                    android:id="@+id/Settings_SaveBtn"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/round_btn3"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/sourcesanspro_semibold"
+                    android:stateListAnimator="@null"
+                    android:text="Update"
+                    android:textAllCaps="false"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/Settings_Password" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"/>
+
+            </LinearLayout>
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/settingsLinear"
                 app:layout_constraintBottom_toBottomOf="parent"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

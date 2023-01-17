@@ -7,187 +7,245 @@
     android:background="@color/white"
     tools:context=".settings">
 
-
-    <ImageButton
-        android:id="@+id/signOut"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="105dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/sign_out"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/moodscape_ls"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="125dp"
-        android:src="@drawable/moodscape_ls"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/sampleImage"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:layout_marginTop="80dp"
-        android:src="@drawable/user_profile"
-        app:layout_constraintEnd_toEndOf="@+id/moodscape_ls"
-        app:layout_constraintStart_toStartOf="@+id/moodscape_ls"
-        app:layout_constraintTop_toTopOf="@+id/moodscape_ls" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
 
-    <ImageButton
-        android:id="@+id/settingsAddPhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="152dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/settings_add_pfp"
-        app:layout_constraintStart_toStartOf="@+id/sampleImage"
-        app:layout_constraintTop_toTopOf="@+id/sampleImage" />
+            <ImageButton
+                android:id="@+id/signOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
 
-    <EditText
-        android:id="@+id/Settings_FName"
-        android:layout_width="500dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="250dp"
-        android:background="@drawable/round_btn2"
-        android:ems="10"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:hint="First Name"
-        android:inputType="text"
-        android:paddingStart="25dp"
-        android:paddingLeft="25dp"
-        android:paddingTop="0dp"
-        android:paddingEnd="0dp"
-        android:paddingRight="0dp"
-        android:paddingBottom="2dp"
-        android:textColor="@color/dark_gray"
-        android:textColorHint="@color/dark_gray"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="@+id/sampleImage"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="@+id/sampleImage"
-        app:layout_constraintTop_toTopOf="@+id/sampleImage" />
+                android:background="#00FFFFFF"
+                android:src="@drawable/sign_out"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/Settings_LName"
-        android:layout_width="500dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="110dp"
-        android:background="@drawable/round_btn2"
-        android:ems="10"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:hint="Last Name"
-        android:inputType="text"
-        android:paddingStart="25dp"
-        android:paddingLeft="25dp"
-        android:paddingTop="0dp"
-        android:paddingEnd="0dp"
-        android:paddingRight="0dp"
-        android:paddingBottom="2dp"
-        android:textColor="@color/dark_gray"
-        android:textColorHint="@color/dark_gray"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="@+id/Settings_FName"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/Settings_FName"
-        app:layout_constraintTop_toTopOf="@+id/Settings_FName" />
+            <ImageView
+                android:id="@+id/moodscape_ls"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:src="@drawable/moodscape_ls"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Settings_Age"
-        android:layout_width="500dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="110dp"
-        android:background="@drawable/round_btn2"
-        android:ems="10"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:hint="Age"
-        android:inputType="number"
-        android:paddingStart="25dp"
-        android:paddingLeft="25dp"
-        android:paddingTop="0dp"
-        android:paddingEnd="0dp"
-        android:paddingRight="0dp"
-        android:paddingBottom="2dp"
-        android:textColor="@color/dark_gray"
-        android:textColorHint="@color/dark_gray"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="@+id/Settings_LName"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/Settings_LName"
-        app:layout_constraintTop_toTopOf="@+id/Settings_LName" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/sampleImage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="60dp"
+                android:src="@drawable/user_profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/moodscape_ls" />
 
-    <EditText
-        android:id="@+id/Settings_Email"
-        android:layout_width="500dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="110dp"
-        android:background="@drawable/round_btn2"
-        android:ems="10"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:paddingStart="25dp"
-        android:paddingLeft="25dp"
-        android:paddingTop="0dp"
-        android:paddingEnd="0dp"
-        android:paddingRight="0dp"
-        android:paddingBottom="2dp"
-        android:textColor="@color/dark_gray"
-        android:textColorHint="@color/dark_gray"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="@+id/Settings_Age"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/Settings_Age"
-        app:layout_constraintTop_toTopOf="@+id/Settings_Age" />
+            <ImageButton
+                android:id="@+id/settingsAddPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="140dp"
+                android:background="#00FFFFFF"
+                android:src="@drawable/settings_add_pfp"
+                app:layout_constraintBottom_toBottomOf="@+id/sampleImage"
+                app:layout_constraintStart_toStartOf="@+id/sampleImage"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-    <EditText
-        android:id="@+id/Settings_Password"
-        android:layout_width="500dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="110dp"
-        android:background="@drawable/round_btn2"
-        android:ems="10"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:paddingStart="25dp"
-        android:paddingLeft="25dp"
-        android:paddingTop="0dp"
-        android:paddingEnd="0dp"
-        android:paddingRight="0dp"
-        android:paddingBottom="2dp"
-        android:textColor="@color/dark_gray"
-        android:textColorHint="@color/dark_gray"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="@+id/Settings_Email"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/Settings_Email"
-        app:layout_constraintTop_toTopOf="@+id/Settings_Email" />
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="User Name"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:textSize="22sp"
+                android:textColor="@color/dark_gray"
+                android:fontFamily="@font/sourcesanspro_semibold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sampleImage" />
 
-    <Button
-        android:id="@+id/Settings_SaveBtn"
-        android:layout_width="500dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="130dp"
-        android:background="@drawable/round_btn3"
-        android:elevation="5dp"
-        android:fontFamily="@font/sourcesanspro_semibold"
-        android:stateListAnimator="@null"
-        android:text="SAVE CHANGES"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="@+id/Settings_Password"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/Settings_Password"
-        app:layout_constraintTop_toTopOf="@+id/Settings_Password" />
+            <TextView
+                android:id="@+id/userEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:gravity="center"
+                android:text="Email Address"
+                android:textSize="14sp"
+                android:textColor="@color/dark_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+            <LinearLayout
+                android:id="@+id/settingsLinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userEmail">
+
+                <EditText
+                    android:id="@+id/Settings_FName"
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    android:background="@drawable/round_btn2"
+                    android:backgroundTint="@color/white_smoke"
+                    android:ems="16"
+                    android:drawableStart="@drawable/user_name"
+                    android:drawablePadding="20dp"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:hint="First Name"
+                    android:inputType="text"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="10dp"
+                    android:textColor="@color/dark_gray"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/Settings_LName"
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    android:background="@drawable/round_btn2"
+                    android:backgroundTint="@color/white_smoke"
+                    android:ems="16"
+                    android:drawableStart="@drawable/user_name"
+                    android:drawablePadding="20dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:hint="Last Name"
+                    android:inputType="text"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="10dp"
+                    android:textColor="@color/dark_gray"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/Settings_Age"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/round_btn2"
+                    android:backgroundTint="@color/white_smoke"
+                    android:ems="16"
+                    android:drawableStart="@drawable/age"
+                    android:drawablePadding="20dp"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:hint="Age"
+                    android:inputType="number"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="10dp"
+                    android:textColor="@color/dark_gray"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    android:ems="10"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp"
+                    android:layout_marginTop="15dp"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="@color/dark_gray"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Settings_Password"
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:background="@drawable/round_btn2"
+                        android:backgroundTint="@color/white_smoke"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        android:drawableStart="@drawable/password"
+                        android:drawablePadding="20dp"
+                        android:paddingStart="20dp"
+                        android:paddingTop="0dp"
+                        android:paddingEnd="0dp"
+                        android:paddingBottom="2dp"
+                        android:textColor="@color/dark_gray"
+                        android:textColorHint="@color/dark_gray"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <EditText
+                    android:id="@+id/Settings_Email"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/round_btn2"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="25dp"
+                    android:textColor="@color/dark_gray"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="16sp"
+                    android:visibility="invisible"/>
+
+                <Button
+                    android:id="@+id/Settings_SaveBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/round_btn3"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/sourcesanspro_semibold"
+                    android:stateListAnimator="@null"
+                    android:text="Update"
+                    android:textAllCaps="false"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/Settings_Password" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/settingsLinear"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
+        android:id="@+id/linearLayout10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -249,5 +307,4 @@
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

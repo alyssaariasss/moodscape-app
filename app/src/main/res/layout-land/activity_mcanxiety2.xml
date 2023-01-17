@@ -7,23 +7,25 @@
     tools:context=".MCAnxiety2">
 
     <ScrollView
-        android:layout_width="681dp"
-        android:layout_height="327dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
 
             <TextView
                 android:id="@+id/title2"
-                android:layout_width="330dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:fontFamily="@font/sourcesanspro_regular"
-                android:text="Breathing exercises enable more air to flow into your body and can help calm your nerves, reducing stress and anxiety"
+                android:text="Breathing exercises enable more air to flow\n into your body and can help calm your nerves, reducing stress and anxiety"
                 android:textAlignment="center"
                 android:textColor="@color/dark_gray"
                 android:textSize="16sp"
@@ -34,40 +36,45 @@
 
             <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/anxiety2_content"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="280dp"
                 android:layout_marginTop="100dp"
                 android:src="@drawable/breathe1"
-                app:layout_constraintEnd_toEndOf="@+id/title2"
-                app:layout_constraintStart_toStartOf="@+id/title2"
-                app:layout_constraintTop_toTopOf="@+id/title2" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.508"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title2" />
 
             <Button
                 android:id="@+id/mc_doneBtn1"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="320dp"
-                android:background="@drawable/round_btn3"
+                android:layout_marginTop="120dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
                 android:elevation="5dp"
-                android:fontFamily="@font/sourcesanspro_semibold"
-                android:gravity="center"
                 android:stateListAnimator="@null"
-                android:text="@string/done"
-                android:textSize="22sp"
-                app:layout_constraintEnd_toEndOf="@+id/anxiety2_content"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/anxiety2_content"
-                app:layout_constraintTop_toTopOf="@+id/anxiety2_content" />
+                android:fontFamily="@font/sourcesanspro_bold"
+                android:background="@drawable/round_btn3"
+                android:gravity="center"
+                android:text="Done"
+                android:textAllCaps="false"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.508"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/anxiety2_content" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/mc_doneBtn1" />
+                app:layout_constraintTop_toBottomOf="@+id/mc_doneBtn1"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
 
     <LinearLayout

@@ -15,17 +15,17 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
 
             <TextView
                 android:id="@+id/title1"
-                android:layout_width="280dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
                 android:fontFamily="@font/sourcesanspro_regular"
-                android:text="Increase your self-love and reaffirm yourself today through this quote. "
+                android:text="Increase your self-love and reaffirm\n yourself today through this quote. "
                 android:textAlignment="center"
                 android:textColor="@color/dark_gray"
                 android:textSize="16sp"
@@ -34,16 +34,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
             <TextView
                 android:id="@+id/title2"
-                android:layout_width="330dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:fontFamily="@font/ubuntu_bold"
                 android:lineSpacingExtra="10sp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
                 android:text='"I AM ALLOWED TO MAKE A BIG DEAL OUT OF THINGS THAT FEEL REALLY BIG TO ME"'
                 android:textAlignment="center"
                 android:textColor="@color/coral"
@@ -57,28 +54,25 @@
                 android:id="@+id/anxiety1_design"
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
-                android:layout_marginTop="210dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
+                android:layout_marginTop="30dp"
                 android:src="@drawable/anxiety1_design"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/title2" />
+                app:layout_constraintTop_toBottomOf="@+id/title2" />
 
             <Button
                 android:id="@+id/mc_doneBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="70dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
                 android:background="@drawable/round_btn3"
                 android:elevation="5dp"
                 android:fontFamily="@font/sourcesanspro_bold"
                 android:gravity="center"
-                android:stateListAnimator="@null"
-                android:text="@string/done"
+                android:text="Done"
+                android:textAllCaps="false"
                 android:textSize="24sp"
+                android:stateListAnimator="@null"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.508"
                 app:layout_constraintStart_toStartOf="parent"

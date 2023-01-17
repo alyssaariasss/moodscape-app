@@ -8,20 +8,21 @@
     tools:context=".BreakScreen2">
 
     <ScrollView
-        android:layout_width="681dp"
-        android:layout_height="327dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
 
             <TextView
                 android:id="@+id/breakscreenTagline"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:fontFamily="@font/ubuntu_bold"
@@ -35,7 +36,7 @@
 
             <TextView
                 android:id="@+id/breakscreenTagline2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/sourcesanspro_regular"
@@ -60,9 +61,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/breakscreenTagline2" />
 
             <LinearLayout
+                android:id="@+id/bs2Linear"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="50dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -72,36 +74,41 @@
 
                 <Button
                     android:id="@+id/backButton"
-                    android:layout_width="100dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/round_btn3"
                     android:elevation="5dp"
-                    android:fontFamily="@font/sourcesanspro_semibold"
+                    android:fontFamily="@font/sourcesanspro_bold"
                     android:stateListAnimator="@null"
                     android:text="@string/back"
                     android:textAllCaps="false"
-                    android:textSize="22sp"
-                    app:backgroundTint="@color/canary"
-                    app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-                    app:layout_constraintStart_toStartOf="@+id/breakscreen1"
-                    app:layout_constraintTop_toBottomOf="@+id/breakscreen1" />
+                    android:textSize="24sp"
+                    app:backgroundTint="@color/canary" />
 
 
                 <Button
                     android:id="@+id/meditateButton"
-                    android:layout_width="160dp"
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:background="@drawable/round_btn3"
                     android:elevation="5dp"
-                    android:fontFamily="@font/sourcesanspro_semibold"
+                    android:fontFamily="@font/sourcesanspro_bold"
                     android:stateListAnimator="@null"
                     android:text="@string/meditate"
                     android:textAllCaps="false"
-                    android:textSize="22sp"
+                    android:textSize="24sp"
                     app:backgroundTint="@color/dark_pink" />
 
             </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bs2Linear"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
@@ -169,7 +176,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </LinearLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

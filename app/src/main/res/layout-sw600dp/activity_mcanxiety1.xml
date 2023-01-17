@@ -6,65 +6,91 @@
     android:layout_height="match_parent"
     tools:context=".MCAnxiety1">
 
-    <TextView
-        android:id="@+id/title1"
-        android:layout_width="330dp"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:text="Increase your self-love and reaffirm yourself today through this quote. "
-        android:textAlignment="center"
-        android:textColor="@color/dark_gray"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
 
-    <TextView
-        android:id="@+id/title2"
-        android:layout_width="500dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="125dp"
-        android:fontFamily="@font/ubuntu_bold"
-        android:lineSpacingExtra="10sp"
-        android:text='"I AM ALLOWED TO MAKE A BIG DEAL OUT OF THINGS THAT FEEL REALLY BIG TO ME"'
-        android:textAlignment="center"
-        android:textColor="@color/coral"
-        android:textSize="42sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/title1" />
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:text="Increase your self-love and reaffirm\n yourself today through this quote. "
+                android:textAlignment="center"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/anxiety1_design"
-        android:layout_width="500dp"
-        android:layout_height="350dp"
-        android:layout_marginTop="280dp"
-        android:src="@drawable/anxiety1_design"
-        app:layout_constraintEnd_toEndOf="@+id/title2"
-        app:layout_constraintHorizontal_bias="0.513"
-        app:layout_constraintStart_toStartOf="@+id/title2"
-        app:layout_constraintTop_toTopOf="@+id/title2" />
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:lineSpacingExtra="10sp"
+                android:text='"I AM ALLOWED TO MAKE A BIG DEAL OUT OF THINGS THAT FEEL REALLY BIG TO ME"'
+                android:textAlignment="center"
+                android:textColor="@color/coral"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title1" />
 
-    <Button
-        android:id="@+id/mc_doneBtn"
-        android:layout_width="500dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="450dp"
-        android:background="@drawable/round_btn3"
-        android:elevation="5dp"
-        android:fontFamily="@font/sourcesanspro_semibold"
-        android:gravity="center"
-        android:stateListAnimator="@null"
-        android:text="@string/done"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="@+id/anxiety1_design"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/anxiety1_design"
-        app:layout_constraintTop_toTopOf="@+id/anxiety1_design" />
+            <ImageView
+                android:id="@+id/anxiety1_design"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/anxiety1_design"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title2" />
+
+            <Button
+                android:id="@+id/mc_doneBtn"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/round_btn3"
+                android:elevation="5dp"
+                android:fontFamily="@font/sourcesanspro_bold"
+                android:gravity="center"
+                android:text="Done"
+                android:textAllCaps="false"
+                android:textSize="24sp"
+                android:stateListAnimator="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.508"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/anxiety1_design" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mc_doneBtn"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/linearLayout6"

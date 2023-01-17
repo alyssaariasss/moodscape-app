@@ -11,6 +11,7 @@
     <color name="coral">#A0616A</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_smoke">#F5F5F5</color>
 
 
 </resources>

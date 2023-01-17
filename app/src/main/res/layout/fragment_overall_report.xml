@@ -24,6 +24,7 @@
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp"
                 android:layout_marginBottom="20dp"
+                android:layout_marginTop="5dp"
                 android:backgroundTint="@color/dirty_cream"
                 app:cardCornerRadius="25dp"
                 app:cardElevation="5dp"
@@ -74,47 +75,51 @@
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp"
                 android:layout_marginBottom="20dp"
-                android:backgroundTint="@color/dirty_cream"
-                app:cardCornerRadius="25dp"
-                app:cardElevation="5dp"
+                android:backgroundTint="@color/white_smoke"
+                app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/overallReportCard"
-                app:layout_constraintVertical_bias="0.044" />
+                app:layout_constraintVertical_bias="0.044" >
 
-            <TextView
-                android:id="@+id/selectedDateText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:elevation="6dp"
-                android:fontFamily="@font/ubuntu_bold"
-                android:gravity="center_horizontal"
-                android:text=""
-                android:textColor="@color/dark_gray"
-                android:textSize="28sp"
-                app:layout_constraintBottom_toBottomOf="@+id/moodView"
-                app:layout_constraintEnd_toEndOf="@+id/selectedDateCard"
-                app:layout_constraintHorizontal_bias="0.191"
-                app:layout_constraintStart_toStartOf="@+id/selectedDateCard"
-                app:layout_constraintTop_toTopOf="@+id/moodView"
-                app:layout_constraintVertical_bias="1.0" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
 
-            <ImageView
-                android:id="@+id/moodView"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:contentDescription="@string/moods"
-                android:elevation="6dp"
-                android:src="@drawable/happy_icon"
-                app:layout_constraintBottom_toBottomOf="@+id/selectedDateCard"
-                app:layout_constraintEnd_toEndOf="@+id/selectedDateCard"
-                app:layout_constraintHorizontal_bias="0.864"
-                app:layout_constraintStart_toStartOf="@+id/selectedDateCard"
-                app:layout_constraintTop_toTopOf="@+id/selectedDateCard"
-                app:layout_constraintVertical_bias="0.357" />
+                    <TextView
+                        android:id="@+id/selectedDateText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="6dp"
+                        android:fontFamily="@font/sourcesanspro_semibold"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/dark_gray"
+                        android:textSize="32sp"
+                        android:layout_weight="1"/>
+
+                    <ImageView
+                        android:id="@+id/moodView"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:contentDescription="@string/moods"
+                        android:elevation="6dp"
+                        android:src="@drawable/happy_icon"
+                        android:layout_weight="1"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/answerOne"

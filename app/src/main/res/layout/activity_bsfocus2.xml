@@ -61,7 +61,7 @@
 
                 <Button
                     android:id="@+id/mc_startBtn"
-                    android:layout_width="350dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
                     android:background="@drawable/round_btn3"
@@ -69,7 +69,8 @@
                     android:fontFamily="@font/sourcesanspro_bold"
                     android:gravity="center"
                     android:stateListAnimator="@null"
-                    android:text="START"
+                    android:text="Start"
+                    android:textAllCaps="false"
                     android:textSize="24sp" />
 
                 <TextView

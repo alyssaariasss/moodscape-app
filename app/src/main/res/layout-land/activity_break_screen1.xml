@@ -7,21 +7,23 @@
     tools:context=".BreakScreen1">
 
     <ScrollView
-        android:layout_width="681dp"
-        android:layout_height="327dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
 
             <ImageView
                 android:id="@+id/breakscreen1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="100dp"
                 android:src="@drawable/undraw_breakscreen1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
@@ -30,9 +32,9 @@
 
             <TextView
                 android:id="@+id/breakscreenTagline"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="248dp"
+                android:layout_marginTop="40dp"
                 android:fontFamily="@font/ubuntu_bold"
                 android:gravity="center"
                 android:text="Take a moment to\nprocess your thoughts!"
@@ -41,74 +43,78 @@
                 android:textSize="26sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/breakscreen1" />
+                app:layout_constraintTop_toBottomOf="@+id/breakscreen1" />
 
             <TextView
                 android:id="@+id/breakscreenTagline2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="76dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/sourcesanspro_regular"
+                android:gravity="center"
                 android:text="press next to continue"
                 android:textAlignment="center"
                 android:textColor="@color/dark_gray"
                 android:textSize="18sp"
-                android:gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/breakscreenTagline" />
+                app:layout_constraintTop_toBottomOf="@+id/breakscreenTagline" />
 
             <LinearLayout
-                android:id="@+id/linearLayout7"
+                android:id="@+id/bs1Linear"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="100dp"
+                android:layout_height="80dp"
                 android:gravity="center"
                 android:orientation="horizontal"
+                android:layout_marginTop="100dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/breakscreenTagline2">
+                app:layout_constraintTop_toBottomOf="@+id/breakscreenTagline2">
 
                 <Button
                     android:id="@+id/backButton"
-                    android:layout_width="100dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/round_btn3"
                     android:elevation="5dp"
-                    android:fontFamily="@font/sourcesanspro_semibold"
+                    android:fontFamily="@font/sourcesanspro_bold"
                     android:stateListAnimator="@null"
                     android:text="Back"
                     android:textAllCaps="false"
-                    android:textSize="22sp"
-                    app:backgroundTint="@color/canary"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    android:textSize="24sp"
+                    app:backgroundTint="@color/canary" />
 
                 <Button
                     android:id="@+id/continueButton"
-                    android:layout_width="160dp"
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:background="@drawable/round_btn3"
                     android:elevation="5dp"
-                    android:fontFamily="@font/sourcesanspro_semibold"
+                    android:fontFamily="@font/sourcesanspro_bold"
                     android:stateListAnimator="@null"
                     android:text="Continue"
                     android:textAllCaps="false"
-                    android:textSize="22sp"
+                    android:textSize="24sp"
                     app:backgroundTint="@color/dark_pink" />
+
             </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
+                android:layout_height="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bs1Linear"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
 
-    <LinearLayout
+
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -170,7 +176,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

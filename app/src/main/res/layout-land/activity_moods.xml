@@ -10,50 +10,49 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/linearLayout2">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
 
             <TextView
                 android:id="@+id/ChoiceTagline"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:fontFamily="@font/sourcesanspro_semibold"
                 android:gravity="center"
-                android:text="@string/mood_title_uncut"
+                android:text="@string/mood_title"
                 android:textAlignment="center"
                 android:textColor="@color/dark_gray"
-                android:textSize="22sp"
+                android:textSize="38sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/moodView"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="20dp"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="40dp"
                 android:src="@drawable/angry_icon"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.499"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ChoiceTagline" />
 
             <com.google.android.material.slider.Slider
                 android:id="@+id/slider"
-                android:layout_width="475dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:contentDescription="@string/mood"
                 android:stepSize="1"
                 android:value="0"
@@ -61,55 +60,55 @@
                 android:valueTo="5"
                 app:labelBehavior="gone"
                 app:layout_constraintEnd_toEndOf="@+id/moodView"
-                app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="@+id/moodView"
                 app:layout_constraintTop_toBottomOf="@+id/moodView"
                 app:thumbColor="@color/canary"
                 app:trackColor="#50FFC461" />
 
-            <!--    Navbar Buttons  -->
-
             <Button
                 android:id="@+id/ChoiceButton"
-                android:layout_width="250dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="20dp"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
                 android:background="@drawable/round_btn"
                 android:elevation="5dp"
-                android:fontFamily="@font/sourcesanspro_semibold"
+                android:fontFamily="@font/sourcesanspro_bold"
                 android:gravity="center"
                 android:stateListAnimator="@null"
                 android:text="@string/select"
                 android:textAlignment="center"
                 android:textAllCaps="false"
-                android:textSize="22sp"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/slider"
-                app:layout_constraintVertical_bias="0.106" />
+                app:layout_constraintTop_toBottomOf="@+id/slider" />
 
             <TextView
-                android:id="@+id/dummyText"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="80dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ChoiceButton"
                 app:layout_constraintBottom_toBottomOf="parent"/>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/linearLayout8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="4"
-        android:elevation="12dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="20dp"
+        android:layout_gravity="center_horizontal"
         android:background="@color/white"
+        android:elevation="5dp"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:weightSum="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -125,18 +124,6 @@
             app:layout_constraintBottom_toBottomOf="@+id/progressCard"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-        <ImageButton
-            android:id="@+id/nav_settings"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#00FFFFFF"
-            android:src="@drawable/nav_settings"
-            android:translationZ="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/nav_about_mood"
@@ -161,6 +148,19 @@
             app:layout_constraintBottom_toBottomOf="@+id/nav_about_mood"
             app:layout_constraintStart_toStartOf="@+id/nav_about_mood"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/nav_settings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:src="@drawable/nav_settings"
+            android:translationZ="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nav_progress"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 

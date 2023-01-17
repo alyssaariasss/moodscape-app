@@ -5,100 +5,136 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/question5_tagline1"
-        android:layout_width="120dp"
-        android:layout_height="21dp"
-        android:layout_marginBottom="4dp"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:text="on a scale of 1-10"
-        android:textColor="#4A5759"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/question5_how"
-        app:layout_constraintStart_toStartOf="@+id/question5_how" />
-
-    <TextView
-        android:id="@+id/question5_how"
-        android:layout_width="250dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="64dp"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="How well have you been sleeping?"
-        android:textColor="#4A5759"
-        android:textSize="20sp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <TextView
-        android:id="@+id/question5_tagline2"
-        android:layout_width="314dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="80dp"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:text="1 being poorly and 10 being very well"
-        android:textColor="#4A5759"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/question5_how" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
+
+            <TextView
+                android:id="@+id/question5_tagline1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:text="on a scale of 1-10"
+                android:textColor="#4A5759"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/question5_how"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="How well have you been\nsleeping?"
+                android:textColor="#4A5759"
+                android:textSize="26sp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question5_tagline1" />
 
 
-    <Button
-        android:id="@+id/nextbtn5"
-        android:layout_width="180dp"
-        android:layout_height="35dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="236dp"
-        android:background="@drawable/round_btn3"
-        android:elevation="5dp"
-        android:fontFamily="@font/sourcesanspro_semibold"
-        android:gravity="center_horizontal|center_vertical"
-        android:paddingTop="0dp"
-        android:stateListAnimator="@null"
-        android:text="Next"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:backgroundTint="@color/dark_pink"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backbtn5"
-        tools:ignore="TextContrastCheck" />
+            <TextView
+                android:id="@+id/question5_tagline2"
+                android:layout_width="265dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="80dp"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:text="1 being poorly and 10 being very well"
+                android:textColor="#4A5759"
+                android:textSize="18sp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question5_how" />
 
-    <Button
-        android:id="@+id/backbtn5"
-        android:layout_width="130dp"
-        android:layout_height="35dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="37dp"
-        android:background="@drawable/round_btn3"
-        android:elevation="5dp"
-        android:fontFamily="@font/sourcesanspro_semibold"
-        android:gravity="center_horizontal|center_vertical"
-        android:paddingTop="2dp"
-        android:stateListAnimator="@null"
-        android:text="Back"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:backgroundTint="@color/canary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.347"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/question5_seekBar"
-        tools:ignore="TextContrastCheck" />
 
-    <SeekBar
-        android:id="@+id/question5_seekBar"
-        android:layout_width="750dp"
-        android:layout_height="85dp"
-        android:layout_marginTop="44dp"
-        android:background="@drawable/round_btn4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/question5_tagline2"
-        app:tickMarkTint="#000000" />
+            <TextView
+                android:id="@+id/question5_rate"
+                android:layout_width="29dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question5_tagline2" />
+
+            <SeekBar
+                android:id="@+id/question5_seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/round_btn4"
+                android:max="10"
+                android:min="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.529"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question5_rate"
+                app:tickMarkTint="#000000" />
+
+            <LinearLayout
+                android:id="@+id/q5Linear"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="140dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question5_seekBar">
+
+                <Button
+                    android:id="@+id/backbtn5"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_btn3"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/sourcesanspro_bold"
+                    android:stateListAnimator="@null"
+                    android:text="Back"
+                    android:textAllCaps="false"
+                    android:textSize="24sp"
+                    app:backgroundTint="@color/canary" />
+
+
+                <Button
+                    android:id="@+id/nextbtn5"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/round_btn3"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/sourcesanspro_bold"
+                    android:stateListAnimator="@null"
+                    android:text="Next"
+                    android:textAllCaps="false"
+                    android:textSize="24sp"
+                    app:backgroundTint="@color/dark_pink" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/q5Linear"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

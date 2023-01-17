@@ -3,87 +3,86 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="20dp"
-    android:backgroundTint="@color/dirty_cream"
-    app:cardCornerRadius="25dp"
-    app:cardElevation="5dp"
-    >
-
-    <TextView
-        android:id="@+id/moodList"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="mood"
-        android:layout_marginLeft="17dp"
-        android:textColor="@color/dark_gray"
-        android:textSize="30sp"
-        android:fontFamily="@font/sourcesanspro_bold" />
+    android:backgroundTint="@color/white_smoke"
+    android:layout_margin="2dp"
+    app:cardCornerRadius="20dp">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="17dp"
-        android:layout_marginRight="17dp"
-        android:orientation="vertical"
-        android:paddingBottom="10dp">
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:orientation="vertical">
 
         <TextView
-            android:layout_marginTop="60dp"
+            android:id="@+id/moodList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="M O O D"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_gray"
+            android:textSize="32sp"
+            android:fontFamily="@font/sourcesanspro_bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Why were you feeling this way?"
             android:textColor="@color/dark_gray"
             android:textSize="20sp"
             android:fontFamily="@font/sourcesanspro_semibold" />
 
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="-"
-            android:textColor="@color/dark_gray"
-            android:textSize="20sp" />
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="•"
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/answerList1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hello"
+                android:layout_marginLeft="8dp"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:textColor="@color/dark_gray"
+                android:textSize="18sp" />
+
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/answerList1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="hello"
-            android:layout_marginLeft="8dp"
-            android:textColor="@color/dark_gray"
-            android:textSize="18sp" />
-    </LinearLayout>
-
-
-        <TextView
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Where are you right now?"
             android:textColor="@color/dark_gray"
             android:textSize="20sp"
             android:fontFamily="@font/sourcesanspro_semibold"  />
 
-
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-"
+                android:text="•"
                 android:textColor="@color/dark_gray"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"/>
 
             <TextView
                 android:id="@+id/answerList2_1"
@@ -91,33 +90,33 @@
                 android:layout_height="wrap_content"
                 android:text="hello"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="@font/sourcesanspro_regular"
                 android:textColor="@color/dark_gray"
                 android:textSize="18sp" />
         </LinearLayout>
 
-
         <TextView
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Who are you with?"
             android:textColor="@color/dark_gray"
             android:textSize="20sp"
             android:fontFamily="@font/sourcesanspro_semibold"  />
 
-
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-"
+                android:text="•"
                 android:textColor="@color/dark_gray"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"/>
 
             <TextView
                 android:id="@+id/answerList2_2"
@@ -125,33 +124,33 @@
                 android:layout_height="wrap_content"
                 android:text="hello"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="@font/sourcesanspro_regular"
                 android:textColor="@color/dark_gray"
                 android:textSize="18sp" />
         </LinearLayout>
 
-
         <TextView
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="What did you do today?"
             android:textColor="@color/dark_gray"
             android:textSize="20sp"
             android:fontFamily="@font/sourcesanspro_semibold"  />
 
-
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-"
+                android:text="•"
                 android:textColor="@color/dark_gray"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"/>
 
             <TextView
                 android:id="@+id/answerList3"
@@ -159,34 +158,33 @@
                 android:layout_height="wrap_content"
                 android:text="hello"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="@font/sourcesanspro_regular"
                 android:textColor="@color/dark_gray"
                 android:textSize="18sp" />
         </LinearLayout>
 
-
-
         <TextView
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="How much do you worry about things?"
             android:textColor="@color/dark_gray"
             android:textSize="20sp"
-            android:fontFamily="@font/sourcesanspro_semibold"  />
-
+            android:fontFamily="@font/sourcesanspro_semibold" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-"
+                android:text="•"
                 android:textColor="@color/dark_gray"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"/>
 
             <TextView
                 android:id="@+id/answerList4"
@@ -194,33 +192,33 @@
                 android:layout_height="wrap_content"
                 android:text="hello"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="@font/sourcesanspro_regular"
                 android:textColor="@color/dark_gray"
                 android:textSize="18sp" />
         </LinearLayout>
 
-
         <TextView
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="How well have you been sleeping?"
             android:textColor="@color/dark_gray"
             android:textSize="20sp"
             android:fontFamily="@font/sourcesanspro_semibold"  />
 
-
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-"
+                android:text="•"
                 android:textColor="@color/dark_gray"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"/>
 
             <TextView
                 android:id="@+id/answerList5"
@@ -228,10 +226,14 @@
                 android:layout_height="wrap_content"
                 android:text="hello"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="@font/sourcesanspro_regular"
                 android:textColor="@color/dark_gray"
                 android:textSize="18sp" />
         </LinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
 
     </LinearLayout>
 

@@ -11,7 +11,7 @@
         android:id="@+id/Hello_User"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/sourcesanspro_bold"
         android:text="Hello, User!"
@@ -32,24 +32,27 @@
         app:layout_constraintStart_toStartOf="@+id/Hello_User"
         app:layout_constraintTop_toTopOf="@+id/Hello_User" />
 
-
-    <RelativeLayout
-        android:layout_width="355dp"
-        android:layout_height="500dp"
-        android:layout_marginTop="80dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/menu_tagline">
+        app:layout_constraintTop_toBottomOf="@id/menu_tagline"
+        app:layout_constraintVertical_bias="0.01">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/for_moods"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="0dp"
-            android:layout_marginStart="2dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:backgroundTint="@color/dirty_cream"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp">
@@ -58,12 +61,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:orientation="horizontal"
-                android:weightSum="2.5">
+                android:weightSum="2">
 
                 <TextView
-                    android:layout_width="50dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
                     android:layout_weight="1"
                     android:fontFamily="@font/sourcesanspro_regular"
                     android:paddingStart="25dp"
@@ -72,22 +75,22 @@
                     android:textSize="20sp" />
 
                 <ImageView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_weight="1.5"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
                     android:src="@drawable/menu1" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/for_goals"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="125dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
             android:backgroundTint="@color/dirty_cream"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp">
@@ -96,37 +99,39 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:orientation="horizontal"
-                android:weightSum="2.5" >
+                android:weightSum="2">
 
                 <ImageView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginTop="10dp"
-                    android:layout_weight="1.5"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
                     android:src="@drawable/menu2" />
 
                 <TextView
-                    android:layout_width="60dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/sourcesanspro_regular"
                     android:paddingEnd="25dp"
                     android:text="what are your\ngoals for today?"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/sourcesanspro_regular"
                     android:textAlignment="textEnd"
                     android:textColor="@color/dark_gray"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    tools:ignore="RtlCompat" />
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/for_meditation"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_alignStart="@+id/for_goals"
-            android:layout_alignTop="@+id/for_goals"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="125dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
             android:backgroundTint="@color/dirty_cream"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp">
@@ -135,12 +140,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:orientation="horizontal"
-                android:weightSum="2.5">
+                android:weightSum="2">
 
                 <TextView
-                    android:layout_width="70dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
                     android:layout_weight="1"
                     android:fontFamily="@font/sourcesanspro_regular"
                     android:paddingStart="25dp"
@@ -149,24 +154,22 @@
                     android:textSize="20sp" />
 
                 <ImageView
-                    android:layout_width="30dp"
+                    android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:paddingBottom="20dp"
                     android:layout_marginStart="10dp"
-                    android:layout_weight="1.5"
+                    android:layout_weight="1"
+                    android:paddingBottom="20dp"
                     android:src="@drawable/menu3" />
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/for_summary"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_alignStart="@+id/for_meditation"
-            android:layout_alignTop="@+id/for_meditation"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="125dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
             android:backgroundTint="@color/dirty_cream"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp">
@@ -175,43 +178,47 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:orientation="horizontal"
-                android:weightSum="2.5" >
+                android:weightSum="2">
 
                 <ImageView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginTop="10dp"
-                    android:layout_weight="1.5"
+                    android:layout_weight="1"
                     android:src="@drawable/menu4" />
 
                 <TextView
-                    android:layout_width="60dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
                     android:layout_weight="1"
                     android:fontFamily="@font/sourcesanspro_regular"
                     android:paddingEnd="25dp"
                     android:text="track your\nsummary here"
                     android:textAlignment="textEnd"
                     android:textColor="@color/dark_gray"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    tools:ignore="RtlCompat" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
-
-    </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:background="@color/white"
+        android:elevation="5dp"
         android:orientation="horizontal"
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
         android:weightSum="4"
-        android:elevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">

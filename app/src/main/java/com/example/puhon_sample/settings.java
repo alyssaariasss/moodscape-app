@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -41,6 +42,7 @@ import java.util.Map;
 
 public class settings extends AppCompatActivity {
 
+    TextView userEmail, userName;
     EditText FName, LName, PAge, PEmail, PPassword;
     Button SaveChangesBtn;
     ImageButton LogOut, AddProfilePic;
@@ -67,6 +69,8 @@ public class settings extends AppCompatActivity {
         PEmail = findViewById(R.id.Settings_Email);
         PPassword = findViewById(R.id.Settings_Password);
         SaveChangesBtn = findViewById(R.id.Settings_SaveBtn);
+        userEmail = findViewById(R.id.userEmail);
+        userName = findViewById(R.id.userName);
         LogOut = findViewById(R.id.signOut);
         ImgProfilePic = findViewById(R.id.sampleImage);
         AddProfilePic = findViewById(R.id.settingsAddPhoto);
@@ -80,8 +84,8 @@ public class settings extends AppCompatActivity {
         reference = database.getReference().child("users").child(id);
         storageReference = FirebaseStorage.getInstance().getReference().child("Profile Pic");
 
-        AddProfilePic.setOnClickListener(v -> CropImage.activity().setAspectRatio(1, 1).start(settings.this));
 
+        AddProfilePic.setOnClickListener(v -> CropImage.activity().setAspectRatio(1, 1).start(settings.this));
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -95,6 +99,9 @@ public class settings extends AppCompatActivity {
                 PEmail.setText(userprofile.getUserEmail());
                 PPassword.setText(userprofile.getUserPassword());
 
+                userEmail.setText(String.format(userprofile.getUserEmail()));
+                userName.setText(String.format(userprofile.getUserFirstName(), userprofile.getUserLastName()));
+
             }
 
             @Override
@@ -102,7 +109,6 @@ public class settings extends AppCompatActivity {
 
             }
         });
-
 
         // Updates user profile information + picture in settings page
         SaveChangesBtn.setOnClickListener(new View.OnClickListener() {

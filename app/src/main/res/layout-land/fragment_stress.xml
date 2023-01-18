@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="95dp"
+        android:layout_marginTop="85dp"
         tools:ignore="UselessParent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,8 +19,9 @@
 
             <TextView
                 android:id="@+id/fragment_title1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="Alleviating Stress"
                 android:fontFamily="@font/sourcesanspro_semibold"
                 android:textSize="24sp"
@@ -31,43 +32,39 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/stress1"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="100dp"
+                android:layout_marginStart="150dp"
+                android:layout_marginEnd="150dp"
                 android:backgroundTint="@color/dirty_cream"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/fragment_title1"
-                app:layout_constraintVertical_bias="0.160">
+                app:layout_constraintTop_toBottomOf="@+id/fragment_title1"
+                app:layout_constraintVertical_bias="0.1">
 
                 <LinearLayout
                     android:id="@+id/linearLayoutMC1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
                     android:elevation="6dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="@+id/stress1"
-                    app:layout_constraintEnd_toEndOf="@+id/stress1"
-                    app:layout_constraintStart_toStartOf="@+id/stress1"
-                    app:layout_constraintTop_toTopOf="@+id/stress1">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/stress1_image"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="20dp"
                         android:src="@drawable/laugh_icon" />
 
                     <LinearLayout
-                        android:layout_marginStart="15dp"
-                        android:layout_width="250dp"
+                        android:layout_width="230dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -84,16 +81,15 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
-                            android:text="A good belly laugh not only relieves stress but also generates positive physical changes in the body."
+                            android:text="A good laugh relieves stress and generates positive physical changes in the body."
                             android:textColor="@color/dark_gray"
                             android:textSize="14sp" />
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_marginTop="30dp"
-                        android:layout_marginEnd="15dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
                         android:src="@drawable/arrow_forward" />
                 </LinearLayout>
 
@@ -102,42 +98,37 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/stress2"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_marginTop="125dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="150dp"
+                android:layout_marginEnd="150dp"
                 android:backgroundTint="@color/dirty_cream"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.491"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/stress1">
+                app:layout_constraintTop_toBottomOf="@+id/stress1">
 
                 <LinearLayout
                     android:id="@+id/linearLayoutMC2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
                     android:elevation="6dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="@+id/stress2"
-                    app:layout_constraintEnd_toEndOf="@+id/stress2"
-                    app:layout_constraintStart_toStartOf="@+id/stress2"
-                    app:layout_constraintTop_toTopOf="@+id/stress2">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/stress2_image"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="20dp"
                         android:src="@drawable/stress2_note" />
 
                     <LinearLayout
-                        android:layout_width="250dp"
+                        android:layout_width="230dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
+                        android:layout_marginStart="20dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -154,7 +145,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
-                            android:text="Expressive writing can reduce stress. Journaling will help you deal with your emotions and calm your thoughts."
+                            android:text="Journaling can help you deal with your emotions and calm your thoughts."
                             android:textColor="@color/dark_gray"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -162,14 +153,11 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginStart="10dp"
                         android:src="@drawable/arrow_forward" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-
-
 
             <!--    Dummy view to prevent cutoff at the bottom         -->
             <TextView

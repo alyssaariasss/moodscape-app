@@ -97,8 +97,8 @@ public class settings extends AppCompatActivity {
                 PAge.setText(userprofile.getUserAge());
                 PPassword.setText(userprofile.getUserPassword());
 
-                userEmail.setText(String.format(userprofile.getUserEmail()));
-                userName.setText(String.format(userprofile.getUserFirstName(), userprofile.getUserLastName()));
+                userEmail.setText(userprofile.getUserEmail());
+                userName.setText(String.format(userprofile.getUserFirstName() + " " + userprofile.getUserLastName()));
 
             }
 
@@ -210,10 +210,6 @@ public class settings extends AppCompatActivity {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             imageUri = result.getUri();
             Picasso.get().load(imageUri).into(ImgProfilePic);
-        }
-        else
-        {
-            Toast.makeText(this, "Error, Try Again", Toast.LENGTH_SHORT).show();
         }
     }
 

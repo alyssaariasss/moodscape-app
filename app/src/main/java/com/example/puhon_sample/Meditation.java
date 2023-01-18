@@ -22,7 +22,6 @@ public class Meditation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meditation);
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         mc_relax = findViewById(R.id.mc_relax);
         mc_focus = findViewById(R.id.mc_focus);

@@ -21,7 +21,6 @@ public class questions extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question1);
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         Question1 = findViewById(R.id.question1);
         BackBtn1 = findViewById(R.id.backbtn1);

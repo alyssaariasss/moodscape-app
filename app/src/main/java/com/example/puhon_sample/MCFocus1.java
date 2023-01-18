@@ -35,7 +35,6 @@ public class MCFocus1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mcfocus1);
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         focusTimer = findViewById(R.id.focus1_timer);
         focusTimerStart = findViewById(R.id.focus_timer_start);

@@ -40,7 +40,6 @@ public class MCFocus2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mcfocus2);
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         tv_p1 = findViewById(R.id.tv_p1);
         tv_p2 = findViewById(R.id.tv_p2);

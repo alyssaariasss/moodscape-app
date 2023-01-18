@@ -16,7 +16,6 @@ public class stress2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stress2);
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         stress2DoneBtn = (Button) findViewById(R.id.stress2DoneBtn);
 

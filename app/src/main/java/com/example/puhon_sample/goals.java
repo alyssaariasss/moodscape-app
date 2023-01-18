@@ -37,7 +37,6 @@ public class goals extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goals);
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         goals_Today = findViewById(R.id.goals_Today);
         goals_History = findViewById(R.id.goals_History);

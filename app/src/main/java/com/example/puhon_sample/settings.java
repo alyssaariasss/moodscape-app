@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,8 +41,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class settings extends AppCompatActivity {
 
+    ProgressBar progressBar;
     TextView userEmail, userName;
-    EditText FName, LName, PAge, PEmail, PPassword;
+    EditText FName, LName, PAge, PPassword;
     Button SaveChangesBtn;
     ImageButton LogOut, AddProfilePic;
     FirebaseAuth fAuth;
@@ -60,10 +62,10 @@ public class settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        progressBar = findViewById(R.id.progressBar);
         FName = findViewById(R.id.Settings_FName);
         LName = findViewById(R.id.Settings_LName);
         PAge = findViewById(R.id.Settings_Age);
-        PEmail = findViewById(R.id.Settings_Email);
         PPassword = findViewById(R.id.Settings_Password);
         SaveChangesBtn = findViewById(R.id.Settings_SaveBtn);
         userEmail = findViewById(R.id.userEmail);
@@ -93,7 +95,6 @@ public class settings extends AppCompatActivity {
                 FName.setText(userprofile.getUserFirstName());
                 LName.setText(userprofile.getUserLastName());
                 PAge.setText(userprofile.getUserAge());
-                PEmail.setText(userprofile.getUserEmail());
                 PPassword.setText(userprofile.getUserPassword());
 
                 userEmail.setText(String.format(userprofile.getUserEmail()));
@@ -113,44 +114,34 @@ public class settings extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (FName.getText().toString().isEmpty() || LName.getText().toString().isEmpty() ||
-                        PAge.getText().toString().isEmpty() || PEmail.getText().toString().isEmpty() || PPassword.getText().toString().isEmpty()) {
+                        PAge.getText().toString().isEmpty() || PPassword.getText().toString().isEmpty()) {
                     Toast.makeText(settings.this, "One or Many fields are empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                String email = PEmail.getText().toString();
-                user.updateEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
+                String password = PPassword.getText().toString();
+                user.updatePassword(password).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Map<String, Object> edited = new HashMap<>();
                         edited.put("userFirstName", FName.getText().toString());
                         edited.put("userLastName", LName.getText().toString());
                         edited.put("userAge", PAge.getText().toString());
-                        edited.put("userEmail", email);
+                        edited.put("userPassword", password);
                         reference.updateChildren(edited).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Toast.makeText(settings.this, "Profile Updated", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), menu.class));
+                                startActivity(new Intent(getApplicationContext(), settings.class));
                                 finish();
                             }
                         });
-                        Toast.makeText(settings.this, "Profile Updated", Toast.LENGTH_SHORT).show();
+                        progressBar.setVisibility(View.VISIBLE);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(settings.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
-                });
-                String password = PPassword.getText().toString();
-                user.updatePassword(password).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Map<String, Object> edited = new HashMap<>();
-                        edited.put("userPassword", password);
-                        reference.updateChildren(edited);
-                    }
-
                 });
                 uploadProfileImage();
             }

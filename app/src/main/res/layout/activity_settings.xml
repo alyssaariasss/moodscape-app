@@ -93,6 +93,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/userName" />
 
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userEmail" />
+
             <LinearLayout
                 android:id="@+id/settingsLinear"
                 android:layout_width="match_parent"
@@ -196,25 +207,11 @@
                         android:textSize="16sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/Settings_Email"
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/round_btn2"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:paddingStart="25dp"
-                    android:textColor="@color/dark_gray"
-                    android:textColorHint="@color/dark_gray"
-                    android:textSize="16sp"
-                    android:visibility="invisible"/>
-
                 <Button
                     android:id="@+id/Settings_SaveBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="30dp"
                     android:background="@drawable/round_btn3"
                     android:elevation="5dp"
                     android:fontFamily="@font/sourcesanspro_semibold"

@@ -145,6 +145,38 @@ public class relax_music extends AppCompatActivity {
             }
         });
 
+        // NavBar Buttons
+
+        ImageButton btn_home = findViewById(R.id.nav_home);
+        ImageButton btn_info = findViewById(R.id.nav_about_mood);
+        ImageButton btn_progress = findViewById(R.id.nav_progress);
+        ImageButton btn_settings = findViewById(R.id.nav_settings);
+
+
+        btn_home.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, menu.class);
+            startActivity(intent);
+        });
+
+        btn_info.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, aboutMoodscape.class);
+            startActivity(intent);
+        });
+
+        btn_progress.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, summary.class);
+            startActivity(intent);
+        });
+
+        btn_settings.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, settings.class);
+            startActivity(intent);
+        });
+
     }
 
     // created a section for all the names
@@ -196,47 +228,6 @@ public class relax_music extends AppCompatActivity {
 
             }
         });
-
-
-        // NavBar Buttons
-
-        ImageButton btn_home = findViewById(R.id.nav_home);
-
-        btn_home.setOnClickListener(v -> {
-
-            mediaPlayer.stop();
-            Intent intent = new Intent(this, menu.class);
-            startActivity(intent);
-        });
-
-        ImageButton btn_info = findViewById(R.id.nav_about_mood);
-
-        btn_info.setOnClickListener(v -> {
-
-            mediaPlayer.stop();
-            Intent intent = new Intent(this, aboutMoodscape.class);
-            startActivity(intent);
-        });
-
-        ImageButton btn_progress = findViewById(R.id.nav_progress);
-
-        btn_progress.setOnClickListener(v -> {
-
-            mediaPlayer.stop();
-            Intent intent = new Intent(this, summary.class);
-            startActivity(intent);
-        });
-
-        ImageButton btn_settings = findViewById(R.id.nav_settings);
-
-        btn_settings.setOnClickListener(v -> {
-
-            mediaPlayer.stop();
-            Intent intent = new Intent(this, settings.class);
-            startActivity(intent);
-        });
-
-
 
         new Thread(new Runnable() {
             @Override

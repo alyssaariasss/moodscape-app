@@ -218,6 +218,7 @@ public class settings extends AppCompatActivity {
         {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             imageUri = result.getUri();
+            Picasso.get().load(imageUri).into(ImgProfilePic);
         }
         else
         {

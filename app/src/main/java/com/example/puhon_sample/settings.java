@@ -1,6 +1,9 @@
 package com.example.puhon_sample;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -44,14 +47,15 @@ public class settings extends AppCompatActivity {
     ProgressBar progressBar;
     TextView userEmail, userName;
     EditText FName, LName, PAge, PPassword;
-    Button SaveChangesBtn;
-    ImageButton LogOut, AddProfilePic;
+    Button SaveChangesBtn, LogOut;
+    ImageButton AddProfilePic, aboutInfo;
     FirebaseAuth fAuth;
     FirebaseDatabase database;
     DatabaseReference reference;
     String id;
     User userprofile;
     CircleImageView ImgProfilePic;
+    Dialog mDialog;
     private Uri imageUri;
     private String myUri = "";
     private StorageTask uploadTask;
@@ -73,6 +77,7 @@ public class settings extends AppCompatActivity {
         LogOut = findViewById(R.id.signOut);
         ImgProfilePic = findViewById(R.id.sampleImage);
         AddProfilePic = findViewById(R.id.settingsAddPhoto);
+        aboutInfo = findViewById(R.id.about_moodscape);
 
 
         fAuth = FirebaseAuth.getInstance();
@@ -83,8 +88,14 @@ public class settings extends AppCompatActivity {
         reference = database.getReference().child("users").child(id);
         storageReference = FirebaseStorage.getInstance().getReference().child("Profile Pic");
 
-
         AddProfilePic.setOnClickListener(v -> CropImage.activity().setAspectRatio(1, 1).start(settings.this));
+
+        mDialog = new Dialog(this);
+        aboutInfo.setOnClickListener(v -> {
+
+            mDialog.setContentView(R.layout.about_moodscape_popup);
+            mDialog.show();
+        });
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -150,7 +161,7 @@ public class settings extends AppCompatActivity {
         // NavBar Buttons
 
         ImageButton btn_home = findViewById(R.id.nav_home);
-        ImageButton btn_info = findViewById(R.id.nav_about_mood);
+        ImageButton btn_goals = findViewById(R.id.nav_goal);
         ImageButton btn_progress = findViewById(R.id.nav_progress);
 
         btn_home.setOnClickListener(v -> {
@@ -159,9 +170,9 @@ public class settings extends AppCompatActivity {
             startActivity(intent);
         });
 
-        btn_info.setOnClickListener(v -> {
+        btn_goals.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, aboutMoodscape.class);
+            Intent intent = new Intent(this, goals.class);
             startActivity(intent);
         });
 

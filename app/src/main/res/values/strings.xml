@@ -169,4 +169,5 @@
     <string name="goal_title">Your goal title here ...</string>
     <string name="set_time">Set Time</string>
     <string name="save_goal">Save goal</string>
+    <string name="about_moodscape">Moodscape is a mobile application for monitoring an individual’s mental state. This project creates a safe environment for users to track their moods and list their goals for the day. This application is for everyone who wants to see and monitor their day-to-day mood and overall progress. The mobile application also enables the user to identify the usual reasons and events that may trigger moods.</string>
 </resources>

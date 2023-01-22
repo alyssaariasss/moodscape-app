@@ -86,15 +86,16 @@
 
     <!--    Navbar Buttons  -->
     <LinearLayout
+        android:id="@+id/linearLayout10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:background="@color/white"
+        android:elevation="5dp"
         android:orientation="horizontal"
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
         android:weightSum="4"
-        android:elevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -112,12 +113,12 @@
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <ImageButton
-            android:id="@+id/nav_about_mood"
+            android:id="@+id/nav_goal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#00FFFFFF"
-            android:src="@drawable/nav_info"
+            android:src="@drawable/nav_goal"
             android:translationZ="0dp"
             app:layout_constraintBottom_toBottomOf="@+id/nav_home"
             app:layout_constraintStart_toStartOf="@+id/nav_home"

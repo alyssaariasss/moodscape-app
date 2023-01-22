@@ -1,11 +1,10 @@
 package com.example.puhon_sample;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,4 +29,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
+
+    @Override
+    public void onBackPressed() { }
 }

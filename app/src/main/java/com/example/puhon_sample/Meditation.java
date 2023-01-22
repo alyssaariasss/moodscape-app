@@ -42,7 +42,7 @@ public class Meditation extends AppCompatActivity {
         // NavBar Buttons
 
         ImageButton btn_home = findViewById(R.id.nav_home);
-        ImageButton btn_info = findViewById(R.id.nav_about_mood);
+        ImageButton btn_goals = findViewById(R.id.nav_goal);
         ImageButton btn_progress = findViewById(R.id.nav_progress);
         ImageButton btn_settings = findViewById(R.id.nav_settings);
 
@@ -53,9 +53,9 @@ public class Meditation extends AppCompatActivity {
             startActivity(intent);
         });
 
-        btn_info.setOnClickListener(v -> {
+        btn_goals.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, aboutMoodscape.class);
+            Intent intent = new Intent(this, goals.class);
             startActivity(intent);
         });
 

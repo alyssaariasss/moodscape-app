@@ -21,38 +21,27 @@
             android:layout_marginEnd="30dp">
 
             <ImageButton
-                android:id="@+id/signOut"
+                android:id="@+id/about_moodscape"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="15dp"
                 android:background="#00FFFFFF"
-                android:src="@drawable/sign_out"
+                android:src="@drawable/nav_info"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-            <ImageView
-                android:id="@+id/moodscape_ls"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="70dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
-                android:src="@drawable/moodscape_ls"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/sampleImage"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="80dp"
                 android:src="@drawable/user_profile"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/moodscape_ls" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/settingsAddPhoto"
@@ -93,15 +82,26 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/userName" />
 
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userEmail" />
+
             <LinearLayout
                 android:id="@+id/settingsLinear"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:layout_marginTop="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="80dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/userEmail">
@@ -196,27 +196,11 @@
                         android:textSize="16sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/Settings_Email"
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/round_btn2"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:paddingStart="25dp"
-                    android:textColor="@color/dark_gray"
-                    android:textColorHint="@color/dark_gray"
-                    android:textSize="16sp"
-                    android:visibility="invisible"/>
-
                 <Button
                     android:id="@+id/Settings_SaveBtn"
-                    android:layout_width="350dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="30dp"
                     android:background="@drawable/round_btn3"
                     android:elevation="5dp"
                     android:fontFamily="@font/sourcesanspro_semibold"
@@ -229,8 +213,29 @@
                     app:layout_constraintTop_toTopOf="@+id/Settings_Password" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"/>
+
+                <Button
+                    android:id="@+id/signOut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_btn3"
+                    app:backgroundTint="@color/canary"
+                    android:layout_marginTop="5dp"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/sourcesanspro_semibold"
+                    android:stateListAnimator="@null"
+                    android:text="Logout"
+                    android:textAllCaps="false"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/Settings_Password" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"/>
 
             </LinearLayout>
 
@@ -241,6 +246,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/settingsLinear"
                 app:layout_constraintBottom_toBottomOf="parent"/>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -274,12 +280,12 @@
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <ImageButton
-            android:id="@+id/nav_about_mood"
+            android:id="@+id/nav_goal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#00FFFFFF"
-            android:src="@drawable/nav_info"
+            android:src="@drawable/nav_goal"
             android:translationZ="0dp"
             app:layout_constraintBottom_toBottomOf="@+id/nav_home"
             app:layout_constraintStart_toStartOf="@+id/nav_home"

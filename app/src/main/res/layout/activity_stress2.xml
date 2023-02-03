@@ -64,7 +64,7 @@
             <EditText
                 android:id="@+id/stress2_input_txt"
                 android:layout_width="match_parent"
-                android:layout_height="450dp"
+                android:layout_height="451dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/round_btn4"

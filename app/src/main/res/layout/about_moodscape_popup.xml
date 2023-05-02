@@ -28,6 +28,149 @@
             android:textSize="16sp"
             android:text="@string/about_moodscape"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="OUR TEAM"
+            android:fontFamily="@font/sourcesanspro_semibold"
+            android:textSize="28dp"
+            android:layout_gravity="center"
+            android:textColor="@color/dark_gray"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:weightSum="2">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:src="@drawable/alyssa"
+                android:gravity="left"
+                android:layout_weight="2"/>
+
+            <LinearLayout
+                android:layout_width="185dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:layout_marginTop="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sourcesanspro_semibold"
+                    android:textSize="22sp"
+                    android:text="Alyssa Mae Arias"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/dark_gray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:textSize="20sp"
+                    android:layout_marginTop="5dp"
+                    android:text="Team Lead"
+                    android:textColor="@color/dark_gray" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:weightSum="2">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:src="@drawable/shiara"
+                android:gravity="left"
+                android:layout_weight="2"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:layout_marginTop="18dp">
+
+                <TextView
+                    android:layout_width="185dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sourcesanspro_semibold"
+                    android:textSize="21sp"
+                    android:text="Shiara Mae Deudor"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/dark_gray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:textSize="20sp"
+                    android:layout_marginTop="5dp"
+                    android:text="QA Tester"
+                    android:textColor="@color/dark_gray" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:weightSum="2">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:src="@drawable/janika"
+                android:gravity="left"
+                android:layout_weight="2"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:layout_marginTop="18dp">
+
+                <TextView
+                    android:layout_width="185dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sourcesanspro_semibold"
+                    android:textSize="22sp"
+                    android:text="Janika Escolano"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/dark_gray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:textSize="20sp"
+                    android:layout_marginTop="5dp"
+                    android:text="UI/UX Designer"
+                    android:textColor="@color/dark_gray" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
     </LinearLayout>
 
 </ScrollView>

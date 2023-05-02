@@ -32,7 +32,7 @@ public class MCAnxiety1 extends AppCompatActivity {
                 "It is only when we take chances, when our lives improve. The initial and the most difficult risk that we need to take is to become honest.",
                 "There are three ways to ultimate success: The first way is to be kind. The second way is to be kind. The third way is to be kind.",
                 "If you are working on something that you really care about, you don’t have to be pushed. The vision pulls you.",
-                "You don't always need a plan. Sometimes you just need to breathe, trust, let go and see what happens",
+                "You don't always need a plan. Sometimes you just need to breathe, trust, let go and see what happens.",
                 "People often say that beauty is in the eye of the beholder, and I say that the most liberating thing about beauty is realizing you are the beholder.",
                 "The best and most beautiful things in the world cannot be seen or even touched — they must be felt with the heart.",
                 "Don’t limit yourself. Many people limit themselves to what they think they can do. You can go as far as your mind lets you. What you believe, remember, you can achieve.",
@@ -50,7 +50,6 @@ public class MCAnxiety1 extends AppCompatActivity {
         title2.setText(String.format("\"%s\"", quote));
 
         mcButtonDone.setOnClickListener(v -> {
-
             Intent intent = new Intent(this, Meditation.class);
             startActivity(intent);
         });

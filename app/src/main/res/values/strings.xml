@@ -76,7 +76,12 @@
     <string name="confirm_q">CONFIRM</string>
     <string name="guide_questions">Guide Questions</string>
     <string name="view_summary">VIEW SUMMARY</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="daily_logging_title">Daily Mood Logging</string>
+    <string name="daily_goals_title">Daily Goals</string>
+    <string name="stress_act_title">Stress-Relieving Activities</string>
+    <string name="daily_logging_text">Start your day by logging your current mood. Choose from a diverse range of emotions that best represent how you feel. By consistently tracking your moods, you\'ll notice patterns, triggers, and trends, enabling you to make positive changes in your life.</string>
+    <string name="daily_goals_text">Set achievable daily goals to enhance your well-being and productivity. Whether it\'s finding time for self-care, staying physically active, or accomplishing a personal project, Moodscape helps you stay focused and motivated. Check off completed goals and reflect on missed ones to foster growth and continuous improvement.</string>
+    <string name="stress_act_text">Life can get overwhelming at times, but Moodscape has got you covered. Discover a curated list of stress-relieving activities tailored to suit your needs. From mindfulness exercises and meditation to quick relaxation techniques, you can find solace and peace in just a few minutes.</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="no_goals_for_today">No goals for today.</string>
     <string name="taking_care_of_yourself_is_productive">Taking care of yourself is productive.</string>
@@ -170,4 +175,5 @@
     <string name="set_time">Set Time</string>
     <string name="save_goal">Save goal</string>
     <string name="about_moodscape">Moodscape is a mobile application for monitoring an individual’s mental state. This project creates a safe environment for users to track their moods and list their goals for the day. This application is for everyone who wants to see and monitor their day-to-day mood and overall progress. The mobile application also enables the user to identify the usual reasons and events that may trigger moods.</string>
+    <string name="skip">Skip</string>
 </resources>

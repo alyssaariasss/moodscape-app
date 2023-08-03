@@ -27,7 +27,7 @@ public class splash extends AppCompatActivity {
                 Intent intent= new Intent(splash.this, menu.class);
                 startActivity(intent);
             } else {
-                Intent intent= new Intent(splash.this, MainActivity.class);
+                Intent intent= new Intent(splash.this, Onboarding.class);
                 startActivity(intent);
             }
             finish();
